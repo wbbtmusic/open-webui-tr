@@ -1,73 +1,52 @@
-# Contributing to Open WebUI
+# Open WebUI'ye Katkıda Bulunma
+🚀 **Hoş Geldiniz, Katkıda Bulunanlar!** 🚀
+Open WebUI'ye katkıda bulunma ilginizden dolayı minnettarız. Bu belge, katkılarınızın projeyi etkili bir şekilde geliştirmesini sağlamak için size yol göstermek amacıyla hazırlanmıştır. Gelin, Open WebUI'yi birlikte daha iyi hale getirelim!
 
-🚀 **Welcome, Contributors!** 🚀
-
-Your interest in contributing to Open WebUI is greatly appreciated. This document is here to guide you through the process, ensuring your contributions enhance the project effectively. Let's make Open WebUI even better, together!
-
-## 📌 Key Points
-
+## 📌 Temel Noktalar
 ### 🦙 Ollama vs. Open WebUI
+Ollama ve Open WebUI arasında ayrım yapmak çok önemlidir:
+- **Open WebUI**, sohbet etkileşimleri için sezgisel ve duyarlı bir web arayüzü sağlamaya odaklanır.
+- **Ollama**, bu etkileşimleri destekleyen temel teknolojidir.
+Eğer sorununuz veya katkınız doğrudan Ollama'nın temel teknolojisiyle ilgiliyse, lütfen bunu ilgili [Ollama proje deposuna](https://ollama.com/) yönlendirin. Open WebUI'nin deposu yalnızca web arayüzü yönüne adanmıştır.
 
-It's crucial to distinguish between Ollama and Open WebUI:
-
-- **Open WebUI** focuses on providing an intuitive and responsive web interface for chat interactions.
-- **Ollama** is the underlying technology that powers these interactions.
-
-If your issue or contribution pertains directly to the core Ollama technology, please direct it to the appropriate [Ollama project repository](https://ollama.com/). Open WebUI's repository is dedicated to the web interface aspect only.
-
-### 🚨 Reporting Issues
-
-Noticed something off? Have an idea? Check our [Issues tab](https://github.com/open-webui/open-webui/issues) to see if it's already been reported or suggested. If not, feel free to open a new issue. When reporting an issue, please follow our issue templates. These templates are designed to ensure that all necessary details are provided from the start, enabling us to address your concerns more efficiently.
-
-> [!IMPORTANT]
+### 🚨 Sorun Bildirme
+Yanlış giden bir şey mi fark ettiniz? Bir fikriniz mi var? Daha önce bildirilip bildirilmediğini veya önerilip önerilmediğini görmek için [Sorunlar (Issues) sekmemizi](https://github.com/open-webui/open-webui/issues) kontrol edin. Eğer yoksa, yeni bir sorun açmaktan çekinmeyin. Sorun bildirirken, lütfen sorun şablonlarımızı takip edin. Bu şablonlar, gerekli tüm detayların baştan itibaren sağlanmasını sağlamak ve endişelerinizi daha verimli bir şekilde ele almamıza olanak tanımak için tasarlanmıştır.
+> **ÖNEMLİ:**
 >
-> - **Template Compliance:** Please be aware that failure to follow the provided issue template, or not providing the requested information at all, will likely result in your issue being closed without further consideration. This approach is critical for maintaining the manageability and integrity of issue tracking.
-> - **Detail is Key:** To ensure your issue is understood and can be effectively addressed, it's imperative to include comprehensive details. Descriptions should be clear, including steps to reproduce, expected outcomes, and actual results. Lack of sufficient detail may hinder our ability to resolve your issue.
+> - **Şablon Uyumluluğu:** Sağlanan sorun şablonuna uyulmaması veya istenen bilgilerin hiç sağlanmaması durumunda, sorununuzun daha fazla değerlendirilmeden kapatılabileceğini lütfen unutmayın. Bu yaklaşım, sorun takibinin yönetilebilirliğini ve bütünlüğünü korumak için kritik öneme sahiptir.
+> - **Detay Önemlidir:** Sorununuzun anlaşılmasını ve etkili bir şekilde ele alınmasını sağlamak için kapsamlı detaylar eklemek zorunludur. Açıklamalar açık olmalı, yeniden üretme adımları, beklenen sonuçlar ve gerçek sonuçlar dahil edilmelidir. Yeterli detayın olmaması, sorununuzu çözme yeteneğimizi engelleyebilir.
 
-### 🧭 Scope of Support
+### 🧭 Destek Kapsamı
+Open WebUI ile doğrudan ilgili olmayan, özellikle Docker kurulumları gibi çalıştığı ortamla ilgili sorunlarda bir artış fark ettik. Docker dağıtımını desteklemeye çalışsak da, sorunsuz bir deneyim için Docker temellerini anlamak çok önemlidir.
+- **Docker Dağıtım Desteği**: Open WebUI, Docker dağıtımını destekler. Docker bilgisi olduğu varsayılır. Docker temelleri için lütfen [resmi Docker dokümantasyonuna](https://docs.docker.com/get-started/overview/) başvurun.
+- **Gelişmiş Yapılandırmalar**: HTTPS için reverse proxy kurmak ve Docker dağıtımlarını yönetmek temel bilgi gerektirir. Bu becerileri öğrenmek için çok sayıda çevrimiçi kaynak mevcuttur. Bu bilgiye sahip olmanız, Open WebUI ve benzeri projelerle deneyiminizi büyük ölçüde artıracaktır.
 
-We've noticed an uptick in issues not directly related to Open WebUI but rather to the environment it's run in, especially Docker setups. While we strive to support Docker deployment, understanding Docker fundamentals is crucial for a smooth experience.
+## 💡 Katkıda Bulunma
+Katkıda bulunmak mı istiyorsunuz? Harika! İşte nasıl yardımcı olabileceğiniz:
+### 🛠 Pull Request'ler
+Pull request'leri memnuniyetle karşılıyoruz. Bir tane göndermeden önce lütfen:
+1. Fikirlerinizle ilgili bir tartışma başlatın [burada](https://github.com/open-webui/open-webui/discussions/new/choose).
+2. Projenin kodlama standartlarına uyun ve yeni özellikler için testler ekleyin.
+3. Gerektiğinde dokümantasyonu güncelleyin.
+4. Açık, açıklayıcı commit mesajları yazın.
+5. Pull request'inizi zamanında tamamlamanız çok önemlidir. Hızlı hareket ediyoruz ve PR'ların çok uzun süre bekletilmesi mümkün değildir. Eğer makul bir süre içinde tamamlayamazsanız, projenin ilerlemesini sağlamak için kapatmak zorunda kalabiliriz.
 
-- **Docker Deployment Support**: Open WebUI supports Docker deployment. Familiarity with Docker is assumed. For Docker basics, please refer to the [official Docker documentation](https://docs.docker.com/get-started/overview/).
+### 📚 Dokümantasyon ve Eğitimler
+Dokümantasyonu geliştirerek, eğitimler yazarak veya web UI'yi kurma ve optimize etme konusunda rehberler oluşturarak Open WebUI'yi daha erişilebilir hale getirmemize yardımcı olun.
 
-- **Advanced Configurations**: Setting up reverse proxies for HTTPS and managing Docker deployments requires foundational knowledge. There are numerous online resources available to learn these skills. Ensuring you have this knowledge will greatly enhance your experience with Open WebUI and similar projects.
+### 🌐 Çeviriler ve Uluslararasılaşma
+Open WebUI'yi daha geniş bir kitleye ulaştırmamıza yardımcı olun. Bu bölümde, projeye yeni çeviriler ekleme sürecinde size rehberlik edeceğiz.
+Çevirileri depolamak için JSON dosyalarını kullanıyoruz. Mevcut çeviri dosyalarını `src/lib/i18n/locales` dizininde bulabilirsiniz. Her dizin belirli bir dile karşılık gelir; örneğin, İngilizce (ABD) için `en-US`, Fransızca (Fransa) için `fr-FR` ve bu böyle devam eder. Belirli bir dil için uygun kodu bulmak üzere [ISO 639 Dil Kodları'na](http://www.lingoes.net/en/translator/langcode.htm) başvurabilirsiniz.
+Yeni bir dil eklemek için:
+- `src/lib/i18n/locales` yolunda, uygun dil kodunu ad olarak kullanarak yeni bir dizin oluşturun. Örneğin, İspanyolca (İspanya) çevirileri ekliyorsanız, `es-ES` adında yeni bir dizin oluşturun.
+- Amerikan İngilizcesi çeviri dosyasını/dosyalarını (`src/lib/i18n/locale` dizinindeki `en-US` dizininden) bu yeni dizine kopyalayın ve JSON formatındaki string değerlerini kendi dilinize göre güncelleyin. JSON nesnesinin yapısını koruduğunuzdan emin olun.
+- Dil kodunu ve ilgili başlığını `src/lib/i18n/locales/languages.json` adresindeki diller dosyasına ekleyin.
 
-## 💡 Contributing
+### 🤔 Sorular ve Geri Bildirim
+Sorularınız veya geri bildiriminiz mi var? [Discord topluluğumuza](https://discord.gg/5rJgQTnV4s) katılın veya bir sorun açın. Yardımcı olmak için buradayız!
 
-Looking to contribute? Great! Here's how you can help:
+## 🙏 Teşekkür Ederiz!
+Katkılarınız, büyük veya küçük olsun, Open WebUI üzerinde önemli bir etki yaratıyor. Projeye ne katacağınızı görmek için sabırsızlanıyoruz!
+Birlikte, topluluk için daha da güçlü bir araç yaratalım. 🌟
 
-### 🛠 Pull Requests
-
-We welcome pull requests. Before submitting one, please:
-
-1. Open a discussion regarding your ideas [here](https://github.com/open-webui/open-webui/discussions/new/choose).
-2. Follow the project's coding standards and include tests for new features.
-3. Update documentation as necessary.
-4. Write clear, descriptive commit messages.
-5. It's essential to complete your pull request in a timely manner. We move fast, and having PRs hang around too long is not feasible. If you can't get it done within a reasonable time frame, we may have to close it to keep the project moving forward.
-
-### 📚 Documentation & Tutorials
-
-Help us make Open WebUI more accessible by improving documentation, writing tutorials, or creating guides on setting up and optimizing the web UI.
-
-### 🌐 Translations and Internationalization
-
-Help us make Open WebUI available to a wider audience. In this section, we'll guide you through the process of adding new translations to the project.
-
-We use JSON files to store translations. You can find the existing translation files in the `src/lib/i18n/locales` directory. Each directory corresponds to a specific language, for example, `en-US` for English (US), `fr-FR` for French (France) and so on. You can refer to [ISO 639 Language Codes](http://www.lingoes.net/en/translator/langcode.htm) to find the appropriate code for a specific language.
-
-To add a new language:
-
-- Create a new directory in the `src/lib/i18n/locales` path with the appropriate language code as its name. For instance, if you're adding translations for Spanish (Spain), create a new directory named `es-ES`.
-- Copy the American English translation file(s) (from `en-US` directory in `src/lib/i18n/locale`) to this new directory and update the string values in JSON format according to your language. Make sure to preserve the structure of the JSON object.
-- Add the language code and its respective title to languages file at `src/lib/i18n/locales/languages.json`.
-
-### 🤔 Questions & Feedback
-
-Got questions or feedback? Join our [Discord community](https://discord.gg/5rJgQTnV4s) or open an issue. We're here to help!
-
-## 🙏 Thank You!
-
-Your contributions, big or small, make a significant impact on Open WebUI. We're excited to see what you bring to the project!
-
-Together, let's create an even more powerful tool for the community. 🌟
+Türkçeye çeviren: Burak Can Öğüt
