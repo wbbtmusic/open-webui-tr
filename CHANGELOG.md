@@ -1,2306 +1,2369 @@
-# Changelog
+# Değişiklik Günlüğü
 
-All notable changes to this project will be documented in this file.
+Bu projeye yapılan tüm önemli değişiklikler bu dosyada belgelenecektir.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+Format, [Keep a Changelog](https://keepachielog.com/en/1.1.0/) standardını temel alır
+ve bu proje [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standardına uyar.
 
 ## [0.6.18] - 2025-07-19
 
-### Fixed
+### Düzeltildi
 
-- 🚑 **Users Not Loading in Groups**: Resolved an issue where user list was not displaying within user groups, restoring full visibility and management of group memberships for teams and admins.
+- 🚑 **Gruplarda Yüklenmeyen Kullanıcılar**: Kullanıcı grupları içinde kullanıcı listesinin görüntülenmemesi sorunu çözüldü. Bu düzeltme ile ekipler ve admin'ler için grup üyeliklerinin tam görünürlüğü ve yönetimi geri getirildi.
 
 ## [0.6.17] - 2025-07-19
 
-### Added
+### Eklendi
 
-- 📂 **Dedicated Folder View with Chat List**: Clicking a folder now reveals a brand-new landing page showcasing a list of all chats within that folder, making navigation simpler and giving teams immediate visibility into project-specific conversations.
-- 🆕 **Streamlined Folder Creation Modal**: Creating a new folder is now a seamless, unified experience with a dedicated modal that visually and functionally matches the edit folder flow, making workspace organization more intuitive and error-free for all users.
-- 🗃️ **Direct File Uploads to Folder Knowledge**: You can now upload files straight to a folder’s knowledge—empowering you to enrich project spaces by adding resources and documents directly, without the need to pre-create knowledge bases beforehand.
-- 🔎 **Chat Preview in Search**: When searching chats, instantly preview results in context without having to open them—making discovery, auditing, and recall dramatically quicker, especially in large, active teams.
-- 🖼️ **Image Upload and Inline Insertion in Notes**: Notes now support inserting images directly among your text, letting you create rich, visually structured documentation, brainstorms, or reports in a more natural and engaging way—no more images just as attachments.
-- 📱 **Enhanced Note Selection Editing and Q&A**: Select any portion of your notes to either edit just the highlighted part or ask focused questions about that content—streamlining workflows, boosting productivity, and making reviews or AI-powered enhancements more targeted.
-- 📝 **Copy Notes as Rich Text**: Copy entire notes—including all formatting, images, and structure—directly as rich text for seamless pasting into emails, reports, or other tools, maintaining clarity and consistency outside the WebUI.
-- ⚡ **Fade-In Streaming Text Experience**: Live-generated responses now elegantly fade in as the AI streams them, creating a more natural and visually engaging reading experience; easily toggled off in Interface settings if you prefer static displays.
-- 🔄 **Settings for Follow-Up Prompts**: Fine-tune your follow-up prompt experience—with new controls, you can choose to keep them visible or have them inserted directly into the message input instead of auto-submitting, giving you more flexibility and control over your workflow.
-- 🔗 **Prompt Variable Documentation Quick Link**: Access documentation for prompt variables in one click from the prompt editor modal—shortening the learning curve and making advanced prompt-building more accessible.
-- 📈 **Active and Total User Metrics for Telemetry**: Gain valuable insights into usage patterns and platform engagement with new metrics tracking active and total users—enhancing auditability and planning for large organizations.
-- 🏷️ **Traceability with Log Trace and Span IDs**: Each log entry now carries detailed trace and span IDs, making it much easier for admins to pinpoint and resolve issues across distributed systems or in complex troubleshooting.
-- 👥 **User Group Add/Remove Endpoints**: Effortlessly add or remove users from groups with new, improved endpoints—giving admins and team leads faster, clearer control over collaboration and permissions.
-- ⚙️ **Note Settings and Controls Streamlined**: The main “Settings” for notes are now simply called “Controls”, and note files now reside in a dedicated controls section, decluttering navigation and making it easier to find and configure note-related options.
-- 🚀 **Faster Admin User Page Loads**: The user list endpoint for admins has been optimized to exclude heavy profile images, speeding up load times for large teams and reducing waiting during administrative tasks.
-- 📡 **Chat ID Header Forwarding**: Ollama and OpenAI router requests now include the chat ID in request headers, enabling better request correlation and debugging capabilities across AI model integrations.
-- 🧠 **Enhanced Reasoning Tag Processing**: Improved and expanded reasoning tag parsing to handle various tag formats more robustly, including standard XML-style tags and custom delimiters, ensuring better AI reasoning transparency and debugging capabilities.
-- 🔐 **OAuth Token Endpoint Authentication Method**: Added configurable OAuth token endpoint authentication method support, providing enhanced flexibility and security options for enterprise OAuth integrations and identity provider compatibility.
-- 🛡️ **Redis Sentinel High Availability Support**: Comprehensive Redis Sentinel failover implementation with automatic master discovery, intelligent retry logic for connection failures, and seamless operation during master node outages—eliminating single points of failure and ensuring continuous service availability in production deployments.
-- 🌐 **Localization & Internationalization Improvements**: Refined and expanded translations for Simplified Chinese, Traditional Chinese, French, German, Korean, and Polish, ensuring a more fluent and native experience for global users across all supported languages.
+- 📂 **Sohbet Listesi İçeren Özel Klasör Görünümü**: Artık bir klasöre tıklandığında, o klasördeki tüm sohbetlerin bir listesini gösteren yepyeni bir başlangıç sayfası açılıyor. Bu, gezinmeyi basitleştiriyor ve ekiplere projeye özgü konuşmalara anında görünürlük sağlıyor.
+- 🆕 **Modernleştirilmiş Klasör Oluşturma Modalı**: Yeni bir klasör oluşturmak artık, klasör düzenleme akışıyla görsel ve işlevsel olarak eşleşen özel bir modal ile kusursuz ve birleşik bir deneyim sunuyor. Bu, tüm kullanıcılar için çalışma alanı organizasyonunu daha sezgisel ve hatasız hale getiriyor.
+- 🗃️ **Doğrudan Klasör Bilgi Tabanına Dosya Yükleme**: Artık dosyaları doğrudan bir klasörün bilgi tabanına yükleyebilirsiniz. Bu sayede, önceden bilgi tabanı oluşturmaya gerek kalmadan, kaynak ve belgeleri doğrudan ekleyerek proje alanlarınızı zenginleştirebilirsiniz.
+- 🔎 **Aramada Sohbet Önizlemesi**: Sohbetleri ararken, sonuçları açmak zorunda kalmadan anında bağlam içinde önizleyebilirsiniz. Bu, özellikle büyük ve aktif ekiplerde keşfi, denetimi ve geri çağırmayı önemli ölçüde hızlandırır.
+- 🖼️ **Notlara Resim Yükleme ve Satır İçi Ekleme**: Notlar artık metinlerinizin arasına doğrudan resim eklemeyi destekliyor. Bu sayede, resimleri sadece ek olarak değil, zengin, görsel olarak yapılandırılmış belgeler, beyin fırtınaları veya raporlar oluşturmanıza olanak tanır.
+- 📱 **Gelişmiş Not Seçimi Düzenleme ve Soru-Cevap**: Notlarınızın herhangi bir bölümünü seçerek sadece vurgulanan kısmı düzenleyebilir veya o içerik hakkında odaklanmış sorular sorabilirsiniz. Bu, iş akışlarını kolaylaştırır, üretkenliği artırır ve incelemeleri veya yapay zeka destekli geliştirmeleri daha hedefli hale getirir.
+- 📝 **Notları Zengin Metin Olarak Kopyalama**: Tüm notları—biçimlendirme, resimler ve yapı dahil—doğrudan zengin metin olarak kopyalayıp e-postalara, raporlara veya diğer araçlara sorunsuzca yapıştırabilirsiniz. Böylece WebUI dışındaki tutarlılığı ve netliği korursunuz.
+- ⚡ **Akıcı Metin için Fade-In Deneyimi**: Canlı olarak oluşturulan yanıtlar artık yapay zeka tarafından akıtılırken zarif bir şekilde belirginleşerek daha doğal ve görsel olarak çekici bir okuma deneyimi yaratır. Eğer statik gösterimleri tercih ederseniz, bu özellik Arayüz ayarlarından kolayca kapatılabilir.
+- 🔄 **Takip Eden Prompt'lar için Ayarlar**: Takip eden prompt deneyiminizi hassas bir şekilde ayarlayın. Yeni kontrollerle, bu prompt'ları görünür tutmayı veya otomatik olarak gönderilmek yerine doğrudan mesaj giriş kutusuna eklenmesini seçebilirsiniz. Bu, iş akışınız üzerinde size daha fazla esneklik ve kontrol sağlar.
+- 🔗 **Prompt Değişkenleri için Dokümantasyon Hızlı Bağlantısı**: Prompt düzenleyici modalından tek bir tıklama ile prompt değişkenleri dokümantasyonuna erişin. Bu, öğrenme sürecini kısaltır ve gelişmiş prompt oluşturmayı daha erişilebilir hale getirir.
+- 📈 **Telemetri için Aktif ve Toplam Kullanıcı Metrikleri**: Aktif ve toplam kullanıcıları izleyen yeni metriklerle kullanım alışkanlıkları ve platform etkileşimi hakkında değerli bilgiler edinin. Bu, büyük kuruluşlar için denetlenebilirliği ve planlamayı geliştirir.
+- 🏷️ **Log Trace ve Span ID'leri ile İzlenebilirlik**: Her log kaydı artık ayrıntılı trace ve span ID'leri taşıyor. Bu, admin'lerin dağıtık sistemlerdeki veya karmaşık sorun giderme senaryolarındaki sorunları tespit etmesini ve çözmesini çok daha kolay hale getirir.
+- 👥 **Kullanıcı Grubu Ekleme/Kaldırma Endpoint'leri**: Yeni ve geliştirilmiş endpoint'ler ile kullanıcıları gruplara zahmetsizce ekleyin veya çıkarın. Bu, admin'lere ve ekip liderlerine işbirliği ve izinler üzerinde daha hızlı ve net bir kontrol sağlar.
+- ⚙️ **Not Ayarları ve Kontrolleri Sadeleştirildi**: Notlar için ana "Ayarlar" artık sadece "Kontroller" olarak adlandırılıyor ve not dosyaları artık özel bir kontroller bölümünde yer alıyor. Bu, gezinmeyi sadeleştirir ve notla ilgili seçenekleri bulmayı ve yapılandırmayı kolaylaştırır.
+- 🚀 **Daha Hızlı Admin Kullanıcı Sayfası Yüklemeleri**: Admin'ler için kullanıcı listesi endpoint'i, ağır profil resimlerini hariç tutacak şekilde optimize edildi. Bu, büyük ekipler için yükleme sürelerini hızlandırır ve yönetimsel görevler sırasında beklemeyi azaltır.
+- 📡 **Sohbet ID'si Header Yönlendirme**: Ollama ve OpenAI router istekleri artık istek başlıklarında sohbet ID'sini içeriyor. Bu, AI model entegrasyonları arasında daha iyi istek korelasyonu ve hata ayıklama yetenekleri sağlar.
+- 🧠 **Gelişmiş Mantık Yürütme Etiketi İşleme**: Standart XML tarzı etiketler ve özel sınırlayıcılar da dahil olmak üzere çeşitli etiket formatlarını daha sağlam bir şekilde işlemek için mantık yürütme etiketi (reasoning tag) ayrıştırması iyileştirildi ve genişletildi. Bu, daha iyi AI mantık yürütme şeffaflığı ve hata ayıklama yetenekleri sağlar.
+- 🔐 **OAuth Token Endpoint Kimlik Doğrulama Yöntemi**: Yapılandırılabilir OAuth token endpoint kimlik doğrulama yöntemi desteği eklendi. Bu, kurumsal OAuth entegrasyonları ve kimlik sağlayıcı uyumluluğu için gelişmiş esneklik ve güvenlik seçenekleri sunar.
+- 🛡️ **Redis Sentinel Yüksek Erişilebilirlik Desteği**: Otomatik master keşfi, bağlantı hataları için akıllı yeniden deneme mantığı ve master node kesintileri sırasında sorunsuz çalışma özellikleriyle kapsamlı Redis Sentinel failover uygulaması. Bu, tek hata noktalarını ortadan kaldırır ve üretim ortamlarında sürekli hizmet kullanılabilirliği sağlar.
+- 🌐 **Yerelleştirme ve Uluslararasılaştırma İyileştirmeleri**: Basitleştirilmiş Çince, Geleneksel Çince, Fransızca, Almanca, Korece ve Lehçe için çeviriler iyileştirildi ve genişletildi. Bu, tüm desteklenen dillerde küresel kullanıcılar için daha akıcı ve doğal bir deneyim sağlar.
 
-### Fixed
+### Düzeltildi
 
-- 🏷️ **Hybrid Search Functionality Restored**: Hybrid search now works seamlessly again—enabling more accurate, relevant, and comprehensive knowledge discovery across all RAG-powered workflows.
-- 🚦 **Note Chat - Edit Button Disabled During AI Generation**: The edit button when chatting with a note is now disabled while the AI is responding—preventing accidental edits and ensuring workflow clarity during chat sessions.
-- 🧹 **Cleaner Database Credentials**: Database connection no longer duplicates ‘@’ in credentials, preventing potential connection issues and ensuring smoother, more reliable integrations.
-- 🧑‍💻 **File Deletion Now Removes Related Vector Data**: When files are deleted from storage, they are now purged from the vector database as well, ensuring clean data management and preventing clutter or stale search results.
-- 📁 **Files Modal Translation Issues Fixed**: All modal dialog strings—including “Using Entire Document” and “Using Focused Retrieval”—are now fully translated for a more consistent and localized UI experience.
-- 🚫 **Drag-and-Drop File Upload Disabled for Unsupported Models**: File upload by drag-and-drop is disabled when using models that do not support attachments—removing confusion and preventing workflow interruptions.
-- 🔑 **Ollama Tool Calls Now Reliable**: Fixed issues with Ollama-based tool calls, ensuring uninterrupted AI augmentation and tool use for every chat.
-- 📄 **MIME Type Help String Correction**: Cleaned up mimetype help text by removing extraneous characters, providing clearer guidance for file upload configurations.
-- 📝 **Note Editor Permission Fix**: Removed unnecessary admin-only restriction from note chat functionality, allowing all authorized users to access note editing features as intended.
-- 📋 **Chat Sources Handling Improved**: Fixed sources handling logic to prevent duplicate source assignments in chat messages, ensuring cleaner and more accurate source attribution during conversations.
-- 😀 **Emoji Generation Error Handling**: Improved error handling in audio router and fixed metadata structure for emoji generation tasks, preventing crashes and ensuring more reliable emoji generation functionality.
-- 🔒 **Folder System Prompt Permission Enforcement**: System prompt fields in folder edit modal are now properly hidden for users without system prompt permissions, ensuring consistent security policy enforcement across all folder management interfaces.
-- 🌐 **WebSocket Redis Lock Timeout Type Conversion**: Fixed proper integer type conversion for WebSocket Redis lock timeout configuration with robust error handling, preventing potential configuration errors and ensuring stable WebSocket connections.
-- 📦 **PostHog Dependency Added**: Added PostHog 5.4.0 library to resolve ChromaDB compatibility issues, ensuring stable vector database operations and preventing library version conflicts during deployment.
+- 🏷️ **Hybrid Search İşlevselliği Geri Getirildi**: Hybrid search artık tekrar sorunsuz bir şekilde çalışıyor. Bu, tüm RAG destekli iş akışlarında daha doğru, ilgili ve kapsamlı bilgi keşfi sağlar.
+- 🚦 **Not Sohbeti - AI Yanıtı Sırasında Düzenle Butonu Devre Dışı**: Bir notla sohbet ederken, AI yanıt verirken düzenle butonu artık devre dışı bırakılıyor. Bu, sohbet oturumları sırasında kazara yapılan düzenlemeleri önler ve iş akışı netliğini sağlar.
+- 🧹 **Daha Temiz Veritabanı Kimlik Bilgileri**: Veritabanı bağlantısı artık kimlik bilgilerinde '@' karakterini kopyalamıyor. Bu, olası bağlantı sorunlarını önler ve daha sorunsuz, daha güvenilir entegrasyonlar sağlar.
+- 🧑‍💻 **Dosya Silme Artık İlgili Vektör Verilerini de Kaldırıyor**: Dosyalar depolama alanından silindiğinde, artık vektör veritabanından da temizleniyor. Bu, temiz veri yönetimi sağlar ve dağınıklığı veya eski arama sonuçlarını önler.
+- 📁 **Dosyalar Modal Çeviri Sorunları Giderildi**: "Tüm Belgeyi Kullanarak" ve "Odaklanmış Alım Kullanarak" dahil olmak üzere tüm modal iletişim kutusu metinleri artık daha tutarlı ve yerelleştirilmiş bir UI deneyimi için tamamen çevrildi.
+- 🚫 **Desteklenmeyen Modeller için Sürükle-Bırak Dosya Yükleme Devre Dışı**: Eklentileri desteklemeyen modeller kullanılırken sürükle-bırak ile dosya yükleme devre dışı bırakıldı. Bu, kafa karışıklığını ortadan kaldırır ve iş akışı kesintilerini önler.
+- 🔑 **Ollama Araç Çağrıları Artık Güvenilir**: Ollama tabanlı araç çağrılarındaki sorunlar giderildi. Bu, her sohbet için kesintisiz AI artırması ve araç kullanımı sağlar.
+- 📄 **MIME Type Yardım Metni Düzeltmesi**: Dosya yükleme yapılandırmaları için daha net rehberlik sağlamak amacıyla gereksiz karakterler kaldırılarak mimetype yardım metni temizlendi.
+- 📝 **Not Düzenleyici İzin Düzeltmesi**: Not sohbeti işlevselliğinden gereksiz admin-only kısıtlaması kaldırıldı. Bu, tüm yetkili kullanıcıların amaçlandığı gibi not düzenleme özelliklerine erişmesine olanak tanır.
+- 📋 **Sohbet Kaynakları İşleme İyileştirildi**: Sohbet mesajlarında yinelenen kaynak atamalarını önlemek için kaynak işleme mantığı düzeltildi. Bu, konuşmalar sırasında daha temiz ve daha doğru kaynak atfı sağlar.
+- 😀 **Emoji Oluşturma Hata Yönetimi**: Audio router'da hata yönetimi iyileştirildi ve emoji oluşturma görevleri için metadata yapısı düzeltildi. Bu, çökmeleri önler ve daha güvenilir emoji oluşturma işlevselliği sağlar.
+- 🔒 **Klasör Sistem Prompt'u İzin Uygulaması**: Klasör düzenleme modalındaki sistem prompt'u alanları, sistem prompt'u izinlerine sahip olmayan kullanıcılar için artık düzgün bir şekilde gizleniyor. Bu, tüm klasör yönetimi arayüzlerinde tutarlı güvenlik politikası uygulanmasını sağlar.
+- 🌐 **WebSocket Redis Kilit Zaman Aşımı Tip Dönüşümü**: WebSocket Redis kilit zaman aşımı yapılandırması için sağlam hata yönetimi ile uygun tamsayı tip dönüşümü düzeltildi. Bu, olası yapılandırma hatalarını önler ve kararlı WebSocket bağlantıları sağlar.
+- 📦 **PostHog Bağımlılığı Eklendi**: ChromaDB uyumluluk sorunlarını çözmek için PostHog 5.4.0 kütüphanesi eklendi. Bu, kararlı vektör veritabanı işlemlerini sağlar ve dağıtım sırasında kütüphane sürüm çakışmalarını önler.
 
-### Changed
+### Değiştirildi
 
-- 👀 **Tiptap Editor Upgraded to v3**: The underlying rich text editor has been updated for future-proofing, though some supporting libraries remain on v2 for compatibility. For now, please install dependencies using 'npm install --force' to avoid installation errors.
-- 🚫 **Removed Redundant or Unused Strings and Elements**: Miscellaneous unused, duplicate, or obsolete code and translations have been cleaned up to maintain a streamlined and high-performance experience.
+- 👀 **Tiptap Editor v3'e Yükseltildi**: Altta yatan zengin metin düzenleyici, geleceğe dönük olarak güncellendi, ancak bazı destekleyici kütüphaneler uyumluluk için v2'de kaldı. Şimdilik, kurulum hatalarından kaçınmak için lütfen bağımlılıkları 'npm install --force' komutuyla yükleyin.
+- 🚫 **Gereksiz veya Kullanılmayan Metinler ve Öğeler Kaldırıldı**: Sade ve yüksek performanslı bir deneyim sağlamak için çeşitli kullanılmayan, yinelenen veya eski kod ve çeviriler temizlendi.
 
 ## [0.6.16] - 2025-07-14
 
-### Added
+### Eklendi
 
-- 🗂️ **Folders as Projects**: Organize your workflow with folder-based projects—set folder-level system prompts and associate custom knowledge, bringing seamless, context-rich management to teams and users handling multiple initiatives or clients.
-- 📁 **Instant Folder-Based Chat Creation**: Start a new chat directly from any folder; just click and your new conversation is automatically embedded in the right project context—no more manual dragging or setup, saving time and eliminating mistakes.
-- 🧩 **Prompt Variables with Automatic Input Modal**: Prompts containing variables now display a clean, auto-generated input modal that **autofocuses on the first field** for instant value entry—just select the prompt and fill in exactly what’s needed, reducing friction and guesswork.
-- 🔡 **Variable Input Typing in Prompts**: Define input types for prompt variables (e.g., text, textarea, number, select, color, date, map and more), giving everyone a clearer and more precise prompt-building experience for advanced automation or workflows.
-- 🚀 **Base Model List Caching**: Cache your base model list to speed up model selection and reduce repeated API calls; toggle this in Admin Settings > Connections for responsive model management even in large or multi-provider setups.
-- ⏱️ **Configurable Model List Cache TTL**: Take control over model list caching with the new MODEL_LIST_CACHE_TTL environment variable. Set a custom cache duration in seconds to balance performance and freshness, reducing API requests in stable environments or ensuring rapid updates when models change frequently.
-- 🔖 **Reference Notes as Knowledge or in Chats**: Use any note as knowledge for a model or folder, or reference it directly from chat—integrate living documentation into your Retrieval Augmented Generation workflows or discussions, bridging knowledge and action.
-- 📝 **Chat Directly with Notes (Experimental)**: Ask questions about any note, and directly edit or update notes from within a chat—unlock direct AI-powered brainstorming, summarization, and cleanup, like having your own collaborative AI canvas.
-- 🤝 **Collaborative Notes with Multi-User Editing**: Share notes with others and collaborate live—multiple users can edit a note in real-time, boosting cooperative knowledge building and workflow documentation.
-- 🛡️ **Collaborative Note Permissions**: Control who can view or edit each note with robust sharing permissions, ensuring privacy or collaboration per your organizational needs.
-- 🔗 **Copy Link to Notes**: Quickly copy and share direct links to notes for easier knowledge transfer within your team or external collaborators.
-- 📋 **Task List Support in Notes**: Add, organize, and manage checklists or tasks inside your notes—plan projects, track to-dos, and keep everything actionable in a single space.
-- 🧠 **AI-Generated Note Titles**: Instantly generate relevant and concise titles for your notes using AI—keep your knowledge library organized without tedious manual editing.
-- 🔄 **Full Undo/Redo Support in Notes**: Effortlessly undo or redo your latest note changes—never fear mistakes or accidental edits while collaborating or writing.
-- 📝 **Enhanced Note Word/Character Counter**: Always know the size of your notes with built-in counters, making it easier to adhere to length guidelines for shared or published content.
-- 🖊️ **Floating & Bubble Formatting Menus in Note Editor**: Access text formatting tools through both a floating menu and an intuitive bubble menu directly in the note editor—making rich text editing faster, more discoverable, and easier than ever.
-- ✍️ **Rich Text Prompt Insertion**: A new setting allows prompts to be inserted directly into the chat box as fully-formatted rich text, preserving Markdown elements like headings, lists, and bold text for a more intuitive and visually consistent editing experience.
-- 🌐 **Configurable Database URL**: WebUI now supports more flexible database configuration via new environment variables—making deployment and scaling simpler across various infrastructure setups.
-- 🎛️ **Completely Frontend-Handled File Upload in Temporary Chats**: When using temporary chats, file extraction now occurs fully in your browser with zero files sent to the backend, further strengthening privacy and giving you instant feedback.
-- 🔄 **Enhanced Banner and Chat Command Visibility**: Banner handling and command feedback in chat are now clearer and more contextually visible, making alerts, suggestions, and automation easier to spot and interact with for all users.
-- 📱 **Mobile Experience Polished**: The "new chat" button is back in mobile, plus core navigation and input controls have been smoothed out for better usability on phones and tablets.
-- 📄 **OpenDocument Text (.odt) Support**: Seamlessly upload and process .odt files from open-source office suites like LibreOffice and OpenOffice, expanding your ability to build knowledge from a wider range of document formats.
-- 📑 **Enhanced Markdown Document Splitting**: Improve knowledge retrieval from Markdown files with a new header-aware splitting strategy. This method intelligently chunks documents based on their header structure, preserving the original context and hierarchy for more accurate and relevant RAG results.
-- 📚 **Full Context Mode for Knowledge Bases**: When adding a knowledge base to a folder or custom model, you can now toggle full context mode for the entire knowledge base. This bypasses the usual chunking and retrieval process, making it perfect for leaner knowledge bases.
-- 🕰️ **Configurable OAuth Timeout**: Enhance login reliability by setting a custom timeout (OAUTH_TIMEOUT) for all OAuth providers (Google, Microsoft, GitHub, OIDC), preventing authentication failures on slow or restricted networks.
-- 🎨 **Accessibility & High-Contrast Theme Enhancements**: Major accessibility overhaul with significant updates to the high-contrast theme. Improved focus visibility, ARIA labels, and semantic HTML ensure core components like the chat interface and model selector are fully compliant and readable for visually impaired users.
-- ↕️ **Resizable System Prompt Fields**: Conveniently resize system prompt input fields to comfortably view and edit lengthy or complex instructions, improving the user experience for advanced model configuration.
-- 🔧 **Granular Update Check Control**: Gain finer control over outbound connections with the new ENABLE_VERSION_UPDATE_CHECK flag. This allows administrators to disable version update checks independently of the full OFFLINE_MODE, perfect for environments with restricted internet access that still need to download embedding models.
-- 🗃️ **Configurable Qdrant Collection Prefix**: Enhance scalability by setting a custom QDRANT_COLLECTION_PREFIX. This allows multiple Open WebUI instances to share a single Qdrant cluster safely, ensuring complete data isolation between separate deployments without conflicts.
-- ⚙️ **Improved Default Database Performance**: Enhanced out-of-the-box performance by setting smarter database connection pooling defaults, reducing API response times for users on non-SQLite databases without requiring manual configuration.
-- 🔧 **Configurable Redis Key Prefix**: Added support for the REDIS_KEY_PREFIX environment variable, allowing multiple Open WebUI instances to share a Redis cluster with isolated key namespaces for improved multi-tenancy.
-- ➡️ **Forward User Context to Reranker**: For advanced RAG integrations, user information (ID, name, email, role) can now be forwarded as HTTP headers to external reranking services, enabling personalized results or per-user access control.
-- ⚙️ **PGVector Connection Pooling**: Enhance performance and stability for PGVector-based RAG by enabling and configuring the database connection pool. New environment variables allow fine-tuning of pool size, timeout, and overflow settings to handle high-concurrency workloads efficiently.
-- ⚙️ **General Backend Refactoring**: Extensive refactoring delivers a faster, more reliable, and robust backend experience—improving chat speed, model management, and day-to-day reliability.
-- 🌍 **Expanded & Improved Translations**: Enjoy a more accessible and intuitive experience thanks to comprehensive updates and enhancements for Chinese (Simplified and Traditional), German, French, Catalan, Irish, and Spanish translations throughout the interface.
+- 🗂️ **Klasörler Proje Olarak**: İş akışınızı klasör tabanlı projelerle organize edin—klasör düzeyinde sistem prompt'ları ayarlayın ve özel bilgi tabanları ilişkilendirin. Bu, birden fazla girişimi veya müşteriyi yöneten ekipler ve kullanıcılar için sorunsuz, bağlam açısından zengin bir yönetim sağlar.
+- 📁 **Anında Klasör Tabanlı Sohbet Oluşturma**: Herhangi bir klasörden doğrudan yeni bir sohbet başlatın; sadece tıklayın ve yeni konuşmanız otomatik olarak doğru proje bağlamına yerleştirilsin—artık manuel sürükleme veya kurulum yok, zamandan tasarruf edin ve hataları ortadan kaldırın.
+- 🧩 **Otomatik Giriş Modallı Prompt Değişkenleri**: Değişkenler içeren prompt'lar artık, anında değer girişi için **ilk alana otomatik olarak odaklanan** temiz, otomatik oluşturulmuş bir giriş modalı görüntüler—sadece prompt'u seçin ve tam olarak neyin gerekli olduğunu doldurun, sürtünmeyi ve tahmini azaltın.
+- 🔡 **Prompt'larda Değişken Giriş Tipi Belirleme**: Prompt değişkenleri için giriş türleri tanımlayın (örneğin, metin, metin alanı, sayı, seç, renk, tarih, harita ve daha fazlası). Bu, herkese gelişmiş otomasyon veya iş akışları için daha net ve daha kesin bir prompt oluşturma deneyimi sunar.
+- 🚀 **Temel Model Listesi Önbellekleme**: Model seçimini hızlandırmak ve tekrarlanan API çağrılarını azaltmak için temel model listenizi önbelleğe alın; büyük veya çok sağlayıcılı kurulumlarda bile duyarlı model yönetimi için bunu Admin Ayarları > Bağlantılar'dan açıp kapatın.
+- ⏱️ **Yapılandırılabilir Model Listesi Önbellek TTL'i**: Yeni MODEL_LIST_CACHE_TTL ortam değişkeniyle model listesi önbellekleme üzerinde kontrol sahibi olun. Performans ve güncelliği dengelemek için saniyeler içinde özel bir önbellek süresi ayarlayın, kararlı ortamlarda API isteklerini azaltın veya modeller sık değiştiğinde hızlı güncellemeler sağlayın.
+- 🔖 **Notları Bilgi Tabanı Olarak veya Sohbetlerde Referans Verme**: Herhangi bir notu bir model veya klasör için bilgi tabanı olarak kullanın veya doğrudan sohbetten referans verin—canlı belgeleri Retrieval Augmented Generation (RAG) iş akışlarınıza veya tartışmalarınıza entegre ederek bilgi ve eylem arasında köprü kurun.
+- 📝 **Notlarla Doğrudan Sohbet (Deneysel)**: Herhangi bir not hakkında sorular sorun ve notları doğrudan bir sohbet içinden düzenleyin veya güncelleyin—doğrudan yapay zeka destekli beyin fırtınası, özetleme ve temizleme kilidini açın, sanki kendi işbirlikçi yapay zeka tuvaliniz varmış gibi.
+- 🤝 **Çok Kullanıcılı Düzenleme ile İşbirlikçi Notlar**: Notları başkalarıyla paylaşın ve canlı olarak işbirliği yapın—birden çok kullanıcı bir notu gerçek zamanlı olarak düzenleyebilir, işbirlikçi bilgi oluşturmayı ve iş akışı belgelerini artırabilir.
+- 🛡️ **İşbirlikçi Not İzinleri**: Kuruluşunuzun ihtiyaçlarına göre gizliliği veya işbirliğini sağlamak için her notu kimin görüntüleyebileceğini veya düzenleyebileceğini sağlam paylaşım izinleriyle kontrol edin.
+- 🔗 **Notlara Bağlantı Kopyala**: Ekibinizdeki veya harici işbirlikçilerinizle daha kolay bilgi aktarımı için notlara doğrudan bağlantıları hızla kopyalayın ve paylaşın.
+- 📋 **Notlarda Görev Listesi Desteği**: Notlarınızın içinde kontrol listeleri veya görevler ekleyin, düzenleyin ve yönetin—projeleri planlayın, yapılacakları izleyin ve her şeyi tek bir alanda eyleme dönüştürülebilir tutun.
+- 🧠 **AI Tarafından Oluşturulan Not Başlıkları**: Yapay zeka kullanarak notlarınız için anında ilgili ve özlü başlıklar oluşturun—bilgi kütüphanenizi sıkıcı manuel düzenleme olmadan düzenli tutun.
+- 🔄 **Notlarda Tam Geri Alma/Yineleme Desteği**: En son not değişikliklerinizi zahmetsizce geri alın veya yineleyin—işbirliği yaparken veya yazarken hatalardan veya kazara yapılan düzenlemelerden asla korkmayın.
+- 📝 **Gelişmiş Not Kelime/Karakter Sayacı**: Paylaşılan veya yayınlanan içerik için uzunluk yönergelerine uymayı kolaylaştıran yerleşik sayaçlarla notlarınızın boyutunu her zaman bilin.
+- 🖊️ **Not Düzenleyicide Kayan ve Balon Biçimlendirme Menüleri**: Zengin metin düzenlemesini daha hızlı, daha keşfedilebilir ve her zamankinden daha kolay hale getiren hem kayan bir menü hem de not düzenleyicide doğrudan sezgisel bir balon menüsü aracılığıyla metin biçimlendirme araçlarına erişin.
+- ✍️ **Zengin Metin Prompt Ekleme**: Yeni bir ayar, prompt'ların başlıklar, listeler ve kalın metin gibi Markdown öğelerini koruyarak sohbet kutusuna tam biçimlendirilmiş zengin metin olarak doğrudan eklenmesine olanak tanır, bu da daha sezgisel ve görsel olarak tutarlı bir düzenleme deneyimi sağlar.
+- 🌐 **Yapılandırılabilir Veritabanı URL'si**: WebUI artık yeni ortam değişkenleri aracılığıyla daha esnek veritabanı yapılandırmasını destekliyor—dağıtımı ve çeşitli altyapı kurulumlarında ölçeklendirmeyi basitleştiriyor.
+- 🎛️ **Geçici Sohbetlerde Tamamen Frontend Tarafından Yönetilen Dosya Yükleme**: Geçici sohbetleri kullanırken, dosya çıkarma artık tamamen tarayıcınızda gerçekleşir ve backend'e sıfır dosya gönderilir, bu da gizliliği daha da güçlendirir ve size anında geri bildirim verir.
+- 🔄 **Gelişmiş Banner ve Sohbet Komutu Görünürlüğü**: Sohbetteki banner yönetimi ve komut geri bildirimi artık daha net ve bağlamsal olarak daha görünür, bu da uyarıları, önerileri ve otomasyonu tüm kullanıcılar için fark etmeyi ve etkileşimde bulunmayı kolaylaştırır.
+- 📱 **Mobil Deneyim İyileştirildi**: "Yeni sohbet" butonu mobilde geri döndü, ayrıca temel gezinme ve giriş kontrolleri telefonlarda ve tabletlerde daha iyi kullanılabilirlik için düzeltildi.
+- 📄 **OpenDocument Text (.odt) Desteği**: LibreOffice ve OpenOffice gibi açık kaynaklı ofis paketlerinden .odt dosyalarını sorunsuzca yükleyin ve işleyin, daha geniş bir belge formatı yelpazesinden bilgi oluşturma yeteneğinizi genişletin.
+- 📑 **Gelişmiş Markdown Belge Bölme**: Yeni bir başlık duyarlı bölme stratejisiyle Markdown dosyalarından bilgi alımını iyileştirin. Bu yöntem, belgeleri başlık yapılarına göre akıllıca parçalara ayırır, orijinal bağlamı ve hiyerarşiyi daha doğru ve ilgili RAG sonuçları için korur.
+- 📚 **Bilgi Tabanları için Tam Bağlam Modu**: Bir klasöre veya özel bir modele bilgi tabanı eklerken, artık tüm bilgi tabanı için tam bağlam modunu açabilirsiniz. Bu, normal parçalama ve alım sürecini atlar, bu da daha yalın bilgi tabanları için mükemmel hale getirir.
+- 🕰️ **Yapılandırılabilir OAuth Zaman Aşımı**: Yavaş veya kısıtlı ağlarda kimlik doğrulama hatalarını önleyerek tüm OAuth sağlayıcıları (Google, Microsoft, GitHub, OIDC) için özel bir zaman aşımı (OAUTH_TIMEOUT) ayarlayarak giriş güvenilirliğini artırın.
+- 🎨 **Erişilebilirlik ve Yüksek Kontrastlı Tema Geliştirmeleri**: Yüksek kontrastlı temada önemli güncellemelerle büyük bir erişilebilirlik revizyonu. İyileştirilmiş odak görünürlüğü, ARIA etiketleri ve anlamsal HTML, sohbet arayüzü ve model seçici gibi temel bileşenlerin görme engelli kullanıcılar için tamamen uyumlu ve okunabilir olmasını sağlar.
+- ↕️ **Yeniden Boyutlandırılabilir Sistem Prompt Alanları**: Uzun veya karmaşık talimatları rahatça görüntülemek ve düzenlemek için sistem prompt giriş alanlarını yeniden boyutlandırın, bu da gelişmiş model yapılandırması için kullanıcı deneyimini iyileştirir.
+- 🔧 **Ayrıntılı Güncelleme Kontrolü**: Yeni ENABLE_VERSION_UPDATE_CHECK bayrağı ile giden bağlantılar üzerinde daha ince kontrol sahibi olun. Bu, yöneticilerin hala gömme modellerini indirmesi gereken ancak kısıtlı internet erişimi olan ortamlar için sürüm güncelleme kontrollerini tam OFFLINE_MODE'dan bağımsız olarak devre dışı bırakmalarına olanak tanır.
+- 🗃️ **Yapılandırılabilir Qdrant Koleksiyon Ön Eki**: Özel bir QDRANT_COLLECTION_PREFIX ayarlayarak ölçeklenebilirliği artırın. Bu, birden çok Open WebUI örneğinin tek bir Qdrant kümesini güvenli bir şekilde paylaşmasına olanak tanır ve ayrı dağıtımlar arasında çakışma olmaksızın tam veri yalıtımı sağlar.
+- ⚙️ **İyileştirilmiş Varsayılan Veritabanı Performansı**: Daha akıllı veritabanı bağlantı havuzu varsayılanları ayarlayarak kutudan çıkar çıkmaz performansı artırın, manuel yapılandırma gerektirmeden SQLite dışı veritabanlarındaki kullanıcılar için API yanıt sürelerini azaltın.
+- 🔧 **Yapılandırılabilir Redis Anahtar Ön Eki**: REDIS_KEY_PREFIX ortam değişkeni desteği eklendi, bu da birden çok Open WebUI örneğinin bir Redis kümesini yalıtılmış anahtar ad alanlarıyla paylaşmasına olanak tanıyarak çoklu kiracılığı iyileştirir.
+- ➡️ **Kullanıcı Bağlamını Reranker'a Yönlendirme**: Gelişmiş RAG entegrasyonları için, kullanıcı bilgileri (ID, ad, e-posta, rol) artık kişiselleştirilmiş sonuçlar veya kullanıcı başına erişim kontrolü sağlamak için harici yeniden sıralama hizmetlerine HTTP başlıkları olarak iletilebilir.
+- ⚙️ **PGVector Bağlantı Havuzu**: PGVector tabanlı RAG için performansı ve kararlılığı artırmak için veritabanı bağlantı havuzunu etkinleştirin ve yapılandırın. Yeni ortam değişkenleri, yüksek eşzamanlılık iş yüklerini verimli bir şekilde yönetmek için havuz boyutu, zaman aşımı ve taşma ayarlarını ince ayar yapmanıza olanak tanır.
+- ⚙️ **Genel Backend Yeniden Yapılandırması**: Kapsamlı yeniden yapılandırma, daha hızlı, daha güvenilir ve sağlam bir backend deneyimi sunar—sohbet hızını, model yönetimini ve günlük güvenilirliği artırır.
+- 🌍 **Genişletilmiş ve İyileştirilmiş Çeviriler**: Arayüz genelinde Çince (Basitleştirilmiş ve Geleneksel), Almanca, Fransızca, Katalanca, İrlandaca ve İspanyolca çeviriler için kapsamlı güncellemeler ve geliştirmeler sayesinde daha erişilebilir ve sezgisel bir deneyimin tadını çıkarın.
 
-### Fixed
+### Düzeltildi
 
-- 🛠️ **Rich Text Input Stability and Performance**: Multiple improvements ensure faster, cleaner text editing and rendering with reduced glitches—especially supporting links, color picking, checkbox controls, and code blocks in notes and chats.
-- 📷 **Seamless iPhone Image Uploads**: Effortlessly upload photos from iPhones and other devices using HEIC format—images are now correctly recognized and processed, eliminating compatibility issues.
-- 🔄 **Audio MIME Type Registration**: Issues with audio file content types have been resolved, guaranteeing smoother, error-free uploads and playback for transcription or note attachments.
-- 🖍️ **Input Commands Now Always Visible**: Input commands (like prompts or knowledge) dynamically adjust their height on small screens, ensuring nothing is cut off and every tool remains easily accessible.
-- 🛑 **Tool Result Rendering**: Fixed display problems with tool results, providing fast, clear feedback when using external or internal tools.
-- 🗂️ **Table Alignment in Markdown**: Markdown tables are now rendered and aligned as expected, keeping reports and documentation readable.
-- 🖼️ **Thread Image Handling**: Fixed an issue where messages containing only images in threads weren’t displayed correctly.
-- 🗝️ **Note Access Control Security**: Tightened access control logic for notes to guarantee that shared or collaborative notes respect all user permissions and privacy safeguards.
-- 🧾 **Ollama API Compatibility**: Fixed model parameter naming in the API to ensure uninterrupted compatibility for all Ollama endpoints.
-- 🛠️ **Detection for 'text/html' Files**: Files loaded with docling/tika are now reliably detected as the correct type, improving knowledge ingestion and document parsing.
-- 🔐 **OAuth Login Stability**: Resolved a critical OAuth bug that caused login failures on subsequent attempts after logging out. The user session is now completely cleared on logout, ensuring reliable and secure authentication across all supported providers (Google, Microsoft, GitHub, OIDC).
-- 🚪 **OAuth Logout and Redirect Reliability**: The OAuth logout process has been made more robust. Logout requests now correctly use proxy environment variables, ensuring they succeed in corporate networks. Additionally, the custom WEBUI_AUTH_SIGNOUT_REDIRECT_URL is now properly respected for all OAuth/OIDC configurations, ensuring a seamless sign-out experience.
-- 📜 **Banner Newline Rendering**: Banners now correctly render newline characters, ensuring that multi-line announcements and messages are displayed with their intended formatting.
-- ℹ️ **Consistent Model Description Rendering**: Model descriptions now render Markdown correctly in the main chat interface, matching the formatting seen in the model selection dropdown for a consistent user experience.
-- 🔄 **Offline Mode Update Check Display**: Corrected a UI bug where the "Checking for Updates..." message would display indefinitely when the application was set to offline mode.
-- 🛠️ **Tool Result Encoding**: Fixed a bug where tool calls returning non-ASCII characters would fail, ensuring robust handling of international text and special characters in tool outputs.
+- 🛠️ **Zengin Metin Girişi Kararlılığı ve Performansı**: Çok sayıda iyileştirme, daha hızlı, daha temiz metin düzenleme ve oluşturma sağlar ve özellikle notlar ve sohbetlerde bağlantıları, renk seçiciyi, onay kutusu kontrollerini ve kod bloklarını destekler.
+- 📷 **Sorunsuz iPhone Resim Yüklemeleri**: HEIC formatını kullanan iPhone'lardan ve diğer cihazlardan zahmetsizce fotoğraf yükleyin—resimler artık doğru bir şekilde tanınır ve işlenir, uyumluluk sorunları ortadan kalkar.
+- 🔄 **Ses MIME Türü Kaydı**: Ses dosyası içerik türleriyle ilgili sorunlar çözüldü, bu da transkripsiyon veya not ekleri için daha sorunsuz, hatasız yüklemeler ve oynatma garantisi verir.
+- 🖍️ **Giriş Komutları Artık Her Zaman Görünür**: Giriş komutları (prompt'lar veya bilgi tabanları gibi) küçük ekranlarda yüksekliklerini dinamik olarak ayarlar, hiçbir şeyin kesilmemesini ve her aracın kolayca erişilebilir kalmasını sağlar.
+- 🛑 **Araç Sonucu Oluşturma**: Araç sonuçlarıyla ilgili görüntüleme sorunları düzeltildi, harici veya dahili araçları kullanırken hızlı, net geri bildirim sağlar.
+- 🗂️ **Markdown'da Tablo Hizalaması**: Markdown tabloları artık beklendiği gibi oluşturulur ve hizalanır, raporları ve belgeleri okunabilir tutar.
+- 🖼️ **Konu Başlığı Resim Yönetimi**: Konu başlıklarında yalnızca resim içeren mesajların doğru görüntülenmemesi sorunu düzeltildi.
+- 🗝️ **Not Erişim Kontrolü Güvenliği**: Paylaşılan veya işbirlikçi notların tüm kullanıcı izinlerine ve gizlilik korumalarına saygı duymasını garanti etmek için notlar için erişim kontrol mantığı sıkılaştırıldı.
+- 🧾 **Ollama API Uyumluluğu**: Tüm Ollama endpoint'leri için kesintisiz uyumluluk sağlamak amacıyla API'deki model parametre adlandırması düzeltildi.
+- 🛠️ **'text/html' Dosyaları için Algılama**: docling/tika ile yüklenen dosyalar artık doğru tür olarak güvenilir bir şekilde algılanır, bilgi alımını ve belge ayrıştırmasını iyileştirir.
+- 🔐 **OAuth Giriş Kararlılığı**: Oturumu kapattıktan sonraki denemelerde giriş hatalarına neden olan kritik bir OAuth hatası çözüldü. Kullanıcı oturumu artık oturum kapatıldığında tamamen temizlenir, bu da tüm desteklenen sağlayıcılarda (Google, Microsoft, GitHub, OIDC) güvenilir ve güvenli kimlik doğrulama sağlar.
+- 🚪 **OAuth Oturum Kapatma ve Yönlendirme Güvenilirliği**: OAuth oturum kapatma süreci daha sağlam hale getirildi. Oturum kapatma istekleri artık proxy ortam değişkenlerini doğru bir şekilde kullanır, bu da kurumsal ağlarda başarılı olmalarını sağlar. Ek olarak, özel WEBUI_AUTH_SIGNOUT_REDIRECT_URL artık tüm OAuth/OIDC yapılandırmaları için düzgün bir şekilde dikkate alınır, bu da sorunsuz bir oturum kapatma deneyimi sağlar.
+- 📜 **Banner Yeni Satır Oluşturma**: Banner'lar artık yeni satır karakterlerini doğru bir şekilde oluşturur, bu da çok satırlı duyuruların ve mesajların amaçlanan biçimlendirmeleriyle görüntülenmesini sağlar.
+- ℹ️ **Tutarlı Model Açıklaması Oluşturma**: Model açıklamaları artık ana sohbet arayüzünde Markdown'ı doğru bir şekilde oluşturur, tutarlı bir kullanıcı deneyimi için model seçim açılır menüsünde görülen biçimlendirmeyle eşleşir.
+- 🔄 **Çevrimdışı Mod Güncelleme Kontrolü Gösterimi**: Uygulama çevrimdışı moda ayarlandığında "Güncellemeler kontrol ediliyor..." mesajının süresiz olarak görüntülenmesine neden olan bir UI hatası düzeltildi.
+- 🛠️ **Araç Sonucu Kodlaması**: ASCII olmayan karakterler döndüren araç çağrılarının başarısız olmasına neden olan bir hata düzeltildi, bu da araç çıktılarında uluslararası metin ve özel karakterlerin sağlam bir şekilde işlenmesini sağlar.
+
+### Değiştirildi
+
+- 👀 **Tiptap Editor v3'e Yükseltildi**: Altta yatan zengin metin düzenleyici, geleceğe dönük olarak güncellendi, ancak bazı destekleyici kütüphaneler uyumluluk için v2'de kaldı. Şimdilik, kurulum hatalarından kaçınmak için lütfen bağımlılıkları 'npm install --force' komutuyla yükleyin.
+- 🚫 **Gereksiz veya Kullanılmayan Metinler ve Öğeler Kaldırıldı**: Sade ve yüksek performanslı bir deneyim sağlamak için çeşitli kullanılmayan, yinelenen veya eski kod ve çeviriler temizlendi.
 
 ## [0.6.15] - 2025-06-16
 
-### Added
+### Eklendi
 
-- 🖼️ **Global Image Compression Option**: Effortlessly set image compression globally so all image uploads and outputs are optimized, speeding up load times and saving bandwidth—perfect for teams dealing with large files or limited network resources.
-- 🎤 **Custom Speech-to-Text Content-Type for Transcription**: Define custom content types for audio transcription, ensuring compatibility with diverse audio sources and unlocking smoother, more accurate transcriptions in advanced setups.
-- 🗂️ **LDAP Group Synchronization (Experimental)**: Automatically sync user groups from your LDAP directory directly into Open WebUI for seamless enterprise access management—simplifies identity integration and governance across your organization.
-- 📈 **OpenTelemetry Metrics via OTLP Exporter (Experimental)**: Gain enterprise-grade analytics and monitor your AI usage in real time with experimental OpenTelemetry Metrics support—connect to any OTLP-compatible backend for instant insights into performance, load, and user interactions.
-- 🕰️ **See User Message Timestamps on Hover (Chat Bubble UI)**: Effortlessly check when any user message was sent by hovering over it in Chat Bubble mode—no more switching screens or digging through logs for context.
-- 🗂️ **Leaderboard Sorting Options**: Sort the leaderboard directly in the UI for a clearer, more actionable view of top performers, models, or tools—making analysis and recognition quick and easy for teams.
-- 🏆 **Evaluation Details Modal in Feedbacks and Leaderboard**: Dive deeper with new modals that display detailed evaluation information when reviewing feedbacks and leaderboard rankings—accelerates learning, progress tracking, and quality improvement.
-- 🔄 **Support for Multiple Pages in External Document Loaders**: Effortlessly extract and work with content spanning multiple pages in external documents, giving you complete flexibility for in-depth research and document workflows.
-- 🌐 **New Accessibility Enhancements Across the Interface**: Benefit from significant accessibility improvements—tab navigation, ARIA roles/labels, better high-contrast text/modes, accessible modals, and more—making Open WebUI more usable and equitable for everyone, including those using assistive technologies.
-- ⚡ **Performance & Stability Upgrades Across Frontend and Backend**: Enjoy a smoother, more reliable experience with numerous behind-the-scenes optimizations and refactoring on both frontend and backend—resulting in faster load times, fewer errors, and even greater stability throughout your workflows.
-- 🌏 **Updated and Expanded Localizations**: Enjoy improved, up-to-date translations for Finnish, German (now with model pinning features), Korean, Russian, Simplified Chinese, Spanish, and more—making every interaction smoother, clearer, and more intuitive for international users.
+- 🖼️ **Global Resim Sıkıştırma Seçeneği**: Tüm resim yüklemelerinin ve çıktılarının optimize edilmesi için resim sıkıştırmayı global olarak zahmetsizce ayarlayın. Bu, yükleme sürelerini hızlandırır ve bant genişliğinden tasarruf sağlar—büyük dosyalarla veya sınırlı ağ kaynaklarıyla çalışan ekipler için mükemmeldir.
+- 🎤 **Transkripsiyon için Özel Speech-to-Text Content-Type**: Ses transkripsiyonu için özel content type'ları tanımlayın. Bu, çeşitli ses kaynaklarıyla uyumluluk sağlar ve gelişmiş kurulumlarda daha pürüzsüz, daha doğru transkripsiyonların kilidini açar.
+- 🗂️ **LDAP Grup Senkronizasyonu (Deneysel)**: Kullanıcı gruplarını LDAP dizininizden doğrudan Open WebUI'ye otomatik olarak senkronize ederek sorunsuz kurumsal erişim yönetimi sağlayın—kuruluşunuz genelinde kimlik entegrasyonunu ve yönetişimi basitleştirir.
+- 📈 **OTLP Exporter ile OpenTelemetry Metrikleri (Deneysel)**: Deneysel OpenTelemetry Metrics desteği ile kurumsal düzeyde analitikler elde edin ve AI kullanımınızı gerçek zamanlı olarak izleyin—performans, yük ve kullanıcı etkileşimleri hakkında anında içgörüler için herhangi bir OTLP uyumlu backend'e bağlanın.
+- 🕰️ **Kullanıcı Mesajı Zaman Damgalarını Üzerine Gelince Görme (Sohbet Balonu UI)**: Sohbet Balonu modunda herhangi bir kullanıcı mesajının üzerine gelerek ne zaman gönderildiğini zahmetsizce kontrol edin—bağlam için ekran değiştirmeye veya logları karıştırmaya son.
+- 🗂️ **Liderlik Tablosu Sıralama Seçenekleri**: En iyi performans gösterenleri, modelleri veya araçları daha net ve eyleme geçirilebilir bir görünüm için liderlik tablosunu doğrudan UI üzerinden sıralayın—ekipler için analiz ve takdiri hızlı ve kolay hale getirir.
+- 🏆 **Geri Bildirimler ve Liderlik Tablosunda Değerlendirme Detayları Modalı**: Geri bildirimleri ve liderlik tablosu sıralamalarını incelerken ayrıntılı değerlendirme bilgilerini gösteren yeni modallarla daha derine inin—öğrenmeyi, ilerleme takibini ve kalite iyileştirmesini hızlandırır.
+- 🔄 **Harici Belge Yükleyicilerde Birden Fazla Sayfa Desteği**: Harici belgelerde birden fazla sayfaya yayılan içeriği zahmetsizce çıkarın ve üzerinde çalışın, derinlemesine araştırma ve belge iş akışları için size tam esneklik sağlar.
+- 🌐 **Arayüz Genelinde Yeni Erişilebilirlik Geliştirmeleri**: Önemli erişilebilirlik iyileştirmelerinden yararlanın—sekme ile gezinme, ARIA rolleri/etiketleri, daha iyi yüksek kontrastlı metin/modlar, erişilebilir modallar ve daha fazlası—Open WebUI'yi yardımcı teknolojiler kullananlar da dahil olmak üzere herkes için daha kullanışlı ve eşit hale getirir.
+- ⚡ **Frontend ve Backend Genelinde Performans ve Kararlılık Yükseltmeleri**: Hem frontend hem de backend'de sayısız perde arkası optimizasyon ve yeniden yapılandırma ile daha pürüzsüz, daha güvenilir bir deneyimin tadını çıkarın—daha hızlı yükleme süreleri, daha az hata ve iş akışlarınız boyunca daha da fazla kararlılık sağlar.
+- 🌏 **Güncellenmiş ve Genişletilmiş Yerelleştirmeler**: Fince, Almanca (artık model sabitleme özellikleriyle), Korece, Rusça, Basitleştirilmiş Çince, İspanyolca ve daha fazlası için güncel çevirilerin keyfini çıkarın—uluslararası kullanıcılar için her etkileşimi daha pürüzsüz, daha net ve daha sezgisel hale getirir.
 
-### Fixed
+### Düzeltildi
 
-- 🦾 **Ollama Error Messages More Descriptive**: Receive clearer, more actionable error messages when something goes wrong with Ollama models—making troubleshooting and user support faster and more effective.
-- 🌐 **Bypass Webloader Now Works as Expected**: Resolved an issue where the "bypass webloader" feature failed to function correctly, ensuring web search bypasses operate smoothly and reliably for lighter, faster query results.
-- 🔍 **Prevent Redundant Documents in Citation List**: The expanded citation list no longer shows duplicate documents, offering a cleaner, easier-to-digest reference experience when reviewing sources in knowledge and research workflows.
-- 🛡️ **Trusted Header Email Matching is Now Case-Insensitive**: Fixed a critical authentication issue where email case sensitivity could cause secure headers to mismatch, ensuring robust, seamless login and session management in all environments.
-- ⚙️ **Direct Tool Server Input Accepts Empty Strings**: You can now submit direct tool server commands without unexpected errors when passing empty-string values, improving integration and automation efficiency.
-- 📄 **Citation Page Number for Page 1 is Now Displayed**: Corrected an oversight where references for page 1 documents were missing the page number; citations are now always accurate and fully visible.
-- 📒 **Notes Access Restored**: Fixed an issue where some users could not access their notes—everyone can now view and manage their notes reliably, ensuring seamless documentation and workflow continuity.
-- 🛑 **OAuth Callback Double-Slash Issue Resolved**: Fixed rare cases where an extra slash in OAuth callbacks caused failed logins or redirects, making third-party login integrations more reliable.
+- 🦾 **Ollama Hata Mesajları Daha Açıklayıcı**: Ollama modelleriyle ilgili bir şeyler ters gittiğinde daha net, daha eyleme geçirilebilir hata mesajları alın—sorun gidermeyi ve kullanıcı desteğini daha hızlı ve daha etkili hale getirir.
+- 🌐 **Webloader'ı Atla Artık Beklendiği Gibi Çalışıyor**: "Webloader'ı atla" özelliğinin doğru çalışmamasını sağlayan bir sorun çözüldü, bu da web arama atlamalarının daha hafif, daha hızlı sorgu sonuçları için sorunsuz ve güvenilir bir şekilde çalışmasını sağlar.
+- 🔍 **Alıntı Listesinde Gereksiz Belgeleri Önleme**: Genişletilmiş alıntı listesi artık yinelenen belgeleri göstermiyor, bilgi ve araştırma iş akışlarında kaynakları incelerken daha temiz, daha kolay anlaşılır bir referans deneyimi sunar.
+- 🛡️ **Güvenilir Başlık E-posta Eşleştirmesi Artık Büyük/Küçük Harfe Duyarsız**: E-posta büyük/küçük harf duyarlılığının güvenli başlıkların eşleşmemesine neden olabileceği kritik bir kimlik doğrulama sorunu düzeltildi, tüm ortamlarda sağlam, sorunsuz giriş ve oturum yönetimi sağlanır.
+- ⚙️ **Doğrudan Araç Sunucusu Girişi Boş Dizeleri Kabul Ediyor**: Artık boş dize değerleri geçerken beklenmedik hatalar olmadan doğrudan araç sunucusu komutları gönderebilirsiniz, bu da entegrasyon ve otomasyon verimliliğini artırır.
+- 📄 **Alıntı Sayfa 1 için Sayfa Numarası Artık Görüntüleniyor**: Sayfa 1 belgeleri için referansların sayfa numarasını kaçırdığı bir ihmal düzeltildi; alıntılar artık her zaman doğru ve tam olarak görünür.
+- 📒 **Notlara Erişim Geri Getirildi**: Bazı kullanıcıların notlarına erişemediği bir sorun düzeltildi—herkes artık notlarını güvenilir bir şekilde görüntüleyebilir ve yönetebilir, bu da sorunsuz belgelendirme ve iş akışı sürekliliği sağlar.
+- 🛑 **OAuth Geri Çağırma Çift Eğik Çizgi Sorunu Çözüldü**: OAuth geri çağırmalarında fazladan bir eğik çizginin başarısız girişlere veya yönlendirmelere neden olduğu nadir durumlar düzeltildi, bu da üçüncü taraf giriş entegrasyonlarını daha güvenilir hale getirir.
 
-### Changed
+### Değiştirildi
 
-- 🔑 **Dedicated Permission for System Prompts**: System prompt access is now controlled by its own specific permission instead of being grouped with general chat controls, empowering admins with finer-grained management over who can view or modify system prompts for enhanced security and workflow customization.
-- 🛠️ **YouTube Transcript API and python-pptx Updated**: Enjoy better performance, reliability, and broader compatibility thanks to underlying library upgrades—less friction with media-rich and presentation workflows.
+- 🔑 **Sistem Prompt'ları için Ayrı İzin**: Sistem prompt erişimi artık genel sohbet kontrolleriyle gruplandırılmak yerine kendi özel izniyle kontrol ediliyor. Bu, admin'lere gelişmiş güvenlik ve iş akışı özelleştirmesi için sistem prompt'larını kimin görüntüleyebileceği veya değiştirebileceği konusunda daha ayrıntılı bir yönetim sağlar.
+- 🛠️ **YouTube Transcript API ve python-pptx Güncellendi**: Altta yatan kütüphane yükseltmeleri sayesinde daha iyi performans, güvenilirlik ve daha geniş uyumluluğun keyfini çıkarın—medya açısından zengin ve sunum iş akışlarıyla daha az sürtüşme.
 
-### Removed
+### Kaldırıldı
 
-- 🗑️ **Console Logging Disabled in Production**: All 'console.log' and 'console.debug' statements are now disabled in production, guaranteeing improved security and cleaner browser logs for end users by removing extraneous technical output.
+- 🗑️ **Üretimde Konsol Günlüğü Devre Dışı**: Tüm 'console.log' ve 'console.debug' ifadeleri artık üretimde devre dışı bırakılmıştır. Bu, gereksiz teknik çıktıları kaldırarak son kullanıcılar için daha iyi güvenlik ve daha temiz tarayıcı logları garanti eder.
 
 ## [0.6.14] - 2025-06-10
 
-### Added
+### Eklendi
 
-- 🤖 **Automatic "Follow Up" Suggestions**: Open WebUI now intelligently generates actionable "Follow Up" suggestions automatically with each message you send, helping you stay productive and inspired without interrupting your flow; you can always disable this in Settings if you prefer a distraction-free experience.
-- 🧩 **OpenAI-Compatible Embeddings Endpoint**: Introducing a fully OpenAI-style '/api/embeddings' endpoint—now you can plug in OpenAI-style embeddings workflows with zero hassle, making integrations with external tools and platforms seamless and familiar.
-- ↗️ **Model Pinning for Quick Access**: Pin your favorite or most-used models to the sidebar for instant selection—no more scrolling through long model lists; your go-to models are always visible and ready for fast access.
-- 📌 **Selector Model Item Menu**: Each model in the selector now features a menu where you can easily pin/unpin to the sidebar and copy a direct link—simplifying collaboration and staying organized in even the busiest environments.
-- 🛑 **Reliable Stop for Ongoing Chats in Multi-Replica Setups**: Stopping or cancelling an in-progress chat now works reliably even in clustered deployments—ensuring every user can interrupt AI output at any time, no matter your scale.
-- 🧠 **'Think' Parameter for Ollama Models**: Leverage new 'think' parameter support for Ollama—giving you advanced control over AI reasoning process and further tuning model behavior for your unique use cases.
-- 💬 **Picture Description Modes for Docling**: Customize how images are described/extracted by Docling Loader for smarter, more detailed, and workflow-tailored image understanding in your document pipelines.
-- 🛠 **Settings Modal Deep Linking**: Every tab in Settings now has its own route—making direct navigation and sharing of precise settings faster and more intuitive.
-- 🎤 **Audio HTML Component Token**: Easily embed and play audio directly in your chats, improving voice-based workflows and making audio content instantly accessible and manageable from any conversation.
-- 🔑 **Support for Secret Key File**: Now you can specify 'WEBUI_SECRET_KEY_FILE' for more secure and flexible key management—ideal for advanced deployments and tighter security standards.
-- 💡 **Clarity When Cloning Prompts**: Cloned workspace prompts are clearly labelled with "(Clone)" and IDs have "-clone", keeping your prompt library organized and preventing accidental overwrites.
-- 📝 **Dedicated User Role Edit Modal**: Updating user roles now reliably opens a dedicated edit user modal instead of cycling through roles—making it safer and more clear to manage team permissions.
-- 🏞️ **Better Handling & Storage of Interpreter-Generated Images**: Code interpreter-generated images are now centrally stored and reliably loaded from the database or cloud storage, ensuring your artifacts are always available.
-- 🚀 **Pinecone & Vector Search Optimizations**: Applied latest best practices from Pinecone for smarter timeouts, intelligent retry control, improved connection pooling, faster DNS, and concurrent batch handling—giving you more reliable, faster document search and RAG performance without manual tweaks.
-- ⚙️ **Ollama Advanced Parameters Unified**: 'keep_alive' and 'format' options are now integrated into the advanced params section—edit everything from the model editor for flexible model control.
-- 🛠️ **CUDA 12.6 Docker Image Support**: Deploy to NVIDIA GPUs with capability 7.0 and below (e.g., V100, GTX1080) via new cuda126 image—broadening your hardware options for scalable AI workloads.
-- 🔒 **Experimental Table-Level PGVector Data Encryption**: Activate pgcrypto encryption support for pgvector to secure your vector search table contents, giving organizations enhanced compliance and data protection—perfect for enterprise or regulated environments.
-- 👁 **Accessibility Upgrades Across Interface**: Chat buttons and close controls are now labelled and structured for optimal accessibility support, ensuring smoother operation with assistive technologies.
-- 🎨 **High-Contrast Mode Expansions**: High-contrast accessibility mode now also applies to menu items, tabs, and search input fields, offering a more readable experience for all users.
-- 🛠️ **Tooltip & Translation Clarity**: Improved translation and tooltip clarity, especially over radio buttons, making the UI more understandable for all users.
-- 🔠 **Global Localization & Translation Improvements**: Hefty upgrades to Traditional Chinese, Simplified Chinese, Hebrew, Russian, Irish, German, and Danish translation packs—making the platform feel native and intuitive for even more users worldwide.
-- ⚡ **General Backend Stability & Security Enhancements**: Refined numerous backend routines to minimize memory use, improve performance, and streamline integration with external APIs—making the entire platform more robust and secure for daily work.
+- 🤖 **Otomatik "Takip" Önerileri**: Open WebUI artık gönderdiğiniz her mesajla akıllıca eyleme geçirilebilir "Takip" önerileri oluşturur, akışınızı kesmeden üretken ve ilham dolu kalmanıza yardımcı olur; dikkatin dağılmadığı bir deneyim tercih ederseniz bunu her zaman Ayarlar'dan devre dışı bırakabilirsiniz.
+- 🧩 **OpenAI Uyumlu Embeddings Endpoint'i**: Tamamen OpenAI tarzı bir '/api/embeddings' endpoint'i tanıtıyoruz—artık OpenAI tarzı embeddings iş akışlarını sıfır zahmetle bağlayabilirsiniz, bu da harici araçlar ve platformlarla entegrasyonları sorunsuz ve tanıdık hale getirir.
+- ↗️ **Hızlı Erişim için Model Sabitleme**: Favori veya en çok kullandığınız modelleri anında seçim için kenar çubuğuna sabitleyin—artık uzun model listelerinde gezinmek yok; sık kullandığınız modeller her zaman görünür ve hızlı erişime hazırdır.
+- 📌 **Seçici Model Öğesi Menüsü**: Seçicideki her model artık kenar çubuğuna kolayca sabitleyip/kaldırabileceğiniz ve doğrudan bir bağlantı kopyalayabileceğiniz bir menüye sahiptir—en yoğun ortamlarda bile işbirliğini basitleştirir ve düzenli kalmayı sağlar.
+- 🛑 **Çoklu Kopya Kurulumlarında Devam Eden Sohbetler için Güvenilir Durdurma**: Devam eden bir sohbeti durdurmak veya iptal etmek artık kümelenmiş dağıtımlarda bile güvenilir bir şekilde çalışır—her kullanıcının, ölçeğiniz ne olursa olsun, AI çıktısını herhangi bir zamanda kesintiye uğratabilmesini sağlar.
+- 🧠 **Ollama Modelleri için 'Think' Parametresi**: Ollama için yeni 'think' parametre desteğinden yararlanın—AI mantık yürütme süreci üzerinde gelişmiş kontrol sağlar ve benzersiz kullanım durumlarınız için model davranışını daha da ince ayar yapmanızı sağlar.
+- 💬 **Docling için Resim Açıklama Modları**: Belge işlem hatlarınızda daha akıllı, daha ayrıntılı ve iş akışına özel görüntü anlama için Docling Loader tarafından görüntülerin nasıl tanımlandığını/çıkarıldığını özelleştirin.
+- 🛠 **Ayarlar Modalı Derin Bağlantı**: Ayarlar'daki her sekmenin artık kendi rotası var—doğru ayarlara doğrudan gezinmeyi ve paylaşmayı daha hızlı ve daha sezgisel hale getirir.
+- 🎤 **Ses HTML Bileşeni Token'ı**: Sesleri doğrudan sohbetlerinize kolayca yerleştirin ve oynatın, ses tabanlı iş akışlarını iyileştirin ve ses içeriğini herhangi bir konuşmadan anında erişilebilir ve yönetilebilir hale getirin.
+- 🔑 **Gizli Anahtar Dosyası Desteği**: Artık daha güvenli ve esnek anahtar yönetimi için 'WEBUI_SECRET_KEY_FILE' belirtebilirsiniz—gelişmiş dağıtımlar ve daha sıkı güvenlik standartları için idealdir.
+- 💡 **Prompt'ları Klonlarken Netlik**: Klonlanmış çalışma alanı prompt'ları, prompt kütüphanenizi düzenli tutmak ve kazara üzerine yazmaları önlemek için "(Klon)" ile açıkça etiketlenir ve ID'ler "-klon" içerir.
+- 📝 **Özel Kullanıcı Rolü Düzenleme Modalı**: Kullanıcı rollerini güncellemek artık roller arasında geçiş yapmak yerine güvenilir bir şekilde özel bir düzenleme kullanıcı modalı açar—ekip izinlerini yönetmeyi daha güvenli ve daha net hale getirir.
+- 🏞️ **Tercüman Tarafından Oluşturulan Görüntülerin Daha İyi İşlenmesi ve Depolanması**: Kod tercümanı tarafından oluşturulan görüntüler artık merkezi olarak depolanır ve veritabanından veya bulut depolamadan güvenilir bir şekilde yüklenir, bu da eserlerinizin her zaman kullanılabilir olmasını sağlar.
+- 🚀 **Pinecone ve Vektör Arama Optimizasyonları**: Pinecone'dan en son en iyi uygulamaları, daha akıllı zaman aşımları, akıllı yeniden deneme kontrolü, geliştirilmiş bağlantı havuzu, daha hızlı DNS ve eşzamanlı toplu işlem yönetimi için uygulandı—manuel ayarlamalar olmadan size daha güvenilir, daha hızlı belge arama ve RAG performansı sağlar.
+- ⚙️ **Ollama Gelişmiş Parametreleri Birleştirildi**: 'keep_alive' ve 'format' seçenekleri artık gelişmiş parametreler bölümüne entegre edildi—esnek model kontrolü için her şeyi model düzenleyiciden düzenleyin.
+- 🛠️ **CUDA 12.6 Docker Image Desteği**: Yeni cuda126 görüntüsü aracılığıyla yetenek 7.0 ve altındaki NVIDIA GPU'larına (örneğin, V100, GTX1080) dağıtım yapın—ölçeklenebilir AI iş yükleri için donanım seçeneklerinizi genişletin.
+- 🔒 **Deneysel Tablo Düzeyinde PGVector Veri Şifrelemesi**: Vektör arama tablosu içeriğinizi güvence altına almak için pgvector için pgcrypto şifreleme desteğini etkinleştirin, kuruluşlara gelişmiş uyumluluk ve veri koruması sağlayın—kurumsal veya düzenlenmiş ortamlar için mükemmeldir.
+- 👁 **Arayüz Genelinde Erişilebilirlik Yükseltmeleri**: Sohbet düğmeleri ve kapatma kontrolleri artık en iyi erişilebilirlik desteği için etiketlenmiş ve yapılandırılmıştır, yardımcı teknolojilerle daha sorunsuz çalışmayı sağlar.
+- 🎨 **Yüksek Kontrast Modu Genişletmeleri**: Yüksek kontrastlı erişilebilirlik modu artık menü öğeleri, sekmeler ve arama giriş alanlarına da uygulanır, tüm kullanıcılar için daha okunabilir bir deneyim sunar.
+- 🛠️ **Araç İpucu ve Çeviri Netliği**: Özellikle radyo düğmeleri üzerindeki çeviri ve araç ipucu netliği iyileştirildi, bu da UI'yi tüm kullanıcılar için daha anlaşılır hale getirir.
+- 🔠 **Global Yerelleştirme ve Çeviri İyileştirmeleri**: Geleneksel Çince, Basitleştirilmiş Çince, İbranice, Rusça, İrlandaca, Almanca ve Danca çeviri paketlerine yapılan büyük yükseltmeler—platformu dünya çapında daha fazla kullanıcı için yerel ve sezgisel hissettirir.
+- ⚡ **Genel Backend Kararlılığı ve Güvenlik Geliştirmeleri**: Bellek kullanımını en aza indirmek, performansı artırmak ve harici API'lerle entegrasyonu kolaylaştırmak için çok sayıda backend rutini iyileştirildi—tüm platformu günlük işler için daha sağlam ve güvenli hale getirir.
 
-### Fixed
+### Düzeltildi
 
-- 🏷 **Feedback Score Display Improved**: Addressed overflow and visibility issues with feedback scores for more readable and accessible evaluations.
-- 🗂 **Admin Settings Model Edits Apply Immediately**: Changes made in the Model Editor within Admin Settings now take effect instantly, eliminating confusion during model management.
-- 🔄 **Assigned Tools Update Instantly on New Chats**: Models assigned with specific tools now consistently update and are available in every new chat—making tool workflows more predictable and robust.
-- 🛠 **Document Settings Saved Only on User Action**: Document settings now save only when you press the Save button, reducing accidental changes and ensuring greater control.
-- 🔊 **Voice Recording on Older iOS Devices Restored**: Voice input is now fully functional on older iOS devices, keeping voice workflows accessible to all users.
-- 🔒 **Trusted Email Header Session Security**: User sessions now strictly verify the trusted email header matches the logged-in user's email, ensuring secure authentication and preventing accidental session switching.
-- 🔒 **Consistent User Signout on Email Mismatch**: When the trusted email in the header changes, you will now be properly signed out and redirected, safeguarding your session's integrity.
-- 🛠 **General Error & Content Validation Improvements**: Smarter error handling means clearer messages and fewer unnecessary retries—making batch uploads, document handling, and knowledge indexing more resilient.
-- 🕵️ **Better Feedback on Chat Title Edits**: Error messages now show clearly if problems occur while editing chat titles.
+- 🏷 **Geri Bildirim Puanı Görüntüsü İyileştirildi**: Daha okunabilir ve erişilebilir değerlendirmeler için geri bildirim puanlarının taşma ve görünürlük sorunları giderildi.
+- 🗂 **Admin Ayarları Model Düzenlemeleri Anında Uygulanır**: Admin Ayarları içindeki Model Düzenleyici'de yapılan değişiklikler artık anında yürürlüğe girer, model yönetimi sırasında kafa karışıklığını ortadan kaldırır.
+- 🔄 **Atanmış Araçlar Yeni Sohbetlerde Anında Güncellenir**: Belirli araçlarla atanan modeller artık tutarlı bir şekilde güncellenir ve her yeni sohbette kullanılabilir—araç iş akışlarını daha öngörülebilir ve sağlam hale getirir.
+- 🛠 **Belge Ayarları Yalnızca Kullanıcı Eyleminde Kaydedilir**: Belge ayarları artık yalnızca Kaydet düğmesine bastığınızda kaydedilir, kazara yapılan değişiklikleri azaltır ve daha fazla kontrol sağlar.
+- 🔊 **Eski iOS Cihazlarda Ses Kaydı Geri Getirildi**: Ses girişi artık eski iOS cihazlarda tamamen işlevseldir, ses iş akışlarını tüm kullanıcılar için erişilebilir tutar.
+- 🔒 **Güvenilir E-posta Başlığı Oturum Güvenliği**: Kullanıcı oturumları artık güvenilir e-posta başlığının oturum açmış kullanıcının e-postasıyla eşleştiğini kesin olarak doğrular, güvenli kimlik doğrulama sağlar ve kazara oturum geçişini önler.
+- 🔒 **E-posta Uyuşmazlığında Tutarlı Kullanıcı Oturum Kapatma**: Başlıktaki güvenilir e-posta değiştiğinde, artık düzgün bir şekilde oturumunuz kapatılır ve yönlendirilirsiniz, oturumunuzun bütünlüğünü korur.
+- 🛠 **Genel Hata ve İçerik Doğrulama İyileştirmeleri**: Daha akıllı hata yönetimi, daha net mesajlar ve daha az gereksiz yeniden deneme anlamına gelir—toplu yüklemeleri, belge işlemeyi ve bilgi dizinlemeyi daha dayanıklı hale getirir.
+- 🕵️ **Sohbet Başlığı Düzenlemelerinde Daha İyi Geri Bildirim**: Sohbet başlıklarını düzenlerken sorunlar ortaya çıkarsa hata mesajları artık açıkça gösterilir.
+
+### Değiştirildi
+
+- 🔑 **Sistem Prompt'ları için Ayrı İzin**: Sistem prompt erişimi artık genel sohbet kontrolleriyle gruplandırılmak yerine kendi özel izniyle kontrol ediliyor. Bu, admin'lere gelişmiş güvenlik ve iş akışı özelleştirmesi için sistem prompt'larını kimin görüntüleyebileceği veya değiştirebileceği konusunda daha ayrıntılı bir yönetim sağlar.
+- 🛠️ **YouTube Transcript API ve python-pptx Güncellendi**: Altta yatan kütüphane yükseltmeleri sayesinde daha iyi performans, güvenilirlik ve daha geniş uyumluluğun keyfini çıkarın—medya açısından zengin ve sunum iş akışlarıyla daha az sürtüşme.
+
+### Kaldırıldı
+
+- 🗑️ **Üretimde Konsol Günlüğü Devre Dışı**: Tüm 'console.log' ve 'console.debug' ifadeleri artık üretimde devre dışı bırakılmıştır. Bu, gereksiz teknik çıktıları kaldırarak son kullanıcılar için daha iyi güvenlik ve daha temiz tarayıcı logları garanti eder.
 
 ## [0.6.13] - 2025-05-30
 
-### Added
+### Eklendi
 
-- 🟦 **Azure OpenAI Embedding Support**: You can now select Azure OpenAI endpoints for text embeddings, unlocking seamless integration with enterprise-scale Azure AI for powerful RAG and knowledge workflows—no more workarounds, connect and scale effortlessly.
-- 🧩 **Smarter Custom Parameter Handling**: Instantly enjoy more flexible model setup—any JSON pasted into custom parameter fields is now parsed automatically, so you can define rich, nested parameters without tedious manual adjustment. This streamlines advanced configuration for all models and accelerates experimentation.
-- ⚙️ **General Backend Refactoring**: Significant backend improvements deliver a cleaner codebase for better maintainability, faster performance, and even greater platform reliability—making all your workflows run more smoothly.
-- 🌏 **Localization Upgrades**: Experience highly improved user interface translations and clarity in Simplified, Traditional Chinese, Korean, and Finnish, offering a more natural, accurate, and accessible experience for global users.
+- 🟦 **Azure OpenAI Embedding Desteği**: Artık metin embedding'leri için Azure OpenAI endpoint'lerini seçebilirsiniz. Bu, güçlü RAG ve bilgi iş akışları için kurumsal ölçekli Azure AI ile sorunsuz entegrasyonu açar—artık geçici çözümlere gerek yok, zahmetsizce bağlanın ve ölçeklendirin.
+- 🧩 **Daha Akıllı Özel Parametre İşleme**: Anında daha esnek model kurulumunun keyfini çıkarın—özel parametre alanlarına yapıştırılan herhangi bir JSON artık otomatik olarak ayrıştırılır, böylece sıkıcı manuel ayarlamalara gerek kalmadan zengin, iç içe parametreler tanımlayabilirsiniz. Bu, tüm modeller için gelişmiş yapılandırmayı kolaylaştırır ve denemeleri hızlandırır.
+- ⚙️ **Genel Backend Yeniden Yapılandırması**: Önemli backend iyileştirmeleri, daha temiz bir kod tabanı, daha iyi sürdürülebilirlik, daha hızlı performans ve daha da fazla platform güvenilirliği sağlar—tüm iş akışlarınızın daha sorunsuz çalışmasını sağlar.
+- 🌏 **Yerelleştirme Yükseltmeleri**: Basitleştirilmiş, Geleneksel Çince, Korece ve Fince dillerinde oldukça geliştirilmiş kullanıcı arayüzü çevirileri ve netliği deneyimleyin. Bu, küresel kullanıcılar için daha doğal, doğru ve erişilebilir bir deneyim sunar.
 
-### Fixed
+### Düzeltildi
 
-- 🛡️ **Robust Message Handling on Chat Load**: Fixed an issue where chat pages could fail to load if a referenced message was missing or undefined; now, chats always load smoothly and missing IDs no longer disrupt your workflow.
-- 📝 **Correct Prompt Access Control**: Ensured that the prompt access controls register properly, restoring reliable permissioning and safeguarding your prompt workflows.
-- 🛠 **Open WebUI-Specific Params No Longer Sent to Models**: Fixed a bug that sent internal WebUI parameters to APIs, ensuring only intended model options are transmitted—restoring predictable, error-free model operation.
-- 🧠 **Refined Memory Error Handling**: Enhanced stability during memory-related operations, so even uncommon memory errors are gracefully managed without disrupting your session—resulting in a more reliable, worry-free experience.
+- 🛡️ **Sohbet Yüklemede Sağlam Mesaj İşleme**: Bir sohbet sayfasının yüklenememesine neden olan bir sorun düzeltildi. Artık sohbetler her zaman sorunsuz yüklenir ve eksik ID'ler iş akışınızı bozmaz.
+- 📝 **Doğru Prompt Erişim Kontrolü**: Prompt erişim kontrollerinin doğru bir şekilde kaydedilmesi sağlandı, güvenilir izin yönetimini geri getirdi ve prompt iş akışlarınızı güvence altına aldı.
+- 🛠 **Open WebUI'ye Özgü Parametreler Artık Modellere Gönderilmiyor**: Dahili WebUI parametrelerini API'lere gönderen bir hata düzeltildi, yalnızca amaçlanan model seçeneklerinin iletilmesini sağlayarak öngörülebilir, hatasız model çalışmasını geri getirdi.
+- 🧠 **Geliştirilmiş Bellek Hata Yönetimi**: Bellekle ilgili işlemler sırasında kararlılık artırıldı, böylece nadir görülen bellek hataları bile oturumunuzu kesintiye uğratmadan sorunsuz bir şekilde yönetilir—daha güvenilir, daha az endişe verici bir deneyim sağlar.
 
 ## [0.6.12] - 2025-05-29
 
-### Added
+### Eklendi
 
-- 🧩 **Custom Advanced Model Parameters**: You can now add your own tailor-made advanced parameters to any model, empowering you to fine-tune behavior and unlock greater flexibility beyond just the built-in options—accelerate your experimentation.
-- 🪧 **Datalab Marker API Content Extraction Support**: Seamlessly extract content from files and documents using the Datalab Marker API directly in your workflows, enabling more robust structured data extraction for RAG and document processing with just a simple engine switch in the UI.
-- ⚡ **Parallelized Base Model Fetching**: Experience noticeably faster startup and model refresh times—base model data now loads in parallel, drastically shortening delays in busy or large-scale deployments.
-- 🧠 **Efficient Function Loading and Caching**: Functions are now only reloaded if their content changes, preventing unnecessary duplicate loads, saving bandwidth, and boosting performance.
-- 🌍 **Localization & Translation Enhancements**: Improved and expanded Simplified, Traditional Chinese, and Russian translations, providing smoother, more accurate, and context-aware experiences for global users.
+- 🧩 **Özel Gelişmiş Model Parametreleri**: Artık herhangi bir modele kendi özel gelişmiş parametrelerinizi ekleyebilir, böylece davranışı ince ayar yapabilir ve yerleşik seçeneklerin ötesinde daha fazla esneklik elde edebilirsiniz—denemelerinizi hızlandırın.
+- 🪧 **Datalab Marker API İçerik Çıkarma Desteği**: Datalab Marker API'sini kullanarak dosyalar ve belgelerden içeriği doğrudan iş akışlarınıza sorunsuzca çıkarın. Bu, UI'de basit bir motor değişikliği ile RAG ve belge işleme için daha sağlam yapılandırılmış veri çıkarmayı sağlar.
+- ⚡ **Paralel Temel Model Çekme**: Fark edilir derecede daha hızlı başlangıç ve model yenileme süreleri yaşayın—temel model verileri artık paralel olarak yüklenir, yoğun veya büyük ölçekli dağıtımlarda gecikmeleri önemli ölçüde kısaltır.
+- 🧠 **Verimli Fonksiyon Yükleme ve Önbellekleme**: Fonksiyonlar artık yalnızca içerikleri değişirse yeniden yüklenir, gereksiz yinelenen yüklemeleri önler, bant genişliğinden tasarruf sağlar ve performansı artırır.
+- 🌍 **Yerelleştirme ve Çeviri Geliştirmeleri**: Basitleştirilmiş, Geleneksel Çince ve Rusça çevirileri iyileştirildi ve genişletildi, küresel kullanıcılar için daha sorunsuz, daha doğru ve bağlama duyarlı deneyimler sunar.
 
-### Fixed
+### Düzeltildi
 
-- 💬 **Stable Message Input Box**: Fixed an issue where the message input box would shift unexpectedly (especially on mobile or with screen reader support), ensuring a smooth and reliable typing experience for every user.
-- 🔊 **Reliable Read Aloud (Text-to-Speech)**: Read aloud now works seamlessly across messages, so users depending on TTS for accessibility or multitasking will experience uninterrupted and clear voice playback.
-- 🖼 **Image Preview and Download Restored**: Fixed problems with image preview and downloads, ensuring frictionless creation, previewing, and downloading of images in your chats—no more interruptions in creative or documentation workflows.
-- 📱 **Improved Mobile Styling for Workspace Capabilities**: Capabilities management is now readable and easy-to-use even on mobile devices, empowering admins and users to manage access quickly on the go.
-- 🔁 **/api/v1/retrieval/query/collection Endpoint Reliability**: Queries to retrieval collections now return the expected results, bolstering the reliability of your knowledge workflows and citation-ready responses.
+- 💬 **Kararlı Mesaj Giriş Kutusu**: Mesaj giriş kutusunun beklenmedik şekilde kayması sorunu düzeltildi (özellikle mobilde veya ekran okuyucu desteğiyle), her kullanıcı için pürüzsüz ve güvenilir bir yazma deneyimi sağlar.
+- 🔊 **Güvenilir Yüksek Sesle Okuma (Text-to-Speech)**: Yüksek sesle okuma artık mesajlar arasında sorunsuz bir şekilde çalışıyor, bu da erişilebilirlik veya çoklu görev için TTS'ye bağımlı kullanıcıların kesintisiz ve net ses çalma deneyimi yaşamasını sağlar.
+- 🖼 **Resim Önizleme ve İndirme Geri Getirildi**: Resim önizleme ve indirme sorunları düzeltildi, bu da sohbetlerinizde resimlerin sorunsuz bir şekilde oluşturulmasını, önizlenmesini ve indirilmesini sağlar—yaratıcı veya belgelendirme iş akışlarında artık kesinti yok.
+- 📱 **Çalışma Alanı Yetenekleri için Gelişmiş Mobil Stil**: Yetenek yönetimi artık mobil cihazlarda bile okunabilir ve kullanımı kolaydır, bu da admin'lerin ve kullanıcıların hareket halindeyken erişimi hızlı bir şekilde yönetmelerini sağlar.
+- 🔁 **/api/v1/retrieval/query/collection Endpoint Güvenilirliği**: Alım koleksiyonlarına yapılan sorgular artık beklenen sonuçları döndürüyor, bilgi iş akışlarınızın ve alıntıya hazır yanıtların güvenilirliğini güçlendiriyor.
 
-### Removed
+### Kaldırıldı
 
-- 🧹 **Duplicate CSS Elements**: Streamlined the UI by removing redundant CSS, reducing clutter and improving load times for a smoother visual experience.
+- 🧹 **Yinelenen CSS Öğeleri**: Kullanılmayan CSS'i kaldırarak UI sadeleştirildi, bu da daha sorunsuz bir görsel deneyim için dağınıklığı azaltır ve yükleme sürelerini iyileştirir.
 
 ## [0.6.11] - 2025-05-27
 
-### Added
+### Eklendi
 
-- 🟢 **Ollama Model Status Indicator in Model Selector**: Instantly see which Ollama models are currently loaded with a clear indicator in the model selector, helping you stay organized and optimize local model usage.
-- 🗑️ **Unload Ollama Model Directly from Model Selector**: Easily release memory and resources by unloading any loaded Ollama model right in the model selector—streamline hardware management without switching pages.
-- 🗣️ **User-Configurable Speech-to-Text Language Setting**: Improve transcription accuracy by letting individual users explicitly set their preferred STT language in their settings—ideal for multilingual teams and clear audio capture.
-- ⚡ **Granular Audio Playback Speed Control**: Instead of just presets, you can now choose granular audio speed using a numeric input, giving you complete control over playback pace in transcriptions and media reviews.
-- 📦 **GZip, Brotli, ZStd Compression Middleware**: Enjoy significantly faster page loads and reduced bandwidth usage with new server-side compression—giving users a snappier, more efficient experience.
-- 🏷️ **Configurable Weight for BM25 in Hybrid Search**: Fine-tune search relevance by adjusting the weight for BM25 inside hybrid search from the UI, letting you tailor knowledge search results to your workflow.
-- 🧪 **Bypass File Creation with CTRL + SHIFT + V**: When “Paste Large Text as File” is enabled, use CTRL + SHIFT + V to skip the file creation dialog and instantly upload text as a file—perfect for rapid document prep.
-- 🌐 **Bypass Web Loader in Web Search**: Choose to bypass web content loading and use snippets directly in web search for faster, more reliable results when page loads are slow or blocked.
-- 🚀 **Environment Variable: WEBUI_AUTH_TRUSTED_GROUPS_HEADER**: Now sync and manage user groups directly via trusted HTTP header, unlocking smoother single sign-on and identity integrations for organizations.
-- 🏢 **Workspace Models Visibility Controls**: You can now hide workspace-level models from both the model selector and shared environments—keep your team focused and reduce clutter from rarely-used endpoints.
-- 🛡️ **Copy Model Link**: You can now copy a direct link to any model—including those hidden from the selector—making sharing and onboarding others more seamless.
-- 🔗 **Load Function Directly from URL**: Simplify custom function management—just paste any GitHub function URL into Open WebUI and import new functions in seconds.
-- ⚙️ **Custom Name/Description for External Tool Servers**: Personalize and clarify external tool servers by assigning custom names and descriptions, making it easier to manage integrations in large-scale workspaces.
-- 🌍 **Custom OpenAPI JSON URL Support for Tool Servers**: Supports specifying any custom OpenAPI JSON URL, unlocking more flexible integration with any backend for tool calls.
-- 📊 **Source Field Now Displays in Non-Streaming Responses with Attachments**: When files or knowledge are attached, the "source" field now appears for all responses, even in non-streaming mode—enabling improved citation workflow.
-- 🎛 **Pinned Chats**: Reduced payload size on pinned chat requests—leading to faster load times and less data usage, especially on busy warehouses.
-- 🛠 **Import/Export Default Prompt Suggestions**: Enjoy one-click import/export of prompt suggestions, making it much easier to share, reuse, and manage best practices across teams or deployments.
-- 🍰 **Banners Now Sortable from Admin Settings**: Quickly re-order or prioritize banners, letting you highlight the most critical info for your team.
-- 🛠 **Advanced Chat Parameters—Clearer Ollama Support Labels**: Parameters and advanced settings now explicitly indicate if they are Ollama-specific, reducing confusion and improving setup accuracy.
-- 🤏 **Scroll Bar Thumb Improved for Better Visibility**: Enhanced scrollbar styling makes navigation more accessible and visually intuitive.
-- 🗄️ **Modal Redesign for Archived and User Chat Listings**: Clean, modern modal interface for browsing archived and user-specific chats makes locating conversations faster and more pleasant.
-- 📝 **Add/Edit Memory Modal UX**: Memory modals are now larger and have resizable input fields, supporting easier editing of long or complex memory content.
-- 🏆 **Translation & Localization Enhancements**: Major upgrades to Chinese (Simplified & Traditional), Korean, Russian, German, Danish, Finnish—not just fixing typos, but consistency, tone, and terminology for a more natural native-language experience.
-- ⚡ **General Backend Stability & Security Enhancements**: Various backend refinements ensure a more resilient, reliable, and secure platform for smoother operation and peace of mind.
+- 🟢 **Model Seçicide Ollama Model Durum Göstergesi**: Ollama model seçicideki açık bir gösterge ile hangi modellerin o anda yüklü olduğunu anında görün, bu da düzenli kalmanıza ve yerel model kullanımını optimize etmenize yardımcı olur.
+- 🗑️ **Ollama Modelini Doğrudan Model Seçiciden Kaldırma**: Yüklü Ollama modelini doğrudan model seçicide kaldırarak belleği ve kaynakları kolayca serbest bırakın—sayfalar arasında geçiş yapmadan donanım yönetimini kolaylaştırın.
+- 🗣️ **Kullanıcı Tarafından Yapılandırılabilir Speech-to-Text Dil Ayarı**: Bireysel kullanıcıların ayarlarında tercih ettikleri STT dilini açıkça ayarlamalarına izin vererek transkripsiyon doğruluğunu artırın—çok dilli ekipler ve net ses yakalama için idealdir.
+- ⚡ **Ayrıntılı Ses Çalma Hızı Kontrolü**: Sadece ön ayarlar yerine, artık sayısal bir giriş kullanarak ayrıntılı ses hızını seçebilir, transkripsiyonlarda ve medya incelemelerinde çalma hızı üzerinde tam kontrol sahibi olabilirsiniz.
+- 📦 **GZip, Brotli, ZStd Sıkıştırma Middleware**: Yeni sunucu tarafı sıkıştırma ile önemli ölçüde daha hızlı sayfa yüklemelerinin ve azaltılmış bant genişliği kullanımının keyfini çıkarın—kullanıcılara daha hızlı, daha verimli bir deneyim sunar.
+- 🏷️ **Hybrid Search'te BM25 için Yapılandırılabilir Ağırlık**: Hibrit aramada BM25 için ağırlığı UI'dan ayarlayarak arama alaka düzeyini ince ayar yapın, bu da bilgi arama sonuçlarını iş akışınıza göre uyarlamanıza olanak tanır.
+- 🧪 **CTRL + SHIFT + V ile Dosya Oluşturmayı Atla**: "Büyük Metni Dosya Olarak Yapıştır" etkinleştirildiğinde, dosya oluşturma iletişim kutusunu atlamak ve metni anında dosya olarak yüklemek için CTRL + SHIFT + V kullanın—hızlı belge hazırlığı için mükemmeldir.
+- 🌐 **Web Arama'da Web Yükleyiciyi Atla**: Web içeriği yüklemesini atlamayı ve sayfa yüklemeleri yavaş veya engellendiğinde daha hızlı, daha güvenilir sonuçlar için web aramasında doğrudan snippet'leri kullanmayı seçin.
+- 🚀 **Ortam Değişkeni: WEBUI_AUTH_TRUSTED_GROUPS_HEADER**: Artık kullanıcı gruplarını doğrudan güvenilir HTTP başlığı aracılığıyla senkronize edin ve yönetin, kuruluşlar için daha sorunsuz tek oturum açma ve kimlik entegrasyonlarının kilidini açın.
+- 🏢 **Çalışma Alanı Modelleri Görünürlük Kontrolleri**: Artık çalışma alanı düzeyindeki modelleri hem model seçiciden hem de paylaşılan ortamlardan gizleyebilirsiniz—ekibinizi odaklanmış tutun ve nadiren kullanılan endpoint'lerin dağınıklığını azaltın.
+- 🛡️ **Model Bağlantısını Kopyala**: Artık herhangi bir modele (seçiciden gizlenmiş olanlar dahil) doğrudan bir bağlantı kopyalayabilirsiniz—başkalarıyla paylaşımı ve onboarding'i daha sorunsuz hale getirir.
+- 🔗 **Fonksiyonu Doğrudan URL'den Yükle**: Özel fonksiyon yönetimini basitleştirin—herhangi bir GitHub fonksiyon URL'sini Open WebUI'ye yapıştırın ve saniyeler içinde yeni fonksiyonları içe aktarın.
+- ⚙️ **Harici Araç Sunucuları için Özel Ad/Açıklama**: Harici araç sunucularını özel adlar ve açıklamalar atayarak kişiselleştirin ve netleştirin, bu da büyük ölçekli çalışma alanlarında entegrasyonları yönetmeyi kolaylaştırır.
+- 🌍 **Araç Sunucuları için Özel OpenAPI JSON URL Desteği**: Herhangi bir özel OpenAPI JSON URL'sini belirtmeyi destekler, araç çağrıları için herhangi bir backend ile daha esnek entegrasyonun kilidini açar.
+- 📊 **Kaynak Alanı Artık Akışsız Yanıtlarda Eklerle Görüntüleniyor**: Dosyalar veya bilgi tabanları eklendiğinde, "kaynak" alanı artık tüm yanıtlarda, akışsız modda bile görüntülenir—bu da alıntı iş akışını iyileştirir.
+- 🎛 **Sabitlenmiş Sohbetler**: Sabitlenmiş sohbet isteklerindeki yük boyutunu azalttı—özellikle yoğun depolarda daha hızlı yükleme süreleri ve daha az veri kullanımı sağlar.
+- 🛠 **Varsayılan Prompt Önerilerini İçe/Dışa Aktarma**: Prompt önerilerini tek tıklamayla içe/dışa aktarmanın keyfini çıkarın, bu da ekipler veya dağıtımlar arasında en iyi uygulamaları paylaşmayı, yeniden kullanmayı ve yönetmeyi çok daha kolay hale getirir.
+- 🍰 **Banner'lar Artık Yönetici Ayarlarından Sıralanabilir**: Banner'ları hızlıca yeniden sıralayın veya önceliklendirin, bu da ekibiniz için en kritik bilgiyi vurgulamanıza olanak tanır.
+- 🛠 **Gelişmiş Sohbet Parametreleri—Daha Net Ollama Destek Etiketleri**: Parametreler ve gelişmiş ayarlar artık Ollama'ya özgü olup olmadıklarını açıkça belirtir, kafa karışıklığını azaltır ve kurulum doğruluğunu artırır.
+- 🤏 **Daha İyi Görünürlük için Scroll Bar Başparmağı İyileştirildi**: Kaydırma çubuğu stili geliştirildi, gezinmeyi daha erişilebilir ve görsel olarak sezgisel hale getirdi.
+- 🗄️ **Arşivlenmiş ve Kullanıcı Sohbet Listelemeleri için Modal Yeniden Tasarımı**: Arşivlenmiş ve kullanıcıya özgü sohbetlere göz atmak için temiz, modern modal arayüzü, konuşmaları daha hızlı ve daha keyifli bulmanızı sağlar.
+- 📝 **Bellek Modalı UX Ekleme/Düzenleme**: Bellek modalları artık daha büyük ve yeniden boyutlandırılabilir giriş alanlarına sahip, uzun veya karmaşık bellek içeriğini daha kolay düzenlemeyi destekler.
+- 🏆 **Çeviri ve Yerelleştirme Geliştirmeleri**: Çince (Basitleştirilmiş ve Geleneksel), Korece, Rusça, Almanca, Danca, Fince için büyük yükseltmeler—sadece yazım hatalarını düzeltmekle kalmayıp, daha doğal bir ana dil deneyimi için tutarlılık, ton ve terminolojiyi de kapsar.
+- ⚡ **Genel Backend Kararlılığı ve Güvenlik Geliştirmeleri**: Daha sorunsuz çalışma ve gönül rahatlığı için daha dayanıklı, güvenilir ve güvenli bir platform sağlamak amacıyla çeşitli backend iyileştirmeleri.
 
-### Fixed
+### Düzeltildi
 
-- 🖼️ **Image Generation with Allowed File Extensions Now Works Reliably**: Ensure seamless image generation even when strict file extension rules are set—no more blocked creative workflows due to technical hiccups.
-- 🗂 **Remove Leading Dot for File Extension Check**: Fixed an issue where file validation failed because of a leading dot, making file uploads and knowledge management more robust.
-- 🏷️ **Correct Local/External Model Classification**: The platform now accurately distinguishes between local and external models—preventing local models from showing up as external (and vice versa)—ensuring seamless setup, clarity, and management of your AI model endpoints.
-- 📄 **External Document Loader Now Functions as Intended**: External document loaders are reliably invoked, ensuring smoother knowledge ingestion from external sources—expanding your RAG and knowledge workflows.
-- 🎯 **Correct Handling of Toggle Filters**: Toggle filters are now robustly managed, preventing accidental auto-activation and ensuring user preferences are always respected.
-- 🗃 **S3 Tagging Character Restrictions Fixed**: Tags for files in S3 now automatically meet Amazon’s allowed character set, avoiding upload errors and ensuring cross-cloud compatibility.
-- 🛡️ **Authentication Now Uses Password Hash When Duplicate Emails Exist**: Ensures account security and prevents access issues if duplicate emails are present in your system.
+- 🖼️ **İzin Verilen Dosya Uzantılarıyla Resim Oluşturma Artık Güvenilir Şekilde Çalışıyor**: Katı dosya uzantısı kuralları ayarlanmış olsa bile sorunsuz resim oluşturmayı sağlayın—teknik aksaklıklar nedeniyle yaratıcı iş akışları artık engellenmiyor.
+- 🗂 **Dosya Uzantısı Kontrolü için Baştaki Noktayı Kaldır**: Dosya doğrulamasının baştaki bir nokta nedeniyle başarısız olması sorunu düzeltildi, dosya yüklemelerini ve bilgi yönetimini daha sağlam hale getirdi.
+- 🏷️ **Doğru Yerel/Harici Model Sınıflandırması**: Platform artık yerel ve harici modeller arasında doğru bir şekilde ayrım yapıyor—yerel modellerin harici olarak (veya tam tersi) görünmesini önlüyor—AI model endpoint'lerinizin sorunsuz kurulumunu, netliğini ve yönetimini sağlıyor.
+- 📄 **Harici Belge Yükleyici Artık Amaçlandığı Gibi İşlev Görüyor**: Harici belge yükleyicileri güvenilir bir şekilde çağrılır, harici kaynaklardan daha sorunsuz bilgi alımı sağlar—RAG ve bilgi iş akışlarınızı genişletir.
+- 🎯 **Toggle Filtrelerinin Doğru İşlenmesi**: Toggle filtreleri artık sağlam bir şekilde yönetilir, kazara otomatik etkinleştirmeyi önler ve kullanıcı tercihlerinin her zaman dikkate alınmasını sağlar.
+- 🗃 **S3 Etiketleme Karakter Kısıtlamaları Düzeltildi**: S3'teki dosyalar için etiketler artık Amazon'un izin verilen karakter kümesini otomatik olarak karşılar, yükleme hatalarını önler ve bulutlar arası uyumluluk sağlar.
+- 🛡️ **Kimlik Doğrulama Artık Yinelenen E-postalar Olduğunda Parola Karması Kullanıyor**: Sisteminizde yinelenen e-postalar varsa hesap güvenliğini sağlar ve erişim sorunlarını önler.
 
-### Changed
+### Değiştirildi
 
-- 🧩 **Admin Settings: OAuth Redirects Now Use WEBUI_URL**: The OAuth redirect URL is now based on the explicitly set WEBUI_URL, ensuring single sign-on and identity provider integrations always send users to the correct frontend.
+- 🧩 **Yönetici Ayarları: OAuth Yönlendirmeleri Artık WEBUI_URL Kullanıyor**: OAuth yönlendirme URL'si artık açıkça ayarlanmış WEBUI_URL'ye dayanıyor, bu da tek oturum açma ve kimlik sağlayıcı entegrasyonlarının kullanıcıları her zaman doğru frontend'e göndermesini sağlar.
 
-### Removed
+### Kaldırıldı
 
-- 💡 **Duplicate/Typo Component Removals**: Obsolete components have been cleaned up, reducing confusion and improving overall code quality for the team.
-- 🚫 **Streaming Upsert in Pinecone Removed**: Removed streaming upsert references for better compatibility and future-proofing with latest Pinecone SDK updates.
+- 💡 **Yinelenen/Yazım Hatası Bileşenlerinin Kaldırılması**: Ekibin genel kod kalitesini iyileştirmek ve kafa karışıklığını azaltmak için eski bileşenler temizlendi.
+- 🚫 **Pinecone'daki Akışlı Upsert Kaldırıldı**: En son Pinecone SDK güncellemeleriyle daha iyi uyumluluk ve geleceğe dönüklük için akışlı upsert referansları kaldırıldı.
 
 ## [0.6.10] - 2025-05-19
 
-### Added
+### Eklendi
 
-- 🧩 **Experimental Azure OpenAI Support**: Instantly connect to Azure OpenAI endpoints by simply pasting your Azure OpenAI URL into the model connections—bringing flexible, enterprise-grade AI integration directly to your workflow.
-- 💧 **Watermark AI Responses**: Easily add a visible watermark to AI-generated responses for clear content provenance and compliance with EU AI regulations—perfect for regulated environments and transparent communication.
-- 🔍 **Enhanced Search Experience with Dedicated Modal**: Enjoy a modern, powerful search UI in a dedicated modal (open with Ctrl/Cmd + K) accessible from anywhere—quickly find chats, models, or content and boost your productivity.
-- 🔲 **"Toggle" Filter Type for Chat Input**: Add interactive toggle filters (e.g. Web Search, Image, Code Interpreter) right into the chat input—giving you one-click control to activate features and simplifying the chat configuration process.
-- 🧰 **Granular Model Capabilities Editor**: Define detailed capabilities and feature access for each AI model directly from the model editor—enabling tailored behavior, modular control, and a more customized AI environment for every team or use case.
-- 🌐 **Flexible Local and External Connection Support**: Now you can designate any AI connection—whether OpenAI, Ollama, or others—as local or external, enabling seamless setup for on-premise, self-hosted, or cloud configurations and giving you maximum control and flexibility.
-- 🗂️ **Allowed File Extensions for RAG**: Gain full control over your Retrieval-Augmented Generation (RAG) workflows by specifying exactly which file extensions are permitted for upload, improving security and relevance of indexed documents.
-- 🔊 **Enhanced Audio Transcription Logic**: Experience smoother, more reliable audio transcription—very long audio files are now automatically split and processed in segments, preventing errors and ensuring even challenging files are transcribed seamlessly, all part of a broader stability upgrade for robust media workflows.
-- 🦾 **External Document Loader Support**: Enhance knowledge base building by integrating documents using external loaders from a wide range of data sources, expanding what your AI can read and process.
-- 📝 **Preview Button for Code Artifacts**: Instantly jump from an HTML code block to its associated artifacts page with the click of a new preview button—speeding up review and streamlining analysis.
-- 🦻 **Screen Reader Support for Response Messages**: All chat responses are now fully compatible with screen readers, making the platform more inclusive and accessible for everyone.
-- 🧑‍💼 **Customizable Pending User Overlay**: You can now tailor the overlay title and content shown to pending users, ensuring onboarding messaging is perfectly aligned with your organization’s tone and requirements.
-- 🔐 **Option to Disable LDAP Certificate Validation**: You can now disable LDAP certificate validation for maximum flexibility in diverse IT environments—making integrations and troubleshooting much easier.
-- 🎯 **Workspace Search by Username or Email**: Easily search across workspace pages using any username or email address, streamlining user and resource management.
-- 🎨 **High Contrast & Dark Mode Enhancements**: Further improved placeholder, input, suggestion, toast, and model selector contrasts—including a dedicated placeholder dark mode—for more comfortable viewing in all lighting conditions.
-- 🛡️ **Refined Security for Pipelines & Model Uploads**: Strengthened safeguards against path traversal vulnerabilities during uploads—ensuring your platform’s document and model management remains secure.
-- 🌏 **Major Localization Upgrades**: Comprehensive translation updates and improvements across Korean, Bulgarian, Catalan, Japanese, Italian, Traditional Chinese, and Spanish—including more accurate AI terminology for clarity; your experience is now more natural, inclusive, and professional everywhere.
-- 🦾 **General Backend Stability & Security**: Multiple backend improvements (including file upload, command navigation, and logging refactorings) deliver increased resilience, better error handling, and a more robust platform for all users.
+- 🧩 **Deneysel Azure OpenAI Desteği**: Azure OpenAI URL'nizi yapıştırarak Azure OpenAI endpoint'lerine anında bağlanın—esnek, kurumsal düzeyde AI entegrasyonunu doğrudan iş akışınıza getiriyor.
+- 💧 **AI Yanıtlarına Filigran Ekleme**: AI tarafından oluşturulan yanıtlara kolayca görünür bir filigran ekleyerek içeriğin kaynağını ve AB AI düzenlemelerine uyumluluğu net bir şekilde belirtin—düzenlenmiş ortamlar ve şeffaf iletişim için mükemmeldir.
+- 🔍 **Özel Modalla Gelişmiş Arama Deneyimi**: Her yerden erişilebilen özel bir modalda (Ctrl/Cmd + K ile açın) modern, güçlü bir arama UI'sinin keyfini çıkarın—sohbetleri, modelleri veya içeriği hızlıca bulun ve üretkenliğinizi artırın.
+- 🔲 **Sohbet Girişine "Toggle" Filtre Tipi**: Doğrudan sohbet girişine etkileşimli toggle filtreleri (örneğin Web Search, Image, Code Interpreter) ekleyin—özellikleri tek tıklamayla etkinleştirme kontrolü sağlayarak sohbet yapılandırma sürecini basitleştirir.
+- 🧰 **Ayrıntılı Model Yetenekleri Düzenleyici**: Her AI modeli için ayrıntılı yetenekleri ve özellik erişimini doğrudan model düzenleyiciden tanımlayın—her ekip veya kullanım durumu için özelleştirilmiş davranış, modüler kontrol ve daha kişiselleştirilmiş bir AI ortamı sağlar.
+- 🌐 **Esnek Yerel ve Harici Bağlantı Desteği**: Artık herhangi bir AI bağlantısını—OpenAI, Ollama veya diğerleri—yerel veya harici olarak belirleyebilirsiniz, bu da yerinde, kendi barındırdığınız veya bulut yapılandırmaları için sorunsuz kurulumu etkinleştirir ve size maksimum kontrol ve esneklik sağlar.
+- 🗂️ **RAG için İzin Verilen Dosya Uzantıları**: Retrieval-Augmented Generation (RAG) iş akışlarınız üzerinde tam kontrol sahibi olun. Yüklemeye izin verilen dosya uzantılarını tam olarak belirterek, dizine eklenen belgelerin güvenliğini ve alaka düzeyini iyileştirin.
+- 🔊 **Gelişmiş Ses Transkripsiyon Mantığı**: Daha pürüzsüz, daha güvenilir ses transkripsiyonu deneyimi yaşayın—çok uzun ses dosyaları artık otomatik olarak bölünür ve segmentler halinde işlenir, hataları önler ve zorlu dosyaların bile sorunsuz bir şekilde transkript edilmesini sağlar, hepsi sağlam medya iş akışları için daha geniş bir kararlılık yükseltmesinin parçasıdır.
+- 🦾 **Harici Belge Yükleyici Desteği**: Geniş bir veri kaynağı yelpazesinden harici yükleyicileri kullanarak belge tabanı oluşturmayı geliştirin, AI'nizin okuyabileceği ve işleyebileceği belge formatlarını genişletin.
+- 📝 **Kod Artifact'leri için Önizleme Butonu**: Yeni bir önizleme butonuna tıklayarak bir HTML kod bloğundan ilgili artifact sayfasına anında atlayın—incelemeyi hızlandırır ve analizi kolaylaştırır.
+- 🦻 **Yanıt Mesajları için Ekran Okuyucu Desteği**: Tüm sohbet yanıtları artık ekran okuyucularla tamamen uyumludur, platformu herkes için daha kapsayıcı ve erişilebilir hale getirir.
+- 🧑‍💼 **Özelleştirilebilir Bekleyen Kullanıcı Katmanı**: Bekleyen kullanıcılara gösterilen katman başlığını ve içeriğini artık özelleştirebilirsiniz, bu da onboarding mesajlarının kuruluşunuzun tonu ve gereksinimleriyle mükemmel bir şekilde uyumlu olmasını sağlar.
+- 🔐 **LDAP Sertifika Doğrulamasını Devre Dışı Bırakma Seçeneği**: Çeşitli BT ortamlarında maksimum esneklik için LDAP sertifika doğrulamasını artık devre dışı bırakabilirsiniz—entegrasyonları ve sorun gidermeyi çok daha kolay hale getirir.
+- 🎯 **Kullanıcı Adı veya E-posta ile Çalışma Alanı Araması**: Kullanıcı ve kaynak yönetimini kolaylaştırmak için çalışma alanı sayfaları arasında herhangi bir kullanıcı adı veya e-posta adresi kullanarak kolayca arama yapın.
+- 🎨 **Yüksek Kontrast ve Koyu Mod Geliştirmeleri**: Daha rahat görüntüleme için yer tutucu, giriş, öneri, toast ve model seçici kontrastları daha da iyileştirildi—özel bir yer tutucu koyu modu dahil.
+- 🛡️ **Pipelines ve Model Yüklemeleri için Geliştirilmiş Güvenlik**: Yüklemeler sırasında yol dolaşma güvenlik açıklarına karşı korumalar güçlendirildi—platformunuzun belge ve model yönetiminin güvenli kalmasını sağlar.
+- 🌏 **Büyük Yerelleştirme Yükseltmeleri**: Korece, Bulgarca, Katalanca, Japonca, İtalyanca, Geleneksel Çince ve İspanyolca için kapsamlı çeviri güncellemeleri ve iyileştirmeleri—netlik için daha doğru AI terminolojisi dahil; deneyiminiz artık her yerde daha doğal, kapsayıcı ve profesyonel.
+- 🦾 **Genel Backend Kararlılığı ve Güvenliği**: Çeşitli backend iyileştirmeleri (dosya yükleme, komut gezintisi ve log refactoring'leri dahil) artırılmış dayanıklılık, daha iyi hata yönetimi ve tüm kullanıcılar için daha sağlam bir platform sağlar.
 
-### Fixed
+### Düzeltildi
 
-- ✅ **Evaluation Feedback Endpoint Reliability**: Addressed issues with feedback submission endpoints to ensure seamless user feedback collection on model responses.
-- 🫰 **Model List State Fixes**: Resolved issues where model status toggles in the workspace page might inadvertently switch or confuse state, making the management of active/inactive models more dependable.
-- ✍️ **Admin Signup Logic**: Admin self-signup experience and validation flow is smoother and more robust.
-- 🔁 **Signout Redirect Flow Improved**: Logging out now redirects more reliably, reducing confusion and making session management seamless.
+- ✅ **Değerlendirme Geri Bildirim Endpoint Güvenilirliği**: Model yanıtlarında sorunsuz kullanıcı geri bildirim toplama sağlamak için geri bildirim gönderme endpoint'leriyle ilgili sorunlar giderildi.
+- 🫰 **Model Listesi Durum Düzeltmeleri**: Çalışma alanı sayfasındaki model durumu geçişlerinin yanlışlıkla geçiş yapabileceği veya durumu karıştırabileceği sorunlar çözüldü, aktif/pasif modellerin yönetimini daha güvenilir hale getirdi.
+- ✍️ **Admin Kayıt Mantığı**: Admin self-signup deneyimi ve doğrulama akışı daha pürüzsüz ve daha sağlam.
+- 🔁 **Oturum Kapatma Yönlendirme Akışı İyileştirildi**: Oturum kapatma artık daha güvenilir bir şekilde yönlendirir, kafa karışıklığını azaltır ve oturum yönetimini sorunsuz hale getirir.
 
 ## [0.6.9] - 2025-05-10
 
-### Added
+### Eklendi
 
-- 📝 **Edit Attached Images/Files in Messages**: You can now easily edit your sent messages by removing attached files—streamlining document management, correcting mistakes on the fly, and keeping your chats clutter-free.
-- 🚨 **Clear Alerts for Private Task Models**: When interacting with private task models, the UI now clearly alerts you—making it easier to understand resource availability and access, reducing confusion during workflow setup.
+- 📝 **Mesajlarda Ekli Resimleri/Dosyaları Düzenleme**: Gönderdiğiniz mesajları ekli dosyaları kaldırarak kolayca düzenleyebilirsiniz—belge yönetimini kolaylaştırır, anında hataları düzeltir ve sohbetlerinizi dağınıklıktan arındırır.
+- 🚨 **Özel Görev Modelleri için Açık Uyarılar**: Özel görev modelleriyle etkileşimde bulunurken, UI sizi açıkça uyarır—kaynak kullanılabilirliğini ve erişimini anlamayı kolaylaştırır, iş akışı kurulumu sırasında kafa karışıklığını azaltır.
 
-### Fixed
+### Düzeltildi
 
-- 🛡️ **Confirm Dialog Focus Trap Reliability**: The focus now stays correctly within confirmation dialogs, ensuring keyboard navigation and accessibility is seamless and preventing accidental operations—especially helpful during critical or rapid workflows.
-- 💬 **Temporary Chat Admin Controls & Session Cleanliness**: Admins are now able to properly enable temporary chat mode without errors, and previous session prompts or tool selections no longer carry over—delivering a fresh, predictable, and consistent temporary chat experience every time.
-- 🤖 **External Reranker Integration Functionality Restored**: External reranker integrations now work correctly, allowing you to fully leverage advanced ranking services for sharper, more relevant search results in your RAG and knowledge base workflows.
+- 🛡️ **Onay Diyaloğu Odak Tuzağı Güvenilirliği**: Odak artık onay diyaloğunda doğru bir şekilde kalıyor, klavye gezintisi ve erişilebilirliğin sorunsuz olmasını ve kazara işlemleri önlüyor—özellikle kritik veya hızlı iş akışları sırasında yardımcı olur.
+- 💬 **Geçici Sohbet Yönetici Kontrolleri ve Oturum Temizliği**: Yöneticiler artık geçici sohbet modunu hatasız bir şekilde etkinleştirebiliyor ve önceki oturum prompt'ları veya araç seçimleri artık taşınmıyor—her seferinde taze, öngörülebilir ve tutarlı bir geçici sohbet deneyimi sunar.
+- 🤖 **Harici Reranker Entegrasyon İşlevselliği Geri Getirildi**: Harici reranker entegrasyonları artık doğru çalışıyor, bu da RAG ve bilgi tabanı iş akışlarınızda daha keskin, daha ilgili arama sonuçları için gelişmiş sıralama hizmetlerinden tam olarak yararlanmanızı sağlar.
 
 ## [0.6.8] - 2025-05-10
 
-### Added
+### Eklendi
 
-- 🏆 **External Reranker Support for Knowledge Base Search**: Supercharge your Retrieval-Augmented Generation (RAG) workflows with the new External Reranker integration; easily plug in advanced reranking services via the UI to deliver sharper and more relevant search results, accelerating research and insight discovery.
-- 📤 **Unstylized PDF Export Option (Reduced File Size)**: When exporting chat transcripts or documents, you can now choose an unstylized PDF export for snappier downloads, minimal file size, and clean data archiving—perfect for large-scale storage or sharing.
-- 📝 **Vazirmatn Font for Persian & Arabic**: Arabic and Persian users will now see their text beautifully rendered with the specialized Vazirmatn font for an improved localized reading experience.
-- 🏷️ **SharePoint Tenant ID Support for OneDrive**: You can now specify a SharePoint tenant ID in OneDrive settings for seamless authentication and granular enterprise integration.
-- 👤 **Refresh OAuth Profile Picture**: Your OAuth profile picture now updates in real-time, ensuring your presence and avatar always match your latest identity across integrated platforms.
-- 🔧 **Milvus Configuration Improvements**: Configure index and metric types for Milvus directly within settings; take full control of your vector database for more accurate and robust AI search experiences.
-- 🛡️ **S3 Tagging Toggle for Compatibility**: Optional S3 tagging via an environment toggle grants full compatibility with all storage backends—including those that don’t support tagging like Cloudflare R2—ensuring error-free attachment and document management.
-- 👨‍🦯 **Icon Button Accessibility Improvements**: Key interactive icon-buttons now include aria-labels and ARIA descriptions, so screen readers provide precise guidance about what action each button performs for improved accessibility.
-- ♿ **Enhanced Accessibility with Modal Focus Trap**: Modal dialogs and pop-ups now feature a focus trap and improved ARIA roles, ensuring seamless navigation and screen reader support—making the interface friendlier for everyone, including keyboard and assistive tech users.
-- 🏃 **Improved Admin User List Loading Indicator**: The user list loading experience is now clearer and more responsive in the admin panel.
-- 🧑‍🤝‍🧑 **Larger Admin User List Page Size**: Admins can now manage up to 30 users per page in the admin interface, drastically reducing pagination and making large user teams easier and faster to manage.
-- 🌠 **Default Code Interpreter Prompt Clarified**: The built-in code interpreter prompt is now more explicit, preventing AI from wrapping code in Markdown blocks when not needed—ensuring properly formatted code runs as intended every time.
-- 🧾 **Improved Default Title Generation Prompt Template**: Title generation now uses a robust template for reliable JSON output, improving chat organization and searchability.
-- 🔗 **Support Jupyter Notebooks with Non-Root Base URLs**: Notebook-based code execution now supports non-root deployed Jupyter servers, granting full flexibility for hybrid or multi-user setups.
-- 📰 **UI Scrollbar Always Visible for Overflow Tools**: When available tools overflow the display, the scrollbar is now always visible and there’s a handy "show all" toggle, making navigation of large toolsets snappier and more intuitive.
-- 🛠️ **General Backend Refactoring for Stability**: Multiple under-the-hood improvements have been made across backend components, ensuring smoother performance, fewer errors, and a more reliable overall experience for all users.
-- 🚀 **Optimized Web Search for Faster Results**: Web search speed and performance have been significantly enhanced, delivering answers and sources in record time to accelerate your research-heavy workflows.
-- 💡 **More Supported Languages**: Expanded language support ensures an even wider range of users can enjoy an intuitive and natural interface in their native tongue.
+- 🏆 **Bilgi Tabanı Araması için Harici Reranker Desteği**: Yeni Harici Reranker entegrasyonu ile Retrieval-Augmented Generation (RAG) iş akışlarınızı güçlendirin; daha keskin ve daha ilgili arama sonuçları sunmak için gelişmiş yeniden sıralama hizmetlerini UI aracılığıyla kolayca bağlayın, araştırma ve içgörü keşfini hızlandırın.
+- 📤 **Stilize Edilmemiş PDF Dışa Aktarma Seçeneği (Azaltılmış Dosya Boyutu)**: Sohbet dökümlerini veya belgeleri dışa aktarırken, daha hızlı indirmeler, minimum dosya boyutu ve temiz veri arşivlemesi için stilize edilmemiş bir PDF dışa aktarma seçeneği belirleyebilirsiniz—büyük ölçekli depolama veya paylaşım için mükemmeldir.
+- 📝 **Farsça ve Arapça için Vazirmatn Fontu**: Arapça ve Farsça kullanıcıları artık metinlerini özel Vazirmatn fontuyla güzel bir şekilde işlenmiş olarak görecekler, bu da yerelleştirilmiş okuma deneyimini iyileştirir.
+- 🏷️ **OneDrive için SharePoint Kiracı ID Desteği**: Sorunsuz kimlik doğrulama ve ayrıntılı kurumsal entegrasyon için OneDrive ayarlarında bir SharePoint kiracı ID'si belirleyebilirsiniz.
+- 👤 **OAuth Profil Resmi Yenileme**: OAuth profil resminiz artık gerçek zamanlı olarak güncelleniyor, bu da entegre platformlarda varlığınızın ve avatarınızın her zaman en son kimliğinizle eşleşmesini sağlar.
+- 🔧 **Milvus Yapılandırma İyileştirmeleri**: Milvus için dizin ve metrik türlerini doğrudan ayarlardan yapılandırın; daha doğru ve sağlam AI arama deneyimleri için vektör veritabanınızın tam kontrolünü ele alın.
+- 🛡️ **S3 Etiketleme Uyumluluk için Toggle**: Ortam geçiş anahtarı aracılığıyla isteğe bağlı S3 etiketlemesi, Cloudflare R2 gibi etiketlemeyi desteklemeyenler de dahil olmak üzere tüm depolama backend'leriyle tam uyumluluk sağlar—hatasız ek ve belge yönetimini garanti eder.
+- 👨‍🦯 **İkon Buton Erişilebilirlik İyileştirmeleri**: Temel etkileşimli ikon butonları artık aria-label'lar ve ARIA açıklamaları içeriyor, böylece ekran okuyucular her butonun hangi eylemi gerçekleştirdiği hakkında kesin rehberlik sağlar ve erişilebilirliği artırır.
+- ♿ **Modal Odak Tuzağı ile Gelişmiş Erişilebilirlik**: Modal diyaloglar ve pop-up'lar artık odak tuzağı ve geliştirilmiş ARIA rolleri içeriyor, sorunsuz gezinme ve ekran okuyucu desteği sağlıyor—klavye ve yardımcı teknoloji kullanıcıları dahil herkes için arayüzü daha kullanıcı dostu hale getiriyor.
+- 🏃 **İyileştirilmiş Yönetici Kullanıcı Listesi Yükleme Göstergesi**: Kullanıcı listesi yükleme deneyimi artık yönetici panelinde daha net ve daha duyarlı.
+- 🧑‍🤝‍🧑 **Daha Büyük Yönetici Kullanıcı Listesi Sayfa Boyutu**: Yöneticiler artık yönetici arayüzünde sayfa başına 30'a kadar kullanıcıyı yönetebilir, bu da sayfa geçişini önemli ölçüde azaltır ve büyük kullanıcı ekiplerini yönetmeyi kolaylaştırır ve hızlandırır.
+- 🌠 **Varsayılan Kod Tercümanı Prompt'u Netleştirildi**: Yerleşik kod tercümanı prompt'u artık daha açık, AI'nin kodu Markdown bloklarına sarmasını engelliyor—doğru biçimlendirilmiş kodun her seferinde amaçlandığı gibi çalışmasını sağlıyor.
+- 🧾 **İyileştirilmiş Varsayılan Başlık Oluşturma Prompt Şablonu**: Başlık oluşturma artık güvenilir JSON çıktısı için sağlam bir şablon kullanıyor, sohbet organizasyonunu ve aranabilirliği iyileştiriyor.
+- 🔗 **Kök Olmayan Base URL'lerle Jupyter Notebook Desteği**: Notebook tabanlı kod yürütme artık kök olmayan dağıtılmış Jupyter sunucularını destekliyor, hibrit veya çok kullanıcılı kurulumlar için tam esneklik sağlıyor.
+- 📰 **UI Kaydırma Çubuğu Taşma Araçları için Her Zaman Görünür**: Mevcut araçlar ekranı aştığında, kaydırma çubuğu artık her zaman görünür ve kullanışlı bir "tümünü göster" geçişi var, bu da büyük araç setlerinde gezinmeyi daha hızlı ve daha sezgisel hale getiriyor.
+- 🛠️ **Kararlılık için Genel Backend Yeniden Yapılandırması**: Backend bileşenleri genelinde birden fazla arka plan iyileştirmesi yapıldı, daha sorunsuz performans, daha az hata ve tüm kullanıcılar için daha güvenilir bir genel deneyim sağlıyor.
+- 🚀 **Daha Hızlı Sonuçlar için Optimize Edilmiş Web Araması**: Web arama hızı ve performansı önemli ölçüde artırıldı, araştırma yoğun iş akışlarınızı hızlandırmak için rekor sürede yanıtlar ve kaynaklar sunuluyor.
+- 💡 **Daha Fazla Desteklenen Dil**: Genişletilmiş dil desteği, daha geniş bir kullanıcı yelpazesinin kendi ana dilinde sezgisel ve doğal bir arayüzden yararlanmasını sağlar.
 
-### Fixed
+### Düzeltildi
 
-- 🏃‍♂️ **Exhausting Workers in Nginx Reverse Proxy Due to Websocket Fix**: Websocket sessions are now fully compatible behind Nginx, eliminating worker exhaustion and restoring 24/7 reliability for real-time chats even in complex deployments.
-- 🎤 **Audio Transcription Issue with OpenAI Resolved**: OpenAI-based audio transcription now handles WebM and newer formats without error, ensuring seamless voice-to-text workflows every time.
-- 👉 **Message Input RTL Issue Fixed**: The chat message input now displays correctly for right-to-left languages, creating a flawless typing and reading experience for Arabic, Hebrew, and more.
-- 🀄 **Katex: Proper Rendering of Chinese Characters Next to Math**: Math formulas now render perfectly even when directly adjacent to Chinese (CJK) characters, improving visual clarity for multilingual teams and cross-language documents.
-- 🔂 **Duplicate Web Search URLs Eliminated**: Search results now reliably filter out URL duplicates, so your knowledge and search citations are always clean, trimmed, and easy to review.
-- 📄 **Markdown Rendering Fixed in Knowledge Bases**: Markdown is now displayed correctly within knowledge bases, enabling better formatting and clarity of information-rich files.
-- 🗂️ **LDAP Import/Loading Issue Resolved**: LDAP user imports process correctly, ensuring smooth onboarding and access without interruption.
-- 🌎 **Pinecone Batch Operations and Async Safety**: All Pinecone operations (batch insert, upsert, delete) now run efficiently and safely in an async environment, boosting performance and preventing slowdowns in large-scale RAG jobs.
+- 🏃‍♂️ **Websocket Düzeltmesi Nedeniyle Nginx Ters Proxy'de Çalışanları Tüketme**: Websocket oturumları artık Nginx arkasında tamamen uyumlu, çalışanların tükenmesini ortadan kaldırıyor ve karmaşık dağıtımlarda bile gerçek zamanlı sohbetler için 7/24 güvenilirliği geri getiriyor.
+- 🎤 **OpenAI ile Ses Transkripsiyonu Sorunu Çözüldü**: OpenAI tabanlı ses transkripsiyonu artık WebM ve daha yeni formatları hatasız işliyor, her seferinde sorunsuz sesli metin iş akışları sağlıyor.
+- 👉 **Mesaj Girişi RTL Sorunu Düzeltildi**: Sohbet mesajı girişi artık sağdan sola diller için doğru görüntüleniyor, Arapça, İbranice ve daha fazlası için kusursuz bir yazma ve okuma deneyimi yaratıyor.
+- 🀄 **Katex: Matematik Yanındaki Çince Karakterlerin Doğru Oluşturulması**: Matematik formülleri artık doğrudan Çince (CJK) karakterlerin yanında bile mükemmel bir şekilde işleniyor, çok dilli ekipler ve diller arası belgeler için görsel netliği artırıyor.
+- 🔂 **Yinelenen Web Arama URL'leri Ortadan Kaldırıldı**: Arama sonuçları artık URL yinelenmelerini güvenilir bir şekilde filtreliyor, böylece bilginiz ve arama alıntılarınız her zaman temiz, kısaltılmış ve incelemesi kolay oluyor.
+- 📄 **Bilgi Tabanlarında Markdown Oluşturma Düzeltildi**: Markdown artık bilgi tabanlarında doğru bir şekilde görüntüleniyor, zengin bilgi içeren dosyaların daha iyi biçimlendirilmesini ve netliğini sağlıyor.
+- 🗂️ **LDAP İçe Aktarma/Yükleme Sorunu Çözüldü**: LDAP kullanıcı içe aktarmaları doğru bir şekilde işleniyor, sorunsuz onboarding ve kesintisiz erişim sağlanıyor.
+- 🌎 **Pinecone Toplu İşlemler ve Asenkron Güvenlik**: Tüm Pinecone işlemleri (toplu ekleme, güncelleme, silme) artık asenkron bir ortamda verimli ve güvenli bir şekilde çalışıyor, performansı artırıyor ve büyük ölçekli RAG işlerinde yavaşlamaları önlüyor.
 
 ## [0.6.7] - 2025-05-07
 
-### Added
+### Eklendi
 
-- 🌐 **Custom Azure TTS API URL Support Added**: You can now define a custom Azure Text-to-Speech endpoint—enabling flexibility for enterprise deployments and regional compliance.
-- ⚙️ **TOOL_SERVER_CONNECTIONS Environment Variable Suppor**: Easily configure and deploy tool servers via environment variables, streamlining setup and enabling faster enterprise provisioning.
-- 👥 **Enhanced OAuth Group Handling as String or List**: OAuth group data can now be passed as either a list or a comma-separated string, improving compatibility with varied identity provider formats and reducing onboarding friction.
+- 🌐 **Özel Azure TTS API URL Desteği Eklendi**: Artık özel bir Azure Text-to-Speech endpoint'i tanımlayabilirsiniz—kurumsal dağıtımlar ve bölgesel uyumluluk için esneklik sağlıyor.
+- ⚙️ **TOOL_SERVER_CONNECTIONS Ortam Değişkeni Desteği**: Araç sunucularını ortam değişkenleri aracılığıyla kolayca yapılandırın ve dağıtın, kurulumu kolaylaştırın ve daha hızlı kurumsal tedarik sağlayın.
+- 👥 **Gelişmiş OAuth Grup İşleme (Dize veya Liste Olarak)**: OAuth grup verileri artık bir liste veya virgülle ayrılmış bir dize olarak geçirilebilir, çeşitli kimlik sağlayıcı formatlarıyla uyumluluğu artırır ve onboarding sürtünmesini azaltır.
 
-### Fixed
+### Düzeltildi
 
-- 🧠 **Embedding with Ollama Proxy Endpoints Restored**: Fixed an issue where missing API config broke embedding for proxied Ollama models—ensuring consistent performance and compatibility.
-- 🔐 **OIDC OAuth Login Issue Resolved**: Users can once again sign in seamlessly using OpenID Connect-based OAuth, eliminating login interruptions and improving reliability.
-- 📝 **Notes Feature Access Fixed for Non-Admins**: Fixed an issue preventing non-admin users from accessing the Notes feature, restoring full cross-role collaboration capabilities.
-- 🖼️ **Tika Loader Image Extraction Problem Resolved**: Ensured TikaLoader now processes 'extract_images' parameter correctly, restoring complete file extraction functionality in document workflows.
-- 🎨 **Automatic1111 Image Model Setting Applied Properly**: Fixed an issue where switching to a specific image model via the UI wasn’t reflected in generation, re-enabling full visual creativity control.
-- 🏷️ **Multiple XML Tags in Messages Now Parsed Correctly**: Fixed parsing issues when messages included multiple XML-style tags, ensuring clean and unbroken rendering of rich content in chats.
-- 🖌️ **OpenAI Image Generation Issues Resolved**: Resolved broken image output when using OpenAI’s image generation, ensuring fully functional visual creation workflows.
-- 🔎 **Tool Server Settings UI Privacy Restored**: Prevented restricted users from accessing tool server settings via search—restoring tight permissions control and safeguarding sensitive configurations.
-- 🎧 **WebM Audio Transcription Now Supported**: Fixed an issue where WebM files failed during audio transcription—these formats are now fully supported, ensuring smoother voice note workflows and broader file compatibility.
+- 🧠 **Ollama Proxy Endpoint'leri ile Embedding Geri Getirildi**: Proxy'li Ollama modelleri için eksik API config'in embedding'i bozduğu bir sorun düzeltildi—tutarlı performans ve uyumluluk sağlar.
+- 🔐 **OIDC OAuth Giriş Sorunu Çözüldü**: Kullanıcılar OpenID Connect tabanlı OAuth kullanarak tekrar sorunsuz bir şekilde oturum açabilir, giriş kesintilerini ortadan kaldırır ve güvenilirliği artırır.
+- 📝 **Notlar Özelliği Erişimi Admin Olmayanlar için Düzeltildi**: Admin olmayan kullanıcıların Notlar özelliğine erişmesini engelleyen bir sorun düzeltildi, tam çapraz rol işbirliği yetenekleri geri getirildi.
+- 🖼️ **Tika Loader Görüntü Çıkarma Sorunu Çözüldü**: TikaLoader'ın artık 'extract_images' parametresini doğru bir şekilde işlediği, belge iş akışlarında tam dosya çıkarma işlevselliğini geri getirdiği sağlandı.
+- 🎨 **Automatic1111 Görüntü Modeli Ayarı Doğru Uygulandı**: UI aracılığıyla belirli bir görüntü modeline geçişin oluşturmada yansıtılmadığı bir sorun düzeltildi, tam görsel yaratıcılık kontrolünü yeniden etkinleştirdi.
+- 🏷️ **Mesajlardaki Birden Fazla XML Etiketi Artık Doğru Ayrıştırılıyor**: Mesajlar birden fazla XML tarzı etiket içerdiğinde ayrıştırma sorunları düzeltildi, sohbetlerde zengin içeriğin temiz ve kesintisiz oluşturulmasını sağladı.
+- 🖌️ **OpenAI Görüntü Oluşturma Sorunları Çözüldü**: OpenAI'nin görüntü oluşturmasını kullanırken bozuk görüntü çıktısına neden olan sorunlar çözüldü, tamamen işlevsel görsel oluşturma iş akışları sağlandı.
+- 🔎 **Araç Sunucusu Ayarları UI Gizliliği Geri Getirildi**: Kısıtlı kullanıcıların arama yoluyla araç sunucusu ayarlarına erişmesi engellendi—sıkı izin kontrolleri geri getirildi ve hassas yapılandırmalar güvence altına alındı.
+- 🎧 **WebM Ses Transkripsiyonu Artık Destekleniyor**: Ses transkripsiyonu sırasında WebM dosyalarının başarısız olmasına neden olan bir sorun düzeltildi—bu formatlar artık tamamen destekleniyor, daha sorunsuz sesli not iş akışları ve daha geniş dosya uyumluluğu sağlanıyor.
 
 ## [0.6.6] - 2025-05-05
 
-### Added
+### Eklendi
 
-- 📝 **AI-Enhanced Notes (With Audio Transcription)**: Effortlessly create notes, attach meeting or voice audio, and let the AI instantly enhance, summarize, or refine your notes using audio transcriptions—making your documentation smarter, cleaner, and more insightful with minimal effort.
-- 🔊 **Meeting Audio Recording & Import**: Seamlessly record audio from your meetings or capture screen audio and attach it to your notes—making it easier to revisit, annotate, and extract insights from important discussions.
-- 📁 **Import Markdown Notes Effortlessly**: Bring your existing knowledge library into Open WebUI by importing your Markdown notes, so you can leverage all advanced note management and AI features right away.
-- 👥 **Notes Permissions by User Group**: Fine-tune access and editing rights for notes based on user roles or groups, so you can delegate writing or restrict sensitive information as needed.
-- ☁️ **OneDrive & SharePoint Integration**: Keep your content in sync by connecting notes and files directly with OneDrive or SharePoint—unlocking fast enterprise import/export and seamless collaboration with your existing workflows.
-- 🗂️ **Paginated User List in Admin Panel**: Effortlessly manage and search through large teams via the new paginated user list—saving time and streamlining user administration in big organizations.
-- 🕹️ **Granular Chat Share & Export Permissions**: Enjoy enhanced control over who can share or export chats, enabling tighter governance and privacy in team and enterprise settings.
-- 🛑 **User Role Change Confirmation Dialog**: Reduce accidental privilege changes with a required confirmation step before updating user roles—improving security and preventing costly mistakes in team management.
-- 🚨 **Audit Log for Failed Login Attempts**: Quickly detect unauthorized access attempts or troubleshoot user login problems with detailed logs of failed authentication right in the audit trail.
-- 💡 **Dedicated 'Generate Title' Button for Chats**: Swiftly organize every conversation—tap the new button to let AI create relevant, clear titles for all your chats, saving time and reducing clutter.
-- 💬 **Notification Sound Always-On Option**: Take control of your notifications by setting sound alerts to always play—helping you stay on top of important updates in busy environments.
-- 🆔 **S3 File Tagging Support**: Uploaded files to S3 now include tags for better organization, searching, and integration with your file management policies.
-- 🛡️ **OAuth Blocked Groups Support**: Gain more control over group-based access by explicitly blocking specified OAuth groups—ideal for complex identity or security requirements.
-- 🚀 **Optimized Faster Web Search & Multi-Threaded Queries**: Enjoy dramatically faster web search and RAG (retrieval augmented generation) with revamped multi-threaded search—get richer, more accurate results in less time.
-- 🔍 **All-Knowledge Parallel Search**: Searches across your entire knowledge base now happen in parallel even in non-hybrid mode, speeding up responses and improving knowledge accuracy for every question.
-- 🌐 **New Firecrawl & Yacy Web Search Integrations**: Expand your world of information with two new advanced search engines—Firecrawl for deeper web insight and Yacy for decentralized, privacy-friendly search capabilities.
-- 🧠 **Configurable Docling OCR Engine & Language**: Use environment variables to fine-tune Docling OCR engine and supported languages for smarter, more tailored document extraction and RAG workflows.
-- 🗝️ **Enhanced Sentence Transformers Configuration**: Added new environment variables for easier set up and advanced customization of Sentence Transformers—ensuring best fit for your embedding needs.
-- 🌲 **Pinecone Vector Database Integration**: Index, search, and manage knowledge at enterprise scale with full native support for Pinecone as your vector database—effortlessly handle even the biggest document sets.
-- 🔄 **Automatic Requirements Installation for Tools & Functions**: Never worry about lost dependencies on restart—external function and tool requirements are now auto-installed at boot, ensuring tools always “just work.”
-- 🔒 **Automatic Sign-Out on Token Expiry**: Security is smarter—users are now automatically logged out if their authentication token expires, protecting sensitive content and ensuring compliance without disruption.
-- 🎬 **Automatic YouTube Embed Detection**: Paste YouTube links and see instant in-chat video embeds—no more manual embedding, making knowledge sharing and media consumption even easier for every team.
-- 🔄 **Expanded Language & Locale Support**: Translations for Danish, French, Russian, Traditional Chinese, Simplified Chinese, Thai, Catalan, German, and Korean have been upgraded, offering smoother, more natural user experiences across the platform.
+- 📝 **AI Gelişmiş Notlar (Ses Transkripsiyonu ile)**: Notları zahmetsizce oluşturun, toplantı veya ses kaydı ekleyin ve AI'nın ses transkripsiyonlarını kullanarak notlarınızı anında geliştirmesine, özetlemesine veya iyileştirmesine izin verin—belgelerinizi minimum çabayla daha akıllı, daha temiz ve daha bilgilendirici hale getirin.
+- 🔊 **Toplantı Ses Kaydı ve İçe Aktarma**: Toplantılarınızdan sorunsuz bir şekilde ses kaydedin veya ekran sesini yakalayın ve notlarınıza ekleyin—önemli tartışmalardan içgörüleri yeniden ziyaret etmeyi, açıklama eklemeyi ve çıkarmayı kolaylaştırın.
+- 📁 **Markdown Notlarını Zahmetsizce İçe Aktarma**: Mevcut bilgi kütüphanenizi Markdown notlarınızı içe aktararak Open WebUI'ye getirin, böylece tüm gelişmiş not yönetimi ve AI özelliklerinden hemen yararlanabilirsiniz.
+- 👥 **Kullanıcı Grubuna Göre Not İzinleri**: Notlar için erişimi ve düzenleme haklarını kullanıcı rollerine veya gruplarına göre hassas bir şekilde ayarlayın, böylece gerektiğinde yazmayı delege edebilir veya hassas bilgileri kısıtlayabilirsiniz.
+- ☁️ **OneDrive ve SharePoint Entegrasyonu**: İçeriğinizi OneDrive veya SharePoint ile doğrudan notları ve dosyaları bağlayarak senkronize tutun—hızlı kurumsal içe/dışa aktarmayı ve mevcut iş akışlarınızla sorunsuz işbirliğini açın.
+- 🗂️ **Yönetici Panelinde Sayfalandırılmış Kullanıcı Listesi**: Yeni sayfalandırılmış kullanıcı listesi aracılığıyla büyük ekipleri zahmetsizce yönetin ve arayın—büyük kuruluşlarda zaman kazanın ve kullanıcı yönetimini kolaylaştırın.
+- 🕹️ **Ayrıntılı Sohbet Paylaşımı ve Dışa Aktarma İzinleri**: Sohbetleri kimin paylaşabileceği veya dışa aktarabileceği üzerinde gelişmiş kontrolün keyfini çıkarın, ekip ve kurumsal ayarlarda daha sıkı yönetişim ve gizlilik sağlayın.
+- 🛑 **Kullanıcı Rolü Değişikliği Onay Diyaloğu**: Kullanıcı rollerini güncellemeden önce gerekli bir onay adımıyla kazara ayrıcalık değişikliklerini azaltın—güvenliği artırın ve ekip yönetiminde maliyetli hataları önleyin.
+- 🚨 **Başarısız Giriş Denemeleri için Denetim Günlüğü**: Denetim izinde başarısız kimlik doğrulamanın ayrıntılı günlükleriyle yetkisiz erişim denemelerini hızla tespit edin veya kullanıcı giriş sorunlarını giderin.
+- 💡 **Sohbetler için Özel 'Başlık Oluştur' Düğmesi**: Her konuşmayı hızla düzenleyin—AI'nın tüm sohbetleriniz için ilgili, net başlıklar oluşturmasına izin vermek için yeni düğmeye dokunun, zamandan tasarruf edin ve dağınıklığı azaltın.
+- 💬 **Bildirim Sesi Her Zaman Açık Seçeneği**: Sesli uyarıları her zaman çalacak şekilde ayarlayarak bildirimlerinizin kontrolünü ele alın—yoğun ortamlarda önemli güncellemelerin üstesinden gelmenize yardımcı olur.
+- 🆔 **S3 Dosya Etiketleme Desteği**: S3'e yüklenen dosyalar, daha iyi organizasyon, arama ve dosya yönetimi politikalarınızla entegrasyon için etiketler içerir.
+- 🛡️ **OAuth Engellenen Gruplar Desteği**: Belirli OAuth gruplarını açıkça engelleyerek grup tabanlı erişim üzerinde daha fazla kontrol sahibi olun—karmaşık kimlik veya güvenlik gereksinimleri için idealdir.
+- 🚀 **Optimize Edilmiş Daha Hızlı Web Araması ve Çoklu İş Parçacıklı Sorgular**: Yenilenmiş çoklu iş parçacıklı arama ile önemli ölçüde daha hızlı web araması ve RAG (retrieval augmented generation) deneyiminin tadını çıkarın—daha zengin, daha doğru sonuçları daha kısa sürede elde edin.
+- 🔍 **Tüm Bilgi Paralel Araması**: Tüm bilgi tabanınızdaki aramalar artık hibrit olmayan modda bile paralel olarak gerçekleşir, yanıtları hızlandırır ve her soru için bilgi doğruluğunu artırır.
+- 🌐 **Yeni Firecrawl ve Yacy Web Arama Entegrasyonları**: İki yeni gelişmiş arama motoruyla bilgi dünyanızı genişletin—daha derin web içgörüsü için Firecrawl ve merkezi olmayan, gizlilik dostu arama yetenekleri için Yacy.
+- 🧠 **Yapılandırılabilir Docling OCR Motoru ve Dili**: Daha akıllı, daha özel belge çıkarma ve RAG iş akışları için Docling OCR motorunu ve desteklenen dilleri ortam değişkenleriyle ince ayar yapın.
+- 🗝️ **Gelişmiş Sentence Transformers Yapılandırması**: Sentence Transformers'ın daha kolay kurulumu ve gelişmiş özelleştirmesi için yeni ortam değişkenleri eklendi—embedding ihtiyaçlarınız için en uygun uyumu sağlar.
+- 🌲 **Pinecone Vektör Veritabanı Entegrasyonu**: Kurumsal ölçekte bilgiyi dizine ekleyin, arayın ve yönetin, Pinecone'u vektör veritabanınız olarak tam yerel destekle—en büyük belge kümelerini bile zahmetsizce yönetin.
+- 🔄 **Araçlar ve Fonksiyonlar için Otomatik Gereksinim Kurulumu**: Yeniden başlatmada kaybolan bağımlılıklar hakkında asla endişelenmeyin—harici fonksiyon ve araç gereksinimleri artık başlangıçta otomatik olarak kurulur, araçların her zaman "sadece çalışmasını" sağlar.
+- 🔒 **Token Süresi Dolduğunda Otomatik Oturum Kapatma**: Güvenlik daha akıllı—kullanıcılar kimlik doğrulama token'ları süresi dolarsa otomatik olarak oturumu kapatılır, hassas içeriği korur ve kesinti olmadan uyumluluğu sağlar.
+- 🎬 **Otomatik YouTube Gömme Algılama**: YouTube bağlantılarını yapıştırın ve anında sohbet içi video gömümleri görün—artık manuel gömme yok, bilgi paylaşımını ve medya tüketimini her ekip için daha da kolaylaştırır.
+- 🔄 **Genişletilmiş Dil ve Yerel Destek**: Danca, Fransızca, Rusça, Geleneksel Çince, Basitleştirilmiş Çince, Tayca, Katalanca, Almanca ve Korece çevirileri yükseltildi, platform genelinde daha sorunsuz, daha doğal kullanıcı deneyimleri sunar.
 
-### Fixed
+### Düzeltildi
 
-- 🔒 **Tighter HTML Token Security**: HTML rendering is now restricted to admin-uploaded tokens only, reducing any risk of XSS and keeping your data safe.
-- 🔐 **Refined HTML Security and Token Handling**: Further hardened how HTML tokens and content are handled, guaranteeing even stronger resistance to security vulnerabilities and attacks.
-- 🔏 **Correct Model Usage with Ollama Proxy Prefixes**: Enhanced model reference handling so proxied models in Ollama always download and run correctly—even when using custom prefixes.
-- 📥 **Video File Upload Handling**: Prevented video files from being misclassified as text, fixing bugs with uploads and ensuring media files work as expected.
-- 🔄 **No More Dependent WebSocket Sequential Delays**: Streamlined WebSocket operation to prevent delays and maintain snappy real-time collaboration, especially in multi-user environments.
-- 🛠️ **More Robust Action Module Execution**: Multiple actions in a module now trigger as designed, increasing automation and scripting flexibility.
-- 📧 **Notification Webhooks**: Ensured that notification webhooks are always sent for user events, even when the user isn’t currently active.
-- 🗂️ **Smarter Knowledge Base Reindexing**: Knowledge reindexing continues even when corrupt or missing collections are encountered, keeping your search features running reliably.
-- 🏷️ **User Import with Profile Images**: When importing users, their profile images now come along—making onboarding and collaboration visually clearer from day one.
-- 💬 **OpenAI o-Series Universal Support**: All OpenAI o-series models are now seamlessly recognized and supported, unlocking more advanced capabilities and model choices for every workflow.
+- 🔒 **Daha Sıkı HTML Token Güvenliği**: HTML oluşturma artık yalnızca yönetici tarafından yüklenen token'larla kısıtlanmıştır, XSS riskini azaltır ve verilerinizin güvenliğini sağlar.
+- 🔐 **Geliştirilmiş HTML Güvenliği ve Token Yönetimi**: HTML token'larının ve içeriğinin nasıl işlendiği daha da güçlendirildi, güvenlik açıklarına ve saldırılara karşı daha da güçlü bir direnç garanti edildi.
+- 🔏 **Ollama Proxy Ön Ekleriyle Doğru Model Kullanımı**: Ollama'da proxy'li modellerin her zaman doğru bir şekilde indirilmesini ve çalıştırılmasını sağlayarak geliştirilmiş model referansı işleme—özel ön ekler kullanıldığında bile.
+- 📥 **Video Dosya Yükleme İşlemi**: Video dosyalarının yanlışlıkla metin olarak sınıflandırılması önlendi, yüklemelerdeki hatalar düzeltildi ve medya dosyalarının beklendiği gibi çalışması sağlandı.
+- 🔄 **Artık Bağımlı WebSocket Sıralı Gecikmeleri Yok**: Özellikle çok kullanıcılı ortamlarda gecikmeleri önlemek ve hızlı gerçek zamanlı işbirliğini sürdürmek için WebSocket işlemi kolaylaştırıldı.
+- 🛠️ **Daha Sağlam Eylem Modülü Yürütmesi**: Bir modüldeki birden fazla eylem artık tasarlandığı gibi tetikleniyor, otomasyonu ve betikleme esnekliğini artırıyor.
+- 📧 **Bildirim Webhook'ları**: Kullanıcı etkin olmasa bile kullanıcı olayları için bildirim webhook'larının her zaman gönderilmesi sağlandı.
+- 🗂️ **Daha Akıllı Bilgi Tabanı Yeniden Dizinleme**: Bilgi yeniden dizinleme, bozuk veya eksik koleksiyonlar karşılaşıldığında bile devam eder, arama özelliklerinizin güvenilir bir şekilde çalışmasını sağlar.
+- 🏷️ **Profil Resimli Kullanıcı İçe Aktarma**: Kullanıcılar içe aktarılırken, profil resimleri de beraberinde gelir—ilk günden itibaren onboarding ve işbirliğini görsel olarak daha net hale getirir.
+- 💬 **OpenAI o-Serisi Evrensel Desteği**: Tüm OpenAI o-serisi modelleri artık sorunsuz bir şekilde tanınır ve desteklenir, her iş akışı için daha gelişmiş yetenekler ve model seçenekleri sunar.
 
-### Changed
+### Değiştirildi
 
-- 📜 **Custom License Update & Contributor Agreement**: Open WebUI now operates under a custom license with Contributor License Agreement required by default—see https://docs.openwebui.com/license/ for details, ensuring sustainable open innovation for the community.
-- 🔨 **CUDA Docker Images Updated to 12.8**: Upgraded CUDA image support for faster, more compatible model inference and futureproof GPU performance in your AI infrastructure.
-- 🧱 **General Backend Refactoring for Reliability**: Continuous stability improvements streamline backend logic, reduce errors, and lay a stronger foundation for the next wave of feature releases—all under the hood for a more dependable WebUI.
+- 📜 **Özel Lisans Güncellemesi ve Katılımcı Anlaşması**: Open WebUI artık varsayılan olarak Katılımcı Lisans Anlaşması gerektiren özel bir lisans altında çalışmaktadır—ayrıntılar için https://docs.openwebui.com/license/ adresine bakın, topluluk için sürdürülebilir açık inovasyon sağlıyor.
+- 🔨 **CUDA Docker Images 12.8'e Güncellendi**: AI altyapınızda daha hızlı, daha uyumlu model çıkarımı ve geleceğe dönük GPU performansı için CUDA görüntü desteği yükseltildi.
+- 🧱 **Güvenilirlik için Genel Backend Yeniden Yapılandırması**: Sürekli kararlılık iyileştirmeleri backend mantığını kolaylaştırır, hataları azaltır ve yeni özellik sürümlerinin bir sonraki dalgası için daha güçlü bir temel oluşturur—daha güvenilir bir WebUI için her şey arka planda.
 
 ## [0.6.5] - 2025-04-14
 
-### Added
+### Eklendi
 
-- 🛂 **Granular Voice Feature Permissions Per User Group**: Admins can now separately manage access to Speech-to-Text (record voice), Text-to-Speech (read aloud), and Tool Calls for each user group—giving teams tighter control over voice features and enhanced governance across roles.
-- 🗣️ **Toggle Voice Activity Detection (VAD) for Whisper STT**: New environment variable lets you enable/disable VAD filtering with built-in Whisper speech-to-text, giving you flexibility to optimize for different audio quality and response accuracy levels.
-- 📋 **Copy Formatted Response Mode**: You can now enable “Copy Formatted” in Settings > Interface to copy AI responses exactly as styled (with rich formatting, links, and structure preserved), making it faster and cleaner to paste into documents, emails, or reports.
-- ⚙️ **Backend Stability and Performance Enhancements**: General backend refactoring improves system resilience, consistency, and overall reliability—offering smoother performance across workflows whether chatting, generating media, or using external tools.
-- 🌎 **Translation Refinements Across Multiple Languages**: Updated translations deliver smoother language localization, clearer labels, and improved international usability throughout the UI—ensuring a better experience for non-English speakers.
+- 🛂 **Kullanıcı Grubuna Göre Ayrıntılı Ses Özelliği İzinleri**: Yöneticiler artık her kullanıcı grubu için Speech-to-Text (ses kaydı), Text-to-Speech (yüksek sesle okuma) ve Tool Calls erişimini ayrı ayrı yönetebilir—ekiplere ses özellikleri üzerinde daha sıkı kontrol ve roller arasında gelişmiş yönetişim sağlar.
+- 🗣️ **Whisper STT için Ses Etkinliği Algılama (VAD) Geçiş Anahtarı**: Yeni ortam değişkeni, yerleşik Whisper speech-to-text ile VAD filtrelemesini etkinleştirmenize/devre dışı bırakmanıza olanak tanır, farklı ses kalitesi ve yanıt doğruluğu seviyeleri için optimizasyon esnekliği sağlar.
+- 📋 **Biçimlendirilmiş Yanıt Modunu Kopyala**: Artık Ayarlar > Arayüz'den "Biçimlendirilmiş Kopyala"yı etkinleştirebilirsiniz, böylece AI yanıtlarını stilize edildiği gibi (zengin biçimlendirme, bağlantılar ve yapı korunarak) kopyalayabilir, belgelere, e-postalara veya raporlara daha hızlı ve temiz bir şekilde yapıştırabilirsiniz.
+- ⚙️ **Backend Kararlılığı ve Performans Geliştirmeleri**: Genel backend yeniden yapılandırması sistemin dayanıklılığını, tutarlılığını ve genel güvenilirliğini artırır—sohbet ederken, medya oluştururken veya harici araçları kullanırken iş akışları genelinde daha sorunsuz performans sunar.
+- 🌎 **Birden Fazla Dilde Çeviri İyileştirmeleri**: Güncellenmiş çeviriler, daha sorunsuz dil yerelleştirmesi, daha net etiketler ve UI genelinde geliştirilmiş uluslararası kullanılabilirlik sağlar—İngilizce konuşmayanlar için daha iyi bir deneyim sağlar.
 
-### Fixed
+### Düzeltildi
 
-- 🛠️ **LDAP Login Reliability Restored**: Resolved a critical issue where some LDAP setups failed due to attribute parsing—ensuring consistent, secure, and seamless user authentication across enterprise deployments.
-- 🖼️ **Image Generation in Temporary Chats Now Works Properly**: Fixed a bug where image outputs weren’t generated during temporary chats—visual content can now be used reliably in all chat modes without interruptions.
+- 🛠️ **LDAP Giriş Güvenilirliği Geri Getirildi**: Bazı LDAP kurulumlarının öznitelik ayrıştırma nedeniyle başarısız olmasına neden olan kritik bir sorun çözüldü—kurumsal dağıtımlar genelinde tutarlı, güvenli ve sorunsuz kullanıcı kimlik doğrulaması sağlanır.
+- 🖼️ **Geçici Sohbetlerde Resim Oluşturma Artık Doğru Çalışıyor**: Geçici sohbetler sırasında görüntü çıktılarının oluşturulmaması hatası düzeltildi—görsel içerik artık tüm sohbet modlarında kesintisiz olarak güvenilir bir şekilde kullanılabilir.
 
 ## [0.6.4] - 2025-04-12
 
-### Fixed
+### Düzeltildi
 
-- 🛠️ **RAG_TEMPLATE Display Issue Resolved**: Fixed a formatting problem where the custom RAG_TEMPLATE wasn't correctly rendered in the interface—ensuring that custom retrieval prompts now appear exactly as intended for more reliable prompt engineering.
+- 🛠️ **RAG_TEMPLATE Görüntüleme Sorunu Çözüldü**: Özel RAG_TEMPLATE'nin arayüzde doğru bir şekilde oluşturulmamasıyla ilgili bir biçimlendirme sorunu düzeltildi—böylece özel retrieval prompt'ları artık amaçlandığı gibi görünür ve daha güvenilir prompt mühendisliği sağlar.
 
 ## [0.6.3] - 2025-04-12
 
-### Added
+### Eklendi
 
-- 🧪 **Auto-Artifact Detection Toggle**: Automatically detects artifacts in results—but now you can disable this behavior under advanced settings for full control.
-- 🖼️ **Widescreen Mode for Shared Chats**: Shared link conversations now support widescreen layouts—perfect for presentations or easier review across wider displays.
-- 🔁 **Reindex Knowledge Files on Demand**: Admins can now trigger reindexing of all knowledge files after changing embeddings—ensuring immediate alignment with new models for optimal RAG performance.
-- 📄 **OpenAPI YAML Format Support**: External tools can now use YAML-format OpenAPI specs—making integration simpler for developers familiar with YAML-based configurations.
-- 💬 **Message Content Copy Behavior**: Copy action now excludes 'details' tags—streamlining clipboard content when sharing or pasting summaries elsewhere.
-- 🧭 **Sougou Web Search Integration**: New search engine option added—enhancing global relevance and diversity of search sources for multilingual users.
-- 🧰 **Frontend Web Loader Engine Configuration**: Admins can now set preferred web loader engine for RAG workflows directly from the frontend—offering more control across setups.
-- 👥 **Multi-Model Chat Permission Control**: Admins can manage access to multi-model chats per user group—allowing tighter governance in team environments.
-- 🧱 **Persistent Configuration Can Be Disabled**: New environment variable lets advanced users and hosts turn off persistent configs—ideal for volatile or stateless deployments.
-- 🧠 **Elixir Code Highlighting Support**: Elixir syntax is now beautifully rendered in code blocks—perfect for developers using this language in AI or automation projects.
-- 🌐 **PWA External Manifest URL Support**: You can now define an external manifest.json—integrate Open WebUI seamlessly in managed or proxy-based PWA environments like Cloudflare Zero Trust.
-- 🧪 **Azure AI Speech-to-Text Provider Integration**: Easily transcribe large audio files (up to 200MB) with high accuracy using Microsoft's Azure STT—fully configurable in Audio Settings.
-- 🔏 **PKCE (Code Challenge Method) Support for OIDC**: Enhance your OIDC login security with Proof Key for Code Exchange—ideal for zero-trust and native client apps.
-- ✨ **General UI/UX Enhancements**: Numerous refinements across layout, styling, and tool interactions—reducing visual noise and improving overall usability across key workflows.
-- 🌍 **Translation Updates Across Multiple Languages**: Refined Catalan, Russian, Chinese (Simplified & Traditional), Hungarian, and Spanish translations for clearer navigation and instructions globally.
+- 🧪 **Otomatik Artifact Algılama Geçiş Anahtarı**: Sonuçlardaki artifact'leri otomatik olarak algılar—ancak artık tam kontrol için gelişmiş ayarlardan bu davranışı devre dışı bırakabilirsiniz.
+- 🖼️ **Paylaşılan Sohbetler için Geniş Ekran Modu**: Paylaşılan bağlantı konuşmaları artık geniş ekran düzenlerini destekliyor—sunumlar veya daha geniş ekranlarda daha kolay inceleme için mükemmel.
+- 🔁 **Bilgi Dosyalarını İsteğe Bağlı Olarak Yeniden Dizinleme**: Yöneticiler artık embedding'leri değiştirdikten sonra tüm bilgi dosyalarının yeniden dizinlenmesini tetikleyebilir—optimum RAG performansı için yeni modellerle anında hizalamayı sağlar.
+- 📄 **OpenAPI YAML Format Desteği**: Harici araçlar artık YAML formatlı OpenAPI spec'lerini kullanabilir—YAML tabanlı yapılandırmalara aşina olan geliştiriciler için entegrasyonu basitleştirir.
+- 💬 **Mesaj İçeriği Kopyalama Davranışı**: Kopyalama eylemi artık 'details' etiketlerini dışarıda bırakır—başka yerlere özetleri paylaşırken veya yapıştırırken pano içeriğini kolaylaştırır.
+- 🧭 **Sougou Web Arama Entegrasyonu**: Yeni arama motoru seçeneği eklendi—çok dilli kullanıcılar için küresel alaka düzeyini ve arama kaynaklarının çeşitliliğini artırıyor.
+- 🧰 **Frontend Web Loader Engine Yapılandırması**: Yöneticiler artık RAG iş akışları için tercih edilen web loader engine'i doğrudan frontend'den ayarlayabilir—kurulumlar genelinde daha fazla kontrol sağlar.
+- 👥 **Çok Modelli Sohbet İzin Kontrolü**: Yöneticiler, kullanıcı grubuna göre çok modelli sohbetlere erişimi yönetebilir—ekip ortamlarında daha sıkı yönetişim sağlar.
+- 🧱 **Kalıcı Yapılandırma Devre Dışı Bırakılabilir**: Yeni ortam değişkeni, gelişmiş kullanıcıların ve sunucuların kalıcı yapılandırmaları kapatmasına olanak tanır—değişken veya durumsuz dağıtımlar için idealdir.
+- 🧠 **Elixir Kod Vurgulama Desteği**: Elixir sözdizimi artık kod bloklarında güzelce işleniyor—AI veya otomasyon projelerinde bu dili kullanan geliştiriciler için mükemmel.
+- 🌐 **PWA Harici Manifest URL Desteği**: Artık harici bir manifest.json tanımlayabilirsiniz—Open WebUI'yi Cloudflare Zero Trust gibi yönetilen veya proxy tabanlı PWA ortamlarında sorunsuz bir şekilde entegre edin.
+- 🧪 **Azure AI Speech-to-Text Sağlayıcı Entegrasyonu**: Microsoft'un Azure STT'sini kullanarak büyük ses dosyalarını (200 MB'a kadar) yüksek doğrulukla kolayca transkript edin—Ses Ayarlarında tamamen yapılandırılabilir.
+- 🔏 **OIDC için PKCE (Code Challenge Method) Desteği**: Zero-trust ve yerel istemci uygulamaları için ideal olan Proof Key for Code Exchange ile OIDC giriş güvenliğinizi artırın.
+- ✨ **Genel UI/UX Geliştirmeleri**: Düzen, stil ve araç etkileşimlerinde sayısız iyileştirme—görsel gürültüyü azaltır ve temel iş akışları genelinde genel kullanılabilirliği artırır.
+- 🌍 **Birden Fazla Dilde Çeviri Güncellemeleri**: Katalanca, Rusça, Çince (Basitleştirilmiş ve Geleneksel), Macarca ve İspanyolca çevirileri daha net gezinme ve talimatlar için iyileştirildi.
 
-### Fixed
+### Düzeltildi
 
-- 💥 **Chat Completion Error with Missing Models Resolved**: Fixed internal server error when referencing a model that doesn’t exist—ensuring graceful fallback and clear error guidance.
-- 🔧 **Correct Knowledge Base Citations Restored**: Citations generated by RAG workflows now show accurate references—ensuring verifiability in outputs from sourced content.
-- 🎙️ **Broken OGG/WebM Audio Upload Handling for OpenAI Fixed**: Uploading OGG or WebM files now converts properly to WAV before transcription—restoring accurate AI speech recognition workflows.
-- 🔐 **Tool Server 'Session' Authentication Restored**: Previously broken session auth on external tool servers is now fully functional—ensuring secure and seamless access to connected tools.
-- 🌐 **Folder-Based Chat Rename Now Updates Correctly**: Renaming chats in folders now reflects instantly everywhere—improving chat organization and clarity.
-- 📜 **KaTeX Overflow Displays Fixed**: Math expressions now stay neatly within message bounds—preserving layout consistency even with long formulas.
-- 🚫 **Stopping Ongoing Chat Fixed**: You can now return to an active (ongoing) chat and stop generation at any time—ensuring full control over sessions.
-- 🔧 **TOOL_SERVERS / TOOL_SERVER_CONNECTIONS Indexing Issue Fixed**: Fixed a mismatch between tool lists and their access paths—restoring full function and preventing confusion in tool management.
-- 🔐 **LDAP Login Handles Multiple Emails**: When LDAP returns multiple email attributes, the first valid one is now used—ensuring login success and account consistency.
-- 🧩 **Model Visibility Toggle Fix**: Toggling model visibility now works even for untouched models—letting admins smoothly manage user access across base models.
-- ⚙️ **Cross-Origin manifest.json Now Loads Properly**: Compatibility issues with Cloudflare Zero Trust (and others) resolved, allowing manifest.json to load behind authenticated proxies.
+- 💥 **Eksik Modellerle Sohbet Tamamlama Hatası Çözüldü**: Mevcut olmayan bir modele başvurulduğunda dahili sunucu hatası düzeltildi—zarif bir yedek ve açık hata rehberliği sağlar.
+- 🔧 **Doğru Bilgi Tabanı Atıfları Geri Getirildi**: RAG iş akışları tarafından oluşturulan atıflar artık doğru referansları gösteriyor—kaynaklı içerikten çıkan çıktılarda doğrulanabilirliği sağlıyor.
+- 🎙️ **Bozuk OGG/WebM Ses Yükleme İşlemi OpenAI için Düzeltildi**: OGG veya WebM dosyalarının yüklenmesi artık transkripsiyondan önce düzgün bir şekilde WAV'ye dönüştürülüyor—doğru AI konuşma tanıma iş akışlarını geri getiriyor.
+- 🔐 **Araç Sunucusu 'Oturum' Kimlik Doğrulaması Geri Getirildi**: Daha önce bozuk olan harici araç sunucularındaki oturum kimlik doğrulaması artık tamamen işlevseldir—bağlı araçlara güvenli ve sorunsuz erişim sağlar.
+- 🌐 **Klasör Tabanlı Sohbet Yeniden Adlandırma Artık Doğru Güncelleniyor**: Klasörlerdeki sohbetleri yeniden adlandırmak artık her yerde anında yansır—sohbet organizasyonunu ve netliğini iyileştirir.
+- 📜 **KaTeX Taşma Görüntüleri Düzeltildi**: Matematik ifadeleri artık mesaj sınırları içinde düzenli bir şekilde kalır—uzun formüllerle bile düzen tutarlılığını korur.
+- 🚫 **Devam Eden Sohbet Durdurma Düzeltildi**: Artık aktif (devam eden) bir sohbete geri dönebilir ve üretimi istediğiniz zaman durdurabilirsiniz—oturumlar üzerinde tam kontrol sağlar.
+- 🔧 **TOOL_SERVERS / TOOL_SERVER_CONNECTIONS Dizinleme Sorunu Düzeltildi**: Araç listeleri ve erişim yolları arasındaki bir uyuşmazlık düzeltildi—tam işlevselliği geri getirdi ve araç yönetiminde kafa karışıklığını önledi.
+- 🔐 **LDAP Girişi Birden Fazla E-postayı İşliyor**: LDAP birden fazla e-posta özniteliği döndürdüğünde, artık ilk geçerli olan kullanılır—giriş başarısı ve hesap tutarlılığı sağlar.
+- 🧩 **Model Görünürlüğü Geçiş Anahtarı Düzeltmesi**: Model görünürlüğünü değiştirmek, dokunulmamış modeller için bile çalışır—admin'lerin temel modeller arasında kullanıcı erişimini sorunsuz bir şekilde yönetmesine olanak tanır.
+- ⚙️ **Çapraz Kaynak manifest.json Artık Düzgün Yükleniyor**: Cloudflare Zero Trust (ve diğerleri) ile uyumluluk sorunları çözüldü, manifest.json'ın kimliği doğrulanmış proxy'lerin arkasından yüklenmesine izin verir.
 
-### Changed
+### Değiştirildi
 
-- 🔒 **Default Access Scopes Set to Private for All Resources**: Models, tools, and knowledge are now private by default when created—ensuring better baseline security and visibility controls.
-- 🧱 **General Backend Refactoring for Stability**: Numerous invisible improvements enhance backend scalability, security, and maintainability—powering upcoming features with a stronger foundation.
-- 🧩 **Stable Dependency Upgrades**: Updated key platform libraries—Chromadb (0.6.3), pgvector (0.4.0), Azure Identity (1.21.0), and Youtube Transcript API (1.0.3)—for improved compatibility, functionality, and security.
+- 🔒 **Tüm Kaynaklar için Varsayılan Erişim Kapsamları Özel Olarak Ayarlandı**: Modeller, araçlar ve bilgi tabanları artık varsayılan olarak oluşturulduğunda özeldir—daha iyi temel güvenlik ve görünürlük kontrolleri sağlar.
+- 🧱 **Kararlılık için Genel Backend Yeniden Yapılandırması**: Sayısız görünmez iyileştirme, backend ölçeklenebilirliğini, güvenliğini ve sürdürülebilirliğini artırır—daha güçlü bir temel ile gelecek özellikleri güçlendirir.
+- 🧩 **Kararlı Bağımlılık Yükseltmeleri**: Temel platform kütüphaneleri—Chromadb (0.6.3), pgvector (0.4.0), Azure Identity (1.21.0) ve Youtube Transcript API (1.0.3)—geliştirilmiş uyumluluk, işlevsellik ve güvenlik için güncellendi.
 
 ## [0.6.2] - 2025-04-06
 
-### Added
+### Eklendi
 
-- 🌍 **Improved Global Language Support**: Expanded and refined translations across multiple languages to enhance clarity and consistency for international users.
+- 🌍 **Geliştirilmiş Küresel Dil Desteği**: Uluslararası kullanıcılar için netliği ve tutarlılığı artırmak amacıyla birden fazla dilde genişletilmiş ve iyileştirilmiş çeviriler.
 
-### Fixed
+### Düzeltildi
 
-- 🛠️ **Accurate Tool Descriptions from OpenAPI Servers**: External tools now use full endpoint descriptions instead of summaries when generating tool specifications—helping AI models understand tool purpose more precisely and choose the right tool more accurately in tool workflows.
-- 🔧 **Precise Web Results Source Attribution**: Fixed a key issue where all web search results showed the same source ID—now each result gets its correct and distinct source, ensuring accurate citations and traceability.
-- 🔍 **Clean Web Search Retrieval**: Web search now retains only results from URLs where real content was successfully fetched—improving accuracy and removing empty or broken links from citations.
-- 🎵 **Audio File Upload Response Restored**: Resolved an issue where uploading audio files did not return valid responses, restoring smooth file handling for transcription and audio-based workflows.
+- 🛠️ **OpenAPI Sunucularından Doğru Araç Açıklamaları**: Harici araçlar, araç spesifikasyonlarını oluştururken özetler yerine tam endpoint açıklamalarını kullanır—AI modellerinin araç amacını daha hassas bir şekilde anlamasına ve araç iş akışlarında doğru aracı daha doğru bir şekilde seçmesine yardımcı olur.
+- 🔧 **Kesin Web Sonuçları Kaynak Atfı**: Tüm web arama sonuçlarının aynı kaynak ID'sini gösterdiği kritik bir sorun düzeltildi—artık her sonuç kendi doğru ve farklı kaynağını alır, doğru atıflar ve izlenebilirlik sağlar.
+- 🔍 **Temiz Web Arama Alımı**: Web araması artık yalnızca gerçek içeriğin başarıyla alındığı URL'lerden sonuçları tutar—doğruluğu artırır ve alıntılardan boş veya bozuk bağlantıları kaldırır.
+- 🎵 **Ses Dosyası Yükleme Yanıtı Geri Getirildi**: Ses dosyalarını yüklerken geçerli yanıtların dönmemesi sorunu çözüldü, transkripsiyon ve ses tabanlı iş akışları için sorunsuz dosya yönetimini geri getirdi.
 
-### Changed
+### Değiştirildi
 
-- 🧰 **General Backend Refactoring**: Multiple behind-the-scenes improvements streamline backend performance, reduce complexity, and ensure a more stable, maintainable system overall—making everything smoother without changing your workflow.
+- 🧰 **Genel Backend Yeniden Yapılandırması**: Birden fazla perde arkası iyileştirme, backend performansını kolaylaştırır, karmaşıklığı azaltır ve genel olarak daha kararlı, sürdürülebilir bir sistem sağlar—iş akışınızı değiştirmeden her şeyi daha sorunsuz hale getirir.
 
 ## [0.6.1] - 2025-04-05
 
-### Added
+### Eklendi
 
-- 🛠️ **Global Tool Servers Configuration**: Admins can now centrally configure global external tool servers from Admin Settings > Tools, allowing seamless sharing of tool integrations across all users without manual setup per user.
-- 🔐 **Direct Tool Usage Permission for Users**: Introduced a new user-level permission toggle that grants non-admin users access to direct external tools, empowering broader team collaboration while maintaining control.
-- 🧠 **Mistral OCR Content Extraction Support**: Added native support for Mistral OCR as a high-accuracy document loader, drastically improving text extraction from scanned documents in RAG workflows.
-- 🖼️ **Tools Indicator UI Redesign**: Enhanced message input now smartly displays both built-in and external tools via a unified dropdown, making it simpler and more intuitive to activate tools during conversations.
-- 📄 **RAG Prompt Improved and More Coherent**: Default RAG system prompt has been revised to be more clear and citation-focused—admins can leave the template field empty to use this new gold-standard prompt.
-- 🧰 **Performance & Developer Improvements**: Major internal restructuring of several tool-related components, simplifying styling and merging external/internal handling logic, resulting in better maintainability and performance.
-- 🌍 **Improved Translations**: Updated translations for Tibetan, Polish, Chinese (Simplified & Traditional), Arabic, Russian, Ukrainian, Dutch, Finnish, and French to improve clarity and consistency across the interface.
+- 🛠️ **Global Araç Sunucuları Yapılandırması**: Yöneticiler artık Admin Ayarları > Araçlar'dan global harici araç sunucularını merkezi olarak yapılandırabilir, bu da kullanıcı başına manuel kuruluma gerek kalmadan araç entegrasyonlarının tüm kullanıcılar arasında sorunsuz bir şekilde paylaşılmasına olanak tanır.
+- 🔐 **Kullanıcılar için Doğrudan Araç Kullanım İzni**: Admin olmayan kullanıcılara doğrudan harici araçlara erişim izni veren yeni bir kullanıcı düzeyinde izin geçiş anahtarı tanıtıldı, daha geniş ekip işbirliğini güçlendirirken kontrolü sürdürür.
+- 🧠 **Mistral OCR İçerik Çıkarma Desteği**: Yüksek doğruluklu bir belge yükleyici olarak Mistral OCR için yerel destek eklendi, RAG iş akışlarında taranmış belgelerden metin çıkarmayı önemli ölçüde iyileştirdi.
+- 🖼️ **Araçlar Göstergesi UI Yeniden Tasarımı**: Mesaj girişi, hem yerleşik hem de harici araçları birleşik bir açılır menü aracılığıyla akıllıca görüntüler, bu da konuşmalar sırasında araçları etkinleştirmeyi daha basit ve sezgisel hale getirir.
+- 📄 **RAG Prompt'u Geliştirildi ve Daha Tutarlı**: Varsayılan RAG sistem prompt'u daha net ve alıntı odaklı olacak şekilde revize edildi—yöneticiler, bu yeni altın standart prompt'u kullanmak için şablon alanını boş bırakabilirler.
+- 🧰 **Performans ve Geliştirici İyileştirmeleri**: Stilizasyonu basitleştiren ve harici/dahili işleme mantığını birleştiren, daha iyi sürdürülebilirlik ve performans sağlayan birkaç araçla ilgili bileşenin büyük dahili yeniden yapılandırması.
+- 🌍 **Geliştirilmiş Çeviriler**: Tibetçe, Lehçe, Çince (Basitleştirilmiş ve Geleneksel), Arapça, Rusça, Ukraynaca, Felemenkçe, Fince ve Fransızca için güncellenmiş çeviriler, arayüz genelinde netliği ve tutarlılığı artırmak için.
 
-### Fixed
+### Düzeltildi
 
-- 🔑 **External Tool Server API Key Bug Resolved**: Fixed a critical issue where authentication headers were not being sent when calling tools from external OpenAPI tool servers, ensuring full security and smooth tool operations.
-- 🚫 **Conditional Export Button Visibility**: UI now gracefully hides export buttons when there's nothing to export in models, prompts, tools, or functions, improving visual clarity and reducing confusion.
-- 🧪 **Hybrid Search Failure Recovery**: Resolved edge case in parallel hybrid search where empty or unindexed collections caused backend crashes—these are now cleanly skipped to ensure system stability.
-- 📂 **Admin Folder Deletion Fix**: Addressed an issue where folders created in the admin workspace couldn't be deleted, restoring full organizational flexibility for admins.
-- 🔐 **Improved Generic Error Feedback on Login**: Authentication errors now show simplified, non-revealing messages for privacy and improved UX, especially with federated logins.
-- 📝 **Tool Message with Images Improved**: Enhanced how tool-generated messages with image outputs are shown in chat, making them more readable and consistent with the overall UI design.
-- ⚙️ **Auto-Exclusion for Broken RAG Collections**: Auto-skips document collections that fail to fetch data or return "None", preventing silent errors and streamlining retrieval workflows.
-- 📝 **Docling Text File Handling Fix**: Fixed file parsing inconsistency that broke docling-based RAG functionality for certain plain text files, ensuring wider file compatibility.
+- 🔑 **Harici Araç Sunucusu API Anahtarı Hatası Çözüldü**: Harici OpenAPI araç sunucularından araçları çağırırken kimlik doğrulama başlıklarının gönderilmemesiyle ilgili kritik bir sorun düzeltildi, tam güvenlik ve sorunsuz araç işlemleri sağlandı.
+- 🚫 **Koşullu Dışa Aktar Butonu Görünürlüğü**: UI artık modellerde, prompt'larda, araçlarda veya fonksiyonlarda dışa aktarılacak hiçbir şey olmadığında dışa aktar butonlarını zarifçe gizler, görsel netliği iyileştirir ve kafa karışıklığını azaltır.
+- 🧪 **Hibrit Arama Hata Kurtarma**: Paralel hibrit aramada boş veya dizine eklenmemiş koleksiyonların backend çökmelerine neden olduğu uç durum düzeltildi—sistem kararlılığını sağlamak için bunlar artık temiz bir şekilde atlanır.
+- 📂 **Yönetici Klasörü Silme Düzeltmesi**: Yönetici çalışma alanında oluşturulan klasörlerin silinememesi sorunu giderildi, admin'ler için tam organizasyonel esnekliği geri getirdi.
+- 🔐 **Girişte Geliştirilmiş Genel Hata Geri Bildirimi**: Kimlik doğrulama hataları artık gizlilik ve geliştirilmiş UX için basitleştirilmiş, açıklayıcı olmayan mesajlar gösterir, özellikle birleşik girişlerde.
+- 📝 **Resimli Araç Mesajı İyileştirildi**: Sohbet içinde araç tarafından oluşturulan mesajların görüntü çıktılarının nasıl gösterildiği iyileştirildi, bunları daha okunabilir ve genel UI tasarımıyla tutarlı hale getirdi.
+- ⚙️ **Bozuk RAG Koleksiyonları için Otomatik Dışlama**: Veri getirmede başarısız olan veya "None" döndüren belge koleksiyonlarını otomatik olarak atlar, gizli hataları önler ve retrieval iş akışlarını kolaylaştırır.
+- 📝 **Docling Metin Dosyası İşleme Düzeltmesi**: Belirli düz metin dosyaları için docling tabanlı RAG işlevselliğini bozan dosya ayrıştırma tutarsızlığı düzeltildi, daha geniş dosya uyumluluğu sağlandı.
 
 ## [0.6.0] - 2025-03-31
 
-### Added
+### Eklendi
 
-- 🧩 **External Tool Server Support via OpenAPI**: Connect Open WebUI to any OpenAPI-compatible REST server instantly—offering immediate integration with thousands of developer tools, SDKs, and SaaS systems for powerful extensibility. Learn more: https://github.com/open-webui/openapi-servers
-- 🛠️ **MCP Server Support via MCPO**: You can now convert and expose your internal MCP tools as interoperable OpenAPI HTTP servers within Open WebUI for seamless, plug-n-play AI toolchain creation. Learn more: https://github.com/open-webui/mcpo
-- 📨 **/messages Chat API Endpoint Support**: For power users building external AI systems, new endpoints allow precise control of messages asynchronously—feed long-running external responses into Open WebUI chats without coupling with the frontend.
-- 📝 **Client-Side PDF Generation**: PDF exports are now generated fully client-side for drastically improved output quality—perfect for saving conversations or documents.
-- 💼 **Enforced Temporary Chats Mode**: Admins can now enforce temporary chat sessions by default to align with stringent data retention and compliance requirements.
-- 🌍 **Public Resource Sharing Permission Controls**: Fine-grained user group permissions now allow enabling/disabling public sharing for models, knowledge, prompts, and tools—ideal for privacy, team control, and internal deployments.
-- 📦 **Custom pip Options for Tools/Functions**: You can now specify custom pip installation options with "PIP_OPTIONS", "PIP_PACKAGE_INDEX_OPTIONS" environment variables—improving compatibility, support for private indexes, and better control over Python environments.
-- 🔢 **Editable Message Counter**: You can now double-click the message count number and jump straight to editing the index—quickly navigate complex chats or regenerate specific messages precisely.
-- 🧠 **Embedding Prefix Support Added**: Add custom prefixes to your embeddings for instruct-style tokens, enabling stronger model alignment and more consistent RAG performance.
-- 🙈 **Ability to Hide Base Models**: Optionally hide base models from the UI, helping users streamline model visibility and limit access to only usable endpoints..
-- 📚 **Docling Content Extraction Support**: Open WebUI now supports Docling as a content extraction engine, enabling smarter and more accurate parsing of complex file formats—ideal for advanced document understanding and Retrieval-Augmented Generation (RAG) workflows.
-- 🗃️ **Redis Sentinel Support Added**: Enhance deployment redundancy with support for Redis Sentinel for highly available, failover-safe Redis-based caching or pub/sub.
-- 📚 **JSON Schema Format for Ollama**: Added support for defining the format using JSON schema in Ollama-compatible models, improving flexibility and validation of model outputs.
-- 🔍 **Chat Sidebar Search "Clear” Button**: Quickly clear search filters in chat sidebar using the new ✖️ button—streamline your chat navigation with one click.
-- 🗂️ **Auto-Focus + Enter Submit for Folder Name**: When creating a new folder, the system automatically enters rename mode with name preselected—simplifying your org workflow.
-- 🧱 **Markdown Alerts Rendering**: Blockquotes with syntax hinting (e.g. ⚠️, ℹ️, ✅) now render styled Markdown alert banners, making messages and documentation more visually structured.
-- 🔁 **Hybrid Search Runs in Parallel Now**: Hybrid (BM25 + embedding) search components now run in parallel—dramatically reducing response times and speeding up document retrieval.
-- 📋 **Cleaner UI for Tool Call Display**: Optimized the visual layout of called tools inside chat messages for better clarity and reduced visual clutter.
-- 🧪 **Playwright Timeout Now Configurable**: Default timeout for Playwright processes is now shorter and adjustable via environment variables—making web scraping more robust and tunable to environments.
-- 📈 **OpenTelemetry Support for Observability**: Open WebUI now integrates with OpenTelemetry, allowing you to connect with tools like Grafana, Jaeger, or Prometheus for detailed performance insights and real-time visibility—entirely opt-in and fully self-hosted. Even if enabled, no data is ever sent to us, ensuring your privacy and ownership over all telemetry data.
-- 🛠 **General UI Enhancements & UX Polish**: Numerous refinements across sidebar, code blocks, modal interactions, button alignment, scrollbar visibility, and folder behavior improve overall fluidity and usability of the interface.
-- 🧱 **General Backend Refactoring**: Numerous backend components have been refactored to improve stability, maintainability, and performance—ensuring a more consistent and reliable system across all features.
-- 🌍 **Internationalization Language Support Updates**: Added Estonian and Galician languages, improved Spanish (fully revised), Traditional Chinese, Simplified Chinese, Turkish, Catalan, Ukrainian, and German for a more localized and inclusive interface.
+- 🧩 **OpenAPI Aracılığıyla Harici Araç Sunucusu Desteği**: Open WebUI'yi herhangi bir OpenAPI uyumlu REST sunucusuna anında bağlayın—güçlü genişletilebilirlik için binlerce geliştirici aracı, SDK ve SaaS sistemiyle anında entegrasyon sunar. Daha fazla bilgi için: https://github.com/open-webui/openapi-servers
+- 🛠️ **MCPO Aracılığıyla MCP Sunucu Desteği**: Artık dahili MCP araçlarınızı Open WebUI içinde birlikte çalışabilir OpenAPI HTTP sunucuları olarak dönüştürebilir ve gösterebilirsiniz, bu da sorunsuz, tak ve çalıştır AI araç zinciri oluşturmayı sağlar. Daha fazla bilgi için: https://github.com/open-webui/mcpo
+- 📨 **/messages Sohbet API Endpoint Desteği**: Harici AI sistemleri oluşturan ileri düzey kullanıcılar için, yeni endpoint'ler mesajların asenkron olarak hassas kontrolünü sağlar—uzun süreli harici yanıtları frontend ile bağlamadan Open WebUI sohbetlerine besleyin.
+- 📝 **Client-Side PDF Oluşturma**: PDF dışa aktarımları artık tamamen client-side'da oluşturulur ve çıktı kalitesini önemli ölçüde artırır—konuşmaları veya belgeleri kaydetmek için mükemmeldir.
+- 💼 **Zorunlu Geçici Sohbet Modu**: Yöneticiler artık katı veri saklama ve uyumluluk gereksinimleriyle uyum sağlamak için varsayılan olarak geçici sohbet oturumlarını zorunlu kılabilir.
+- 🌍 **Herkese Açık Kaynak Paylaşım İzin Kontrolleri**: İnce ayarlı kullanıcı grubu izinleri artık modeller, bilgi tabanları, prompt'lar ve araçlar için herkese açık paylaşımı etkinleştirmeye/devre dışı bırakmaya izin verir—gizlilik, ekip kontrolü ve dahili dağıtımlar için idealdir.
+- 📦 **Araçlar/Fonksiyonlar için Özel pip Seçenekleri**: Artık "PIP_OPTIONS", "PIP_PACKAGE_INDEX_OPTIONS" ortam değişkenleriyle özel pip kurulum seçenekleri belirleyebilirsiniz—uyumluluğu, özel indeksler için desteği ve Python ortamları üzerinde daha iyi kontrolü iyileştirir.
+- 🔢 **Düzenlenebilir Mesaj Sayacı**: Mesaj sayacı numarasını çift tıklayabilir ve doğrudan dizini düzenlemeye geçebilirsiniz—karmaşık sohbetlerde hızlıca gezinin veya belirli mesajları hassas bir şekilde yeniden oluşturun.
+- 🧠 **Embedding Ön Ek Desteği Eklendi**: Talimat tarzı token'lar için embedding'lerinize özel ön ekler ekleyin, daha güçlü model hizalaması ve daha tutarlı RAG performansı sağlar.
+- 🙈 **Temel Modelleri Gizleme Yeteneği**: İsteğe bağlı olarak temel modelleri UI'den gizleyin, kullanıcıların model görünürlüğünü kolaylaştırmasına ve yalnızca kullanılabilir endpoint'lere erişimi sınırlamasına yardımcı olur.
+- 📚 **Docling İçerik Çıkarma Desteği**: Open WebUI artık Docling'i bir içerik çıkarma motoru olarak destekliyor, karmaşık dosya formatlarının daha akıllı ve daha doğru ayrıştırmasını sağlıyor—gelişmiş belge anlama ve Retrieval-Augmented Generation (RAG) iş akışları için idealdir.
+- 🗃️ **Redis Sentinel Desteği Eklendi**: Yüksek kullanılabilirlikli, hata toleranslı Redis tabanlı önbellekleme veya pub/sub için Redis Sentinel desteği ile dağıtım yedekliliğini artırın.
+- 📚 **Ollama için JSON Schema Formatı**: Ollama uyumlu modellerde formatı JSON schema kullanarak tanımlama desteği eklendi, model çıktılarının esnekliğini ve doğrulanmasını iyileştiriyor.
+- 🔍 **Sohbet Kenar Çubuğu Arama "Temizle" Düğmesi**: Yeni ✖️ düğmesini kullanarak sohbet kenar çubuğundaki arama filtrelerini hızlıca temizleyin—tek tıklamayla sohbet gezinmenizi kolaylaştırın.
+- 🗂️ **Klasör Adı için Otomatik Odaklanma + Enter Gönderme**: Yeni bir klasör oluştururken, sistem otomatik olarak ad önceden seçilmiş şekilde yeniden adlandırma moduna girer—organizasyon iş akışınızı basitleştirir.
+- 🧱 **Markdown Uyarıları Oluşturma**: Sözdizimi ipuçları (örneğin ⚠️, ℹ️, ✅) içeren blok alıntılar, stilize edilmiş Markdown uyarı banner'ları oluşturur, mesajları ve belgeleri görsel olarak daha yapılandırılmış hale getirir.
+- 🔁 **Hibrit Arama Artık Paralel Çalışıyor**: Hibrit (BM25 + embedding) arama bileşenleri artık paralel çalışır—yanıt sürelerini önemli ölçüde azaltır ve belge alımını hızlandırır.
+- 📋 **Araç Çağrısı Görüntüsü için Daha Temiz UI**: Sohbet mesajları içinde çağrılan araçların görsel düzeni, daha iyi netlik ve azaltılmış görsel dağınıklık için optimize edildi.
+- 🧪 **Playwright Zaman Aşımı Artık Yapılandırılabilir**: Playwright süreçleri için varsayılan zaman aşımı artık daha kısa ve ortam değişkenleriyle ayarlanabilir—web kazımayı daha sağlam ve ortamlara göre ayarlanabilir hale getirir.
+- 📈 **Gözlemlenebilirlik için OpenTelemetry Desteği**: Open WebUI artık OpenTelemetry ile entegre olur, Grafana, Jaeger veya Prometheus gibi araçlarla bağlantı kurarak ayrıntılı performans içgörüleri ve gerçek zamanlı görünürlük elde etmenizi sağlar—tamamen isteğe bağlıdır ve tamamen kendi barındırdığınızdır. Etkinleştirilse bile, hiçbir veri bize gönderilmez, tüm telemetri verileri üzerindeki gizliliğiniz ve sahipliğiniz sağlanır.
+- 🛠 **Genel UI Geliştirmeleri ve UX İyileştirmeleri**: Kenar çubuğu, kod blokları, modal etkileşimleri, düğme hizalaması, kaydırma çubuğu görünürlüğü ve klasör davranışı genelinde sayısız iyileştirme, arayüzün genel akışkanlığını ve kullanılabilirliğini artırır.
+- 🧱 **Genel Backend Yeniden Yapılandırması**: Sayısız backend bileşeni, kararlılığı, sürdürülebilirliği ve performansı artırmak için yeniden yapılandırıldı—tüm özellikler genelinde daha tutarlı ve güvenilir bir sistem sağlar.
+- 🌍 **Uluslararasılaşma Dil Desteği Güncellemeleri**: Estonca ve Galiçyaca dilleri eklendi, İspanyolca (tamamen revize edildi), Geleneksel Çince, Basitleştirilmiş Çince, Türkçe, Katalanca, Ukraynaca ve Almanca daha yerelleştirilmiş ve kapsayıcı bir arayüz için iyileştirildi.
 
-### Fixed
+### Düzeltildi
 
-- 🧑‍💻 **Firefox Input Height Bug**: Text input in Firefox now maintains proper height, ensuring message boxes look consistent and behave predictably.
-- 🧾 **Tika Blank Line Bug**: PDFs processed with Apache Tika 3.1.0.0 no longer introduce excessive blank lines—improving RAG output quality and visual cleanliness.
-- 🧪 **CSV Loader Encoding Issues**: CSV files with unknown encodings now automatically detect character sets, resolving import errors in non-UTF-8 datasets.
-- ✅ **LDAP Auth Config Fix**: Path to certificate file is now optional for LDAP setups, fixing authentication trouble for users without preconfigured cert paths.
-- 📥 **File Deletion in Bypass Mode**: Resolved issue where files couldn’t be deleted from knowledge when “bypass embedding” mode was enabled.
-- 🧩 **Hybrid Search Result Sorting & Deduplication Fixed**: Fixed citation and sorting issues in RAG hybrid and reranker modes, ensuring retrieved documents are shown in correct order per score.
-- 🧷 **Model Export/Import Broken for a Single Model**: Fixed bug where individual models couldn’t be exported or re-imported, restoring full portability.
-- 📫 **Auth Redirect Fix**: Logged-in users are now routed properly without unnecessary login prompts when already authenticated.
+- 🧑‍💻 **Firefox Giriş Yüksekliği Hatası**: Firefox'taki metin girişi artık uygun yüksekliği korur, mesaj kutularının tutarlı görünmesini ve öngörülebilir şekilde davranmasını sağlar.
+- 🧾 **Tika Boş Satır Hatası**: Apache Tika 3.1.0.0 ile işlenen PDF'ler artık aşırı boş satırlar içermez—RAG çıktı kalitesini ve görsel temizliği iyileştirir.
+- 🧪 **CSV Yükleyici Kodlama Sorunları**: Bilinmeyen kodlamalara sahip CSV dosyaları artık karakter kümelerini otomatik olarak algılar, UTF-8 olmayan veri kümelerinde içe aktarma hatalarını çözer.
+- ✅ **LDAP Kimlik Doğrulama Yapılandırma Düzeltmesi**: Sertifika dosyasına giden yol artık LDAP kurulumları için isteğe bağlıdır, önceden yapılandırılmış sertifika yolları olmayan kullanıcılar için kimlik doğrulama sorunlarını düzeltir.
+- 📥 **Bypass Modunda Dosya Silme**: "Bypass embedding" modu etkinleştirildiğinde dosyaların bilgiden silinememesi sorunu çözüldü.
+- 🧩 **Hibrit Arama Sonuç Sıralaması ve Tekrarlananları Kaldırma Düzeltildi**: RAG hibrit ve reranker modlarında alıntı ve sıralama sorunları düzeltildi, alınan belgelerin puana göre doğru sırada gösterilmesi sağlandı.
+- 📫 **Kimlik Doğrulama Yönlendirme Düzeltmesi**: Oturum açmış kullanıcılar artık zaten kimliği doğrulanmışken gereksiz oturum açma istemleri olmadan düzgün bir şekilde yönlendirilir.
 
-### Changed
+### Değiştirildi
 
-- 🧠 **Prompt Autocompletion Disabled By Default**: Autocomplete suggestions while typing are now disabled unless explicitly re-enabled in user preferences—reduces distractions while composing prompts for advanced users.
-- 🧾 **Normalize Citation Numbering**: Source citations now properly begin from "1" instead of "0"—improving consistency and professional presentation in AI outputs.
-- 📚 **Improved Error Handling from Pipelines**: Pipelines now show the actual returned error message from failed tasks rather than generic "Connection closed"—making debugging far more user-friendly.
+- 🧠 **Prompt Otomatik Tamamlama Varsayılan Olarak Devre Dışı Bırakıldı**: Yazarken otomatik tamamlama önerileri artık kullanıcı tercihlerinde açıkça yeniden etkinleştirilmedikçe devre dışı bırakılmıştır—gelişmiş kullanıcılar için prompt oluştururken dikkat dağıtıcı unsurları azaltır.
+- 🧾 **Alıntı Numaralandırmasını Normalleştir**: Kaynak alıntıları artık düzgün bir şekilde "0" yerine "1"den başlar—AI çıktılarında tutarlılığı ve profesyonel sunumu iyileştirir.
+- 📚 **Pipelines'dan Geliştirilmiş Hata Yönetimi**: Pipelines artık başarısız görevlerden genel "Bağlantı kapatıldı" yerine gerçek dönen hata mesajını gösterir—hata ayıklamayı çok daha kullanıcı dostu hale getirir.
 
-### Removed
+### Kaldırıldı
 
-- 🧾 **ENABLE_AUDIT_LOGS Setting Removed**: Deprecated setting “ENABLE_AUDIT_LOGS” has been fully removed—now controlled via “AUDIT_LOG_LEVEL” instead.
+- 🧾 **ENABLE_AUDIT_LOGS Ayarı Kaldırıldı**: Eskimiş "ENABLE_AUDIT_LOGS" ayarı tamamen kaldırıldı—artık bunun yerine "AUDIT_LOG_LEVEL" tarafından kontrol ediliyor.
 
 ## [0.5.20] - 2025-03-05
 
-### Added
+### Eklendi
 
-- **⚡ Toggle Code Execution On/Off**: You can now enable or disable code execution, providing more control over security, ensuring a safer and more customizable experience.
+- **⚡ Kod Yürütmeyi Aç/Kapat**: Artık kod yürütmeyi etkinleştirebilir veya devre dışı bırakabilir, güvenlik üzerinde daha fazla kontrol sağlayabilir, daha güvenli ve daha özelleştirilebilir bir deneyim sağlayabilirsiniz.
 
-### Fixed
+### Düzeltildi
 
-- **📜 Pinyin Keyboard Enter Key Now Works Properly**: Resolved an issue where the Enter key for Pinyin keyboards was not functioning as expected, ensuring seamless input for Chinese users.
-- **🖼️ Web Manifest Loading Issue Fixed**: Addressed inconsistencies with 'site.webmanifest', guaranteeing proper loading and representation of the app across different browsers and devices.
-- **📦 Non-Root Container Issue Resolved**: Fixed a critical issue where the UI failed to load correctly in non-root containers, ensuring reliable deployment in various environments.
+- **📜 Pinyin Klavye Enter Tuşu Artık Düzgün Çalışıyor**: Pinyin klavyeler için Enter tuşunun beklendiği gibi çalışmaması sorunu çözüldü, Çince kullanıcılar için sorunsuz giriş sağlandı.
+- **🖼️ Web Manifest Yükleme Sorunu Düzeltildi**: 'site.webmanifest' ile ilgili tutarsızlıklar giderildi, uygulamanın farklı tarayıcılar ve cihazlar arasında doğru bir şekilde yüklenmesini ve temsil edilmesini garantiledi.
+- **📦 Kök Olmayan Container Sorunu Çözüldü**: UI'nin kök olmayan container'larda doğru yüklenememesi gibi kritik bir sorun düzeltildi, çeşitli ortamlarda güvenilir dağıtım sağlandı.
 
 ## [0.5.19] - 2025-03-04
 
-### Added
+### Eklendi
 
-- **📊 Logit Bias Parameter Support**: Fine-tune conversation dynamics by adjusting the Logit Bias parameter directly in chat settings, giving you more control over model responses.
-- **⌨️ Customizable Enter Behavior**: You can now configure Enter to send messages only when combined with Ctrl (Ctrl+Enter) via Settings > Interface, preventing accidental message sends.
-- **📝 Collapsible Code Blocks**: Easily collapse long code blocks to declutter your chat, making it easier to focus on important details.
-- **🏷️ Tag Selector in Model Selector**: Quickly find and categorize models with the new tag filtering system in the Model Selector, streamlining model discovery.
-- **📈 Experimental Elasticsearch Vector DB Support**: Now supports Elasticsearch as a vector database, offering more flexibility for data retrieval in Retrieval-Augmented Generation (RAG) workflows.
-- **⚙️ General Reliability Enhancements**: Various stability improvements across the WebUI, ensuring a smoother, more consistent experience.
-- **🌍 Updated Translations**: Refined multilingual support for better localization and accuracy across various languages.
+- **📊 Logit Bias Parametre Desteği**: Sohbet ayarlarında Logit Bias parametresini doğrudan ayarlayarak konuşma dinamiklerini ince ayar yapın, model yanıtları üzerinde daha fazla kontrol sağlayın.
+- **⌨️ Özelleştirilebilir Enter Davranışı**: Artık Ayarlar > Arayüz aracılığıyla Enter'ı yalnızca Ctrl ile birleştirildiğinde (Ctrl+Enter) mesaj gönderecek şekilde yapılandırabilirsiniz, kazara mesaj göndermeleri önler.
+- **📝 Daraltılabilir Kod Blokları**: Sohbetinizi dağınıklıktan arındırmak ve önemli ayrıntılara odaklanmayı kolaylaştırmak için uzun kod bloklarını kolayca daraltın.
+- **🏷️ Model Seçicide Etiket Seçici**: Model Seçici'deki yeni etiket filtreleme sistemi ile modelleri hızlıca bulun ve kategorize edin, model keşfini kolaylaştırın.
+- **📈 Deneysel Elasticsearch Vektör DB Desteği**: Artık Elasticsearch'i bir vektör veritabanı olarak destekliyor, Retrieval-Augmented Generation (RAG) iş akışlarında veri alımı için daha fazla esneklik sunuyor.
+- **⚙️ Genel Güvenilirlik Geliştirmeleri**: WebUI genelinde çeşitli kararlılık iyileştirmeleri, daha pürüzsüz, daha tutarlı bir deneyim sağlar.
+- **🌍 Güncellenmiş Çeviriler**: Daha iyi yerelleştirme ve çeşitli dillerde doğruluk için iyileştirilmiş çok dilli destek.
 
-### Fixed
+### Düzeltildi
 
-- **🔄 "Stream" Hook Activation**: Fixed an issue where the "Stream" hook only worked when globally enabled, ensuring reliable real-time filtering.
-- **📧 LDAP Email Case Sensitivity**: Resolved an issue where LDAP login failed due to email case sensitivity mismatches, improving authentication reliability.
-- **💬 WebSocket Chat Event Registration**: Fixed a bug preventing chat event listeners from being registered upon sign-in, ensuring real-time updates work properly.
+- **🔄 "Stream" Hook Aktivasyonu**: "Stream" hook'unun yalnızca global olarak etkinleştirildiğinde çalışması sorunu düzeltildi, güvenilir gerçek zamanlı filtreleme sağlandı.
+- **📧 LDAP E-posta Büyük/Küçük Harf Duyarlılığı**: LDAP girişinin e-posta büyük/küçük harf duyarlılığı uyuşmazlıkları nedeniyle başarısız olması sorunu çözüldü, kimlik doğrulama güvenilirliği iyileştirildi.
+- **💬 WebSocket Sohbet Olayı Kaydı**: Oturum açıldığında sohbet olay dinleyicilerinin kaydedilmesini engelleyen bir hata düzeltildi, gerçek zamanlı güncellemelerin düzgün çalışması sağlandı.
 
 ## [0.5.18] - 2025-02-27
 
-### Fixed
+### Düzeltildi
 
-- **🌐 Open WebUI Now Works Over LAN in Insecure Context**: Resolved an issue preventing Open WebUI from functioning when accessed over a local network in an insecure context, ensuring seamless connectivity.
-- **🔄 UI Now Reflects Deleted Connections Instantly**: Fixed an issue where deleting a connection did not update the UI in real time, ensuring accurate system state visibility.
-- **🛠️ Models Now Display Correctly with ENABLE_FORWARD_USER_INFO_HEADERS**: Addressed a bug where models were not visible when ENABLE_FORWARD_USER_INFO_HEADERS was set, restoring proper model listing.
+- **🌐 Open WebUI Artık Güvenli Olmayan Bağlamda LAN Üzerinde Çalışıyor**: Open WebUI'nin yerel bir ağ üzerinden güvenli olmayan bir bağlamda erişildiğinde işlev görememesi sorunu çözüldü, sorunsuz bağlantı sağlandı.
+- **🔄 UI Artık Silinen Bağlantıları Anında Yansıtıyor**: Bir bağlantının silinmesinin UI'yi gerçek zamanlı olarak güncellememesi sorunu düzeltildi, doğru sistem durumu görünürlüğü sağlandı.
+- **🛠️ ENABLE_FORWARD_USER_INFO_HEADERS ile Modeller Artık Doğru Görüntüleniyor**: ENABLE_FORWARD_USER_INFO_HEADERS ayarı yapıldığında modellerin görünmemesi sorunu giderildi, doğru model listelemesi geri getirildi.
 
 ## [0.5.17] - 2025-02-27
 
-### Added
+### Eklendi
 
-- **🚀 Instant Document Upload with Bypass Embedding & Retrieval**: Admins can now enable "Bypass Embedding & Retrieval" in Admin Settings > Documents, significantly speeding up document uploads and ensuring full document context is retained without chunking.
-- **🔎 "Stream" Hook for Real-Time Filtering**: The new "stream" hook allows dynamic real-time message filtering. Learn more in our documentation (https://docs.openwebui.com/features/plugin/functions/filter).
-- **☁️ OneDrive Integration**: Early support for OneDrive storage integration has been introduced, expanding file import options.
-- **📈 Enhanced Logging with Loguru**: Backend logging has been improved with Loguru, making debugging and issue tracking far more efficient.
-- **⚙️ General Stability Enhancements**: Backend and frontend refactoring improves performance, ensuring a smoother and more reliable user experience.
-- **🌍 Updated Translations**: Refined multilingual support for better localization and accuracy across various languages.
+- **🚀 Bypass Embedding & Retrieval ile Anında Belge Yükleme**: Yöneticiler artık Admin Ayarları > Belgeler'de "Bypass Embedding & Retrieval" özelliğini etkinleştirerek belge yüklemelerini önemli ölçüde hızlandırabilir ve tüm belge bağlamının parçalanmadan korunmasını sağlayabilir.
+- **🔎 Gerçek Zamanlı Filtreleme için "Stream" Hook'u**: Yeni "stream" hook'u, dinamik gerçek zamanlı mesaj filtrelemesine olanak tanır. Daha fazla bilgiyi dokümantasyonumuzda bulabilirsiniz (https://docs.openwebui.com/features/plugin/functions/filter).
+- ☁️ **OneDrive Entegrasyonu**: OneDrive depolama entegrasyonu için erken destek eklendi, dosya içe aktarma seçeneklerini genişletti.
+- 📈 **Loguru ile Gelişmiş Günlükleme**: Backend günlükleme, Loguru ile iyileştirildi, hata ayıklama ve sorun takibini çok daha verimli hale getirdi.
+- ⚙️ **Genel Kararlılık Geliştirmeleri**: Backend ve frontend yeniden yapılandırması performansı iyileştirir, daha pürüzsüz ve daha güvenilir bir kullanıcı deneyimi sağlar.
+- 🌍 **Güncellenmiş Çeviriler**: Daha iyi yerelleştirme ve çeşitli dillerde doğruluk için iyileştirilmiş çok dilli destek.
 
-### Fixed
+### Düzeltildi
 
-- **🔄 Reliable Model Imports from the Community Platform**: Resolved import failures, allowing seamless integration of community-shared models without errors.
-- **📊 OpenAI Usage Statistics Restored**: Fixed an issue where OpenAI usage metrics were not displaying correctly, ensuring accurate tracking of usage data.
-- **🗂️ Deduplication for Retrieved Documents**: Documents retrieved during searches are now intelligently deduplicated, meaning no more redundant results—helping to keep information concise and relevant.
+- 🔄 **Topluluk Platformundan Güvenilir Model İçe Aktarımları**: İçe aktarma hataları çözüldü, topluluk tarafından paylaşılan modellerin hatasız bir şekilde sorunsuz entegrasyonunu sağladı.
+- 📊 **OpenAI Kullanım İstatistikleri Geri Getirildi**: OpenAI kullanım metriklerinin doğru görüntülenmemesi sorunu düzeltildi, kullanım verilerinin doğru takibini sağladı.
+- 🗂️ **Alınan Belgeler için Tekrarlananları Kaldırma**: Aramalar sırasında alınan belgeler artık akıllıca tekrarlananlardan arındırılıyor, bu da gereksiz sonuçları ortadan kaldırarak bilginin kısa ve ilgili kalmasına yardımcı oluyor.
 
-### Changed
+### Değiştirildi
 
-- **📝 "Full Context Mode" Renamed for Clarity**: The "Full Context Mode" toggle in Web Search settings is now labeled "Bypass Embedding & Retrieval" for consistency across the UI.
+- 📝 **"Tam Bağlam Modu" Netlik için Yeniden Adlandırıldı**: Web Arama ayarlarındaki "Tam Bağlam Modu" geçiş anahtarı, UI genelinde tutarlılık için artık "Bypass Embedding & Retrieval" olarak etiketlendi.
 
 ## [0.5.16] - 2025-02-20
 
-### Fixed
+### Düzeltildi
 
-- **🔍 Web Search Retrieval Restored**: Resolved a critical issue that broke web search retrieval by reverting deduplication changes, ensuring complete and accurate search results once again.
+- 🔍 **Web Arama Alımı Geri Getirildi**: Tekrarlananları kaldırma değişikliklerini geri alarak web arama alımını bozan kritik bir sorun çözüldü, bu da tam ve doğru arama sonuçlarını tekrar sağladı.
 
 ## [0.5.15] - 2025-02-20
 
-### Added
+### Eklendi
 
-- **📄 Full Context Mode for Local Document Search (RAG)**: Toggle full context mode from Admin Settings > Documents to inject entire document content into context, improving accuracy for models with large context windows—ideal for deep context understanding.
-- **🌍 Smarter Web Search with Agentic Workflows**: Web searches now intelligently gather and refine multiple relevant terms, similar to RAG handling, delivering significantly better search results for more accurate information retrieval.
-- **🔎 Experimental Playwright Support for Web Loader**: Web content retrieval is taken to the next level with Playwright-powered scraping for enhanced accuracy in extracted web data.
-- **☁️ Experimental Azure Storage Provider**: Early-stage support for Azure Storage allows more cloud storage flexibility directly within Open WebUI.
-- **📊 Improved Jupyter Code Execution with Plots**: Interactive coding now properly displays inline plots, making data visualization more seamless inside chat interactions.
-- **⏳ Adjustable Execution Timeout for Jupyter Interpreter**: Customize execution timeout (default: 60s) for Jupyter-based code execution, allowing longer or more constrained execution based on your needs.
-- **▶️ "Running..." Indicator for Jupyter Code Execution**: A visual indicator now appears while code execution is in progress, providing real-time status updates on ongoing computations.
-- **⚙️ General Backend & Frontend Stability Enhancements**: Extensive refactoring improves reliability, performance, and overall user experience for a more seamless Open WebUI.
-- **🌍 Translation Updates**: Various international translation refinements ensure better localization and a more natural user interface experience.
+- 📄 **Yerel Belge Araması için Tam Bağlam Modu (RAG)**: Admin Ayarları > Belgeler'den tam bağlam modunu açarak tüm belge içeriğini bağlama enjekte edin, büyük bağlam pencereli modeller için doğruluğu artırın—derin bağlam anlama için idealdir.
+- 🌍 **Ajan Tabanlı İş Akışlarıyla Daha Akıllı Web Araması**: Web aramaları artık birden fazla ilgili terimi akıllıca toplar ve iyileştirir, RAG işleme benzer şekilde, daha doğru bilgi alımı için önemli ölçüde daha iyi arama sonuçları sunar.
+- 🔎 **Web Yükleyici için Deneysel Playwright Desteği**: Playwright destekli kazıma ile web içeriği alımı bir sonraki seviyeye taşındı, çıkarılan web verilerinde artırılmış doğruluk için.
+- ☁️ **Deneysel Azure Depolama Sağlayıcısı**: Azure Depolama entegrasyonu için erken aşama destek eklendi, Open WebUI içinde daha fazla bulut depolama esnekliği sağlıyor.
+- 📊 **Plot'lar ile Geliştirilmiş Jupyter Kod Yürütme**: Etkileşimli kodlama artık sohbet etkileşimlerinde veri görselleştirmesini daha sorunsuz hale getirerek satır içi çizimler görüntüler.
+- ⏳ **Jupyter Tercümanı için Ayarlanabilir Yürütme Zaman Aşımı**: İhtiyaçlarınıza göre daha uzun veya daha kısıtlı yürütme sağlamak için Jupyter tabanlı kod yürütme için yürütme zaman aşımını (varsayılan: 60s) özelleştirin.
+- ▶️ **Jupyter Kod Yürütme için "Running..." Göstergesi**: Kod yürütme devam ederken görsel bir gösterge belirir, devam eden hesaplamalar hakkında gerçek zamanlı durum güncellemeleri sağlar.
+- ⚙️ **Genel Backend ve Frontend Kararlılık Geliştirmeleri**: Kapsamlı yeniden yapılandırma, daha sorunsuz bir Open WebUI için güvenilirliği, performansı ve genel kullanıcı deneyimini iyileştirir.
+- 🌍 **Çeviri Güncellemeleri**: Çeşitli uluslararası çeviri iyileştirmeleri, daha iyi yerelleştirme ve daha doğal bir kullanıcı arayüzü deneyimi sağlar.
 
-### Fixed
+### Düzeltildi
 
-- **📱 Mobile Hover Issue Resolved**: Users can now edit responses smoothly on mobile without interference, fixing a longstanding hover issue.
-- **🔄 Temporary Chat Message Duplication Fixed**: Eliminated buggy behavior where messages were being unnecessarily repeated in temporary chat mode, ensuring a smooth and consistent conversation flow.
+- 📱 **Mobil Üzerine Gelme Sorunu Çözüldü**: Kullanıcılar artık mobil cihazlarda yanıtları sorunsuz bir şekilde düzenleyebilir, uzun süreli üzerine gelme sorununu düzeltir.
+- 🔄 **Geçici Sohbet Mesajı Tekrarlaması Düzeltildi**: Geçici sohbet modunda mesajların gereksiz yere tekrarlanmasına neden olan hatalı davranış ortadan kaldırıldı, sorunsuz ve tutarlı bir konuşma akışı sağlandı.
 
 ## [0.5.14] - 2025-02-17
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Critical Import Error Resolved**: Fixed a circular import issue preventing 'override_static' from being correctly imported in 'open_webui.config', ensuring smooth system initialization and stability.
+- 🔧 **Kritik İçe Aktarma Hatası Çözüldü**: 'open_webui.config' içinde 'override_static'in doğru şekilde içe aktarılmasını engelleyen dairesel bir içe aktarma sorunu düzeltildi, sorunsuz sistem başlatma ve kararlılık sağlandı.
 
 ## [0.5.13] - 2025-02-17
 
-### Added
+### Eklendi
 
-- **🌐 Full Context Mode for Web Search**: Enable highly accurate web searches by utilizing full context mode—ideal for models with large context windows, ensuring more precise and insightful results.
-- **⚡ Optimized Asynchronous Web Search**: Web searches now load significantly faster with optimized async support, providing users with quicker, more efficient information retrieval.
-- **🔄 Auto Text Direction for RTL Languages**: Automatic text alignment based on language input, ensuring seamless conversation flow for Arabic, Hebrew, and other right-to-left scripts.
-- **🚀 Jupyter Notebook Support for Code Execution**: The "Run" button in code blocks can now use Jupyter for execution, offering a powerful, dynamic coding experience directly in the chat.
-- **🗑️ Message Delete Confirmation Dialog**: Prevent accidental deletions with a new confirmation prompt before removing messages, adding an additional layer of security to your chat history.
-- **📥 Download Button for SVG Diagrams**: SVG diagrams generated within chat can now be downloaded instantly, making it easier to save and share complex visual data.
-- **✨ General UI/UX Improvements and Backend Stability**: A refined interface with smoother interactions, improved layouts, and backend stability enhancements for a more reliable, polished experience.
+- 🌐 **Web Araması için Tam Bağlam Modu**: Tam bağlam modunu kullanarak son derece doğru web aramalarını etkinleştirin—büyük bağlam pencereli modeller için idealdir, daha kesin ve bilgilendirici sonuçlar sağlar.
+- ⚡ **Optimize Edilmiş Asenkron Web Araması**: Web aramaları, optimize edilmiş asenkron destekle önemli ölçüde daha hızlı yüklenir, kullanıcılara daha hızlı, daha verimli bilgi alımı sağlar.
+- 🔄 **RTL Diller için Otomatik Metin Yönü**: Dil girişine göre otomatik metin hizalaması, Arapça, İbranice ve diğer sağdan sola betikler için sorunsuz konuşma akışı sağlar.
+- 🚀 **Kod Yürütme için Jupyter Notebook Desteği**: Kod bloklarındaki "Run" düğmesi artık yürütme için Jupyter'ı kullanabilir, sohbet içinde güçlü, dinamik bir kodlama deneyimi sunar.
+- 🗑️ **Mesaj Silme Onay Diyaloğu**: Mesajları kaldırmadan önce yeni bir onay istemiyle kazara silmeleri önleyin, sohbet geçmişinize ek bir güvenlik katmanı ekler.
+- 📥 **SVG Diyagramları için İndirme Düğmesi**: Sohbet içinde oluşturulan SVG diyagramları artık anında indirilebilir, karmaşık görsel verileri kaydetmeyi ve paylaşmayı kolaylaştırır.
+- ✨ **Genel UI/UX İyileştirmeleri ve Backend Kararlılığı**: Daha güvenilir, daha şık bir deneyim için daha pürüzsüz etkileşimler, iyileştirilmiş düzenler ve backend kararlılık geliştirmeleri ile yenilenmiş bir arayüz.
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ Temporary Chat Message Continue Button Fixed**: The "Continue Response" button for temporary chats now works as expected, ensuring an uninterrupted conversation flow.
+- 🛠️ **Geçici Sohbet Mesajı Devam Düğmesi Düzeltildi**: Geçici sohbetler için "Yanıtı Devam Et" düğmesi artık beklendiği gibi çalışıyor, kesintisiz bir konuşma akışı sağlıyor.
 
-### Changed
+### Değiştirildi
 
-- **📝 Prompt Variable Update**: Deprecated square bracket '[]' indicators for prompt variables; now requires double curly brackets '{{}}' for consistency and clarity.
-- **🔧 Stability Enhancements**: Error handling improved in chat history, ensuring smoother operations when reviewing previous messages.
+- 📝 **Prompt Değişkeni Güncellemesi**: Prompt değişkenleri için köşeli parantez '[]' göstergeleri eski haline getirildi; tutarlılık ve netlik için artık çift kıvrık parantez '{{}}' gerektiriyor.
+- 🔧 **Kararlılık Geliştirmeleri**: Sohbet geçmişinde hata yönetimi iyileştirildi, önceki mesajları incelerken daha sorunsuz işlemler sağlandı.
 
 ## [0.5.12] - 2025-02-13
 
-### Added
+### Eklendi
 
-- **🛠️ Multiple Tool Calls Support for Native Function Mode**: Functions now can call multiple tools within a single response, unlocking better automation and workflow flexibility when using native function calling.
+- **🛠️ Yerel Fonksiyon Modu için Çoklu Araç Çağrısı Desteği**: Fonksiyonlar artık tek bir yanıtta birden fazla aracı çağırabilir, yerel fonksiyon çağırmayı kullanırken daha iyi otomasyon ve iş akışı esnekliği sağlar.
 
-### Fixed
+### Düzeltildi
 
-- **📝 Playground Text Completion Restored**: Addressed an issue where text completion in the Playground was not functioning.
-- **🔗 Direct Connections Now Work for Regular Users**: Fixed a bug where users with the 'user' role couldn't establish direct API connections, enabling seamless model usage for all user tiers.
-- **⚡ Landing Page Input No Longer Lags with Long Text**: Improved input responsiveness on the landing page, ensuring fast and smooth typing experiences even when entering long messages.
-- **🔧 Parameter in Functions Fixed**: Fixed an issue where the reserved parameters wasn’t recognized within functions, restoring full functionality for advanced task-based automation.
+- 📝 **Playground Metin Tamamlama Geri Getirildi**: Playground'da metin tamamlama işlevinin çalışmaması sorunu giderildi.
+- 🔗 **Doğrudan Bağlantılar Artık Normal Kullanıcılar için Çalışıyor**: 'user' rolüne sahip kullanıcıların doğrudan API bağlantıları kuramaması hatası düzeltildi, tüm kullanıcı seviyeleri için sorunsuz model kullanımını etkinleştirdi.
+- ⚡ **Açılış Sayfası Girişi Uzun Metinle Artık Gecikmiyor**: Açılış sayfasında giriş duyarlılığı iyileştirildi, uzun mesajlar girilirken bile hızlı ve pürüzsüz yazma deneyimleri sağlandı.
+- 🔧 **Fonksiyonlardaki Parametre Düzeltildi**: Fonksiyonlarda ayrılmış parametrelerin tanınmaması sorunu düzeltildi, gelişmiş görev tabanlı otomasyon için tam işlevsellik geri getirildi.
 
 ## [0.5.11] - 2025-02-13
 
-### Added
+### Eklendi
 
-- **🎤 Kokoro-JS TTS Support**: A new on-device, high-quality text-to-speech engine has been integrated, vastly improving voice generation quality—everything runs directly in your browser.
-- **🐍 Jupyter Notebook Support in Code Interpreter**: Now, you can configure Code Interpreter to run Python code not only via Pyodide but also through Jupyter, offering a more robust coding environment for AI-driven computations and analysis.
-- **🔗 Direct API Connections for Private & Local Inference**: You can now connect Open WebUI to your private or localhost API inference endpoints. CORS must be enabled, but this unlocks direct, on-device AI infrastructure support.
-- **🔍 Advanced Domain Filtering for Web Search**: You can now specify which domains should be included or excluded from web searches, refining results for more relevant information retrieval.
-- **🚀 Improved Image Generation Metadata Handling**: Generated images now retain metadata for better organization and future retrieval.
-- **📂 S3 Key Prefix Support**: Fine-grained control over S3 storage file structuring with configurable key prefixes.
-- **📸 Support for Image-Only Messages**: Send messages containing only images, facilitating more visual-centric interactions.
-- **🌍 Updated Translations**: German, Spanish, Traditional Chinese, and Catalan translations updated for better multilingual support.
+- **🎤 Kokoro-JS TTS Desteği**: Yeni bir cihaz içi, yüksek kaliteli text-to-speech motoru entegre edildi, ses oluşturma kalitesini önemli ölçüde artırdı—her şey doğrudan tarayıcınızda çalışıyor.
+- 🐍 **Kod Tercümanında Jupyter Notebook Desteği**: Artık Kod Tercümanı'nı Python kodunu sadece Pyodide aracılığıyla değil, Jupyter aracılığıyla da çalıştıracak şekilde yapılandırabilirsiniz, AI destekli hesaplamalar ve analizler için daha sağlam bir kodlama ortamı sunar.
+- 🔗 **Özel ve Yerel Çıkarım için Doğrudan API Bağlantıları**: Open WebUI'yi özel veya localhost API çıkarım endpoint'lerinize bağlayabilirsiniz. CORS etkinleştirilmelidir, ancak bu, doğrudan, cihaz içi AI altyapısı desteğini açar.
+- 🔍 **Web Araması için Gelişmiş Alan Filtreleme**: Web aramalarına hangi alanların dahil edilmesi veya hariç tutulması gerektiğini belirtebilirsiniz, daha ilgili bilgi alımı için sonuçları iyileştirir.
+- 🚀 **Geliştirilmiş Resim Oluşturma Metadata İşlemesi**: Oluşturulan resimler, daha iyi organizasyon ve gelecekteki alım için metadata'yı korur.
+- 📂 **S3 Anahtar Ön Ek Desteği**: Yapılandırılabilir anahtar ön ekleri ile S3 depolama dosyası yapılandırması üzerinde ayrıntılı kontrol.
+- 📸 **Yalnızca Resim İçeren Mesajlar için Destek**: Yalnızca resim içeren mesajlar göndererek daha görsel odaklı etkileşimleri kolaylaştırın.
+- 🌍 **Güncellenmiş Çeviriler**: Almanca, İspanyolca, Geleneksel Çince ve Katalanca çevirileri, daha iyi çok dilli destek için güncellendi.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 OAuth Debug Logs & Username Claim Fixes**: Debug logs have been added for OAuth role and group management, with fixes ensuring proper OAuth username retrieval and claim handling.
-- **📌 Citations Formatting & Toggle Fixes**: Inline citation toggles now function correctly, and citations with more than three sources are now fully visible when expanded.
-- **📸 ComfyUI Maximum Seed Value Constraint Fixed**: The maximum allowed seed value for ComfyUI has been corrected, preventing unintended behavior.
-- **🔑 Connection Settings Stability**: Addressed connection settings issues that were causing instability when saving configurations.
-- **📂 GGUF Model Upload Stability**: Fixed upload inconsistencies for GGUF models, ensuring reliable local model handling.
-- **🔧 Web Search Configuration Bug**: Fixed issues where web search filters and settings weren't correctly applied.
-- **💾 User Settings Persistence Fix**: Ensured user-specific settings are correctly saved and applied across sessions.
-- **🔄 OpenID Username Retrieval Enhancement**: Usernames are now correctly picked up and assigned for OpenID Connect (OIDC) logins.
+- 🔧 **OAuth Hata Ayıklama Logları ve Kullanıcı Adı İddia Düzeltmeleri**: OAuth rolü ve grup yönetimi için hata ayıklama logları eklendi, doğru OAuth kullanıcı adı alımı ve iddia işlemesi sağlandı.
+- 📌 **Alıntılar Biçimlendirme ve Geçiş Anahtarı Düzeltmeleri**: Satır içi alıntı geçiş anahtarları artık doğru çalışıyor ve üçten fazla kaynağa sahip alıntılar artık genişletildiğinde tamamen görünür.
+- 📸 **ComfyUI Maksimum Seed Değeri Kısıtlaması Düzeltildi**: ComfyUI için izin verilen maksimum seed değeri düzeltildi, istenmeyen davranışları önledi.
+- 🔑 **Bağlantı Ayarları Kararlılığı**: Yapılandırmaları kaydederken kararsızlığa neden olan bağlantı ayarları sorunları giderildi.
+- 📂 **GGUF Model Yükleme Kararlılığı**: GGUF modelleri için yükleme tutarsızlıkları düzeltildi, güvenilir yerel model işleme sağlandı.
+- 🔧 **Web Arama Yapılandırma Hatası**: Web arama filtreleri ve ayarlarının doğru uygulanmaması sorunları düzeltildi.
+- 💾 **Kullanıcı Ayarları Kalıcılığı Düzeltmesi**: Kullanıcıya özgü ayarların oturumlar arasında doğru bir şekilde kaydedilmesi ve uygulanması sağlandı.
+- 🔄 **OpenID Kullanıcı Adı Alımı Geliştirmesi**: OpenID Connect (OIDC) girişleri için kullanıcı adları artık doğru bir şekilde alınır ve atanır.
 
 ## [0.5.10] - 2025-02-05
 
-### Fixed
+### Düzeltildi
 
-- **⚙️ System Prompts Now Properly Templated via API**: Resolved an issue where system prompts were not being correctly processed when used through the API, ensuring template variables now function as expected.
-- **📝 '<thinking>' Tag Display Issue Fixed**: Fixed a bug where the 'thinking' tag was disrupting content rendering, ensuring clean and accurate text display.
-- **💻 Code Interpreter Stability with Custom Functions**: Addressed failures when using the Code Interpreter with certain custom functions like Anthropic, ensuring smoother execution and better compatibility.
+- ⚙️ **Sistem Prompt'ları Artık API aracılığıyla Düzgün Şablonlandı**: Sistem prompt'larının API aracılığıyla kullanıldığında doğru bir şekilde işlenmemesi sorunu çözüldü, şablon değişkenlerinin beklendiği gibi çalışması sağlandı.
+- 📝 **'<thinking>' Etiketi Görüntüleme Sorunu Düzeltildi**: 'thinking' etiketinin içerik oluşturmayı bozması hatası düzeltildi, temiz ve doğru metin görüntülemesi sağlandı.
+- 💻 **Özel Fonksiyonlarla Kod Tercümanı Kararlılığı**: Anthropic gibi belirli özel fonksiyonlarla Kod Tercümanı kullanılırken oluşan hatalar giderildi, daha sorunsuz yürütme ve daha iyi uyumluluk sağlandı.
 
 ## [0.5.9] - 2025-02-05
 
-### Fixed
+### Düzeltildi
 
-- **💡 "Think" Tag Display Issue**: Resolved a bug where the "Think" tag was not functioning correctly, ensuring proper visualization of the model's reasoning process before delivering responses.
+- 💡 **"Think" Etiketi Görüntüleme Sorunu**: "Think" etiketinin doğru çalışmaması hatası çözüldü, yanıtları vermeden önce modelin düşünme sürecinin doğru görselleştirilmesi sağlandı.
 
 ## [0.5.8] - 2025-02-05
 
-### Added
+### Eklendi
 
-- **🖥️ Code Interpreter**: Models can now execute code in real time to refine their answers dynamically, running securely within a sandboxed browser environment using Pyodide. Perfect for calculations, data analysis, and AI-assisted coding tasks!
-- **💬 Redesigned Chat Input UI**: Enjoy a sleeker and more intuitive message input with improved feature selection, making it easier than ever to toggle tools, enable search, and interact with AI seamlessly.
-- **🛠️ Native Tool Calling Support (Experimental)**: Supported models can now call tools natively, reducing query latency and improving contextual responses. More enhancements coming soon!
-- **🔗 Exa Search Engine Integration**: A new search provider has been added, allowing users to retrieve up-to-date and relevant information without leaving the chat interface.
-- **🌍 Localized Dates & Times**: Date and time formats now match your system locale, ensuring a more natural, region-specific experience.
-- **📎 User Headers for External Embedding APIs**: API calls to external embedding services now include user-related headers.
-- **🌍 "Always On" Web Search Toggle**: A new option under Settings > Interface allows users to enable Web Search by default—transform Open WebUI into your go-to search engine, ensuring AI-powered results with every query.
-- **🚀 General Performance & Stability**: Significant improvements across the platform for a faster, more reliable experience.
-- **🖼️ UI/UX Enhancements**: Numerous design refinements improving readability, responsiveness, and accessibility.
-- **🌍 Improved Translations**: Chinese, Korean, French, Ukrainian and Serbian translations have been updated with refined terminologies for better clarity.
+- 🖥️ **Kod Tercümanı**: Modeller artık yanıtlarını dinamik olarak iyileştirmek için kodu gerçek zamanlı olarak yürütebilir, Pyodide kullanarak güvenli bir sandboxed tarayıcı ortamında çalışır. Hesaplamalar, veri analizi ve AI destekli kodlama görevleri için mükemmel!
+- 💬 **Yeniden Tasarlanmış Sohbet Giriş UI'si**: Geliştirilmiş özellik seçimi ile daha şık ve sezgisel bir mesaj girişinin keyfini çıkarın, araçları açıp kapatmayı, aramayı etkinleştirmeyi ve AI ile sorunsuz bir şekilde etkileşim kurmayı her zamankinden daha kolay hale getirir.
+- 🛠️ **Yerel Araç Çağırma Desteği (Deneysel)**: Desteklenen modeller artık araçları yerel olarak çağırabilir, sorgu gecikmesini azaltır ve bağlamsal yanıtları iyileştirir. Daha fazla geliştirme yakında geliyor!
+- 🔗 **Exa Arama Motoru Entegrasyonu**: Yeni bir arama sağlayıcısı eklendi, kullanıcıların sohbet arayüzünden ayrılmadan güncel ve ilgili bilgilere erişmesine olanak tanır.
+- 🌍 **Yerelleştirilmiş Tarihler ve Saatler**: Tarih ve saat formatları artık sistem yerel ayarınızla eşleşiyor, daha doğal, bölgeye özgü bir deneyim sağlıyor.
+- 📎 **Harici Embedding API'leri için Kullanıcı Başlıkları**: Harici embedding hizmetlerine yapılan API çağrıları artık kullanıcıyla ilgili başlıkları içeriyor.
+- 🌍 **"Her Zaman Açık" Web Arama Geçiş Anahtarı**: Ayarlar > Arayüz altında yeni bir seçenek, kullanıcıların Web Aramayı varsayılan olarak etkinleştirmesine olanak tanır—Open WebUI'yi ana arama motorunuz haline getirin, her sorguyla AI destekli sonuçlar sağlayın.
+- 🚀 **Genel Performans ve Kararlılık**: Daha hızlı, daha güvenilir bir deneyim için platform genelinde önemli iyileştirmeler.
+- 🖼️ **UI/UX Geliştirmeleri**: Okunabilirliği, duyarlılığı ve erişilebilirliği iyileştiren çok sayıda tasarım iyileştirmesi.
+- 🌍 **Geliştirilmiş Çeviriler**: Çince, Korece, Fransızca, Ukraynaca ve Sırpça çevirileri, daha iyi netlik için iyileştirilmiş terminolojilerle güncellendi.
 
-### Fixed
+### Düzeltildi
 
-- **🔄 OAuth Name Field Fallback**: Resolves OAuth login failures by using the email field as a fallback when a name is missing.
-- **🔑 Google Drive Credentials Restriction**: Ensures only authenticated users can access Google Drive credentials for enhanced security.
-- **🌐 DuckDuckGo Search Rate Limit Handling**: Fixes issues where users would encounter 202 errors due to rate limits when using DuckDuckGo for web search.
-- **📁 File Upload Permission Indicator**: Users are now notified when they lack permission to upload files, improving clarity on system restrictions.
-- **🔧 Max Tokens Issue**: Fixes cases where 'max_tokens' were not applied correctly, ensuring proper model behavior.
-- **🔍 Validation for RAG Web Search URLs**: Filters out invalid or unsupported URLs when using web-based retrieval augmentation.
-- **🖋️ Title Generation Bug**: Fixes inconsistencies in title generation, ensuring proper chat organization.
+- 🔄 **OAuth Ad Alanı Yedeklemesi**: Bir ad eksik olduğunda e-posta alanını yedek olarak kullanarak OAuth giriş hatalarını çözer.
+- 🔑 **Google Drive Kimlik Bilgileri Kısıtlaması**: Gelişmiş güvenlik için yalnızca kimliği doğrulanmış kullanıcıların Google Drive kimlik bilgilerine erişmesini sağlar.
+- 🌐 **DuckDuckGo Arama Hızı Sınırı İşlemesi**: DuckDuckGo için web araması kullanıldığında kullanıcıların hız limitleri nedeniyle 202 hatalarıyla karşılaşması sorunlarını düzeltir.
+- 📁 **Dosya Yükleme İzin Göstergesi**: Kullanıcılara dosya yükleme izinleri olmadığında artık bildirimde bulunulur, sistem kısıtlamaları hakkında netliği artırır.
+- 🔧 **Maksimum Token Sorunu**: 'max_tokens'ın doğru uygulanmadığı durumları düzeltir, doğru model davranışını sağlar.
+- 🔍 **RAG Web Arama URL'leri için Doğrulama**: Web tabanlı retrieval augmentation kullanılırken geçersiz veya desteklenmeyen URL'leri filtreler.
+- 🖋️ **Başlık Oluşturma Hatası**: Başlık oluşturmadaki tutarsızlıkları düzeltir, doğru sohbet organizasyonunu sağlar.
 
-### Removed
+### Kaldırıldı
 
-- **⚡ Deprecated Non-Web Worker Pyodide Execution**: Moves entirely to browser sandboxing for better performance and security.
+- ⚡ **Eskimiş Web Worker Pyodide Yürütmesi**: Daha iyi performans ve güvenlik için tamamen tarayıcı sandboxing'ine geçildi.
 
 ## [0.5.7] - 2025-01-23
 
-### Added
+### Eklendi
 
-- **🌍 Enhanced Internationalization (i18n)**: Refined and expanded translations for greater global accessibility and a smoother experience for international users.
+- **🌍 Gelişmiş Uluslararasılaşma (i18n)**: Daha fazla küresel erişilebilirlik ve uluslararası kullanıcılar için daha sorunsuz bir deneyim için iyileştirilmiş ve genişletilmiş çeviriler.
 
-### Fixed
+### Düzeltildi
 
-- **🔗 Connection Model ID Resolution**: Resolved an issue preventing model IDs from registering in connections.
-- **💡 Prefix ID for Ollama Connections**: Fixed a bug where prefix IDs in Ollama connections were non-functional.
-- **🔧 Ollama Model Enable/Disable Functionality**: Addressed the issue of enable/disable toggles not working for Ollama base models.
-- **🔒 RBAC Permissions for Tools and Models**: Corrected incorrect Role-Based Access Control (RBAC) permissions for tools and models, ensuring that users now only access features according to their assigned privileges, enhancing security and role clarity.
+- 🔗 **Bağlantı Modeli ID Çözünürlüğü**: Model ID'lerinin bağlantılarda kaydolmasını engelleyen bir sorun çözüldü.
+- 💡 **Ollama Bağlantıları için Ön Ek ID**: Ollama bağlantılarındaki ön ek ID'lerinin işlevsiz olması hatası düzeltildi.
+- 🔧 **Ollama Modeli Etkinleştirme/Devre Dışı Bırakma İşlevselliği**: Ollama temel modelleri için etkinleştirme/devre dışı bırakma geçiş anahtarlarının çalışmaması sorunu giderildi.
+- 🔒 **Araçlar ve Modeller için RBAC İzinleri**: Araçlar ve modeller için yanlış Rol Tabanlı Erişim Kontrolü (RBAC) izinleri düzeltildi, böylece kullanıcılar artık yalnızca atanan ayrıcalıklarına göre özelliklere erişir, güvenliği ve rol netliğini artırır.
 
 ## [0.5.6] - 2025-01-22
 
-### Added
+### Eklendi
 
-- **🧠 Effortful Reasoning Control for OpenAI Models**: Introduced the reasoning_effort parameter in chat controls for supported OpenAI models, enabling users to fine-tune how much cognitive effort a model dedicates to its responses, offering greater customization for complex queries and reasoning tasks.
+- **🧠 OpenAI Modelleri için Çaba Gerektiren Muhakeme Kontrolü**: Desteklenen OpenAI modelleri için sohbet kontrollerine `reasoning_effort` parametresi tanıtıldı, kullanıcıların bir modelin yanıtlarına ne kadar bilişsel çaba harcayacağını ince ayar yapmasına olanak tanıyarak karmaşık sorgular ve muhakeme görevleri için daha fazla özelleştirme sunar.
 
-### Fixed
+### Düzeltildi
 
-- **🔄 Chat Controls Loading UI Bug**: Resolved an issue where collapsible chat controls appeared as "loading," ensuring a smoother and more intuitive user experience for managing chat settings.
+- 🔄 **Sohbet Kontrolleri Yükleme UI Hatası**: Daraltılabilir sohbet kontrollerinin "yükleniyor" olarak görünmesi sorunu çözüldü, sohbet ayarlarını yönetmek için daha sorunsuz ve daha sezgisel bir kullanıcı deneyimi sağlandı.
 
-### Changed
+### Değiştirildi
 
-- **🔧 Updated Ollama Model Creation**: Revamped the Ollama model creation method to align with their new JSON payload format, ensuring seamless compatibility and more efficient model setup workflows.
+- 🔧 **Güncellenmiş Ollama Model Oluşturma**: Ollama model oluşturma yöntemi, yeni JSON payload formatlarına uyum sağlamak için yeniden düzenlendi, sorunsuz uyumluluk ve daha verimli model kurulum iş akışları sağlandı.
 
 ## [0.5.5] - 2025-01-22
 
-### Added
+### Eklendi
 
-- **🤔 Native 'Think' Tag Support**: Introduced the new 'think' tag support that visually displays how long the model is thinking, omitting the reasoning content itself until the next turn. Ideal for creating a more streamlined and focused interaction experience.
-- **🖼️ Toggle Image Generation On/Off**: In the chat input menu, you can now easily toggle image generation before initiating chats, providing greater control and flexibility to suit your needs.
-- **🔒 Chat Controls Permissions**: Admins can now disable chat controls access for users, offering tighter management and customization over user interactions.
-- **🔍 Web Search & Image Generation Permissions**: Easily disable web search and image generation for specific users, improving workflow governance and security for certain environments.
-- **🗂️ S3 and GCS Storage Provider Support**: Scaled deployments now benefit from expanded storage options with Amazon S3 and Google Cloud Storage seamlessly integrated as providers.
-- **🎨 Enhanced Model Management**: Reintroduced the ability to download and delete models directly in the admin models settings page to minimize user confusion and aid efficient model management.
-- **🔗 Improved Connection Handling**: Enhanced backend to smoothly handle multiple identical base URLs, allowing more flexible multi-instance configurations with fewer hiccups.
-- **✨ General UI/UX Refinements**: Numerous tweaks across the WebUI make navigation and usability even more user-friendly and intuitive.
-- **🌍 Translation Enhancements**: Various translation updates ensure smoother and more polished interactions for international users.
+- 🤔 **Yerel 'Think' Etiketi Desteği**: Modelin ne kadar düşündüğünü görsel olarak gösteren yeni 'think' etiketi desteği tanıtıldı, muhakeme içeriğini bir sonraki adıma kadar atlar. Daha düzenli ve odaklanmış bir etkileşim deneyimi oluşturmak için idealdir.
+- 🖼️ **Görüntü Oluşturmayı Aç/Kapat**: Sohbet giriş menüsünde, sohbetleri başlatmadan önce görüntü oluşturmayı kolayca açıp kapatabilirsiniz, ihtiyaçlarınıza uygun daha fazla kontrol ve esneklik sağlar.
+- 🔒 **Sohbet Kontrolleri İzinleri**: Yöneticiler artık kullanıcılar için sohbet kontrolleri erişimini devre dışı bırakabilir, kullanıcı etkileşimleri üzerinde daha sıkı yönetim ve özelleştirme sunar.
+- 🔍 **Web Araması ve Görüntü Oluşturma İzinleri**: Belirli kullanıcılar için web aramasını ve görüntü oluşturmayı kolayca devre dışı bırakın, belirli ortamlar için iş akışı yönetişimini ve güvenliğini iyileştirin.
+- 🗂️ **S3 ve GCS Depolama Sağlayıcısı Desteği**: Ölçeklendirilmiş dağıtımlar artık Amazon S3 ve Google Cloud Storage'ın sorunsuz entegre edilmiş sağlayıcılar olarak genişletilmiş depolama seçeneklerinden yararlanır.
+- 🎨 **Gelişmiş Model Yönetimi**: Kullanıcı karışıklığını en aza indirmek ve verimli model yönetimini sağlamak için yönetici modelleri ayarları sayfasında modelleri doğrudan indirme ve silme yeteneği yeniden tanıtıldı.
+- 🔗 **Geliştirilmiş Bağlantı İşleme**: Birden fazla aynı temel URL'yi sorunsuz bir şekilde işlemek için backend geliştirildi, daha az sorunla daha esnek çoklu örnek yapılandırmalarına izin veriyor.
+- ✨ **Genel UI/UX İyileştirmeleri**: WebUI genelinde gezinmeyi ve kullanılabilirliği daha da kullanıcı dostu ve sezgisel hale getiren çok sayıda ince ayar.
+- 🌍 **Çeviri Geliştirmeleri**: Uluslararası kullanıcılar için daha sorunsuz ve daha şık etkileşimler sağlamak amacıyla çeşitli çeviri güncellemeleri.
 
-### Fixed
+### Düzeltildi
 
-- **⚡ MPS Functionality for Mac Users**: Fixed MPS support, ensuring smooth performance and compatibility for Mac users leveraging MPS.
-- **📡 Ollama Connection Management**: Resolved the issue where deleting all Ollama connections prevented adding new ones.
+- ⚡ **Mac Kullanıcıları için MPS İşlevselliği**: MPS desteği düzeltildi, MPS'yi kullanan Mac kullanıcıları için sorunsuz performans ve uyumluluk sağlandı.
+- 📡 **Ollama Bağlantı Yönetimi**: Tüm Ollama bağlantılarının silinmesinin yenilerini eklemeyi engellemesi sorunu çözüldü.
 
-### Changed
+### Değiştirildi
 
-- **⚙️ General Stability Refac**: Backend refactoring delivers a more stable, robust platform.
-- **🖥️ Desktop App Preparations**: Ongoing work to support the upcoming Open WebUI desktop app. Follow our progress and updates here: https://github.com/open-webui/desktop
+- ⚙️ **Genel Kararlılık Yeniden Yapılandırması**: Backend yeniden yapılandırması daha kararlı, sağlam bir platform sunar.
+- 🖥️ **Masaüstü Uygulaması Hazırlıkları**: Gelecek Open WebUI masaüstü uygulamasını desteklemek için devam eden çalışmalar. Gelişmelerimizi ve güncellemelerimizi buradan takip edin: https://github.com/open-webui/desktop
 
 ## [0.5.4] - 2025-01-05
 
-### Added
+### Eklendi
 
-- **🔄 Clone Shared Chats**: Effortlessly clone shared chats to save time and streamline collaboration, perfect for reusing insightful discussions or custom setups.
-- **📣 Native Notifications for Channel Messages**: Stay informed with integrated desktop notifications for channel messages, ensuring you never miss important updates while multitasking.
-- **🔥 Torch MPS Support**: MPS support for Mac users when Open WebUI is installed directly, offering better performance and compatibility for AI workloads.
-- **🌍 Enhanced Translations**: Small improvements to various translations, ensuring a smoother global user experience.
+- 🔄 **Paylaşılan Sohbetleri Klonla**: Zamandan tasarruf etmek ve işbirliğini kolaylaştırmak için paylaşılan sohbetleri zahmetsizce klonlayın, bilgilendirici tartışmaları veya özel kurulumları yeniden kullanmak için mükemmeldir.
+- 📣 **Kanal Mesajları için Yerel Bildirimler**: Kanal mesajları için entegre masaüstü bildirimleriyle haberdar olun, çoklu görev yaparken önemli güncellemeleri asla kaçırmamanızı sağlayın.
+- 🔥 **Torch MPS Desteği**: Open WebUI doğrudan yüklendiğinde Mac kullanıcıları için MPS desteği, AI iş yükleri için daha iyi performans ve uyumluluk sunar.
+- 🌍 **Gelişmiş Çeviriler**: Çeşitli çevirilere küçük iyileştirmeler yapıldı, daha sorunsuz bir küresel kullanıcı deneyimi sağlandı.
 
-### Fixed
+### Düzeltildi
 
-- **🖼️ Image-Only Messages in Channels**: You can now send images without accompanying text or content in channels.
-- **❌ Proper Exception Handling**: Enhanced error feedback by ensuring exceptions are raised clearly, reducing confusion and promoting smoother debugging.
-- **🔍 RAG Query Generation Restored**: Fixed query generation issues for Retrieval-Augmented Generation, improving retrieval accuracy and ensuring seamless functionality.
-- **📩 MOA Response Functionality Fixed**: Addressed an error with the MOA response generation feature.
-- **💬 Channel Thread Loading with 50+ Messages**: Resolved an issue where channel threads stalled when exceeding 50 messages, ensuring smooth navigation in active discussions.
-- **🔑 API Endpoint Restrictions Resolution**: Fixed a critical bug where the 'API_KEY_ALLOWED_ENDPOINTS' setting was not functioning as intended, ensuring API access is limited to specified endpoints for enhanced security.
-- **🛠️ Action Functions Restored**: Corrected an issue preventing action functions from working, restoring their utility for customized automations and workflows.
-- **📂 Temporary Chat JSON Export Fix**: Resolved a bug blocking temporary chats from being exported in JSON format, ensuring seamless data portability.
+- 🖼️ **Kanallarda Yalnızca Resim İçeren Mesajlar**: Kanallarda artık ek metin veya içerik olmadan resim gönderebilirsiniz.
+- ❌ **Doğru İstisna İşleme**: İstisnaların açıkça yükseltilmesi sağlanarak hata geri bildirimi geliştirildi, kafa karışıklığını azalttı ve daha sorunsuz hata ayıklamayı teşvik etti.
+- 🔍 **RAG Sorgu Oluşturma Geri Getirildi**: Retrieval-Augmented Generation için sorgu oluşturma sorunları düzeltildi, retrieval doğruluğunu artırdı ve sorunsuz işlevsellik sağlandı.
+- 📩 **MOA Yanıt İşlevselliği Düzeltildi**: MOA yanıt oluşturma özelliğiyle ilgili bir hata giderildi.
+- 💬 **50+ Mesajlı Kanal Konusu Yüklemesi**: Kanal konularının 50 mesajı aştığında takılması sorunu çözüldü, aktif tartışmalarda sorunsuz gezinme sağlandı.
+- 🔑 **API Endpoint Kısıtlamaları Çözünürlüğü**: 'API_KEY_ALLOWED_ENDPOINTS' ayarının amaçlandığı gibi çalışmaması gibi kritik bir hata düzeltildi, geliştirilmiş güvenlik için API erişiminin belirtilen endpoint'lerle sınırlı kalmasını sağladı.
+- 🛠️ **Eylem Fonksiyonları Geri Getirildi**: Eylem fonksiyonlarının çalışmasını engelleyen bir sorun düzeltildi, özelleştirilmiş otomasyonlar ve iş akışları için kullanışlılıkları geri getirildi.
+- 📂 **Geçici Sohbet JSON Dışa Aktarma Düzeltmesi**: Geçici sohbetlerin JSON formatında dışa aktarılmasını engelleyen bir hata düzeltildi, sorunsuz veri taşınabilirliği sağlandı.
 
-### Changed
+### Değiştirildi
 
-- **🎛️ Sidebar UI Tweaks**: Chat folders, including pinned folders, now display below the Chats section for better organization; the "New Folder" button has been relocated to the Chats section for a more intuitive workflow.
-- **🏗️ Real-Time Save Disabled by Default**: The 'ENABLE_REALTIME_CHAT_SAVE' setting is now off by default, boosting response speed for users who prioritize performance in high-paced workflows or less critical scenarios.
-- **🎤 Audio Input Echo Cancellation**: Audio input now features echo cancellation enabled by default, reducing audio feedback for improved clarity during conversations or voice-based interactions.
-- **🔧 General Reliability Improvements**: Numerous under-the-hood enhancements have been made to improve platform stability, boost overall performance, and ensure a more seamless, dependable experience across workflows.
+- 🎛️ **Kenar Çubuğu UI Ayarları**: Sohbet klasörleri, sabitlenmiş klasörler dahil, daha iyi organizasyon için Sohbetler bölümünün altında görüntülenir; "Yeni Klasör" düğmesi, daha sezgisel bir iş akışı için Sohbetler bölümüne taşındı.
+- 🏗️ **Gerçek Zamanlı Kaydetme Varsayılan Olarak Devre Dışı**: 'ENABLE_REALTIME_CHAT_SAVE' ayarı artık varsayılan olarak kapalıdır, yüksek tempolu iş akışlarında veya daha az kritik senaryolarda performansı önceliklendiren kullanıcılar için yanıt hızını artırır.
+- 🎤 **Ses Girişi Yankı İptali**: Ses girişi artık varsayılan olarak yankı iptali özelliğine sahiptir, konuşmalar veya ses tabanlı etkileşimler sırasında daha iyi netlik için ses geri bildirimini azaltır.
+- 🔧 **Genel Güvenilirlik İyileştirmeleri**: Platform kararlılığını artırmak, genel performansı yükseltmek ve iş akışları genelinde daha sorunsuz, daha güvenilir bir deneyim sağlamak için perde arkasında sayısız iyileştirme yapıldı.
 
 ## [0.5.3] - 2024-12-31
 
-### Added
+### Eklendi
 
-- **💬 Channel Reactions with Built-In Emoji Picker**: Easily express yourself in channel threads and messages with reactions, featuring an intuitive built-in emoji picker for seamless selection.
-- **🧵 Threads for Channels**: Organize discussions within channels by creating threads, improving clarity and fostering focused conversations.
-- **🔄 Reset Button for SVG Pan/Zoom**: Added a handy reset button to SVG Pan/Zoom, allowing users to quickly return diagrams or visuals to their default state without hassle.
-- **⚡ Realtime Chat Save Environment Variable**: Introduced the ENABLE_REALTIME_CHAT_SAVE environment variable. Choose between faster responses by disabling realtime chat saving or ensuring chunk-by-chunk data persistency for critical operations.
-- **🌍 Translation Enhancements**: Updated and refined translations across multiple languages, providing a smoother experience for international users.
-- **📚 Improved Documentation**: Expanded documentation on functions, including clearer guidance on function plugins and detailed instructions for migrating to v0.5. This ensures users can adapt and harness new updates more effectively. (https://docs.openwebui.com/features/plugin/)
+- 💬 **Kanal Reaksiyonları ve Yerleşik Emoji Seçici**: Kanallardaki konulara ve mesajlara reaksiyonlarla kolayca kendinizi ifade edin, sorunsuz seçim için sezgisel yerleşik bir emoji seçici içerir.
+- 🧵 **Kanallar için Konular**: Kanallar içindeki tartışmaları konular oluşturarak düzenleyin, netliği artırın ve odaklanmış konuşmaları teşvik edin.
+- 🔄 **SVG Pan/Zoom için Sıfırla Düğmesi**: SVG Pan/Zoom'a kullanışlı bir sıfırla düğmesi eklendi, kullanıcıların diyagramları veya görselleri zahmetsizce varsayılan durumlarına hızla döndürmelerini sağlar.
+- ⚡ **Gerçek Zamanlı Sohbet Kaydetme Ortam Değişkeni**: ENABLE_REALTIME_CHAT_SAVE ortam değişkeni tanıtıldı. Gerçek zamanlı sohbet kaydını devre dışı bırakarak daha hızlı yanıtlar veya kritik işlemler için parça parça veri kalıcılığı sağlayarak seçim yapın.
+- 🌍 **Çeviri Geliştirmeleri**: Birden fazla dilde güncellenmiş ve iyileştirilmiş çeviriler, uluslararası kullanıcılar için daha sorunsuz bir deneyim sağlar.
+- 📚 **Geliştirilmiş Dokümantasyon**: Fonksiyonlar hakkında genişletilmiş dokümantasyon, fonksiyon eklentileri hakkında daha net rehberlik ve v0.5'e geçiş için ayrıntılı talimatlar içerir. Bu, kullanıcıların yeni güncellemeleri daha etkili bir şekilde uyarlamasını ve kullanmasını sağlar. (https://docs.openwebui.com/features/plugin/)
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ Ollama Parameters Respected**: Resolved an issue where input parameters for Ollama were being ignored, ensuring precise and consistent model behavior.
-- **🔧 Function Plugin Outlet Hook Reliability**: Fixed a bug causing issues with 'event_emitter' and outlet hooks in filter function plugins, guaranteeing smoother operation within custom extensions.
-- **🖋️ Weird Custom Status Descriptions**: Adjusted the formatting and functionality for custom user statuses, ensuring they display correctly and intuitively.
-- **🔗 Restored API Functionality**: Fixed a critical issue where APIs were not operational for certain configurations, ensuring uninterrupted access.
-- **⏳ Custom Pipe Function Completion**: Resolved an issue where chats using specific custom pipe function plugins weren’t finishing properly, restoring consistent chat workflows.
-- **✅ General Stability Enhancements**: Implemented various under-the-hood improvements to boost overall reliability, ensuring smoother and more consistent performance across the WebUI.
+- 🛠️ **Ollama Parametreleri Dikkat Ediliyor**: Ollama için giriş parametrelerinin göz ardı edilmesi sorunu çözüldü, hassas ve tutarlı model davranışı sağlandı.
+- 🔧 **Fonksiyon Eklentisi Çıkış Hook'u Güvenilirliği**: Filtre fonksiyonu eklentilerindeki 'event_emitter' ve çıkış hook'larında sorunlara neden olan bir hata düzeltildi, özel uzantılar içinde daha sorunsuz çalışma garantisi verildi.
+- 🖋️ **Tuhaf Özel Durum Açıklamaları**: Özel kullanıcı durumlarının biçimlendirilmesi ve işlevselliği ayarlandı, doğru ve sezgisel bir şekilde görüntülenmeleri sağlandı.
+- 🔗 **Geri Getirilen API İşlevselliği**: Belirli yapılandırmalar için API'lerin çalışmaması gibi kritik bir sorun düzeltildi, kesintisiz erişim sağlandı.
+- ⏳ **Özel Pipe Fonksiyonu Tamamlama**: Belirli özel pipe fonksiyon eklentilerini kullanan sohbetlerin düzgün bir şekilde bitmemesi sorunu çözüldü, tutarlı sohbet iş akışları geri getirildi.
+- ✅ **Genel Kararlılık Geliştirmeleri**: Genel güvenilirliği artırmak için perde arkasında çeşitli iyileştirmeler yapıldı, WebUI genelinde daha sorunsuz ve daha tutarlı performans sağlandı.
 
 ## [0.5.2] - 2024-12-26
 
-### Added
+### Eklendi
 
-- **🖊️ Typing Indicators in Channels**: Know exactly who’s typing in real-time within your channels, enhancing collaboration and keeping everyone engaged.
-- **👤 User Status Indicators**: Quickly view a user’s status by clicking their profile image in channels for better coordination and availability insights.
-- **🔒 Configurable API Key Authentication Restrictions**: Flexibly configure endpoint restrictions for API key authentication, now off by default for a smoother setup in trusted environments.
+- 🖊️ **Kanallarda Yazma Göstergeleri**: Kanallarınızda kimin gerçek zamanlı olarak yazdığını tam olarak bilin, işbirliğini artırın ve herkesi etkileşimde tutun.
+- 👤 **Kullanıcı Durum Göstergeleri**: Daha iyi koordinasyon ve uygunluk içgörüleri için kanallarda bir kullanıcının profil resmine tıklayarak durumunu hızla görüntüleyin.
+- 🔒 **Yapılandırılabilir API Anahtarı Kimlik Doğrulama Kısıtlamaları**: API anahtarı kimlik doğrulaması için endpoint kısıtlamalarını esnek bir şekilde yapılandırın, güvenilir ortamlarda daha sorunsuz bir kurulum için artık varsayılan olarak kapalıdır.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Playground Functionality Restored**: Resolved a critical issue where the playground wasn’t working, ensuring seamless experimentation and troubleshooting workflows.
-- **📊 Corrected Ollama Usage Statistics**: Fixed a calculation error in Ollama’s usage statistics, providing more accurate tracking and insights for better resource management.
-- **🔗 Pipelines Outlet Hook Registration**: Addressed an issue where outlet hooks for pipelines weren’t registered, restoring functionality and consistency in pipeline workflows.
-- **🎨 Image Generation Error**: Resolved a persistent issue causing errors with 'get_automatic1111_api_auth()' to ensure smooth image generation workflows.
-- **🎙️ Text-to-Speech Error**: Fixed the missing argument in Eleven Labs’ 'get_available_voices()', restoring full text-to-speech capabilities for uninterrupted voice interactions.
-- **🖋️ Title Generation Issue**: Fixed a bug where title generation was not working in certain cases, ensuring consistent and reliable chat organization.
+- 🔧 **Playground İşlevselliği Geri Getirildi**: Playground'ın çalışmaması gibi kritik bir sorun çözüldü, sorunsuz deneme ve sorun giderme iş akışları sağlandı.
+- 📊 **Düzeltilmiş Ollama Kullanım İstatistikleri**: Ollama'nın kullanım istatistiklerindeki bir hesaplama hatası düzeltildi, daha doğru izleme ve daha iyi kaynak yönetimi için içgörüler sağlandı.
+- 🔗 **Pipelines Outlet Hook Kaydı**: Pipeline'lar için çıkış hook'larının kaydedilmemesi sorunu giderildi, pipeline iş akışlarında işlevsellik ve tutarlılık geri getirildi.
+- 🎨 **Görüntü Oluşturma Hatası**: Sorunsuz görüntü oluşturma iş akışları sağlamak için 'get_automatic1111_api_auth()' ile ilgili hatalara neden olan sürekli bir sorun çözüldü.
+- 🎙️ **Text-to-Speech Hatası**: Eleven Labs'ın 'get_available_voices()' içinde eksik bağımsız değişken düzeltildi, kesintisiz ses etkileşimleri için tam metin-konuşma yetenekleri geri getirildi.
+- 🖋️ **Başlık Oluşturma Sorunu**: Belirli durumlarda başlık oluşturmanın çalışmaması hatası düzeltildi, tutarlı ve güvenilir sohbet organizasyonu sağlandı.
 
 ## [0.5.1] - 2024-12-25
 
-### Added
+### Eklendi
 
-- **🔕 Notification Sound Toggle**: Added a new setting under Settings > Interface to disable notification sounds, giving you greater control over your workspace environment and focus.
+- 🔕 **Bildirim Sesi Geçiş Anahtarı**: Ayarlar > Arayüz altında bildirim seslerini devre dışı bırakmak için yeni bir ayar eklendi, çalışma alanı ortamınız ve odaklanmanız üzerinde daha fazla kontrol sağlar.
 
-### Fixed
+### Düzeltildi
 
-- **🔄 Non-Streaming Response Visibility**: Resolved an issue where non-streaming responses were not displayed, ensuring all responses are now reliably shown in your conversations.
-- **🖋️ Title Generation with OpenAI APIs**: Fixed a bug preventing title generation when using OpenAI APIs, restoring the ability to automatically generate chat titles for smoother organization.
-- **👥 Admin Panel User List**: Addressed the issue where only 50 users were visible in the admin panel. You can now manage and view all users without restrictions.
-- **🖼️ Image Generation Error**: Fixed the issue causing 'get_automatic1111_api_auth()' errors in image generation, ensuring seamless creative workflows.
-- **⚙️ Pipeline Settings Loading Issue**: Resolved a problem where pipeline settings were stuck at the loading screen, restoring full configurability in the admin panel.
+- 🔄 **Akışsız Yanıt Görünürlüğü**: Akışsız yanıtların görüntülenmemesi sorunu çözüldü, artık tüm yanıtlar konuşmalarınızda güvenilir bir şekilde gösteriliyor.
+- 🖋️ **OpenAI API'leri ile Başlık Oluşturma**: OpenAI API'lerini kullanırken başlık oluşturmayı engelleyen bir hata düzeltildi, daha sorunsuz organizasyon için sohbet başlıklarını otomatik olarak oluşturma yeteneği geri getirildi.
+- 👥 **Yönetici Paneli Kullanıcı Listesi**: Yönetici panelinde sadece 50 kullanıcının görünmesi sorunu giderildi. Artık tüm kullanıcıları kısıtlama olmaksızın yönetebilir ve görüntüleyebilirsiniz.
+- 🖼️ **Görüntü Oluşturma Hatası**: Görüntü oluşturmada 'get_automatic1111_api_auth()' hatalarına neden olan sorun düzeltildi, sorunsuz yaratıcı iş akışları sağlandı.
+- ⚙️ **Pipeline Ayarları Yükleme Sorunu**: Pipeline ayarlarının yükleme ekranında takılı kalması sorunu çözüldü, yönetici panelinde tam yapılandırılabilirlik geri getirildi.
 
 ## [0.5.0] - 2024-12-25
 
-### Added
+### Eklendi
 
-- **💬 True Asynchronous Chat Support**: Create chats, navigate away, and return anytime with responses ready. Ideal for reasoning models and multi-agent workflows, enhancing multitasking like never before.
-- **🔔 Chat Completion Notifications**: Never miss a completed response. Receive instant in-UI notifications when a chat finishes in a non-active tab, keeping you updated while you work elsewhere.
-- **🌐 Notification Webhook Integration**: Get alerts via webhooks even when your tab is closed! Configure your webhook URL in Settings > Account and receive timely updates for long-running chats or external integration needs.
-- **📚 Channels (Beta)**: Explore Discord/Slack-style chat rooms designed for real-time collaboration between users and AIs. Build bots for channels and unlock asynchronous communication for proactive multi-agent workflows. Opt-in via Admin Settings > General. A Comprehensive Bot SDK tutorial (https://github.com/open-webui/bot) is incoming, so stay tuned!
-- **🖼️ Client-Side Image Compression**: Now compress images before upload (Settings > Interface), saving bandwidth and improving performance seamlessly.
-- **🛠️ OAuth Management for User Groups**: Enable group-level management via OAuth integration for enhanced control and scalability in collaborative environments.
-- **✅ Structured Output for Ollama**: Pass structured data output directly to Ollama, unlocking new possibilities for streamlined automation and precise data handling.
-- **📜 Offline Swagger Documentation**: Developer-friendly Swagger API docs are now available offline, ensuring full accessibility wherever you are.
-- **📸 Quick Screen Capture Button**: Effortlessly capture your screen with a single click from the message input menu.
-- **🌍 i18n Updates**: Improved and refined translations across several languages, including Ukrainian, German, Brazilian Portuguese, Catalan, and more, ensuring a seamless global user experience.
+- 💬 **Gerçek Asenkron Sohbet Desteği**: Sohbetler oluşturun, başka yere gidin ve yanıtlar hazır olduğunda istediğiniz zaman geri dönün. Muhakeme modelleri ve çoklu ajan iş akışları için idealdir, çoklu görevi daha önce hiç olmadığı kadar geliştirir.
+- 🔔 **Sohbet Tamamlama Bildirimleri**: Tamamlanmış bir yanıtı asla kaçırmayın. Etkin olmayan bir sekmede bir sohbet bittiğinde anında UI içi bildirimler alın, başka yerde çalışırken sizi güncel tutar.
+- 🌐 **Bildirim Webhook Entegrasyonu**: Sekmeniz kapalıyken bile webhook'lar aracılığıyla uyarılar alın! Ayarlar > Hesap'tan webhook URL'nizi yapılandırın ve uzun süreli sohbetler veya harici entegrasyon ihtiyaçları için zamanında güncellemeler alın.
+- 📚 **Kanallar (Beta)**: Kullanıcılar ve AI'lar arasında gerçek zamanlı işbirliği için tasarlanmış Discord/Slack tarzı sohbet odalarını keşfedin. Kanallar için botlar oluşturun ve proaktif çoklu ajan iş akışları için asenkron iletişimin kilidini açın. Yönetici Ayarları > Genel aracılığıyla katılın. Kapsamlı bir Bot SDK öğreticisi (https://github.com/open-webui/bot) geliyor, bu yüzden takipte kalın!
+- 🖼️ **Client-Side Görüntü Sıkıştırma**: Artık yüklemeden önce görüntüleri sıkıştırın (Ayarlar > Arayüz), bant genişliğinden tasarruf edin ve performansı sorunsuz bir şekilde iyileştirin.
+- 🛠️ **Kullanıcı Grupları için OAuth Yönetimi**: İşbirlikçi ortamlarda gelişmiş kontrol ve ölçeklenebilirlik için OAuth entegrasyonu aracılığıyla grup düzeyinde yönetimi etkinleştirin.
+- ✅ **Ollama için Yapılandırılmış Çıktı**: Yapılandırılmış veri çıktısını doğrudan Ollama'ya geçirin, kolaylaştırılmış otomasyon ve hassas veri işleme için yeni olanaklar açın.
+- 📜 **Çevrimdışı Swagger Dokümantasyonu**: Geliştirici dostu Swagger API dokümanları artık çevrimdışı olarak kullanılabilir, nerede olursanız olun tam erişilebilirlik sağlar.
+- 📸 **Hızlı Ekran Yakalama Düğmesi**: Mesaj giriş menüsünden tek tıklamayla ekranınızı zahmetsizce yakalayın.
+- 🌍 **i18n Güncellemeleri**: Ukraynaca, Almanca, Brezilya Portekizcesi, Katalanca ve daha fazlası dahil olmak üzere birçok dilde iyileştirilmiş ve rafine edilmiş çeviriler, sorunsuz bir küresel kullanıcı deneyimi sağlar.
 
-### Fixed
+### Düzeltildi
 
-- **📋 Table Export to CSV**: Resolved issues with CSV export where headers were missing or errors occurred due to values with commas, ensuring smooth and reliable data handling.
-- **🔓 BYPASS_MODEL_ACCESS_CONTROL**: Fixed an issue where users could see models but couldn’t use them with 'BYPASS_MODEL_ACCESS_CONTROL=True', restoring proper functionality for environments leveraging this setting.
+- 📋 **CSV'ye Tablo Dışa Aktarma**: Başlıkların eksik olması veya virgül içeren değerler nedeniyle hatalar oluşması gibi CSV dışa aktarma sorunları çözüldü, sorunsuz ve güvenilir veri işleme sağlandı.
+- 🔓 **BYPASS_MODEL_ACCESS_CONTROL**: Kullanıcıların modelleri görebilmesi ancak 'BYPASS_MODEL_ACCESS_CONTROL=True' ile kullanamaması sorunu düzeltildi, bu ayarı kullanan ortamlar için doğru işlevsellik geri getirildi.
 
-### Changed
+### Değiştirildi
 
-- **💡 API Key Authentication Restriction**: Narrowed API key auth permissions to '/api/models' and '/api/chat/completions' for enhanced security and better API governance.
-- **⚙️ Backend Overhaul for Performance**: Major backend restructuring; a heads-up that some "Functions" using internal variables may face compatibility issues. Moving forward, websocket support is mandatory to ensure Open WebUI operates seamlessly.
+- 💡 **API Anahtarı Kimlik Doğrulama Kısıtlaması**: Gelişmiş güvenlik ve daha iyi API yönetimi için API anahtarı kimlik doğrulama izinleri '/api/models' ve '/api/chat/completions' ile sınırlandırıldı.
+- ⚙️ **Performans için Backend Revizyonu**: Büyük backend yeniden yapılandırması; dahili değişkenleri kullanan bazı "Fonksiyonlar"ın uyumluluk sorunlarıyla karşılaşabileceği konusunda bir uyarı. İleride, Open WebUI'nin sorunsuz çalışmasını sağlamak için websocket desteği zorunludur.
 
-### Removed
+### Kaldırıldı
 
-- **⚠️ Legacy Functionality Clean-Up**: Deprecated outdated backend systems that were non-essential or overlapped with newer implementations, allowing for a leaner, more efficient platform.
+- ⚠️ **Eski İşlevsellik Temizliği**: Gereksiz veya daha yeni uygulamalarla çakışan eski backend sistemleri kullanımdan kaldırıldı, daha yalın, daha verimli bir platform için.
 
 ## [0.4.8] - 2024-12-07
 
-### Added
+### Eklendi
 
-- **🔓 Bypass Model Access Control**: Introduced the 'BYPASS_MODEL_ACCESS_CONTROL' environment variable. Easily bypass model access controls for user roles when access control isn't required, simplifying workflows for trusted environments.
-- **📝 Markdown in Banners**: Now supports markdown for banners, enabling richer, more visually engaging announcements.
-- **🌐 Internationalization Updates**: Enhanced translations across multiple languages, further improving accessibility and global user experience.
-- **🎨 Styling Enhancements**: General UI style refinements for a cleaner and more polished interface.
-- **📋 Rich Text Reliability**: Improved the reliability and stability of rich text input across chats for smoother interactions.
+- 🔓 **Model Erişim Kontrolünü Atla**: 'BYPASS_MODEL_ACCESS_CONTROL' ortam değişkeni tanıtıldı. Erişim kontrolü gerekmediğinde kullanıcı rolleri için model erişim kontrollerini kolayca atlayın, güvenilir ortamlar için iş akışlarını basitleştirin.
+- 📝 **Banner'larda Markdown**: Banner'lar için Markdown desteği eklendi, daha zengin, görsel olarak daha çekici duyurulara olanak tanır.
+- 🌐 **Uluslararasılaşma Güncellemeleri**: Çoklu dillerde geliştirilmiş çeviriler, erişilebilirliği ve küresel kullanıcı deneyimini daha da iyileştiriyor.
+- 🎨 **Stil Geliştirmeleri**: Daha temiz ve daha şık bir arayüz için genel UI stil iyileştirmeleri.
+- 📋 **Zengin Metin Güvenilirliği**: Daha sorunsuz etkileşimler için sohbetlerde zengin metin girişinin güvenilirliği ve kararlılığı iyileştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **💡 Tailwind Build Issue**: Resolved a breaking bug caused by Tailwind, ensuring smoother builds and overall system reliability.
-- **📚 Knowledge Collection Query Fix**: Addressed API endpoint issues with querying knowledge collections, ensuring accurate and reliable information retrieval.
+- 💡 **Tailwind Build Sorunu**: Tailwind'den kaynaklanan kritik bir hata düzeltildi, daha sorunsuz build'ler ve genel sistem güvenilirliği sağlandı.
+- 📚 **Bilgi Koleksiyonu Sorgu Düzeltmesi**: Bilgi koleksiyonlarını sorgulamayla ilgili API endpoint sorunları giderildi, doğru ve güvenilir bilgi alımı sağlandı.
 
 ## [0.4.7] - 2024-12-01
 
-### Added
+### Eklendi
 
-- **✨ Prompt Input Auto-Completion**: Type a prompt and let AI intelligently suggest and complete your inputs. Simply press 'Tab' or swipe right on mobile to confirm. Available only with Rich Text Input (default setting). Disable via Admin Settings for full control.
-- **🌍 Improved Translations**: Enhanced localization for multiple languages, ensuring a more polished and accessible experience for international users.
+- ✨ **Prompt Girişi Otomatik Tamamlama**: Bir prompt yazın ve AI'nın girişlerinizi akıllıca önermesine ve tamamlamasına izin verin. Onaylamak için mobil cihazda 'Tab' tuşuna basın veya sağa kaydırın. Yalnızca Zengin Metin Girişi (varsayılan ayar) ile kullanılabilir. Tam kontrol için Yönetici Ayarları'ndan devre dışı bırakın.
+- 🌍 **Geliştirilmiş Çeviriler**: Çoklu diller için geliştirilmiş yerelleştirme, uluslararası kullanıcılar için daha şık ve erişilebilir bir deneyim sağlar.
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ Tools Export Issue**: Resolved a critical issue where exporting tools wasn’t functioning, restoring seamless export capabilities.
-- **🔗 Model ID Registration**: Fixed an issue where model IDs weren’t registering correctly in the model editor, ensuring reliable model setup and tracking.
-- **🖋️ Textarea Auto-Expansion**: Corrected a bug where textareas didn’t expand automatically on certain browsers, improving usability for multi-line inputs.
-- **🔧 Ollama Embed Endpoint**: Addressed the /ollama/embed endpoint malfunction, ensuring consistent performance and functionality.
+- 🛠️ **Araçlar Dışa Aktarma Sorunu**: Araçları dışa aktarmanın işlevsiz olduğu kritik bir sorun çözüldü, sorunsuz dışa aktarma yetenekleri geri getirildi.
+- 🔗 **Model ID Kaydı**: Model ID'lerinin model düzenleyicide doğru bir şekilde kaydedilmemesi sorunu düzeltildi, güvenilir model kurulumu ve takibi sağlandı.
+- 🖋️ **Textarea Otomatik Genişleme**: Textarea'ların belirli tarayıcılarda otomatik olarak genişlememesi hatası düzeltildi, çok satırlı girişler için kullanılabilirliği iyileştirdi.
+- 🔧 **Ollama Embed Endpoint**: /ollama/embed endpoint'i arızası giderildi, tutarlı performans ve işlevsellik sağlandı.
 
-### Changed
+### Değiştirildi
 
-- **🎨 Knowledge Base Styling**: Refined knowledge base visuals for a cleaner, more modern look, laying the groundwork for further enhancements in upcoming releases.
+- 🎨 **Bilgi Tabanı Stilizasyonu**: Daha temiz, daha modern bir görünüm için bilgi tabanı görselleri iyileştirildi, gelecek sürümlerde daha fazla geliştirme için zemin hazırlandı.
 
 ## [0.4.6] - 2024-11-26
 
-### Added
+### Eklendi
 
-- **🌍 Enhanced Translations**: Various language translations improved to make the WebUI more accessible and user-friendly worldwide.
+- 🌍 **Gelişmiş Çeviriler**: WebUI'yi dünya çapında daha erişilebilir ve kullanıcı dostu hale getirmek için çeşitli dil çevirileri iyileştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **✏️ Textarea Shifting Bug**: Resolved the issue where the textarea shifted unexpectedly, ensuring a smoother typing experience.
-- **⚙️ Model Configuration Modal**: Fixed the issue where the models configuration modal introduced in 0.4.5 wasn’t working for some users.
-- **🔍 Legacy Query Support**: Restored functionality for custom query generation in RAG when using legacy prompts, ensuring both default and custom templates now work seamlessly.
-- **⚡ Improved General Reliability**: Various minor fixes improve platform stability and ensure a smoother overall experience across workflows.
+- ✏️ **Textarea Kaydırma Hatası**: Textarea'nın beklenmedik şekilde kayması sorunu çözüldü, daha sorunsuz bir yazma deneyimi sağlandı.
+- ⚙️ **Model Yapılandırma Modalı**: 0.4.5'te tanıtılan modeller yapılandırma modalının bazı kullanıcılar için çalışmaması sorunu düzeltildi.
+- 🔍 **Eski Sorgu Desteği**: Eski prompt'lar kullanılırken RAG'de özel sorgu oluşturma işlevselliği geri getirildi, hem varsayılan hem de özel şablonların artık sorunsuz çalışması sağlandı.
+- ⚡ **Geliştirilmiş Genel Güvenilirlik**: Çeşitli küçük düzeltmeler, platform kararlılığını artırır ve iş akışları genelinde daha sorunsuz bir genel deneyim sağlar.
 
 ## [0.4.5] - 2024-11-26
 
-### Added
+### Eklendi
 
-- **🎨 Model Order/Defaults Reintroduced**: Brought back the ability to set model order and default models, now configurable via Admin Settings > Models > Configure (Gear Icon).
+- 🎨 **Model Sırası/Varsayılanlar Yeniden Tanıtıldı**: Model sırasını ve varsayılan modelleri ayarlama yeteneği geri getirildi, artık Yönetici Ayarları > Modeller > Yapılandır (Dişli Simgesi) aracılığıyla yapılandırılabilir.
 
-### Fixed
+### Düzeltildi
 
-- **🔍 Query Generation Issue**: Resolved an error in web search query generation, enhancing search accuracy and ensuring smoother search workflows.
-- **📏 Textarea Auto Height Bug**: Fixed a layout issue where textarea input height was shifting unpredictably, particularly when editing system prompts.
-- **🔑 Ollama Authentication**: Corrected an issue with Ollama’s authorization headers, guaranteeing reliable authentication across all endpoints.
-- **⚙️ Missing Min_P Save**: Resolved an issue where the 'min_p' parameter was not being saved in configurations.
-- **🛠️ Tools Description**: Fixed a key issue that omitted tool descriptions in tools payload.
+- 🔍 **Sorgu Oluşturma Sorunu**: Web arama sorgusu oluşturmada bir hata çözüldü, arama doğruluğu artırıldı ve daha sorunsuz arama iş akışları sağlandı.
+- 📏 **Textarea Otomatik Yükseklik Hatası**: Textarea giriş yüksekliğinin öngörülemeyen bir şekilde kayması, özellikle sistem prompt'larını düzenlerken oluşan bir düzen sorunu düzeltildi.
+- 🔑 **Ollama Kimlik Doğrulaması**: Ollama'nın yetkilendirme başlıklarıyla ilgili bir sorun düzeltildi, tüm endpoint'lerde güvenilir kimlik doğrulaması sağlandı.
+- ⚙️ **Eksik Min_P Kaydetme**: 'min_p' parametresinin yapılandırmalara kaydedilmemesi sorunu çözüldü.
+- 🛠️ **Araçlar Açıklaması**: Araçlar payload'ında araç açıklamalarını atlayan önemli bir sorun düzeltildi.
 
 ## [0.4.4] - 2024-11-22
 
-### Added
+### Eklendi
 
-- **🌐 Translation Updates**: Refreshed Catalan, Brazilian Portuguese, German, and Ukrainian translations, further enhancing the platform's accessibility and improving the experience for international users.
+- 🌐 **Çeviri Güncellemeleri**: Katalanca, Brezilya Portekizcesi, Almanca ve Ukraynaca çevirileri yenilendi, platformun erişilebilirliğini daha da artırdı ve uluslararası kullanıcılar için deneyimi iyileştirdi.
 
-### Fixed
+### Düzeltildi
 
-- **📱 Mobile Controls Visibility**: Resolved an issue where the controls button was not displaying on the new chats page for mobile users, ensuring smoother navigation and functionality on smaller screens.
-- **📷 LDAP Profile Image Issue**: Fixed an LDAP integration bug related to profile images, ensuring seamless authentication and a reliable login experience for users.
-- **⏳ RAG Query Generation Issue**: Addressed a significant problem where RAG query generation occurred unnecessarily without attached files, drastically improving speed and reducing delays during chat completions.
+- 📱 **Mobil Kontroller Görünürlüğü**: Mobil kullanıcılar için yeni sohbetler sayfasında kontroller düğmesinin görüntülenmemesi sorunu çözüldü, daha küçük ekranlarda daha sorunsuz gezinme ve işlevsellik sağlandı.
+- 📷 **LDAP Profil Resmi Sorunu**: Profil resimleriyle ilgili bir LDAP entegrasyon hatası düzeltildi, kullanıcılar için sorunsuz kimlik doğrulama ve güvenilir bir giriş deneyimi sağlandı.
+- ⏳ **RAG Sorgu Oluşturma Sorunu**: Ekli dosyalar olmadan RAG sorgu oluşturmanın gereksiz yere gerçekleşmesi gibi önemli bir sorun giderildi, sohbet tamamlamaları sırasında hızı önemli ölçüde artırdı ve gecikmeleri azalttı.
 
-### Changed
+### Değiştirildi
 
-- **⚙️ Legacy Event Emitter Support**: Reintroduced compatibility with legacy "citation" types for event emitters in tools and functions, providing smoother workflows and broader tool support for users.
+- ⚙️ **Eski Event Emitter Desteği**: Araçlar ve fonksiyonlardaki event emitter'lar için eski "citation" türleriyle uyumluluk yeniden tanıtıldı, kullanıcılar için daha sorunsuz iş akışları ve daha geniş araç desteği sağlandı.
 
 ## [0.4.3] - 2024-11-21
 
-### Added
+### Eklendi
 
-- **📚 Inline Citations for RAG Results**: Get seamless inline citations for Retrieval-Augmented Generation (RAG) responses using the default RAG prompt. Note: This feature only supports newly uploaded files, improving traceability and providing source clarity.
-- **🎨 Better Rich Text Input Support**: Enjoy smoother and more reliable rich text formatting for chats, enhancing communication quality.
-- **⚡ Faster Model Retrieval**: Implemented caching optimizations for faster model loading, providing a noticeable speed boost across workflows. Further improvements are on the way!
+- 📚 **RAG Sonuçları için Satır İçi Atıflar**: Varsayılan RAG prompt'unu kullanarak Retrieval-Augmented Generation (RAG) yanıtları için sorunsuz satır içi atıflar alın. Not: Bu özellik yalnızca yeni yüklenen dosyaları destekler, izlenebilirliği artırır ve kaynak netliği sağlar.
+- 🎨 **Daha İyi Zengin Metin Giriş Desteği**: Sohbetler için daha sorunsuz ve daha güvenilir zengin metin biçimlendirmesinin keyfini çıkarın, iletişim kalitesini artırır.
+- ⚡ **Daha Hızlı Model Alımı**: Daha hızlı model yüklemesi için önbellekleme optimizasyonları uygulandı, iş akışları genelinde fark edilir bir hız artışı sağlar. Daha fazla iyileştirme yolda!
 
-### Fixed
+### Düzeltildi
 
-- **🔗 Pipelines Feature Restored**: Resolved a critical issue that previously prevented Pipelines from functioning, ensuring seamless workflows.
-- **✏️ Missing Suffix Field in Ollama Form**: Added the missing "suffix" field to the Ollama generate form, enhancing customization options.
+- 🔗 **Pipelines Özelliği Geri Getirildi**: Daha önce Pipelines'ın işlev görmesini engelleyen kritik bir sorun çözüldü, sorunsuz iş akışları sağlandı.
+- ✏️ **Ollama Formunda Eksik Son Ek Alanı**: Ollama generate formuna eksik "suffix" alanı eklendi, özelleştirme seçeneklerini geliştiriyor.
 
-### Changed
+### Değiştirildi
 
-- **🗂️ Renamed "Citations" to "Sources"**: Improved clarity and consistency by renaming the "citations" field to "sources" in messages.
+- 🗂️ **"Citations" (Atıflar) "Sources" (Kaynaklar) Olarak Yeniden Adlandırıldı**: Mesajlardaki "citations" alanının "sources" olarak yeniden adlandırılmasıyla netlik ve tutarlılık iyileştirildi.
 
 ## [0.4.2] - 2024-11-20
 
-### Fixed
+### Düzeltildi
 
-- **📁 Knowledge Files Visibility Issue**: Resolved the bug preventing individual files in knowledge collections from displaying when referenced with '#'.
-- **🔗 OpenAI Endpoint Prefix**: Fixed the issue where certain OpenAI connections that deviate from the official API spec weren’t working correctly with prefixes.
-- **⚔️ Arena Model Access Control**: Corrected an issue where arena model access control settings were not being saved.
-- **🔧 Usage Capability Selector**: Fixed the broken usage capabilities selector in the model editor.
+- 📁 **Bilgi Dosyaları Görünürlük Sorunu**: Bilgi koleksiyonlarındaki tek tek dosyaların '#' ile referans verildiğinde görüntülenmesini engelleyen hata çözüldü.
+- 🔗 **OpenAI Endpoint Ön Eki**: Resmi API spec'inden sapan belirli OpenAI bağlantılarının ön eklerle doğru çalışmaması sorunu düzeltildi.
+- ⚔️ **Arena Model Erişim Kontrolü**: Arena model erişim kontrol ayarlarının kaydedilmemesi sorunu düzeltildi.
+- 🔧 **Kullanım Yeteneği Seçici**: Model düzenleyicideki bozuk kullanım yetenekleri seçicisi düzeltildi.
 
 ## [0.4.1] - 2024-11-19
 
-### Added
+### Eklendi
 
-- **📊 Enhanced Feedback System**: Introduced a detailed 1-10 rating scale for feedback alongside thumbs up/down, preparing for more precise model fine-tuning and improving feedback quality.
-- **ℹ️ Tool Descriptions on Hover**: Easily access tool descriptions by hovering over the message input, providing a smoother workflow with more context when utilizing tools.
+- 📊 **Gelişmiş Geri Bildirim Sistemi**: Daha hassas model ince ayarı ve geri bildirim kalitesini iyileştirmek için başparmak yukarı/aşağı ile birlikte 1-10 arası ayrıntılı bir derecelendirme ölçeği tanıtıldı.
+- ℹ️ **Üzerine Gelince Araç Açıklamaları**: Mesaj girişinin üzerine gelerek araç açıklamalarına kolayca erişin, araçları kullanırken daha fazla bağlamla daha sorunsuz bir iş akışı sağlar.
 
-### Fixed
+### Düzeltildi
 
-- **🗑️ Graceful Handling of Deleted Users**: Resolved an issue where deleted users caused workspace items (models, knowledge, prompts, tools) to fail, ensuring reliable workspace loading.
-- **🔑 API Key Creation**: Fixed an issue preventing users from creating new API keys, restoring secure and seamless API management.
-- **🔗 HTTPS Proxy Fix**: Corrected HTTPS proxy issues affecting the '/api/v1/models/' endpoint, ensuring smoother, uninterrupted model management.
+- 🗑️ **Silinmiş Kullanıcıların Zarif İşlenmesi**: Silinmiş kullanıcıların çalışma alanı öğelerinin (modeller, bilgi tabanları, prompt'lar, araçlar) başarısız olmasına neden olan bir sorun çözüldü, güvenilir çalışma alanı yüklemesi sağlandı.
+- 🔑 **API Anahtarı Oluşturma**: Kullanıcıların yeni API anahtarları oluşturmasını engelleyen bir sorun düzeltildi, güvenli ve sorunsuz API yönetimini geri getirdi.
+- 🔗 **HTTPS Proxy Düzeltmesi**: '/api/v1/models/' endpoint'ini etkileyen HTTPS proxy sorunları düzeltildi, daha sorunsuz, kesintisiz model yönetimi sağlandı.
 
 ## [0.4.0] - 2024-11-19
 
-### Added
+### Eklendi
 
-- **👥 User Groups**: You can now create and manage user groups, making user organization seamless.
-- **🔐 Group-Based Access Control**: Set granular access to models, knowledge, prompts, and tools based on user groups, allowing for more controlled and secure environments.
-- **🛠️ Group-Based User Permissions**: Easily manage workspace permissions. Grant users the ability to upload files, delete, edit, or create temporary chats, as well as define their ability to create models, knowledge, prompts, and tools.
-- **🔑 LDAP Support**: Newly introduced LDAP authentication adds robust security and scalability to user management.
-- **🌐 Enhanced OpenAI-Compatible Connections**: Added prefix ID support to avoid model ID clashes, with explicit model ID support for APIs lacking '/models' endpoint support, ensuring smooth operation with custom setups.
-- **🔐 Ollama API Key Support**: Now manage credentials for Ollama when set behind proxies, including the option to utilize prefix ID for proper distinction across multiple Ollama instances.
-- **🔄 Connection Enable/Disable Toggle**: Easily enable or disable individual OpenAI and Ollama connections as needed.
-- **🎨 Redesigned Model Workspace**: Freshly redesigned to improve usability for managing models across users and groups.
-- **🎨 Redesigned Prompt Workspace**: A fresh UI to conveniently organize and manage prompts.
-- **🧩 Sorted Functions Workspace**: Functions are now automatically categorized by type (Action, Filter, Pipe), streamlining management.
-- **💻 Redesigned Collaborative Workspace**: Enhanced support for multiple users contributing to models, knowledge, prompts, or tools, improving collaboration.
-- **🔧 Auto-Selected Tools in Model Editor**: Tools enabled through the model editor are now automatically selected, whereas previously it only gave users the option to enable the tool, reducing manual steps and enhancing efficiency.
-- **🔔 Web Search & Tools Indicator**: A clear indication now shows when web search or tools are active, reducing confusion.
-- **🔑 Toggle API Key Auth**: Tighten security by easily enabling or disabling API key authentication option for Open WebUI.
-- **🗂️ Agentic Retrieval**: Improve RAG accuracy via smart pre-processing of chat history to determine the best queries before retrieval.
-- **📁 Large Text as File Option**: Optionally convert large pasted text into a file upload, keeping the chat interface cleaner.
-- **🗂️ Toggle Citations for Models**: Ability to disable citations has been introduced in the model editor.
-- **🔍 User Settings Search**: Quickly search for settings fields, improving ease of use and navigation.
-- **🗣️ Experimental SpeechT5 TTS**: Local SpeechT5 support added for improved text-to-speech capabilities.
-- **🔄 Unified Reset for Models**: A one-click option has been introduced to reset and remove all models from the Admin Settings.
-- **🛠️ Initial Setup Wizard**: The setup process now explicitly informs users that they are creating an admin account during the first-time setup, ensuring clarity. Previously, users encountered the login page right away without this distinction.
-- **🌐 Enhanced Translations**: Several language translations, including Ukrainian, Norwegian, and Brazilian Portuguese, were refined for better localization.
+- 👥 **Kullanıcı Grupları**: Artık kullanıcı grupları oluşturabilir ve yönetebilirsiniz, bu da kullanıcı organizasyonunu sorunsuz hale getirir.
+- 🔐 **Grup Tabanlı Erişim Kontrolü**: Kullanıcı gruplarına göre modellere, bilgi tabanlarına, prompt'lara ve araçlara ayrıntılı erişim ayarlayın, daha kontrollü ve güvenli ortamlar sağlayın.
+- 🛠️ **Grup Tabanlı Kullanıcı İzinleri**: Çalışma alanı izinlerini kolayca yönetin. Kullanıcılara dosya yükleme, silme, düzenleme veya geçici sohbetler oluşturma yeteneği verin, ayrıca modeller, bilgi tabanları, prompt'lar ve araçlar oluşturma yeteneklerini tanımlayın.
+- 🔑 **LDAP Desteği**: Yeni tanıtılan LDAP kimlik doğrulaması, kullanıcı yönetimine sağlam güvenlik ve ölçeklenebilirlik katıyor.
+- 🌐 **Gelişmiş OpenAI Uyumlu Bağlantılar**: Model ID çakışmalarını önlemek için ön ek ID desteği eklendi, '/models' endpoint desteği olmayan API'ler için açık model ID desteği eklendi, özel kurulumlarla sorunsuz çalışmayı sağlıyor.
+- 🔐 **Ollama API Anahtar Desteği**: Artık proxy'lerin arkasına ayarlandığında Ollama için kimlik bilgilerini yönetin, birden çok Ollama örneği arasında doğru ayrım için ön ek ID'si kullanma seçeneği dahil.
+- 🔄 **Bağlantı Etkinleştirme/Devre Dışı Bırakma Geçiş Anahtarı**: Gerektiğinde tek tek OpenAI ve Ollama bağlantılarını kolayca etkinleştirin veya devre dışı bırakın.
+- 🎨 **Yeniden Tasarlanmış Model Çalışma Alanı**: Kullanıcılar ve gruplar arasında modelleri yönetmek için kullanılabilirliği iyileştirmek amacıyla yeni tasarlanmış.
+- 🎨 **Yeniden Tasarlanmış Prompt Çalışma Alanı**: Prompt'ları rahatça düzenlemek ve yönetmek için yeni bir UI.
+- 🧩 **Sıralanmış Fonksiyonlar Çalışma Alanı**: Fonksiyonlar artık yönetimini kolaylaştırmak için otomatik olarak türe göre (Eylem, Filtre, Boru) kategorize ediliyor.
+- 💻 **Yeniden Tasarlanmış İşbirlikçi Çalışma Alanı**: Modeller, bilgi tabanları, prompt'lar veya araçlara katkıda bulunan birden fazla kullanıcı için gelişmiş destek, işbirliğini iyileştiriyor.
+- 🔧 **Model Düzenleyicide Otomatik Seçilen Araçlar**: Model düzenleyici aracılığıyla etkinleştirilen araçlar artık otomatik olarak seçilirken, daha önce sadece kullanıcılara aracı etkinleştirme seçeneği sunuluyordu, bu da manuel adımları azaltır ve verimliliği artırır.
+- 🔔 **Web Araması ve Araçlar Göstergesi**: Web araması veya araçlar aktif olduğunda açık bir gösterge görüntülenir, kafa karışıklığını azaltır.
+- 🔑 **API Anahtarı Kimlik Doğrulamasını Aç/Kapat**: Open WebUI için API anahtarı kimlik doğrulama seçeneğini kolayca etkinleştirerek veya devre dışı bırakarak güvenliği artırın.
+- 🗂️ **Ajan Tabanlı Alım**: Alım öncesinde en iyi sorguları belirlemek için sohbet geçmişini akıllıca ön işlemden geçirerek RAG doğruluğunu iyileştirin.
+- 📁 **Büyük Metni Dosya Olarak Seçeneği**: İsteğe bağlı olarak büyük yapıştırılan metni bir dosya yüklemesine dönüştürün, sohbet arayüzünü daha temiz tutar.
+- 🗂️ **Modeller için Atıfları Aç/Kapat**: Model düzenleyicide atıfları devre dışı bırakma yeteneği eklendi.
+- 🔍 **Kullanıcı Ayarları Araması**: Ayarlar alanlarını hızlıca arayın, kullanım kolaylığını ve gezinmeyi iyileştirir.
+- 🗣️ **Deneysel SpeechT5 TTS**: Geliştirilmiş text-to-speech yetenekleri için yerel SpeechT5 desteği eklendi.
+- 🔄 **Modeller için Birleşik Sıfırlama**: Yönetici Ayarları'ndan tüm modelleri sıfırlamak ve kaldırmak için tek tıklamayla bir seçenek eklendi.
+- 🛠️ **İlk Kurulum Sihirbazı**: Kurulum süreci artık, kullanıcıların ilk kurulum sırasında bir yönetici hesabı oluşturduklarını açıkça bildiriyor, netlik sağlıyor. Daha önce, kullanıcılar bu ayrım olmaksızın doğrudan giriş sayfasına geliyordu.
+- 🌐 **Gelişmiş Çeviriler**: Ukraynaca, Norveççe ve Brezilya Portekizcesi dahil olmak üzere çeşitli dil çevirileri, platform genelinde daha yerelleştirilmiş ve kapsayıcı bir arayüz için iyileştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **🎥 YouTube Video Attachments**: Fixed issues preventing proper loading and attachment of YouTube videos as files.
-- **🔄 Shared Chat Update**: Corrected issues where shared chats were not updating, improving collaboration consistency.
-- **🔍 DuckDuckGo Rate Limit Fix**: Addressed issues with DuckDuckGo search integration, enhancing search stability and performance when operating within rate limits.
-- **🧾 Citations Relevance Fix**: Adjusted the relevance percentage calculation for citations, so that Open WebUI properly reflect the accuracy of a retrieved document in RAG, ensuring users get clearer insights into sources.
-- **🔑 Jina Search API Key Requirement**: Added the option to input an API key for Jina Search, ensuring smooth functionality as keys are now mandatory.
+- 🎥 **YouTube Video Ekleri**: YouTube videolarının dosya olarak doğru şekilde yüklenmesini ve eklenmesini engelleyen sorunlar düzeltildi.
+- 🔄 **Paylaşılan Sohbet Güncellemesi**: Paylaşılan sohbetlerin güncellenmemesi sorunları düzeltildi, işbirliği tutarlılığı iyileştirildi.
+- 🔍 **DuckDuckGo Hız Limiti Düzeltmesi**: DuckDuckGo arama entegrasyonuyla ilgili sorunlar giderildi, hız limitleri içinde çalışırken arama kararlılığı ve performansı artırıldı.
+- 🧾 **Atıfların Alaka Düzeyi Düzeltmesi**: Atıflar için alaka düzeyi yüzdesi hesaplaması ayarlandı, böylece Open WebUI, RAG'deki alınan bir belgenin doğruluğunu doğru bir şekilde yansıtır ve kullanıcılara kaynaklar hakkında daha net içgörüler sağlar.
+- 🔑 **Jina Arama API Anahtarı Gereksinimi**: Jina Arama için bir API anahtarı girme seçeneği eklendi, anahtarlar artık zorunlu olduğundan sorunsuz işlevsellik sağlandı.
 
-### Changed
+### Değiştirildi
 
-- **🛠️ Functions Moved to Admin Panel**: As Functions operate as advanced plugins, they are now accessible from the Admin Panel instead of the workspace.
-- **🛠️ Manage Ollama Connections**: The "Models" section in Admin Settings has been relocated to Admin Settings > "Connections" > Ollama Connections. You can now manage Ollama instances via a dedicated "Manage Ollama" modal from "Connections", streamlining the setup and configuration of Ollama models.
-- **📊 Base Models in Admin Settings**: Admins can now find all base models, both connections or functions, in the "Models" Admin setting. Global model accessibility can be enabled or disabled here. Models are private by default, requiring explicit permission assignment for user access.
-- **📌 Sticky Model Selection for New Chats**: The model chosen from a previous chat now persists when creating a new chat. If you click "New Chat" again from the new chat page, it will revert to your default model.
-- **🎨 Design Refactoring**: Overall design refinements across the platform have been made, providing a more cohesive and polished user experience.
+- 🛠️ **Fonksiyonlar Yönetici Paneline Taşındı**: Fonksiyonlar gelişmiş eklentiler olarak çalıştığı için artık çalışma alanı yerine Yönetici Panelinden erişilebilir.
+- 🛠️ **Ollama Bağlantılarını Yönet**: Yönetici Ayarları'ndaki "Modeller" bölümü, Yönetici Ayarları > "Bağlantılar" > Ollama Bağlantıları'na taşındı. Artık Ollama örneklerini "Bağlantılar"daki özel bir "Ollama'yı Yönet" modalı aracılığıyla yönetebilir, Ollama modellerinin kurulumunu ve yapılandırmasını kolaylaştırır.
+- 📊 **Yönetici Ayarlarındaki Temel Modeller**: Yöneticiler artık "Modeller" Yönetici ayarındaki tüm temel modelleri, bağlantıları veya fonksiyonları bulabilirler. Genel model erişilebilirliği buradan etkinleştirilebilir veya devre dışı bırakılabilir. Modeller varsayılan olarak özeldir ve kullanıcı erişimi için açıkça izin atanması gerekir.
+- 📌 **Yeni Sohbetler için Yapışkan Model Seçimi**: Önceki bir sohbetten seçilen model, yeni bir sohbet oluşturulduğunda devam eder. Yeni sohbet sayfasından tekrar "Yeni Sohbet"e tıklarsanız, varsayılan modelinize geri döner.
+- 🎨 **Tasarım Yeniden Yapılandırması**: Genel tasarım iyileştirmeleri platform genelinde yapıldı, daha tutarlı ve şık bir kullanıcı deneyimi sağlandı.
 
-### Removed
+### Kaldırıldı
 
-- **📂 Model List Reordering**: Temporarily removed and will be reintroduced in upcoming user group settings improvements.
-- **⚙️ Default Model Setting**: Removed the ability to set a default model for users, will be reintroduced with user group settings in the future.
+- 📂 **Model Listesi Yeniden Sıralama**: Geçici olarak kaldırıldı ve gelecek kullanıcı grubu ayarları iyileştirmelerinde yeniden tanıtılacak.
+- ⚙️ **Varsayılan Model Ayarı**: Kullanıcılar için varsayılan model ayarlama yeteneği kaldırıldı, gelecekte kullanıcı grubu ayarlarıyla yeniden tanıtılacak.
 
 ## [0.3.35] - 2024-10-26
 
-### Added
+### Eklendi
 
-- **🌐 Translation Update**: Added translation labels in the SearchInput and CreateCollection components and updated Brazilian Portuguese translation (pt-BR)
-- **📁 Robust File Handling**: Enhanced file input handling for chat. If the content extraction fails or is empty, users will now receive a clear warning, preventing silent failures and ensuring you always know what's happening with your uploads.
-- **🌍 New Language Support**: Introduced Hungarian translations and updated French translations, expanding the platform's language accessibility for a more global user base.
+- **🌐 Çeviri Güncellemesi**: SearchInput ve CreateCollection bileşenlerinde çeviri etiketleri eklendi ve Brezilya Portekizcesi çevirisi (pt-BR) güncellendi.
+- **📁 Sağlam Dosya İşleme**: Sohbet için geliştirilmiş dosya girişi işleme. İçerik çıkarımı başarısız olursa veya boşsa, kullanıcılar artık net bir uyarı alacak, sessiz hataları önleyecek ve yüklemelerinizle ne olduğunu her zaman bilmenizi sağlayacak.
+- **🌍 Yeni Dil Desteği**: Macarca çeviriler tanıtıldı ve Fransızca çeviriler güncellendi, platformun daha küresel bir kullanıcı tabanı için dil erişilebilirliğini genişletti.
 
-### Fixed
+### Düzeltildi
 
-- **📚 Knowledge Base Loading Issue**: Resolved a critical bug where the Knowledge Base was not loading, ensuring smooth access to your stored documents and improving information retrieval in RAG-enhanced workflows.
-- **🛠️ Tool Parameters Issue**: Fixed an error where tools were not functioning correctly when required parameters were missing, ensuring reliable tool performance and more efficient task completions.
-- **🔗 Merged Response Loss in Multi-Model Chats**: Addressed an issue where responses in multi-model chat workflows were being deleted after follow-up queries, improving consistency and ensuring smoother interactions across models.
+- 📚 **Bilgi Tabanı Yükleme Sorunu**: Bilgi Tabanının yüklenmemesiyle ilgili kritik bir hata çözüldü, depolanan belgelerinize sorunsuz erişim sağlandı ve RAG ile geliştirilmiş iş akışlarında bilgi alımı iyileştirildi.
+- 🛠️ **Araç Parametreleri Sorunu**: Gerekli parametreler eksik olduğunda araçların doğru çalışmaması hatası düzeltildi, güvenilir araç performansı ve daha verimli görev tamamlamaları sağlandı.
+- 🔗 **Çok Modelli Sohbetlerde Birleştirilmiş Yanıt Kaybı**: Takip sorgularından sonra çok modelli sohbet iş akışlarında yanıtların silinmesi sorunu giderildi, tutarlılık iyileştirildi ve modeller arasında daha sorunsuz etkileşimler sağlandı.
 
 ## [0.3.34] - 2024-10-26
 
-### Added
+### Eklendi
 
-- **🔧 Feedback Export Enhancements**: Feedback history data can now be exported to JSON, allowing for seamless integration in RLHF processing and further analysis.
-- **🗂️ Embedding Model Lazy Loading**: Search functionality for leaderboard reranking is now more efficient, as embedding models are lazy-loaded only when needed, optimizing performance.
-- **🎨 Rich Text Input Toggle**: Users can now switch back to legacy textarea input for chat if they prefer simpler text input, though rich text is still the default until deprecation.
-- **🛠️ Improved Tool Calling Mechanism**: Enhanced method for parsing and calling tools, improving the reliability and robustness of tool function calls.
-- **🌐 Globalization Enhancements**: Updates to internationalization (i18n) support, further refining multi-language compatibility and accuracy.
+- 🔧 **Geri Bildirim Dışa Aktarma Geliştirmeleri**: Geri bildirim geçmişi verileri artık JSON'a aktarılabilir, RLHF işlemede sorunsuz entegrasyon ve daha fazla analiz sağlar.
+- 🗂️ **Embedding Model Tembel Yükleme**: Liderlik tablosu reranking için arama işlevselliği artık daha verimli, çünkü embedding modelleri yalnızca gerektiğinde tembel yükleniyor, performansı optimize ediyor.
+- 🎨 **Zengin Metin Girişi Geçiş Anahtarı**: Kullanıcılar, daha basit metin girişini tercih ediyorlarsa sohbet için eski textarea girişine geri dönebilirler, ancak zengin metin hala kullanımdan kaldırılana kadar varsayılan ayardır.
+- 🛠️ **Geliştirilmiş Araç Çağırma Mekanizması**: Araçları ayrıştırma ve çağırma yöntemi geliştirildi, araç fonksiyon çağrılarının güvenilirliğini ve sağlamlığını artırdı.
+- 🌐 **Küreselleşme Geliştirmeleri**: Uluslararasılaşma (i18n) desteğine güncellemeler, çoklu dil uyumluluğunu ve doğruluğunu daha da iyileştiriyor.
 
-### Fixed
+### Düzeltildi
 
-- **🖥️ Folder Rename Fix for Firefox**: Addressed a persistent issue where users could not rename folders by pressing enter in Firefox, now ensuring seamless folder management across browsers.
-- **🔠 Tiktoken Model Text Splitter Issue**: Resolved an issue where the tiktoken text splitter wasn’t working in Docker installations, restoring full functionality for tokenized text editing.
-- **💼 S3 File Upload Issue**: Fixed a problem affecting S3 file uploads, ensuring smooth operations for those who store files on cloud storage.
-- **🔒 Strict-Transport-Security Crash**: Resolved a crash when setting the Strict-Transport-Security (HSTS) header, improving stability and security enhancements.
-- **🚫 OIDC Boolean Access Fix**: Addressed an issue with boolean values not being accessed correctly during OIDC logins, ensuring login reliability.
-- **⚙️ Rich Text Paste Behavior**: Refined paste behavior in rich text input to make it smoother and more intuitive when pasting various content types.
-- **🔨 Model Exclusion for Arena Fix**: Corrected the filter function that was not properly excluding models from the arena, improving model management.
-- **🏷️ "Tags Generation Prompt" Fix**: Addressed an issue preventing custom "tags generation prompts" from registering properly, ensuring custom prompt work seamlessly.
+- 🖥️ **Firefox için Klasör Yeniden Adlandırma Düzeltmesi**: Kullanıcıların Firefox'ta enter tuşuna basarak klasörleri yeniden adlandıramaması gibi sürekli bir sorun giderildi, artık tarayıcılar arasında sorunsuz klasör yönetimi sağlanıyor.
+- 🔠 **Tiktoken Model Metin Bölücü Sorunu**: Tiktoken metin bölücünün Docker kurulumlarında çalışmaması sorunu çözüldü, token'lı metin düzenleme için tam işlevsellik geri getirildi.
+- 💼 **S3 Dosya Yükleme Sorunu**: S3 dosya yüklemelerini etkileyen bir sorun düzeltildi, dosyalarını bulut depolamada depolayanlar için sorunsuz işlemler sağlandı.
+- 🔒 **Strict-Transport-Security Çökmesi**: Strict-Transport-Security (HSTS) başlığı ayarlanırken oluşan bir çökme düzeltildi, kararlılık ve güvenlik geliştirmeleri iyileştirildi.
+- 🚫 **OIDC Boolean Erişim Düzeltmesi**: OIDC girişleri sırasında boolean değerlere doğru erişilememesi sorunu giderildi, giriş güvenilirliği sağlandı.
+- ⚙️ **Zengin Metin Yapıştırma Davranışı**: Çeşitli içerik türlerini yapıştırırken daha sorunsuz ve sezgisel hale getirmek için zengin metin girişinde yapıştırma davranışı iyileştirildi.
+- 🔨 **Arena Düzeltmesi için Model Dışlama**: Modelleri arenadan düzgün bir şekilde dışlamayan filtre fonksiyonu düzeltildi, model yönetimini iyileştirdi.
+- 🏷️ **"Etiketler Oluşturma Prompt'u" Düzeltmesi**: Özel "etiketler oluşturma prompt'larının" düzgün bir şekilde kaydedilmesini engelleyen bir sorun giderildi, özel prompt'ların sorunsuz çalışması sağlandı.
 
 ## [0.3.33] - 2024-10-24
 
-### Added
+### Eklendi
 
-- **🏆 Evaluation Leaderboard**: Easily track your performance through a new leaderboard system where your ratings contribute to a real-time ranking based on the Elo system. Sibling responses (regenerations, many model chats) are required for your ratings to count in the leaderboard. Additionally, you can opt-in to share your feedback history and be part of the community-wide leaderboard. Expect further improvements as we refine the algorithm—help us build the best community leaderboard!
-- **⚔️ Arena Model Evaluation**: Enable blind A/B testing of models directly from Admin Settings > Evaluation for a true side-by-side comparison. Ideal for pinpointing the best model for your needs.
-- **🎯 Topic-Based Leaderboard**: Discover more accurate rankings with experimental topic-based reranking, which adjusts leaderboard standings based on tag similarity in feedback. Get more relevant insights based on specific topics!
-- **📁 Folders Support for Chats**: Organize your chats better by grouping them into folders. Drag and drop chats between folders and export them seamlessly for easy sharing or analysis.
-- **📤 Easy Chat Import via Drag & Drop**: Save time by simply dragging and dropping chat exports (JSON) directly onto the sidebar to import them into your workspace—streamlined, efficient, and intuitive!
-- **📚 Enhanced Knowledge Collection**: Now, you can reference individual files from a knowledge collection—ideal for more precise Retrieval-Augmented Generations (RAG) queries and document analysis.
-- **🏷️ Enhanced Tagging System**: Tags now take up less space! Utilize the new 'tag:' query system to manage, search, and organize your conversations more effectively without cluttering the interface.
-- **🧠 Auto-Tagging for Chats**: Your conversations are now automatically tagged for improved organization, mirroring the efficiency of auto-generated titles.
-- **🔍 Backend Chat Query System**: Chat filtering has become more efficient, now handled through the backend\*\* instead of your browser, improving search performance and accuracy.
-- **🎮 Revamped Playground**: Experience a refreshed and optimized Playground for smoother testing, tweaks, and experimentation of your models and tools.
-- **🧩 Token-Based Text Splitter**: Introducing token-based text splitting (tiktoken), giving you more precise control over how text is processed. Previously, only character-based splitting was available.
-- **🔢 Ollama Batch Embeddings**: Leverage new batch embedding support for improved efficiency and performance with Ollama embedding models.
-- **🔍 Enhanced Add Text Content Modal**: Enjoy a cleaner, more intuitive workflow for adding and curating knowledge content with an upgraded input modal from our Knowledge workspace.
-- **🖋️ Rich Text Input for Chats**: Make your chat inputs more dynamic with support for rich text formatting. Your conversations just got a lot more polished and professional.
-- **⚡ Faster Whisper Model Configurability**: Customize your local faster whisper model directly from the WebUI.
-- **☁️ Experimental S3 Support**: Enable stateless WebUI instances with S3 support, greatly enhancing scalability and balancing heavy workloads.
-- **🔕 Disable Update Toast**: Now you can streamline your workspace even further—choose to disable update notifications for a more focused experience.
-- **🌟 RAG Citation Relevance Percentage**: Easily assess citation accuracy with the addition of relevance percentages in RAG results.
-- **⚙️ Mermaid Copy Button**: Mermaid diagrams now come with a handy copy button, simplifying the extraction and use of diagram contents directly in your workflow.
-- **🎨 UI Redesign**: Major interface redesign that will make navigation smoother, keep your focus where it matters, and ensure a modern look.
+- 🏆 **Değerlendirme Liderlik Tablosu**: Puanlarınızın Elo sistemine dayalı gerçek zamanlı bir sıralamaya katkıda bulunduğu yeni bir liderlik tablosu sistemi aracılığıyla performansınızı kolayca takip edin. Liderlik tablosunda puanlarınızın sayılması için kardeş yanıtlar (yeniden oluşturmalar, birçok model sohbeti) gereklidir. Ek olarak, geri bildirim geçmişinizi paylaşmayı ve topluluk genelindeki liderlik tablosunun bir parçası olmayı seçebilirsiniz. Algoritmayı iyileştirdikçe daha fazla iyileştirme bekleyin—en iyi topluluk liderlik tablosunu oluşturmamıza yardımcı olun!
+- ⚔️ **Arena Model Değerlendirmesi**: İhtiyaçlarınız için en iyi modeli tam olarak belirlemek için Yönetici Ayarları > Değerlendirme'den modellerin kör A/B testini doğrudan etkinleştirin.
+- 🎯 **Konu Tabanlı Liderlik Tablosu**: Deneysel konu tabanlı reranking ile daha doğru sıralamaları keşfedin, bu da liderlik tablosu sıralamalarını geri bildirimdeki etiket benzerliğine göre ayarlar. Belirli konulara dayalı daha ilgili içgörüler edinin!
+- 📁 **Sohbetler için Klasör Desteği**: Sohbetlerinizi klasörler halinde gruplandırarak daha iyi düzenleyin. Sohbetleri klasörler arasında sürükleyip bırakın ve kolay paylaşım veya analiz için sorunsuz bir şekilde dışa aktarın.
+- 📤 **Sürükle ve Bırak ile Kolay Sohbet İçe Aktarma**: Sohbet dışa aktarımlarını (JSON) doğrudan kenar çubuğuna sürükleyip bırakarak çalışma alanınıza aktarın—basitleştirilmiş, verimli ve sezgisel!
+- 📚 **Gelişmiş Bilgi Koleksiyonu**: Artık bir bilgi koleksiyonundan tek tek dosyalara referans verebilirsiniz—daha hassas Retrieval-Augmented Generations (RAG) sorguları ve belge analizi için idealdir.
+- 🏷️ **Gelişmiş Etiketleme Sistemi**: Etiketler artık daha az yer kaplıyor! Arayüzü karmaşıklaştırmadan konuşmalarınızı daha etkili bir şekilde yönetmek, aramak ve organize etmek için yeni 'tag:' sorgu sistemini kullanın.
+- 🧠 **Sohbetler için Otomatik Etiketleme**: Konuşmalarınız, otomatik oluşturulan başlıkların verimliliğini yansıtarak daha iyi organizasyon için otomatik olarak etiketlenir.
+- 🔍 **Backend Sohbet Sorgu Sistemi**: Sohbet filtrelemesi artık daha verimli, arama performansını ve doğruluğunu iyileştirerek tarayıcınız yerine backend aracılığıyla işleniyor.
+- 🎮 **Yenilenmiş Playground**: Modellerinizin ve araçlarınızın daha sorunsuz testi, ince ayarı ve denemesi için yenilenmiş ve optimize edilmiş Playground deneyimini yaşayın.
+- 🧩 **Token Tabanlı Metin Bölücü**: Metinlerin nasıl işlendiği üzerinde daha hassas kontrol sağlayan token tabanlı metin bölme (tiktoken) tanıtıldı. Daha önce sadece karakter tabanlı bölme mevcuttu.
+- 🔢 **Ollama Toplu Embeddings**: Ollama embedding modelleriyle geliştirilmiş verimlilik ve performans için yeni toplu embedding desteğinden yararlanın.
+- 🔍 **Gelişmiş Metin İçeriği Ekleme Modalı**: Bilgi çalışma alanımızdan yükseltilmiş bir giriş modalı ile bilgi içeriği ekleme ve düzenleme için daha temiz, daha sezgisel bir iş akışının keyfini çıkarın.
+- 🖋️ **Sohbetler için Zengin Metin Girişi**: Zengin metin biçimlendirme desteği ile sohbet girişlerinizi daha dinamik hale getirin. Konuşmalarınız artık çok daha şık ve profesyonel hale geldi.
+- ⚡ **Daha Hızlı Whisper Model Yapılandırılabilirliği**: Yerel daha hızlı whisper modelinizi doğrudan WebUI'den özelleştirin.
+- ☁️ **Deneysel S3 Desteği**: S3 desteği ile durum bilgisi olmayan WebUI örneklerini etkinleştirin, ölçeklenebilirliği önemli ölçüde artırın ve ağır iş yüklerini dengeleyin.
+- 🔕 **Güncelleme Toast'unu Devre Dışı Bırak**: Artık çalışma alanınızı daha da kolaylaştırabilirsiniz—daha odaklanmış bir deneyim için güncelleme bildirimlerini devre dışı bırakmayı seçin.
+- 🌟 **RAG Atıf Alaka Düzeyi Yüzdesi**: RAG sonuçlarında alaka düzeyi yüzdelerinin eklenmesiyle atıf doğruluğunu kolayca değerlendirin.
+- ⚙️ **Mermaid Kopyalama Düğmesi**: Mermaid diyagramları artık kullanışlı bir kopyalama düğmesiyle geliyor, diyagram içeriğini doğrudan iş akışınızda çıkarmayı ve kullanmayı basitleştiriyor.
+- 🎨 **UI Yeniden Tasarımı**: Gezinmeyi daha sorunsuz hale getirecek, odağınızı önemli olana yönlendirecek ve modern bir görünüm sağlayacak büyük arayüz yeniden tasarımı.
 
-### Fixed
+### Düzeltildi
 
-- **🎙️ Voice Note Mic Stopping Issue**: Fixed the issue where the microphone stayed active after ending a voice note recording, ensuring your audio workflow runs smoothly.
+- 🎙️ **Sesli Not Mikrofon Durdurma Sorunu**: Sesli not kaydını bitirdikten sonra mikrofonun aktif kalması sorunu düzeltildi, ses iş akışınızın sorunsuz çalışmasını sağlandı.
 
-### Removed
+### Kaldırıldı
 
-- **👋 Goodbye Sidebar Tags**: Sidebar tag clutter is gone. We’ve shifted tag buttons to more effective query-based tag filtering for a sleeker, more agile interface.
+- 👋 **Güçlü Kenar Çubuğu Etiketleri**: Kenar çubuğu etiket dağınıklığı gitti. Daha şık, daha çevik bir arayüz için etiket düğmelerini daha etkili sorgu tabanlı etiket filtrelemesine kaydırdık.
 
 ## [0.3.32] - 2024-10-06
 
-### Added
+### Eklendi
 
-- **🔢 Workspace Enhancements**: Added a display count for models, prompts, tools, and functions in the workspace, providing a clear overview and easier management.
+- 🔢 **Çalışma Alanı Geliştirmeleri**: Çalışma alanında modeller, prompt'lar, araçlar ve fonksiyonlar için bir gösterge sayacı eklendi, net bir genel bakış ve daha kolay yönetim sağlandı.
 
-### Fixed
+### Düzeltildi
 
-- **🖥️ Web and YouTube Attachment Fix**: Resolved an issue where attaching web links and YouTube videos was malfunctioning, ensuring seamless integration and display within chats.
-- **📞 Call Mode Activation on Landing Page**: Fixed a bug where call mode was not operational from the landing page.
+- 🖥️ **Web ve YouTube Ek Düzeltmesi**: Web bağlantıları ve YouTube videolarını eklemenin arızalı olması sorunu çözüldü, sohbetlerde sorunsuz entegrasyon ve görüntüleme sağlandı.
+- 📞 **Açılış Sayfasında Çağrı Modu Aktivasyonu**: Çağrı modunun açılış sayfasından çalışmaması hatası düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **🔄 URL Parameter Refinement**: Updated the 'tool_ids' URL parameter to 'tools' or 'tool-ids' for more intuitive and consistent user experience.
-- **🎨 Floating Buttons Styling Update**: Refactored the styling of floating buttons to intelligently adjust to the left side when there isn't enough room on the right, improving interface usability and aesthetic.
-- **🔧 Enhanced Accessibility for Floating Buttons**: Implemented the ability to close floating buttons with the 'Esc' key, making workflow smoother and more efficient for users navigating via keyboard.
-- **🖇️ Updated Information URL**: Information URLs now direct users to a general release page rather than a version-specific URL, ensuring access to the latest and relevant details all in one place.
-- **📦 Library Dependencies Update**: Upgraded dependencies to ensure compatibility and performance optimization for pip installs.
+- 🔄 **URL Parametresi İyileştirmesi**: Daha sezgisel ve tutarlı kullanıcı deneyimi için 'tool_ids' URL parametresi 'tools' veya 'tool-ids' olarak güncellendi.
+- 🎨 **Kayan Butonlar Stil Güncellemesi**: Kayan butonların stili yeniden düzenlendi, sağ tarafta yeterli yer olmadığında akıllıca sol tarafa ayarlanarak arayüz kullanılabilirliği ve estetiği iyileştirildi.
+- 🔧 **Kayan Butonlar için Gelişmiş Erişilebilirlik**: Kayan butonları 'Esc' tuşuyla kapatma yeteneği uygulandı, klavye aracılığıyla gezinen kullanıcılar için iş akışını daha sorunsuz ve verimli hale getirdi.
+- 🖇️ **Güncellenmiş Bilgi URL'si**: Bilgi URL'leri artık kullanıcıları sürüme özgü bir URL yerine genel bir sürüm sayfasına yönlendiriyor, tüm ilgili ayrıntılara tek bir yerden erişim sağlıyor.
+- 📦 **Kütüphane Bağımlılıkları Güncellemesi**: pip kurulumları için uyumluluk ve performans optimizasyonu sağlamak amacıyla bağımlılıklar yükseltildi.
 
 ## [0.3.31] - 2024-10-06
 
-### Added
+### Eklendi
 
-- **📚 Knowledge Feature**: Reimagined documents feature, now more performant with a better UI for enhanced organization; includes streamlined API integration for Retrieval-Augmented Generation (RAG). Detailed documentation forthcoming: https://docs.openwebui.com/
-- **🌐 New Landing Page**: Freshly designed landing page; toggle between the new UI and the classic chat UI from Settings > Interface for a personalized experience.
-- **📁 Full Document Retrieval Mode**: Toggle between full document retrieval or traditional snippets by clicking on the file item. This mode enhances document capabilities and supports comprehensive tasks like summarization by utilizing the entire content instead of RAG.
-- **📄 Extracted File Content Display**: View extracted content directly by clicking on the file item, simplifying file analysis.
-- **🎨 Artifacts Feature**: Render web content and SVGs directly in the interface, supporting quick iterations and live changes.
-- **🖊️ Editable Code Blocks**: Supercharged code blocks now allow live editing directly in the LLM response, with live reloads supported by artifacts.
-- **🔧 Code Block Enhancements**: Introduced a floating copy button in code blocks to facilitate easier code copying without scrolling.
-- **🔍 SVG Pan/Zoom**: Enhanced interaction with SVG images, including Mermaid diagrams, via new pan and zoom capabilities.
-- **🔍 Text Select Quick Actions**: New floating buttons appear when text is highlighted in LLM responses, offering deeper interactions like "Ask a Question" or "Explain".
-- **🗃️ Database Pool Configuration**: Enhanced database handling to support scalable user growth.
-- **🔊 Experimental Audio Compression**: Compress audio files to navigate around the 25MB limit for OpenAI's speech-to-text processing.
-- **🔍 Query Embedding**: Adjusted embedding behavior to enhance system performance by not repeating query embedding.
-- **💾 Lazy Load Optimizations**: Implemented lazy loading of large dependencies to minimize initial memory usage, boosting performance.
-- **🍏 Apple Touch Icon Support**: Optimizes the display of icons for web bookmarks on Apple mobile devices.
-- **🔽 Expandable Content Markdown Support**: Introducing 'details', 'summary' tag support for creating expandable content sections in markdown, facilitating cleaner, organized documentation and interactive content display.
+- 📚 **Bilgi Özelliği**: Yeniden tasarlanan belgeler özelliği, gelişmiş organizasyon için daha iyi bir UI ile daha performanslı; Retrieval-Augmented Generation (RAG) için kolaylaştırılmış API entegrasyonu içerir. Ayrıntılı dokümantasyon yakında geliyor: https://docs.openwebui.com/
+- 🌐 **Yeni Açılış Sayfası**: Yeni tasarlanmış açılış sayfası; kişiselleştirilmiş bir deneyim için Ayarlar > Arayüz'den yeni UI ve klasik sohbet UI'si arasında geçiş yapın.
+- 📁 **Tam Belge Alımı Modu**: Dosya öğesine tıklayarak tam belge alımı veya geleneksel snippet'ler arasında geçiş yapın. Bu mod, belge yeteneklerini geliştirir ve RAG yerine tüm içeriği kullanarak özetleme gibi kapsamlı görevleri destekler.
+- 📄 **Çıkarılan Dosya İçeriği Görüntüsü**: Dosya öğesine tıklayarak çıkarılan içeriği doğrudan görüntüleyin, dosya analizini basitleştirin.
+- 🎨 **Artifacts Özelliği**: Web içeriğini ve SVG'leri doğrudan arayüzde oluşturun, hızlı yinelemeleri ve canlı değişiklikleri destekleyin.
+- 🖊️ **Düzenlenebilir Kod Blokları**: Süper güçlendirilmiş kod blokları, LLM yanıtında doğrudan canlı düzenlemeye izin verir, artifact'ler tarafından canlı yeniden yüklemeler desteklenir.
+- 🔧 **Kod Bloğu Geliştirmeleri**: Kaydırma yapmadan daha kolay kod kopyalamayı sağlamak için kod bloklarına kayan bir kopyalama düğmesi eklendi.
+- 🔍 **SVG Pan/Zoom**: Mermaid diyagramları dahil olmak üzere SVG görüntülerle yeni pan ve zoom yetenekleri aracılığıyla geliştirilmiş etkileşim.
+- 🔍 **Metin Seçimi Hızlı Eylemleri**: LLM yanıtlarında metin vurgulandığında yeni kayan düğmeler belirir, "Soru Sor" veya "Açıkla" gibi daha derin etkileşimler sunar.
+- 🗃️ **Veritabanı Havuzu Yapılandırması**: Ölçeklenebilir kullanıcı büyümesini desteklemek için geliştirilmiş veritabanı işleme.
+- 🔊 **Deneysel Ses Sıkıştırma**: OpenAI'nin speech-to-text işleme için 25MB sınırını aşmak amacıyla ses dosyalarını sıkıştırın.
+- 🔍 **Sorgu Embedding'i**: Sorgu embedding'ini tekrarlamayarak sistem performansını artırmak için embedding davranışı ayarlandı.
+- 💾 **Tembel Yükleme Optimizasyonları**: İlk bellek kullanımını en aza indirmek ve performansı artırmak için büyük bağımlılıkların tembel yüklemesi uygulandı.
+- 🍏 **Apple Touch İkon Desteği**: Apple mobil cihazlarda web yer imleri için ikonların görüntülenmesini optimize eder.
+- 🔽 **Genişletilebilir İçerik Markdown Desteği**: Markdown'da genişletilebilir içerik bölümleri oluşturmak için 'details', 'summary' etiket desteği tanıtıldı, daha temiz, düzenli dokümantasyon ve etkileşimli içerik görüntülemesi sağlar.
 
-### Fixed
+### Düzeltildi
 
-- **🔘 Action Button Issue**: Resolved a bug where action buttons were not functioning, enhancing UI reliability.
-- **🔄 Multi-Model Chat Loop**: Fixed an infinite loop issue in multi-model chat environments, ensuring smoother chat operations.
-- **📄 Chat PDF/TXT Export Issue**: Resolved problems with exporting chat logs to PDF and TXT formats.
-- **🔊 Call to Text-to-Speech Issues**: Rectified problems with text-to-speech functions to improve audio interactions.
+- 🔘 **Eylem Düğmesi Sorunu**: Eylem düğmelerinin çalışmaması hatası çözüldü, UI güvenilirliği artırıldı.
+- 🔄 **Çok Modelli Sohbet Döngüsü**: Çok modelli sohbet ortamlarında sonsuz döngü sorunu düzeltildi, daha sorunsuz sohbet işlemleri sağlandı.
+- 📄 **Sohbet PDF/TXT Dışa Aktarma Sorunu**: Sohbet loglarını PDF ve TXT formatlarına dışa aktarmayla ilgili sorunlar çözüldü.
+- 🔊 **Text-to-Speech'e Çağrı Sorunları**: Ses etkileşimlerini iyileştirmek için text-to-speech fonksiyonlarındaki sorunlar giderildi.
 
-### Changed
+### Değiştirildi
 
-- **⚙️ Endpoint Renaming**: Renamed 'rag' endpoints to 'retrieval' for clearer function description.
-- **🎨 Styling and Interface Updates**: Multiple refinements across the platform to enhance visual appeal and user interaction.
+- ⚙️ **Endpoint Yeniden Adlandırma**: Daha net fonksiyon açıklaması için 'rag' endpoint'leri 'retrieval' olarak yeniden adlandırıldı.
+- 🎨 **Stil ve Arayüz Güncellemeleri**: Görsel çekiciliği ve kullanıcı etkileşimini artırmak için platform genelinde çok sayıda iyileştirme.
 
-### Removed
+### Kaldırıldı
 
-- **🗑️ Deprecated 'DOCS_DIR'**: Removed the outdated 'docs_dir' variable in favor of more direct file management solutions, with direct file directory syncing and API uploads for a more integrated experience.
+- 🗑️ **Eskimiş 'DOCS_DIR'**: Eski 'docs_dir' değişkeni, daha entegre bir deneyim için daha doğrudan dosya yönetimi çözümleriyle birlikte kaldırıldı, doğrudan dosya dizini senkronizasyonu ve API yüklemeleri ile.
 
 ## [0.3.30] - 2024-09-26
 
-### Fixed
+### Düzeltildi
 
-- **🍞 Update Available Toast Dismissal**: Enhanced user experience by ensuring that once the update available notification is dismissed, it won't reappear for 24 hours.
-- **📋 Ollama /embed Form Data**: Adjusted the integration inaccuracies in the /embed form data to ensure it perfectly matches with Ollama's specifications.
-- **🔧 O1 Max Completion Tokens Issue**: Resolved compatibility issues with OpenAI's o1 models max_completion_tokens param to ensure smooth operation.
-- **🔄 Pip Install Database Issue**: Fixed a critical issue where database changes during pip installations were reverting and not saving chat logs, now ensuring data persistence and reliability in chat operations.
-- **🏷️ Chat Rename Tab Update**: Fixed the functionality to change the web browser's tab title simultaneously when a chat is renamed, keeping tab titles consistent.
+- 🍞 **Mevcut Güncelleme Toast'ı Kapatma**: Güncelleme mevcut bildirimi kapatıldıktan sonra 24 saat boyunca tekrar görünmemesini sağlayarak kullanıcı deneyimi geliştirildi.
+- 📋 **Ollama /embed Form Verileri**: /embed form verilerindeki entegrasyon yanlışlıkları, Ollama'nın spesifikasyonlarıyla tam olarak eşleşmesini sağlamak için ayarlandı.
+- 🔧 **O1 Maksimum Tamamlama Tokenları Sorunu**: Sorunsuz çalışma sağlamak için OpenAI'nin o1 modellerinin max_completion_tokens parametresiyle ilgili uyumluluk sorunları çözüldü.
+- 🔄 **Pip Kurulum Veritabanı Sorunu**: Pip kurulumları sırasında veritabanı değişikliklerinin geri alınması ve sohbet loglarının kaydedilmemesi gibi kritik bir sorun düzeltildi, sohbet işlemlerinde veri kalıcılığı ve güvenilirliği sağlandı.
+- 🏷️ **Sohbet Yeniden Adlandırma Sekmesi Güncellemesi**: Bir sohbet yeniden adlandırıldığında web tarayıcısının sekme başlığını eşzamanlı olarak değiştiren işlevsellik düzeltildi, sekme başlıkları tutarlı tutuldu.
 
 ## [0.3.29] - 2023-09-25
 
-### Fixed
+### Düzeltildi
 
-- **🔧 KaTeX Rendering Improvement**: Resolved specific corner cases in KaTeX rendering to enhance the display of complex mathematical notation.
-- **📞 'Call' URL Parameter Fix**: Corrected functionality for 'call' URL search parameter ensuring reliable activation of voice calls through URL triggers.
-- **🔄 Configuration Reset Fix**: Fixed the RESET_CONFIG_ON_START to ensure settings revert to default correctly upon each startup, improving reliability in configuration management.
-- **🌍 Filter Outlet Hook Fix**: Addressed issues in the filter outlet hook, ensuring all filter functions operate as intended.
+- 🔧 **KaTeX Oluşturma İyileştirmesi**: Karmaşık matematiksel gösterimlerin görüntülenmesini iyileştirmek için KaTeX oluşturmadaki belirli uç durumlar çözüldü.
+- 📞 **'Call' URL Parametresi Düzeltmesi**: URL tetikleyicileri aracılığıyla sesli aramaların güvenilir bir şekilde etkinleştirilmesini sağlayan 'call' URL arama parametresi için işlevsellik düzeltildi.
+- 🔄 **Yapılandırma Sıfırlama Düzeltmesi**: Ayarların her başlangıçta doğru bir şekilde varsayılana dönmesini sağlamak için RESET_CONFIG_ON_START düzeltildi, yapılandırma yönetiminde güvenilirlik iyileştirildi.
+- 🌍 **Filtre Çıkış Hook Düzeltmesi**: Tüm filtre fonksiyonlarının amaçlandığı gibi çalışmasını sağlayarak filtre çıkış hook'undaki sorunlar giderildi.
 
 ## [0.3.28] - 2024-09-24
 
-### Fixed
+### Düzeltildi
 
-- **🔍 Web Search Functionality**: Corrected an issue where the web search option was not functioning properly.
+- 🔍 **Web Arama İşlevselliği**: Web arama seçeneğinin doğru çalışmaması sorunu düzeltildi.
 
 ## [0.3.27] - 2024-09-24
 
-### Fixed
+### Düzeltildi
 
-- **🔄 Periodic Cleanup Error Resolved**: Fixed a critical RuntimeError related to the 'periodic_usage_pool_cleanup' coroutine, ensuring smooth and efficient performance post-pip install, correcting a persisting issue from version 0.3.26.
-- **📊 Enhanced LaTeX Rendering**: Improved rendering for LaTeX content, enhancing clarity and visual presentation in documents and mathematical models.
+- 🔄 **Periyodik Temizleme Hatası Çözüldü**: 'periodic_usage_pool_cleanup' coroutine ile ilgili kritik bir RuntimeError düzeltildi, pip kurulumu sonrası sorunsuz ve verimli performans sağlandı, sürüm 0.3.26'dan kalma bir sorun düzeltildi.
+- 📊 **Gelişmiş LaTeX Oluşturma**: LaTeX içeriği için geliştirilmiş oluşturma, belgelerde ve matematiksel modellerde netliği ve görsel sunumu artırıyor.
 
 ## [0.3.26] - 2024-09-24
 
-### Fixed
+### Düzeltildi
 
-- **🔄 Event Loop Error Resolution**: Addressed a critical error where a missing running event loop caused 'periodic_usage_pool_cleanup' to fail with pip installs. This fix ensures smoother and more reliable updates and installations, enhancing overall system stability.
+- 🔄 **Olay Döngüsü Hatası Çözünürlüğü**: Eksik bir çalışan olay döngüsünün pip kurulumlarıyla 'periodic_usage_pool_cleanup'ın başarısız olmasına neden olan kritik bir hata giderildi. Bu düzeltme, genel sistem kararlılığını artırarak daha sorunsuz ve daha güvenilir güncellemeler ve kurulumlar sağlar.
 
 ## [0.3.25] - 2024-09-24
 
-### Fixed
+### Düzeltildi
 
-- **🖼️ Image Generation Functionality**: Resolved an issue where image generation was not functioning, restoring full capability for visual content creation.
-- **⚖️ Rate Response Corrections**: Addressed a problem where rate responses were not working, ensuring reliable feedback mechanisms are operational.
+- 🖼️ **Görüntü Oluşturma İşlevselliği**: Görüntü oluşturmanın işlevsiz olduğu bir sorun çözüldü, görsel içerik oluşturma için tam yetenek geri getirildi.
+- ⚖️ **Yanıt Hızı Düzeltmeleri**: Yanıt hızlarının çalışmaması sorunu giderildi, güvenilir geri bildirim mekanizmalarının çalışır durumda olduğu sağlandı.
 
 ## [0.3.24] - 2024-09-24
 
-### Added
+### Eklendi
 
-- **🚀 Rendering Optimization**: Significantly improved message rendering performance, enhancing user experience and webui responsiveness.
-- **💖 Favorite Response Feature in Chat Overview**: Users can now mark responses as favorite directly from the chat overview, enhancing ease of retrieval and organization of preferred responses.
-- **💬 Create Message Pairs with Shortcut**: Implemented creation of new message pairs using Cmd/Ctrl+Shift+Enter, making conversation editing faster and more intuitive.
-- **🌍 Expanded User Prompt Variables**: Added weekday, timezone, and language information variables to user prompts to match system prompt variables.
-- **🎵 Enhanced Audio Support**: Now includes support for 'audio/x-m4a' files, broadening compatibility with audio content within the platform.
-- **🔏 Model URL Search Parameter**: Added an ability to select a model directly via URL parameters, streamlining navigation and model access.
-- **📄 Enhanced PDF Citations**: PDF citations now open at the associated page, streamlining reference checks and document handling.
-- **🔧Use of Redis in Sockets**: Enhanced socket implementation to fully support Redis, enabling effective stateless instances suitable for scalable load balancing.
-- **🌍 Stream Individual Model Responses**: Allows specific models to have individualized streaming settings, enhancing performance and customization.
-- **🕒 Display Model Hash and Last Modified Timestamp for Ollama Models**: Provides critical model details directly in the Models workspace for enhanced tracking.
-- **❗ Update Info Notification for Admins**: Ensures administrators receive immediate updates upon login, keeping them informed of the latest changes and system statuses.
+- **🚀 Oluşturma Optimizasyonu**: Mesaj oluşturma performansı önemli ölçüde iyileştirildi, kullanıcı deneyimi ve webui duyarlılığı artırıldı.
+- **💖 Sohbet Genel Bakışında Favori Yanıt Özelliği**: Kullanıcılar artık sohbet genel bakışından yanıtları favori olarak işaretleyebilir, tercih edilen yanıtların kolayca alınmasını ve düzenlenmesini kolaylaştırır.
+- **💬 Kısayolla Mesaj Çiftleri Oluşturma**: Cmd/Ctrl+Shift+Enter kullanarak yeni mesaj çiftleri oluşturma uygulandı, konuşma düzenlemesini daha hızlı ve daha sezgisel hale getiriyor.
+- **🌍 Genişletilmiş Kullanıcı Prompt Değişkenleri**: Sistem prompt değişkenleriyle eşleşmesi için kullanıcı prompt'larına hafta içi, zaman dilimi ve dil bilgisi değişkenleri eklendi.
+- 🎵 **Gelişmiş Ses Desteği**: Artık 'audio/x-m4a' dosyaları için destek içerir, platform içinde ses içeriğiyle uyumluluğu genişletiyor.
+- 🔏 **Model URL Arama Parametresi**: URL parametreleri aracılığıyla doğrudan bir model seçme yeteneği eklendi, gezinmeyi ve model erişimini kolaylaştırıyor.
+- 📄 **Gelişmiş PDF Atıfları**: PDF atıfları artık ilgili sayfada açılır, referans kontrollerini ve belge işlemeyi kolaylaştırır.
+- 🔧 **Socketlerde Redis Kullanımı**: Websocket uygulamasını Redis'i tam olarak destekleyecek şekilde geliştirildi, ölçeklenebilir yük dengeleme için uygun durum bilgisi olmayan örnekleri etkinleştiriyor.
+- 🌍 **Bireysel Model Yanıtlarını Akışa Alma**: Belirli modellerin bireysel akış ayarlarına sahip olmasına izin verir, performansı ve özelleştirmeyi artırır.
+- 🕒 **Ollama Modelleri için Model Karma ve Son Değiştirilme Zaman Damgasını Görüntüle**: Modeller çalışma alanında gelişmiş izleme için kritik model ayrıntılarını doğrudan sağlar.
+- ❗ **Yöneticiler için Güncelleme Bilgisi Bildirimi**: Yöneticilerin oturum açar açmaz anında güncellemeler almasını sağlar, en son değişiklikler ve sistem durumları hakkında bilgilendirir.
 
-### Fixed
+### Düzeltildi
 
-- **🗑️ Temporary File Handling On Windows**: Fixed an issue causing errors when accessing a temporary file being used by another process, Tools & Functions should now work as intended.
-- **🔓 Authentication Toggle Issue**: Resolved the malfunction where setting 'WEBUI_AUTH=False' did not appropriately disable authentication, ensuring that user experience and system security settings function as configured.
-- **🔧 Save As Copy Issue for Many Model Chats**: Resolved an error preventing users from save messages as copies in many model chats.
-- **🔒 Sidebar Closure on Mobile**: Resolved an issue where the mobile sidebar remained open after menu engagement, improving user interface responsivity and comfort.
-- **🛡️ Tooltip XSS Vulnerability**: Resolved a cross-site scripting (XSS) issue within tooltips, ensuring enhanced security and data integrity during user interactions.
+- 🗑️ **Windows'ta Geçici Dosya İşleme**: Başka bir işlem tarafından kullanılan geçici bir dosyaya erişirken oluşan hatalara neden olan bir sorun düzeltildi, Araçlar ve Fonksiyonlar artık beklendiği gibi çalışmalıdır.
+- 🔓 **Kimlik Doğrulama Geçiş Anahtarı Sorunu**: 'WEBUI_AUTH=False' ayarının kimlik doğrulamayı uygun şekilde devre dışı bırakmaması arızası çözüldü, kullanıcı deneyiminin ve sistem güvenlik ayarlarının yapılandırıldığı gibi çalışmasını sağlar.
+- 🔧 **Birçok Model Sohbeti için Kopyala Olarak Kaydet Sorunu**: Kullanıcıların birçok model sohbetinde mesajları kopya olarak kaydetmesini engelleyen bir hata çözüldü.
+- 🔒 **Mobil Üzerinde Kenar Çubuğu Kapatma**: Mobil kenar çubuğunun menü etkileşiminden sonra açık kalması sorunu çözüldü, kullanıcı arayüzü duyarlılığını ve konforunu iyileştirdi.
+- 🛡️ **Araç İpucu XSS Güvenlik Açığı**: Araç ipuçlarındaki bir çapraz site betikleme (XSS) sorunu çözüldü, kullanıcı etkileşimleri sırasında geliştirilmiş güvenlik ve veri bütünlüğü sağlandı.
 
-### Changed
+### Değiştirildi
 
-- **↩️ Deprecated Interface Stream Response Settings**: Moved to advanced parameters to streamline interface settings and enhance user clarity.
-- **⚙️ Renamed 'speedRate' to 'playbackRate'**: Standardizes terminology, improving usability and understanding in media settings.
+- ↩️ **Eski Arayüz Akış Yanıt Ayarları Eski Haline Getirildi**: Arayüz ayarlarını kolaylaştırmak ve kullanıcı netliğini artırmak için gelişmiş parametrelere taşındı.
+- ⚙️ **'speedRate' 'playbackRate' olarak yeniden adlandırıldı**: Terminolojiyi standartlaştırır, medya ayarlarında kullanılabilirliği ve anlaşmayı iyileştirir.
 
 ## [0.3.23] - 2024-09-21
 
-### Added
+### Eklendi
 
-- **🚀 WebSocket Redis Support**: Enhanced load balancing capabilities for multiple instance setups, promoting better performance and reliability in WebUI.
-- **🔧 Adjustable Chat Controls**: Introduced width-adjustable chat controls, enabling a personalized and more comfortable user interface.
-- **🌎 i18n Updates**: Improved and updated the Chinese translations.
+- 🚀 **WebSocket Redis Desteği**: Çoklu örnek kurulumları için geliştirilmiş yük dengeleme yetenekleri, WebUI'de daha iyi performans ve güvenilirlik sağlar.
+- 🔧 **Ayarlanabilir Sohbet Kontrolleri**: Her sohbet oturumu için parametreleri kolayca ayarlayabilen genişliği ayarlanabilir sohbet kontrolleri tanıtıldı, etkileşimleriniz üzerinde daha hassas kontrol sunar.
+- 🌎 **i18n Güncellemeleri**: Çince çeviriler iyileştirildi ve güncellendi.
 
-### Fixed
+### Düzeltildi
 
-- **🌐 Task Model Unloading Issue**: Modified task handling to use the Ollama /api/chat endpoint instead of OpenAI compatible endpoint, ensuring models stay loaded and ready with custom parameters, thus minimizing delays in task execution.
-- **📝 Title Generation Fix for OpenAI Compatible APIs**: Resolved an issue preventing the generation of titles, enhancing consistency and reliability when using multiple API providers.
-- **🗃️ RAG Duplicate Collection Issue**: Fixed a bug causing repeated processing of the same uploaded file. Now utilizes indexed files to prevent unnecessary duplications, optimizing resource usage.
-- **🖼️ Image Generation Enhancement**: Refactored OpenAI image generation endpoint to be asynchronous, preventing the WebUI from becoming unresponsive during processing, thus enhancing user experience.
-- **🔓 Downgrade Authlib**: Reverted Authlib to version 1.3.1 to address and resolve issues concerning OAuth functionality.
+- 🌐 **Görev Modeli Kaldırma Sorunu**: Görev işlemini Ollama /api/chat endpoint'ini kullanacak şekilde değiştirildi, OpenAI uyumlu endpoint yerine, modellerin özel parametrelerle yüklü ve hazır kalmasını sağlayarak görev yürütmedeki gecikmeleri en aza indirdi.
+- 📝 **OpenAI Uyumlu API'ler için Başlık Oluşturma Düzeltmesi**: Başlıkların oluşturulmasını engelleyen bir sorun çözüldü, birden fazla API sağlayıcısı kullanırken tutarlılık ve güvenilirlik artırıldı.
+- 🗃️ **RAG Tekrarlanan Koleksiyon Sorunu**: Aynı yüklenen dosyanın tekrar tekrar işlenmesine neden olan bir hata düzeltildi. Artık gereksiz tekrarlamaları önlemek için dizine eklenmiş dosyalar kullanılıyor, kaynak kullanımını optimize ediyor.
+- 🖼️ **Görüntü Oluşturma Geliştirmesi**: OpenAI görüntü oluşturma endpoint'i asenkron olacak şekilde yeniden düzenlendi, işleme sırasında WebUI'nin yanıt vermemesi önlenerek kullanıcı deneyimi artırıldı.
+- 🔓 **Authlib Sürümünü Düşür**: OAuth işlevselliğiyle ilgili sorunları gidermek ve çözmek için Authlib sürümü 1.3.1'e geri alındı.
 
-### Changed
+### Değiştirildi
 
-- **🔍 Improved Message Interaction**: Enhanced the message node interface to allow for easier focus redirection with a simple click, streamlining user interaction.
-- **✨ Styling Refactor**: Updated WebUI styling for a cleaner, more modern look, enhancing user experience across the platform.
+- 🔍 **Geliştirilmiş Mesaj Etkileşimi**: Daha kolay odak yönlendirmesine basit bir tıklama ile izin vermek için mesaj düğüm arayüzü geliştirildi, kullanıcı etkileşimini kolaylaştırıyor.
+- ✨ **Stil Yeniden Yapılandırması**: Daha temiz, daha modern bir görünüm için WebUI stili güncellendi, platform genelinde kullanıcı deneyimi artırıldı.
 
 ## [0.3.22] - 2024-09-19
 
-### Added
+### Eklendi
 
-- **⭐ Chat Overview**: Introducing a node-based interactive messages diagram for improved visualization of conversation flows.
-- **🔗 Multiple Vector DB Support**: Now supports multiple vector databases, including the newly added Milvus support. Community contributions for additional database support are highly encouraged!
-- **📡 Experimental Non-Stream Chat Completion**: Experimental feature allowing the use of OpenAI o1 models, which do not support streaming, ensuring more versatile model deployment.
-- **🔍 Experimental Colbert-AI Reranker Integration**: Added support for "jinaai/jina-colbert-v2" as a reranker, enhancing search relevance and accuracy. Note: it may not function at all on low-spec computers.
-- **🕸️ ENABLE_WEBSOCKET_SUPPORT**: Added environment variable for instances to ignore websocket upgrades, stabilizing connections on platforms with websocket issues.
-- **🔊 Azure Speech Service Integration**: Added support for Azure Speech services for Text-to-Speech (TTS).
-- **🎚️ Customizable Playback Speed**: Playback speed control is now available in Call mode settings, allowing users to adjust audio playback speed to their preferences.
-- **🧠 Enhanced Error Messaging**: System now displays helpful error messages directly to users during chat completion issues.
-- **📂 Save Model as Transparent PNG**: Model profile images are now saved as PNGs, supporting transparency and improving visual integration.
-- **📱 iPhone Compatibility Adjustments**: Added padding to accommodate the iPhone navigation bar, improving UI display on these devices.
-- **🔗 Secure Response Headers**: Implemented security response headers, bolstering web application security.
-- **🔧 Enhanced AUTOMATIC1111 Settings**: Users can now configure 'CFG Scale', 'Sampler', and 'Scheduler' parameters directly in the admin settings, enhancing workflow flexibility without source code modifications.
-- **🌍 i18n Updates**: Enhanced translations for Chinese, Ukrainian, Russian, and French, fostering a better localized experience.
+- ⭐ **Sohbet Genel Bakışı**: Konuşma akışlarının daha iyi görselleştirilmesi için düğüm tabanlı etkileşimli bir mesaj diyagramı tanıtıldı.
+- 🔗 **Çoklu Vektör DB Desteği**: Artık yeni eklenen Milvus desteği de dahil olmak üzere çoklu vektör veritabanlarını destekliyor. Ek veritabanı desteği için topluluk katkıları şiddetle teşvik edilir!
+- 📡 **Deneysel Akışsız Sohbet Tamamlama**: Akış desteği olmayan OpenAI o1 modellerinin kullanımına izin veren deneysel özellik, daha çok yönlü model dağıtımı sağlıyor.
+- 🔍 **Deneysel Colbert-AI Reranker Entegrasyonu**: Arama alaka düzeyini ve doğruluğunu artırmak için "jinaai/jina-colbert-v2" bir reranker olarak desteklendi. Not: Düşük özellikli bilgisayarlarda hiç çalışmayabilir.
+- 🕸️ **ENABLE_WEBSOCKET_SUPPORT**: Websocket yükseltmelerini yok saymak için ortam değişkeni eklendi, websocket sorunları olan platformlarda bağlantıları stabilize ediyor.
+- 🔊 **Azure Speech Service Entegrasyonu**: Text-to-Speech (TTS) için Azure Speech hizmetleri desteği eklendi.
+- 🎚️ **Özelleştirilebilir Çalma Hızı**: Çağrı modu ayarlarında çalma hızı kontrolü artık mevcut, kullanıcıların ses çalma hızını tercihlerine göre ayarlamalarına olanak tanıyor.
+- 🧠 **Gelişmiş Hata Mesajlaşması**: Sohbet tamamlama sorunları sırasında sistem artık kullanıcılara doğrudan yararlı hata mesajları gösteriyor.
+- 📂 **Modeli Şeffaf PNG Olarak Kaydet**: Model profil resimleri artık PNG olarak kaydediliyor, şeffaflığı destekliyor ve görsel entegrasyonu iyileştiriyor.
+- 📱 **iPhone Uyumluluk Ayarları**: iPhone gezinme çubuğunu barındırmak için dolgu eklendi, bu cihazlarda UI görüntüsünü iyileştiriyor.
+- 🔗 **Güvenli Yanıt Başlıkları**: Web uygulaması güvenliğini güçlendirmek için güvenlik yanıt başlıkları uygulandı.
+- 🔧 **Gelişmiş AUTOMATIC1111 Ayarları**: Kullanıcılar artık yönetici ayarlarında 'CFG Scale', 'Sampler' ve 'Scheduler' parametrelerini doğrudan yapılandırabilir, kaynak kod modifikasyonları olmadan iş akışı esnekliğini artırıyor.
+- 🌍 **i18n Güncellemeleri**: Çince, Ukraynaca, Rusça ve Fransızca için geliştirilmiş çeviriler, daha iyi yerelleştirilmiş bir deneyim sağlıyor.
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ Chat Message Deletion**: Resolved issues with chat message deletion, ensuring a smoother user interaction and system stability.
-- **🔢 Ordered List Numbering**: Fixed the incorrect ordering in lists.
+- 🛠️ **Sohbet Mesajı Silme**: Sohbet mesajı silme sorunları çözüldü, daha sorunsuz bir kullanıcı etkileşimi ve sistem kararlılığı sağlandı.
+- 🔢 **Sıralı Liste Numaralandırması**: Listelerdeki yanlış sıralama düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **🎨 Transparent Icon Handling**: Allowed model icons to be displayed on transparent backgrounds, improving UI aesthetics.
-- **📝 Improved RAG Template**: Enhanced Retrieval-Augmented Generation template, optimizing context handling and error checking for more precise operation.
+- 🎨 **Şeffaf İkon İşleme**: Model ikonlarının şeffaf arka planlarda görüntülenmesine izin verildi, UI estetiğini iyileştiriyor.
+- 📝 **Geliştirilmiş RAG Şablonu**: Retrieval-Augmented Generation şablonu geliştirildi, daha hassas çalışma için bağlam işleme ve hata kontrolü optimize edildi.
 
 ## [0.3.21] - 2024-09-08
 
-### Added
+### Eklendi
 
-- **📊 Document Count Display**: Now displays the total number of documents directly within the dashboard.
-- **🚀 Ollama Embed API Endpoint**: Enabled /api/embed endpoint proxy support.
+- 📊 **Belge Sayısı Göstergesi**: Artık panoda doğrudan toplam belge sayısını gösteriyor.
+- 🚀 **Ollama Embed API Endpoint**: /api/embed endpoint proxy desteği etkinleştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **🐳 Docker Launch Issue**: Resolved the problem preventing Open-WebUI from launching correctly when using Docker.
+- 🐳 **Docker Başlatma Sorunu**: Open-WebUI'nin Docker kullanırken doğru başlatılmasını engelleyen sorun çözüldü.
 
-### Changed
+### Değiştirildi
 
-- **🔍 Enhanced Search Prompts**: Improved the search query generation prompts for better accuracy and user interaction, enhancing the overall search experience.
+- 🔍 **Gelişmiş Arama Prompt'ları**: Daha iyi doğruluk ve kullanıcı etkileşimi için arama sorgusu oluşturma prompt'ları iyileştirildi, genel arama deneyimini artırdı.
 
 ## [0.3.20] - 2024-09-07
 
-### Added
+### Eklendi
 
-- **🌐 Translation Update**: Updated Catalan translations to improve user experience for Catalan speakers.
+- 🌐 **Çeviri Güncellemesi**: Katalanca çeviriler, Katalanca konuşan kullanıcılar için kullanıcı deneyimini iyileştirmek üzere güncellendi.
 
-### Fixed
+### Düzeltildi
 
-- **📄 PDF Download**: Resolved a configuration issue with fonts directory, ensuring PDFs are now downloaded with the correct formatting.
-- **🛠️ Installation of Tools & Functions Requirements**: Fixed a bug where necessary requirements for tools and functions were not properly installing.
-- **🔗 Inline Image Link Rendering**: Enabled rendering of images directly from links in chat.
-- **📞 Post-Call User Interface Cleanup**: Adjusted UI behavior to automatically close chat controls after a voice call ends, reducing screen clutter.
-- **🎙️ Microphone Deactivation Post-Call**: Addressed an issue where the microphone remained active after calls.
-- **✍️ Markdown Spacing Correction**: Corrected spacing in Markdown rendering, ensuring text appears neatly and as expected.
-- **🔄 Message Re-rendering**: Fixed an issue causing all response messages to re-render with each new message, now improving chat performance.
+- 📄 **PDF İndirme**: Yazı tipleri diziniyle ilgili bir yapılandırma sorunu çözüldü, PDF'lerin artık doğru biçimlendirme ile indirildiği sağlandı.
+- 🛠️ **Araçlar ve Fonksiyonlar Gereksinimleri Kurulumu**: Araçlar ve fonksiyonlar için gerekli gereksinimlerin düzgün bir şekilde kurulmaması hatası düzeltildi.
+- 🔗 **Satır İçi Resim Bağlantısı Oluşturma**: Sohbet içinde bağlantılardan doğrudan resimlerin oluşturulması etkinleştirildi.
+- 📞 **Çağrı Sonrası Kullanıcı Arayüzü Temizliği**: Sesli çağrı bittikten sonra sohbet kontrollerinin otomatik olarak kapanması için UI davranışı ayarlandı, ekran dağınıklığını azalttı.
+- 🎙️ **Çağrı Sonrası Mikrofon Devre Dışı Bırakma**: Çağrılardan sonra mikrofonun aktif kalması sorunu giderildi.
+- ✍️ **Markdown Boşluk Düzeltmesi**: Markdown oluşturmada boşluk düzeltildi, metnin düzgün ve beklendiği gibi görünmesini sağlandı.
+- 🔄 **Mesaj Yeniden Oluşturma**: Her yeni mesajla birlikte tüm yanıt mesajlarının yeniden oluşturulmasına neden olan bir sorun düzeltildi, sohbet performansını iyileştirdi.
 
-### Changed
+### Değiştirildi
 
-- **🌐 Refined Web Search Integration**: Deprecated the Search Query Generation Prompt threshold; introduced a toggle button for "Enable Web Search Query Generation" allowing users to opt-in to using web search more judiciously.
-- **📝 Default Prompt Templates Update**: Emptied environment variable templates for search and title generation now default to the Open WebUI default prompt templates, simplifying configuration efforts.
+- 🌐 **İyileştirilmiş Web Arama Entegrasyonu**: Arama Sorgusu Oluşturma Prompt eşiği eski haline getirildi; kullanıcıların web aramasını daha dikkatli kullanmayı seçmelerine olanak tanıyan "Web Arama Sorgusu Oluşturmayı Etkinleştir" için bir geçiş düğmesi tanıtıldı.
+- 📝 **Varsayılan Prompt Şablonları Güncellemesi**: Arama ve başlık oluşturma için boş ortam değişkeni şablonları artık Open WebUI varsayılan prompt şablonlarına varsayılır, yapılandırma çabalarını basitleştirir.
 
 ## [0.3.19] - 2024-09-05
 
-### Added
+### Eklendi
 
-- **🌐 Translation Update**: Improved Chinese translations.
+- 🌐 **Çeviri Güncellemesi**: Çince çeviriler iyileştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **📂 DATA_DIR Overriding**: Fixed an issue to avoid overriding DATA_DIR, preventing errors when directories are set identically, ensuring smoother operation and data management.
-- **🛠️ Frontmatter Extraction**: Fixed the extraction process for frontmatter in tools and functions.
+- 📂 **DATA_DIR Üzerine Yazma**: DATA_DIR'in üzerine yazmaktan kaçınmak için bir sorun düzeltildi, dizinler aynı ayarlandığında hataları önledi, daha sorunsuz çalışma ve veri yönetimi sağlandı.
+- 🛠️ **Frontmatter Çıkarımı**: Araçlar ve fonksiyonlarda frontmatter'ın çıkarılması düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **🎨 UI Styling**: Refined the user interface styling for enhanced visual coherence and user experience.
+- 🎨 **UI Stil Ayarları**: Gelişmiş görsel uyum ve kullanıcı deneyimi için kullanıcı arayüzü stili iyileştirildi.
 
 ## [0.3.18] - 2024-09-04
 
-### Added
+### Eklendi
 
-- **🛠️ Direct Database Execution for Tools & Functions**: Enhanced the execution of Python files for tools and functions, now directly loading from the database for a more streamlined backend process.
+- 🛠️ **Araçlar ve Fonksiyonlar için Doğrudan Veritabanı Yürütme**: Araçlar ve fonksiyonlar için Python dosyalarının yürütülmesi geliştirildi, artık daha düzenli bir backend süreci için doğrudan veritabanından yükleniyor.
 
-### Fixed
+### Düzeltildi
 
-- **🔄 Automatic Rewrite of Import Statements in Tools & Functions**: Tool and function scripts that import 'utils', 'apps', 'main', 'config' will now automatically rename these with 'open_webui.', ensuring compatibility and consistency across different modules.
-- **🎨 Styling Adjustments**: Minor fixes in the visual styling to improve user experience and interface consistency.
+- 🔄 **Araçlar ve Fonksiyonlarda İçe Aktarma İfadelerinin Otomatik Yeniden Yazılması**: 'utils', 'apps', 'main', 'config'i içe aktaran araç ve fonksiyon betikleri artık bunları otomatik olarak 'open_webui.' ile yeniden adlandıracak, farklı modüller arasında uyumluluk ve tutarlılık sağlanacak.
+- 🎨 **Stil Ayarları**: Kullanıcı deneyimini ve arayüz tutarlılığını iyileştirmek için küçük görsel stil düzeltmeleri.
 
 ## [0.3.17] - 2024-09-04
 
-### Added
+### Eklendi
 
-- **🔄 Import/Export Configuration**: Users can now import and export webui configurations from admin settings > Database, simplifying setup replication across systems.
-- **🌍 Web Search via URL Parameter**: Added support for activating web search directly through URL by setting 'web-search=true'.
-- **🌐 SearchApi Integration**: Added support for SearchApi as an alternative web search provider, enhancing search capabilities within the platform.
-- **🔍 Literal Type Support in Tools**: Tools now support the Literal type.
-- **🌍 Updated Translations**: Improved translations for Chinese, Ukrainian, and Catalan.
+- 🔄 **Yapılandırma İçe/Dışa Aktarma**: Kullanıcılar artık yönetici ayarlarından > Veritabanı aracılığıyla webui yapılandırmalarını içe ve dışa aktarabilir, sistemler arasında kurulum replikasyonunu basitleştirir.
+- 🌍 **URL Parametresi ile Web Araması**: 'web-search=true' ayarlayarak URL aracılığıyla doğrudan web aramayı etkinleştirme desteği eklendi.
+- 🌐 **SearchApi Entegrasyonu**: Platform içinde arama yeteneklerini geliştiren alternatif bir web arama sağlayıcısı olarak SearchApi desteği eklendi.
+- 🔍 **Araçlarda Literal Tip Desteği**: Araçlar artık Literal tipini destekliyor.
+- 🌍 **Güncellenmiş Çeviriler**: Çince, Ukraynaca ve Katalanca için geliştirilmiş çeviriler.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Pip Install Issue**: Resolved the issue where pip install failed due to missing 'alembic.ini', ensuring smoother installation processes.
-- **🌃 Automatic Theme Update**: Fixed an issue where the color theme did not update dynamically with system changes.
-- **🛠️ User Agent in ComfyUI**: Added default headers in ComfyUI to fix access issues, improving reliability in network communications.
-- **🔄 Missing Chat Completion Response Headers**: Ensured proper return of proxied response headers during chat completion, improving API reliability.
-- **🔗 Websocket Connection Prioritization**: Modified socket.io configuration to prefer websockets and more reliably fallback to polling, enhancing connection stability.
-- **🎭 Accessibility Enhancements**: Added missing ARIA labels for buttons, improving accessibility for visually impaired users.
-- **⚖️ Advanced Parameter**: Fixed an issue ensuring that advanced parameters are correctly applied in all scenarios, ensuring consistent behavior of user-defined settings.
+- 🔧 **Pip Kurulum Sorunu**: Eksik 'alembic.ini' nedeniyle pip kurulumunun başarısız olması sorunu çözüldü, daha sorunsuz kurulum süreçleri sağlandı.
+- 🌃 **Otomatik Tema Güncellemesi**: Renk temasının sistem değişiklikleriyle dinamik olarak güncellenmemesi sorunu düzeltildi.
+- 🛠️ **ComfyUI'de Kullanıcı Aracısı**: Erişim sorunlarını düzeltmek için ComfyUI'de varsayılan başlıklar eklendi, ağ iletişimlerinde güvenilirlik iyileştirildi.
+- 🔄 **Eksik Sohbet Tamamlama Yanıt Başlıkları**: Sohbet tamamlaması sırasında proxy'li yanıt başlıklarının doğru bir şekilde döndürülmesi sağlandı, API güvenilirliği iyileştirildi.
+- 🔗 **Websocket Bağlantı Önceliği**: Bağlantı kararlılığını artırmak için websocket'leri tercih edecek ve daha güvenilir bir şekilde polling'e geri dönecek şekilde socket.io yapılandırması değiştirildi.
+- 🎭 **Erişilebilirlik Geliştirmeleri**: Düğmeler için eksik ARIA etiketleri eklendi, görme engelli kullanıcılar için erişilebilirliği iyileştirdi.
+- ⚖️ **Gelişmiş Parametre**: Gelişmiş parametrelerin tüm senaryolarda doğru bir şekilde uygulanmasını sağlayan bir sorun düzeltildi, kullanıcı tanımlı ayarların tutarlı davranışını sağlandı.
 
-### Changed
+### Değiştirildi
 
-- **🔁 Namespace Reorganization**: Reorganized all Python files under the 'open_webui' namespace to streamline the project structure and improve maintainability. Tools and functions importing from 'utils' should now use 'open_webui.utils'.
-- **🚧 Dependency Updates**: Updated several backend dependencies like 'aiohttp', 'authlib', 'duckduckgo-search', 'flask-cors', and 'langchain' to their latest versions, enhancing performance and security.
+- 🔁 **Ad Alanı Yeniden Düzenleme**: Proje yapısını kolaylaştırmak ve sürdürülebilirliği iyileştirmek için tüm Python dosyaları 'open_webui' ad alanı altında yeniden düzenlendi. 'utils'ten içe aktaran araçlar ve fonksiyonlar artık 'open_webui.utils' kullanmalıdır.
+- 🚧 **Bağımlılık Güncellemeleri**: 'aiohttp', 'authlib', 'duckduckgo-search', 'flask-cors' ve 'langchain' gibi birkaç backend bağımlılığı, performans ve güvenliği artırmak için en son sürümlerine güncellendi.
 
 ## [0.3.16] - 2024-08-27
 
-### Added
+### Eklendi
 
-- **🚀 Config DB Migration**: Migrated configuration handling from config.json to the database, enabling high-availability setups and load balancing across multiple Open WebUI instances.
-- **🔗 Call Mode Activation via URL**: Added a 'call=true' URL search parameter enabling direct shortcuts to activate call mode, enhancing user interaction on mobile devices.
-- **✨ TTS Content Control**: Added functionality to control how message content is segmented for Text-to-Speech (TTS) generation requests, allowing for more flexible speech output options.
-- **😄 Show Knowledge Search Status**: Enhanced model usage transparency by displaying status when working with knowledge-augmented models, helping users understand the system's state during queries.
-- **👆 Click-to-Copy for Codespan**: Enhanced interactive experience in the WebUI by allowing users to click to copy content from code spans directly.
-- **🚫 API User Blocking via Model Filter**: Introduced the ability to block API users based on customized model filters, enhancing security and control over API access.
-- **🎬 Call Overlay Styling**: Adjusted call overlay styling on large screens to not cover the entire interface, but only the chat control area, for a more unobtrusive interaction experience.
+- **🚀 Yapılandırma DB Geçişi**: Yapılandırma işleme config.json'dan veritabanına geçirildi, birden çok Open WebUI örneği genelinde yüksek kullanılabilirlik kurulumları ve yük dengeleme etkinleştirildi.
+- 🔗 **URL aracılığıyla Çağrı Modu Aktivasyonu**: Çağrı modunu doğrudan URL aracılığıyla etkinleştirmek için 'call=true' URL arama parametresi eklendi, mobil cihazlarda kullanıcı etkileşimini geliştiriyor.
+- ✨ **TTS İçerik Kontrolü**: Text-to-Speech (TTS) oluşturma istekleri için mesaj içeriğinin nasıl segmentlere ayrıldığını kontrol etme işlevselliği eklendi, daha esnek konuşma çıkış seçeneklerine izin veriyor.
+- 😄 **Bilgi Arama Durumunu Göster**: Bilgi artırılmış modellerle çalışırken durumu göstererek model kullanım şeffaflığı artırıldı, kullanıcıların sorgular sırasında sistemin durumunu anlamasına yardımcı oluyor.
+- 👆 **Codespan için Tıklayarak Kopyalama**: Kullanıcıların kod span'lerinden içeriği doğrudan tıklayarak kopyalamasına olanak tanıyarak WebUI'de etkileşimli deneyim geliştirildi.
+- 🚫 **Model Filtresi aracılığıyla API Kullanıcısı Engelleme**: API erişimi üzerinde güvenlik ve kontrolü artıran özelleştirilmiş model filtrelerine göre API kullanıcılarını engelleme yeteneği tanıtıldı.
+- 🎬 **Çağrı Katmanı Stil Ayarları**: Çağrı katmanı stil ayarları, tüm arayüzü değil, yalnızca sohbet kontrol alanını kapsayacak şekilde ayarlandı, daha dikkat çekmeyen bir etkileşim deneyimi için.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 LaTeX Rendering Issue**: Addressed an issue that affected the correct rendering of LaTeX.
-- **📁 File Leak Prevention**: Resolved the issue of uploaded files mistakenly being accessible across user chats.
-- **🔧 Pipe Functions with '**files**' Param**: Fixed issues with '**files**' parameter not functioning correctly in pipe functions.
-- **📝 Markdown Processing for RAG**: Fixed issues with processing Markdown in files.
-- **🚫 Duplicate System Prompts**: Fixed bugs causing system prompts to duplicate.
+- 🔧 **LaTeX Oluşturma Sorunu**: LaTeX'in doğru oluşturulmasını etkileyen bir sorun giderildi.
+- 📁 **Dosya Sızıntısı Önleme**: Yüklenen dosyaların kullanıcı sohbetleri arasında yanlışlıkla erişilebilir olması sorunu çözüldü.
+- 🔧 **'**files**' Parametresi ile Pipe Fonksiyonları**: Pipe fonksiyonlarında '**files**' parametresinin doğru çalışmaması sorunları düzeltildi.
+- 📝 **RAG için Markdown İşleme**: Dosyalardaki Markdown işlemesiyle ilgili sorunlar düzeltildi.
+- 🚫 **Yinelenen Sistem Prompt'ları**: Sistem prompt'larının yinelenmesine neden olan hatalar düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **🔋 Wakelock Permission**: Optimized the activation of wakelock to only engage during call mode, conserving device resources and improving battery performance during idle periods.
-- **🔍 Content-Type for Ollama Chats**: Added 'application/x-ndjson' content-type to '/api/chat' endpoint responses to match raw Ollama responses.
-- **✋ Disable Signups Conditionally**: Implemented conditional logic to disable sign-ups when 'ENABLE_LOGIN_FORM' is set to false.
+- 🔋 **Wakelock İzni**: Wakelock aktivasyonu, yalnızca çağrı modu sırasında devreye girecek şekilde optimize edildi, cihaz kaynaklarını korudu ve boşta kalma sürelerinde pil performansını iyileştirdi.
+- 🔍 **Ollama Sohbetleri için İçerik Tipi**: Ollama yanıtlarıyla eşleşmesi için '/api/chat' endpoint yanıtlarına 'application/x-ndjson' içerik tipi eklendi.
+- ✋ **Koşullu Kayıtları Devre Dışı Bırak**: 'ENABLE_LOGIN_FORM' false olarak ayarlandığında kayıtları devre dışı bırakmak için koşullu mantık uygulandı.
 
 ## [0.3.15] - 2024-08-21
 
-### Added
+### Eklendi
 
-- **🔗 Temporary Chat Activation**: Integrated a new URL parameter 'temporary-chat=true' to enable temporary chat sessions directly through the URL.
-- **🌄 ComfyUI Seed Node Support**: Introduced seed node support in ComfyUI for image generation, allowing users to specify node IDs for randomized seed assignment.
+- 🔗 **Geçici Sohbet Aktivasyonu**: Geçici sohbet oturumlarını doğrudan URL aracılığıyla etkinleştirmek için yeni bir URL parametresi 'temporary-chat=true' entegre edildi.
+- 🌄 **ComfyUI Seed Node Desteği**: Görüntü oluşturma için ComfyUI'ye seed node desteği tanıtıldı, kullanıcıların rastgele seed ataması için düğüm ID'lerini belirlemesine olanak tanıyor.
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ Tools and Functions**: Resolved a critical issue where Tools and Functions were not properly functioning, restoring full capability and reliability to these essential features.
-- **🔘 Chat Action Button in Many Model Chat**: Fixed the malfunctioning of chat action buttons in many model chat environments, ensuring a smoother and more responsive user interaction.
-- **⏪ Many Model Chat Compatibility**: Restored backward compatibility for many model chats.
+- 🛠️ **Araçlar ve Fonksiyonlar**: Araçlar ve Fonksiyonların düzgün bir şekilde çalışmaması gibi kritik bir sorun çözüldü, bu temel özelliklere tam yetenek ve güvenilirlik geri getirildi.
+- 🔘 **Birçok Model Sohbetinde Sohbet Eylem Düğmesi**: Birçok model sohbet ortamında sohbet eylem düğmelerinin arızalı olması düzeltildi, daha sorunsuz ve daha duyarlı bir kullanıcı etkileşimi sağlandı.
+- ⏪ **Birçok Model Sohbet Uyumluluğu**: Birçok model sohbeti için geriye dönük uyumluluk geri getirildi.
 
 ## [0.3.14] - 2024-08-21
 
-### Added
+### Eklendi
 
-- **🛠️ Custom ComfyUI Workflow**: Deprecating several older environment variables, this enhancement introduces a new, customizable workflow for a more tailored user experience.
-- **🔀 Merge Responses in Many Model Chat**: Enhances the dialogue by merging responses from multiple models into a single, coherent reply, improving the interaction quality in many model chats.
-- **✅ Multiple Instances of Same Model in Chats**: Enhanced many model chat to support adding multiple instances of the same model.
-- **🔧 Quick Actions in Model Workspace**: Enhanced Shift key quick actions for hiding/unhiding and deleting models, facilitating a smoother workflow.
-- **🗨️ Markdown Rendering in User Messages**: User messages are now rendered in Markdown, enhancing readability and interaction.
-- **💬 Temporary Chat Feature**: Introduced a temporary chat feature, deprecating the old chat history setting to enhance user interaction flexibility.
-- **🖋️ User Message Editing**: Enhanced the user chat editing feature to allow saving changes without sending, providing more flexibility in message management.
-- **🛡️ Security Enhancements**: Various security improvements implemented across the platform to ensure safer user experiences.
-- **🌍 Updated Translations**: Enhanced translations for Chinese, Ukrainian, and Bahasa Malaysia, improving localization and user comprehension.
+- 🛠️ **Özel ComfyUI İş Akışı**: Birkaç eski ortam değişkeni kullanımdan kaldırılıyor, bu geliştirme daha özel bir kullanıcı deneyimi için yeni, özelleştirilebilir bir iş akışı tanıtıyor.
+- 🔀 **Birçok Model Sohbetinde Yanıtları Birleştir**: Çoklu modellerden gelen yanıtları tek, tutarlı bir yanıtta birleştirerek diyaloğu geliştirir, birçok model sohbetinde etkileşim kalitesini artırır.
+- ✅ **Sohbetlerde Aynı Modelin Birden Fazla Örneği**: Aynı modelin birden fazla örneğini eklemeyi destekleyecek şekilde birçok model sohbeti geliştirildi.
+- 🔧 **Model Çalışma Alanında Hızlı Eylemler**: Modelleri gizlemek/göstermek ve silmek için Shift tuşu hızlı eylemleri geliştirildi, daha sorunsuz bir iş akışı kolaylaştırıldı.
+- 🗨️ **Kullanıcı Mesajlarında Markdown Oluşturma**: Kullanıcı mesajları artık Markdown'da oluşturulur, okunabilirliği ve etkileşimi artırır.
+- 💬 **Geçici Sohbet Özelliği**: Eski sohbet geçmişi ayarını eski haline getirerek kullanıcı etkileşimi esnekliğini artırmak için geçici bir sohbet özelliği tanıtıldı.
+- 🖋️ **Kullanıcı Mesajı Düzenleme**: Mesaj yönetiminde daha fazla esneklik sağlamak için kullanıcı sohbeti düzenleme özelliği geliştirildi, değişiklikleri göndermeden kaydetmeye olanak tanır.
+- 🛡️ **Güvenlik Geliştirmeleri**: Daha güvenli kullanıcı deneyimleri sağlamak için platform genelinde çeşitli güvenlik iyileştirmeleri uygulandı.
+- 🌍 **Güncellenmiş Çeviriler**: Çince, Ukraynaca ve Malayca için geliştirilmiş çeviriler, yerelleştirmeyi ve kullanıcı anlamayı iyileştiriyor.
 
-### Fixed
+### Düzeltildi
 
-- **📑 Mermaid Rendering Issue**: Addressed issues with Mermaid chart rendering to ensure clean and clear visual data representation.
-- **🎭 PWA Icon Maskability**: Fixed the Progressive Web App icon to be maskable, ensuring proper display on various device home screens.
-- **🔀 Cloned Model Chat Freezing Issue**: Fixed a bug where cloning many model chats would cause freezing, enhancing stability and responsiveness.
-- **🔍 Generic Error Handling and Refinements**: Various minor fixes and refinements to address previously untracked issues, ensuring smoother operations.
+- 📑 **Mermaid Oluşturma Sorunu**: Temiz ve net görsel veri temsilini sağlamak için Mermaid çizelgesi oluşturma sorunları giderildi.
+- 🎭 **PWA İkon Maskelenebilirliği**: Progresif Web Uygulaması ikonunun maskelenebilir olması düzeltildi, çeşitli cihaz ana ekranlarında doğru görüntüleme sağlandı.
+- 🔀 **Klonlanmış Model Sohbet Dondurma Sorunu**: Birçok model sohbetinin klonlanmasının donmaya neden olduğu bir hata düzeltildi, kararlılık ve duyarlılık artırıldı.
+- 🔍 **Genel Hata İşleme ve İyileştirmeler**: Daha önce izlenmeyen sorunları gidermek için çeşitli küçük düzeltmeler ve iyileştirmeler, daha sorunsuz işlemler sağlıyor.
 
-### Changed
+### Değiştirildi
 
-- **🖼️ Image Generation Refactor**: Overhauled image generation processes for improved efficiency and quality.
-- **🔨 Refactor Tool and Function Calling**: Refactored tool and function calling mechanisms for improved clarity and maintainability.
-- **🌐 Backend Library Updates**: Updated critical backend libraries including SQLAlchemy, uvicorn[standard], faster-whisper, bcrypt, and boto3 for enhanced performance and security.
+- 🖼️ **Görüntü Oluşturma Yeniden Yapılandırması**: Daha iyi verimlilik ve kalite için görüntü oluşturma süreçleri revize edildi.
+- 🔨 **Araç ve Fonksiyon Çağrısı Yeniden Yapılandırması**: Daha iyi netlik ve sürdürülebilirlik için araç ve fonksiyon çağırma mekanizmaları yeniden yapılandırıldı.
+- 🌐 **Backend Kütüphane Güncellemeleri**: SQLAlchemy, uvicorn[standard], faster-whisper, bcrypt ve boto3 dahil olmak üzere kritik backend kütüphaneleri, geliştirilmiş performans ve güvenlik için en son sürümlerine güncellendi.
 
-### Removed
+### Kaldırıldı
 
-- **🚫 Deprecated ComfyUI Environment Variables**: Removed several outdated environment variables related to ComfyUI settings, simplifying configuration management.
+- 🚫 **Eskimiş ComfyUI Ortam Değişkenleri**: ComfyUI ayarlarıyla ilgili birkaç eski ortam değişkeni kaldırıldı, yapılandırma yönetimini basitleştiriyor.
 
 ## [0.3.13] - 2024-08-14
 
-### Added
+### Eklendi
 
-- **🎨 Enhanced Markdown Rendering**: Significant improvements in rendering markdown, ensuring smooth and reliable display of LaTeX and Mermaid charts, enhancing user experience with more robust visual content.
-- **🔄 Auto-Install Tools & Functions Python Dependencies**: For 'Tools' and 'Functions', Open WebUI now automatically install extra python requirements specified in the frontmatter, streamlining setup processes and customization.
-- **🌀 OAuth Email Claim Customization**: Introduced an 'OAUTH_EMAIL_CLAIM' variable to allow customization of the default "email" claim within OAuth configurations, providing greater flexibility in authentication processes.
-- **📶 Websocket Reconnection**: Enhanced reliability with the capability to automatically reconnect when a websocket is closed, ensuring consistent and stable communication.
-- **🤳 Haptic Feedback on Support Devices**: Android devices now support haptic feedback for an immersive tactile experience during certain interactions.
+- 🎨 **Gelişmiş Markdown Oluşturma**: LaTeX ve Mermaid çizelgelerinin sorunsuz ve güvenilir bir şekilde görüntülenmesini sağlayarak, daha sağlam görsel içerikle kullanıcı deneyimini artıran Markdown oluşturmada önemli iyileştirmeler.
+- 🔄 **Araçlar ve Fonksiyonlar Python Bağımlılıklarını Otomatik Kur**: 'Araçlar' ve 'Fonksiyonlar' için Open WebUI artık frontmatter'da belirtilen ek python gereksinimlerini otomatik olarak kurar, kurulum süreçlerini ve özelleştirmeyi kolaylaştırır.
+- 🌀 **OAuth E-posta İddia Özelleştirmesi**: Kimlik doğrulama süreçlerinde daha fazla esneklik sağlamak için OAuth yapılandırmaları içinde varsayılan "e-posta" iddiasını özelleştirmeye izin veren bir 'OAUTH_EMAIL_CLAIM' değişkeni tanıtıldı.
+- 📶 **Websocket Yeniden Bağlantısı**: Bir websocket kapatıldığında otomatik olarak yeniden bağlanma yeteneği ile gelişmiş güvenilirlik, tutarlı ve kararlı iletişim sağlıyor.
+- 🤳 **Desteklenen Cihazlarda Dokunsal Geri Bildirim**: Android cihazlar artık belirli etkileşimler sırasında sürükleyici bir dokunsal deneyim için dokunsal geri bildirimi destekliyor.
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ ComfyUI Performance Improvement**: Addressed an issue causing FastAPI to stall when ComfyUI image generation was active; now runs in a separate thread to prevent UI unresponsiveness.
-- **🔀 Session Handling**: Fixed an issue mandating session_id on client-side to ensure smoother session management and transitions.
-- **🖋️ Minor Bug Fixes and Format Corrections**: Various minor fixes including typo corrections, backend formatting improvements, and test amendments enhancing overall system stability and performance.
+- 🛠️ **ComfyUI Performans İyileştirmesi**: ComfyUI görüntü oluşturma aktifken FastAPI'nin takılmasına neden olan bir sorun giderildi; artık UI'nin yanıt vermemesi önlemek için ayrı bir iş parçacığında çalışıyor.
+- 🔀 **Oturum İşleme**: Daha sorunsuz oturum yönetimi ve geçişleri sağlamak için istemci tarafında session_id'yi zorunlu kılan bir sorun düzeltildi.
+- 🖋️ **Küçük Hata Düzeltmeleri ve Format Düzeltmeleri**: Yazım hataları düzeltmeleri, backend biçimlendirme iyileştirmeleri ve genel sistem kararlılığını ve performansını artıran test düzeltmeleri dahil olmak üzere çeşitli küçük düzeltmeler.
 
-### Changed
+### Değiştirildi
 
-- **🚀 Migration to SvelteKit 2**: Upgraded the underlying framework to SvelteKit version 2, offering enhanced speed, better code structure, and improved deployment capabilities.
-- **🧹 General Cleanup and Refactoring**: Performed broad cleanup and refactoring across the platform, improving code efficiency and maintaining high standards of code health.
-- **🚧 Integration Testing Improvements**: Modified how Cypress integration tests detect chat messages and updated sharing tests for better reliability and accuracy.
-- **📁 Standardized '.safetensors' File Extension**: Renamed the '.sft' file extension to '.safetensors' for ComfyUI workflows, standardizing file formats across the platform.
+- 🚀 **SvelteKit 2'ye Geçiş**: Daha iyi hız, daha iyi kod yapısı ve geliştirilmiş dağıtım yetenekleri sunan temel framework SvelteKit sürüm 2'ye yükseltildi.
+- 🧹 **Genel Temizleme ve Yeniden Yapılandırma**: Kod verimliliğini iyileştirmek ve yüksek kod sağlığı standartlarını korumak için platform genelinde geniş çaplı temizleme ve yeniden yapılandırma yapıldı.
+- 🚧 **Entegrasyon Testi İyileştirmeleri**: Cypress entegrasyon testlerinin sohbet mesajlarını algılama şekli değiştirildi ve daha iyi güvenilirlik ve doğruluk için paylaşım testleri güncellendi.
+- 📁 **Standartlaştırılmış '.safetensors' Dosya Uzantısı**: ComfyUI iş akışları için '.sft' dosya uzantısı '.safetensors' olarak yeniden adlandırıldı, platform genelinde dosya formatları standartlaştırıldı.
 
-### Removed
+### Kaldırıldı
 
-- **🗑️ Deprecated Frontend Functions**: Removed frontend functions that were migrated to backend to declutter the codebase and reduce redundancy.
+- 🗑️ **Eskimiş Frontend Fonksiyonları**: Kod tabanını sadeleştirmek ve gereksizliği azaltmak için backend'e taşınan frontend fonksiyonları kaldırıldı.
 
 ## [0.3.12] - 2024-08-07
 
-### Added
+### Eklendi
 
-- **🔄 Sidebar Infinite Scroll**: Added an infinite scroll feature in the sidebar for more efficient chat navigation, reducing load times and enhancing user experience.
-- **🚀 Enhanced Markdown Rendering**: Support for rendering all code blocks and making images clickable for preview; codespan styling is also enhanced to improve readability and user interaction.
-- **🔒 Admin Shared Chat Visibility**: Admins no longer have default visibility over shared chats when ENABLE_ADMIN_CHAT_ACCESS is set to false, tightening security and privacy settings for users.
-- **🌍 Language Updates**: Added Malay (Bahasa Malaysia) translation and updated Catalan and Traditional Chinese translations to improve accessibility for more users.
+- 🔄 **Kenar Çubuğu Sonsuz Kaydırma**: Daha verimli sohbet gezinmesi için kenar çubuğuna sonsuz kaydırma özelliği eklendi, yükleme sürelerini azaltıyor ve kullanıcı deneyimini geliştiriyor.
+- 🚀 **Gelişmiş Markdown Oluşturma**: Tüm kod bloklarının oluşturulması ve resimlerin önizleme için tıklanabilir hale getirilmesi desteği; kodspan stilizasyonu da okunabilirliği ve kullanıcı etkileşimini artırmak için geliştirildi.
+- 🔒 **Yönetici Paylaşılan Sohbet Görünürlüğü**: ENABLE_ADMIN_CHAT_ACCESS false olarak ayarlandığında yöneticiler artık paylaşılan sohbetler üzerinde varsayılan görünürlüğe sahip değil, kullanıcılar için güvenlik ve gizlilik ayarlarını sıkılaştırıyor.
+- 🌍 **Dil Güncellemeleri**: Malayca (Bahasa Malaysia) çevirisi eklendi ve daha fazla kullanıcı için erişilebilirliği iyileştirmek amacıyla Katalanca ve Geleneksel Çince çevirileri güncellendi.
 
-### Fixed
+### Düzeltildi
 
-- **📊 Markdown Rendering Issues**: Resolved issues with markdown rendering to ensure consistent and correct display across components.
-- **🛠️ Styling Issues**: Multiple fixes applied to styling throughout the application, improving the overall visual experience and interface consistency.
-- **🗃️ Modal Handling**: Fixed an issue where modals were not closing correctly in various model chat scenarios, enhancing usability and interface reliability.
-- **📄 Missing OpenAI Usage Information**: Resolved issues where usage statistics for OpenAI services were not being correctly displayed, ensuring users have access to crucial data for managing and monitoring their API consumption.
-- **🔧 Non-Streaming Support for Functions Plugin**: Fixed a functionality issue with the Functions plugin where non-streaming operations were not functioning as intended, restoring full capabilities for async and sync integration within the platform.
-- **🔄 Environment Variable Type Correction (COMFYUI_FLUX_FP8_CLIP)**: Corrected the data type of the 'COMFYUI_FLUX_FP8_CLIP' environment variable from string to boolean, ensuring environment settings apply correctly and enhance configuration management.
+- 📊 **Markdown Oluşturma Sorunları**: Markdown oluşturma sorunları çözüldü, bileşenler genelinde tutarlı ve doğru görüntüleme sağlandı.
+- 🛠️ **Stil Sorunları**: Uygulama genelinde stile uygulanan birden fazla düzeltme, genel görsel deneyimi ve arayüz tutarlılığını iyileştiriyor.
+- 🗃️ **Modal İşleme**: Çeşitli model sohbet senaryolarında modalların doğru kapanmaması sorunu düzeltildi, kullanılabilirliği ve arayüz güvenilirliği artırıldı.
+- 📄 **Eksik OpenAI Kullanım Bilgileri**: OpenAI hizmetleri için kullanım istatistiklerinin doğru görüntülenmemesi sorunları çözüldü, kullanıcıların API tüketimlerini yönetmek ve izlemek için önemli verilere erişimini sağlıyor.
+- 🔧 **Fonksiyonlar Eklentisi için Akışsız Destek**: Fonksiyonlar eklentisi ile akışsız işlemlerin amaçlandığı gibi çalışmamasıyla ilgili bir işlevsellik sorunu düzeltildi, platform içinde asenkron ve senkron entegrasyon için tam yetenekler geri getirildi.
+- 🔄 **Ortam Değişkeni Türü Düzeltmesi (COMFYUI_FLUX_FP8_CLIP)**: 'COMFYUI_FLUX_FP8_CLIP' ortam değişkeninin veri türü dizeden boolean'a düzeltildi, ortam ayarlarının doğru uygulanmasını ve yapılandırma yönetimini geliştiriyor.
 
-### Changed
+### Değiştirildi
 
-- **🔧 Backend Dependency Updates**: Updated several backend dependencies such as boto3, pypdf, python-pptx, validators, and black, ensuring up-to-date security and performance optimizations.
+- 🔧 **Backend Bağımlılık Güncellemeleri**: boto3, pypdf, python-pptx, validators ve black gibi birkaç backend bağımlılığı güncellendi, güncel güvenlik ve performans optimizasyonları sağlandı.
 
 ## [0.3.11] - 2024-08-02
 
-### Added
+### Eklendi
 
-- **📊 Model Information Display**: Added visuals for model selection, including images next to model names for more intuitive navigation.
-- **🗣 ElevenLabs Voice Adaptations**: Voice enhancements including support for ElevenLabs voice ID by name for personalized vocal interactions.
-- **⌨️ Arrow Keys Model Selection**: Users can now use arrow keys for quicker model selection, enhancing accessibility.
-- **🔍 Fuzzy Search in Model Selector**: Enhanced model selector with fuzzy search to locate models swiftly, including descriptions.
-- **🕹️ ComfyUI Flux Image Generation**: Added support for the new Flux image gen model; introduces environment controls like weight precision and CLIP model options in Settings.
-- **💾 Display File Size for Uploads**: Enhanced file interface now displays file size, preparing for upcoming upload restrictions.
-- **🎚️ Advanced Params "Min P"**: Added 'Min P' parameter in the advanced settings for customized model precision control.
-- **🔒 Enhanced OAuth**: Introduced custom redirect URI support for OAuth behind reverse proxies, enabling safer authentication processes.
-- **🖥 Enhanced Latex Rendering**: Adjustments made to latex rendering processes, now accurately detecting and presenting latex inputs from text.
-- **🌐 Internationalization**: Enhanced with new Romanian and updated Vietnamese and Ukrainian translations, helping broaden accessibility for international users.
+- 📊 **Model Bilgisi Göstergesi**: Daha sezgisel gezinme için model seçimleri için görseller eklendi, model adlarının yanında görüntüler dahil.
+- 🗣 **ElevenLabs Ses Adaptasyonları**: Kişiselleştirilmiş vokal etkileşimler için ElevenLabs ses ID'si desteği de dahil olmak üzere ses geliştirmeleri.
+- ⌨️ **Ok Tuşları Model Seçimi**: Kullanıcılar artık daha hızlı model seçimi için ok tuşlarını kullanabilir, erişilebilirliği artırıyor.
+- 🔍 **Model Seçicide Bulanık Arama**: Model seçici, modelleri hızlı bir şekilde bulmak için bulanık arama ile geliştirildi, açıklamalar dahil.
+- 🕹️ **ComfyUI Flux Görüntü Oluşturma**: Yeni Flux görüntü oluşturma modeli desteği eklendi; Ayarlar'da ağırlık hassasiyeti ve CLIP model seçenekleri gibi ortam kontrolleri tanıtıldı.
+- 💾 **Yüklemeler için Dosya Boyutu Göstergesi**: Geliştirilmiş dosya arayüzü artık dosya boyutunu gösteriyor, gelecek yükleme kısıtlamalarına hazırlanıyor.
+- 🎚️ **Gelişmiş Parametreler "Min P"**: Özelleştirilmiş model hassasiyet kontrolü için gelişmiş ayarlara 'Min P' parametresi eklendi.
+- 🔒 **Gelişmiş OAuth**: Ters proxy'lerin arkasındaki OAuth için özel yönlendirme URI desteği tanıtıldı, daha güvenli kimlik doğrulama süreçleri etkinleştirildi.
+- 🖥 **Gelişmiş Latex Oluşturma**: Latex oluşturma süreçlerinde ayarlamalar yapıldı, artık metinden latex girişlerini doğru bir şekilde algılıyor ve sunuyor.
+- 🌐 **Uluslararasılaşma**: Yeni Romence ve güncellenmiş Vietnamca ve Ukraynaca çevirilerle geliştirildi, uluslararası kullanıcılar için erişilebilirliği genişletmeye yardımcı oluyor.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Tags Handling in Document Upload**: Tags are now properly sent to the upload document handler, resolving issues with missing metadata.
-- **🖥️ Sensitive Input Fields**: Corrected browser misinterpretation of secure input fields, preventing misclassification as password fields.
-- **📂 Static Path Resolution in PDF Generation**: Fixed static paths that adjust dynamically to prevent issues across various environments.
+- 🔧 **Belge Yüklemede Etiket İşleme**: Etiketler artık yükleme belgesi işleyicisine düzgün bir şekilde gönderiliyor, eksik metadata sorunları çözüldü.
+- 🖥️ **Hassas Giriş Alanları**: Tarayıcının güvenli giriş alanlarını yanlış yorumlaması düzeltildi, parola alanları olarak yanlış sınıflandırmayı önledi.
+- 📂 **PDF Oluşturmada Statik Yol Çözünürlüğü**: Çeşitli ortamlarda sorunları önlemek için dinamik olarak ayarlanan statik yollar düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **🎨 UI/UX Styling Enhancements**: Multiple minor styling updates for a cleaner and more intuitive user interface.
-- **🚧 Refactoring Various Components**: Numerous refactoring changes across styling, file handling, and function simplifications for clarity and performance.
-- **🎛️ User Valves Management**: Moved user valves from settings to direct chat controls for more user-friendly access during interactions.
+- 🎨 **UI/UX Stil Geliştirmeleri**: Daha temiz ve daha sezgisel bir kullanıcı arayüzü için birden fazla küçük stil güncellemesi.
+- 🚧 **Çeşitli Bileşenlerin Yeniden Yapılandırılması**: Netlik ve performans için stil, dosya işleme ve fonksiyon basitleştirmelerinde çok sayıda yeniden yapılandırma değişikliği.
+- 🎛️ **Kullanıcı Valve Yönetimi**: Kullanıcı valfleri, etkileşimler sırasında daha kullanıcı dostu erişim için ayarlardan doğrudan sohbet kontrollerine taşındı.
 
-### Removed
+### Kaldırıldı
 
-- **⚙️ Health Check Logging**: Removed verbose logging from the health checking processes to declutter logs and improve backend performance.
+- ⚙️ **Sağlık Kontrolü Günlüğü**: Logları temizlemek ve backend performansını iyileştirmek için sağlık kontrolü süreçlerinden ayrıntılı günlük kaydı kaldırıldı.
 
 ## [0.3.10] - 2024-07-17
 
-### Fixed
+### Düzeltildi
 
-- **🔄 Improved File Upload**: Addressed the issue where file uploads lacked animation.
-- **💬 Chat Continuity**: Fixed a problem where existing chats were not functioning properly in some instances.
-- **🗂️ Chat File Reset**: Resolved the issue of chat files not resetting for new conversations, now ensuring a clean slate for each chat session.
-- **📁 Document Workspace Uploads**: Corrected the handling of document uploads in the workspace using the Files API.
+- 🔄 **Geliştirilmiş Dosya Yükleme**: Dosya yüklemelerinin animasyonsuz olması sorunu giderildi.
+- 💬 **Sohbet Sürekliliği**: Bazı durumlarda mevcut sohbetlerin düzgün çalışmaması sorunu düzeltildi.
+- 🗂️ **Sohbet Dosya Sıfırlaması**: Yeni konuşmalar için sohbet dosyalarının sıfırlanmaması sorunu çözüldü, artık her sohbet oturumu için temiz bir sayfa sağlıyor.
+- 📁 **Belge Çalışma Alanı Yüklemeleri**: Dosyalar API'sini kullanarak çalışma alanındaki belge yüklemelerinin işlenmesi düzeltildi.
 
 ## [0.3.9] - 2024-07-17
 
-### Added
+### Eklendi
 
-- **📁 Files Chat Controls**: We've reverted to the old file handling behavior where uploaded files are always included. You can now manage files directly within the chat controls section, giving you the ability to remove files as needed.
-- **🔧 "Action" Function Support**: Introducing a new "Action" function to write custom buttons to the message toolbar. This feature enables more interactive messaging, with documentation coming soon.
-- **📜 Citations Handling**: For newly uploaded files in documents workspace, citations will now display the actual filename. Additionally, you can click on these filenames to open the file in a new tab for easier access.
-- **🛠️ Event Emitter and Call Updates**: Enhanced 'event_emitter' to allow message replacement and 'event_call' to support text input for Tools and Functions. Detailed documentation will be provided shortly.
-- **🎨 Styling Refactor**: Various styling updates for a cleaner and more cohesive user interface.
-- **🌐 Enhanced Translations**: Improved translations for Catalan, Ukrainian, and Brazilian Portuguese.
+- 📁 **Dosyalar Sohbet Kontrolleri**: Yüklenen dosyaların her zaman dahil edildiği eski dosya işleme davranışına geri döndük. Artık dosyaları doğrudan sohbet kontrolleri bölümünden yönetebilir, gerektiğinde dosyaları kaldırabilirsiniz.
+- 🔧 **"Eylem" Fonksiyon Desteği**: Mesaj araç çubuğuna özel düğmeler yazmak için yeni bir "Eylem" fonksiyonu tanıtıldı. Bu özellik, daha etkileşimli mesajlaşmayı sağlar, dokümantasyon yakında geliyor.
+- 📜 **Atıf İşleme**: Belgeler çalışma alanındaki yeni yüklenen dosyalar için, atıflar artık gerçek dosya adını gösterecektir. Ek olarak, daha kolay erişim için bu dosya adlarına tıklayarak dosyayı yeni bir sekmede açabilirsiniz.
+- 🛠️ **Event Emitter ve Çağrı Güncellemeleri**: Mesaj değiştirmeye izin vermek için 'event_emitter' geliştirildi ve Araçlar ve Fonksiyonlar için metin girişini desteklemek için 'event_call' geliştirildi. Ayrıntılı dokümantasyon yakında sağlanacak.
+- 🎨 **Stil Yeniden Yapılandırması**: Daha temiz ve daha tutarlı bir kullanıcı arayüzü için çeşitli stil güncellemeleri.
+- 🌐 **Gelişmiş Çeviriler**: Katalanca, Ukraynaca ve Brezilya Portekizcesi için geliştirilmiş çeviriler.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Chat Controls Priority**: Resolved an issue where Chat Controls values were being overridden by model information parameters. The priority is now Chat Controls, followed by Global Settings, then Model Settings.
-- **🪲 Debug Logs**: Fixed an issue where debug logs were not being logged properly.
-- **🔑 Automatic1111 Auth Key**: The auth key for Automatic1111 is no longer required.
-- **📝 Title Generation**: Ensured that the title generation runs only once, even when multiple models are in a chat.
-- **✅ Boolean Values in Params**: Added support for boolean values in parameters.
-- **🖼️ Files Overlay Styling**: Fixed the styling issue with the files overlay.
+- 🔧 **Sohbet Kontrolleri Önceliği**: Sohbet Kontrolleri değerlerinin model bilgisi parametreleri tarafından üzerine yazılması sorunu çözüldü. Öncelik artık Sohbet Kontrolleri, ardından Genel Ayarlar, sonra Model Ayarlarıdır.
+- 🪲 **Hata Ayıklama Logları**: Hata ayıklama loglarının düzgün bir şekilde loglanmaması sorunu düzeltildi.
+- 🔑 **Automatic1111 Auth Key**: Automatic1111 için kimlik doğrulama anahtarı artık gerekli değil.
+- 📝 **Başlık Oluşturma**: Başlık oluşturmanın tek sefer çalışması sağlandı, bir sohbette birden fazla model olsa bile.
+- ✅ **Parametrelerde Boolean Değerler**: Parametrelerde boolean değerler için destek eklendi.
+- 🖼️ **Dosyalar Katmanı Stil Ayarları**: Dosyalar katmanı stil sorunu düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **⬆️ Dependency Updates**
-  - Upgraded 'pydantic' from version 2.7.1 to 2.8.2.
-  - Upgraded 'sqlalchemy' from version 2.0.30 to 2.0.31.
-  - Upgraded 'unstructured' from version 0.14.9 to 0.14.10.
-  - Upgraded 'chromadb' from version 0.5.3 to 0.5.4.
+- ⬆️ **Bağımlılık Güncellemeleri**
+  - 'pydantic' sürüm 2.7.1'den 2.8.2'ye yükseltildi.
+  - 'sqlalchemy' sürüm 2.0.30'dan 2.0.31'e yükseltildi.
+  - 'unstructured' sürüm 0.14.9'dan 0.14.10'a yükseltildi.
+  - 'chromadb' sürüm 0.5.3'ten 0.5.4'e yükseltildi.
 
 ## [0.3.8] - 2024-07-09
 
-### Added
+### Eklendi
 
-- **💬 Chat Controls**: Easily adjust parameters for each chat session, offering more precise control over your interactions.
-- **📌 Pinned Chats**: Support for pinned chats, allowing you to keep important conversations easily accessible.
-- **📄 Apache Tika Integration**: Added support for using Apache Tika as a document loader, enhancing document processing capabilities.
-- **🛠️ Custom Environment for OpenID Claims**: Allows setting custom claims for OpenID, providing more flexibility in user authentication.
-- **🔧 Enhanced Tools & Functions API**: Introduced 'event_emitter' and 'event_call', now you can also add citations for better documentation and tracking. Detailed documentation will be provided on our documentation website.
-- **↔️ Sideways Scrolling in Settings**: Settings tabs container now supports horizontal scrolling for easier navigation.
-- **🌑 Darker OLED Theme**: Includes a new, darker OLED theme and improved styling for the light theme, enhancing visual appeal.
-- **🌐 Language Updates**: Updated translations for Indonesian, German, French, and Catalan languages, expanding accessibility.
+- 💬 **Sohbet Kontrolleri**: Her sohbet oturumu için parametreleri kolayca ayarlayın, etkileşimleriniz üzerinde daha hassas kontrol sunar.
+- 📌 **Sabitlenmiş Sohbetler**: Önemli konuşmaları kolayca erişilebilir tutmanıza olanak tanıyan sabitlenmiş sohbetler için destek.
+- 📄 **Apache Tika Entegrasyonu**: Belge işleme yeteneklerini geliştiren bir belge yükleyici olarak Apache Tika kullanımına destek eklendi.
+- 🛠️ **OpenID Talepleri için Özel Ortam**: OpenID için özel talepler ayarlamaya izin verir, kullanıcı kimlik doğrulama süreçlerinde daha fazla esneklik sağlar.
+- 🔧 **Gelişmiş Araçlar ve Fonksiyonlar API'si**: 'event_emitter' ve 'event_call' tanıtıldı, artık daha iyi dokümantasyon ve izleme için atıflar da ekleyebilirsiniz. Ayrıntılı dokümantasyon belgelerimizde sağlanacaktır.
+- ↔️ **Ayarlarda Yana Kaydırma**: Ayarlar sekmeleri container'ı artık daha kolay gezinme için yatay kaydırmayı destekliyor.
+- 🌑 **Daha Koyu OLED Tema**: Yeni, daha koyu bir OLED teması ve açık tema için geliştirilmiş stilizasyon içerir, görsel çekiciliği artırır.
+- 🌐 **Dil Güncellemeleri**: Endonezyaca, Almanca, Fransızca ve Katalanca dilleri için güncellenmiş çeviriler, erişilebilirliği genişletiyor.
 
-### Fixed
+### Düzeltildi
 
-- **⏰ OpenAI Streaming Timeout**: Resolved issues with OpenAI streaming response using the 'AIOHTTP_CLIENT_TIMEOUT' setting, ensuring reliable performance.
-- **💡 User Valves**: Fixed malfunctioning user valves, ensuring proper functionality.
-- **🔄 Collapsible Components**: Addressed issues with collapsible components not working, restoring expected behavior.
+- ⏰ **OpenAI Akış Zaman Aşımı**: 'AIOHTTP_CLIENT_TIMEOUT' ayarını kullanarak OpenAI akış yanıtıyla ilgili sorunlar çözüldü, güvenilir performans sağlandı.
+- 💡 **Kullanıcı Valve'ları**: Arızalı kullanıcı valfleri düzeltildi, doğru işlevsellik sağlandı.
+- 🔄 **Daraltılabilir Bileşenler**: Daraltılabilir bileşenlerin çalışmaması sorunları giderildi, beklenen davranış geri getirildi.
 
-### Changed
+### Değiştirildi
 
-- **🗃️ Database Backend**: Switched from Peewee to SQLAlchemy for improved concurrency support, enhancing database performance.
-- **⬆️ ChromaDB Update**: Upgraded to version 0.5.3. Ensure your remote ChromaDB instance matches this version.
-- **🔤 Primary Font Styling**: Updated primary font to Archivo for better visual consistency.
-- **🔄 Font Change for Windows**: Replaced Arimo with Inter font for Windows users, improving readability.
-- **🚀 Lazy Loading**: Implemented lazy loading for 'faster_whisper' and 'sentence_transformers' to reduce startup memory usage.
-- **📋 Task Generation Payload**: Task generations now include only the "task" field in the body instead of "title".
+- 🗃️ **Veritabanı Backend**: Geliştirilmiş eşzamanlılık desteği için Peewee'den SQLAlchemy'e geçildi, veritabanı performansını artırıyor.
+- ⬆️ **ChromaDB Güncellemesi**: Sürüm 0.5.3'e yükseltildi. Uzak ChromaDB örneğinizin bu sürümle eşleştiğinden emin olun.
+- 🔤 **Birincil Yazı Tipi Stil Ayarı**: Daha iyi görsel tutarlılık için birincil yazı tipi Archivo olarak güncellendi.
+- 🔄 **Windows için Yazı Tipi Değişikliği**: Windows kullanıcıları için Arimo, Inter yazı tipi ile değiştirildi, okunabilirliği iyileştirildi.
+- 🚀 **Tembel Yükleme**: Başlangıç belleği kullanımını azaltmak ve performansı artırmak için 'faster_whisper' ve 'sentence_transformers' için tembel yükleme uygulandı.
+- 📋 **Görev Oluşturma Payload'ı**: Görev oluşturmaları artık "başlık" yerine gövdede sadece "görev" alanını içerir.
 
 ## [0.3.7] - 2024-06-29
 
-### Added
+### Eklendi
 
-- **🌐 Enhanced Internationalization (i18n)**: Newly introduced Indonesian translation, and updated translations for Turkish, Chinese, and Catalan languages to improve user accessibility.
+- **🌐 Gelişmiş Uluslararasılaşma (i18n)**: Yeni tanıtılan Endonezyaca çevirisi ve Türkçe, Çince ve Katalanca dilleri için güncellenmiş çeviriler, kullanıcı erişilebilirliğini iyileştiriyor.
 
-### Fixed
+### Düzeltildi
 
-- **🕵️‍♂️ Browser Language Detection**: Corrected the issue where the application was not properly detecting and adapting to the browser's language settings.
-- **🔐 OIDC Admin Role Assignment**: Fixed a bug where the admin role was not being assigned to the first user who signed up via OpenID Connect (OIDC).
-- **💬 Chat/Completions Endpoint**: Resolved an issue where the chat/completions endpoint was non-functional when the stream option was set to False.
-- **🚫 'WEBUI_AUTH' Configuration**: Addressed the problem where setting 'WEBUI_AUTH' to False was not being applied correctly.
+- 🕵️‍♂️ **Tarayıcı Dili Algılama**: Uygulamanın tarayıcının dil ayarlarını doğru bir şekilde algılayıp uyum sağlamaması sorunu düzeltildi.
+- 🔐 **OIDC Yönetici Rolü Ataması**: OpenID Connect (OIDC) aracılığıyla kaydolan ilk kullanıcıya yönetici rolünün atanmaması hatası düzeltildi.
+- 💬 **Sohbet/Tamamlama Endpoint'i**: Akış seçeneği False olarak ayarlandığında sohbet/tamamlama endpoint'inin işlevsiz olması sorunu çözüldü.
+- 🚫 **'WEBUI_AUTH' Yapılandırması**: 'WEBUI_AUTH' ayarının False olarak ayarlanmasının doğru bir şekilde uygulanmaması sorunu giderildi.
 
-### Changed
+### Değiştirildi
 
-- **📦 Dependency Update**: Upgraded 'authlib' from version 1.3.0 to 1.3.1 to ensure better security and performance enhancements.
+- 📦 **Bağımlılık Güncellemesi**: Daha iyi güvenlik ve performans geliştirmeleri sağlamak için 'authlib' sürüm 1.3.0'dan 1.3.1'e yükseltildi.
 
 ## [0.3.6] - 2024-06-27
 
-### Added
+### Eklendi
 
-- **✨ "Functions" Feature**: You can now utilize "Functions" like filters (middleware) and pipe (model) functions directly within the WebUI. While largely compatible with Pipelines, these native functions can be executed easily within Open WebUI. Example use cases for filter functions include usage monitoring, real-time translation, moderation, and automemory. For pipe functions, the scope ranges from Cohere and Anthropic integration directly within Open WebUI, enabling "Valves" for per-user OpenAI API key usage, and much more. If you encounter issues, SAFE_MODE has been introduced.
-- **📁 Files API**: Compatible with OpenAI, this feature allows for custom Retrieval-Augmented Generation (RAG) in conjunction with the Filter Function. More examples will be shared on our community platform and official documentation website.
-- **🛠️ Tool Enhancements**: Tools now support citations and "Valves". Documentation will be available shortly.
-- **🔗 Iframe Support via Files API**: Enables rendering HTML directly into your chat interface using functions and tools. Use cases include playing games like DOOM and Snake, displaying a weather applet, and implementing Anthropic "artifacts"-like features. Stay tuned for updates on our community platform and documentation.
-- **🔒 Experimental OAuth Support**: New experimental OAuth support. Check our documentation for more details.
-- **🖼️ Custom Background Support**: Set a custom background from Settings > Interface to personalize your experience.
-- **🔑 AUTOMATIC1111_API_AUTH Support**: Enhanced security for the AUTOMATIC1111 API.
-- **🎨 Code Highlight Optimization**: Improved code highlighting features.
-- **🎙️ Voice Interruption Feature**: Reintroduced and now toggleable from Settings > Interface.
-- **💤 Wakelock API**: Now in use to prevent screen dimming during important tasks.
-- **🔐 API Key Privacy**: All API keys are now hidden by default for better security.
-- **🔍 New Web Search Provider**: Added jina_search as a new option.
-- **🌐 Enhanced Internationalization (i18n)**: Improved Korean translation and updated Chinese and Ukrainian translations.
+- ✨ **"Fonksiyonlar" Özelliği**: Artık WebUI içinde filtreler (middleware) ve pipe (model) fonksiyonları gibi "Fonksiyonları" kullanabilirsiniz. Pipeline'larla büyük ölçüde uyumlu olsalar da, bu yerel fonksiyonlar Open WebUI içinde kolayca yürütülebilir. Filtre fonksiyonları için örnek kullanım durumları arasında kullanım izleme, gerçek zamanlı çeviri, moderasyon ve otomatik bellek bulunur. Pipe fonksiyonları için kapsam, Cohere ve Anthropic entegrasyonundan doğrudan Open WebUI içinde, kullanıcı başına OpenAI API anahtar kullanımı için "Valf"leri etkinleştirmeye ve çok daha fazlasına kadar uzanır. Sorunlarla karşılaşırsanız, SAFE_MODE tanıtıldı.
+- 📁 **Dosyalar API'si**: OpenAI ile uyumlu olan bu özellik, Filtre Fonksiyonu ile birlikte özel Retrieval-Augmented Generation (RAG) sağlar. Daha fazla örnek topluluk platformumuzda ve resmi dokümantasyon web sitemizde paylaşılacaktır.
+- 🛠️ **Araç Geliştirmeleri**: Araçlar artık atıfları ve "Valf"leri destekliyor. Dokümantasyon yakında hazır olacak.
+- 🔗 **Files API aracılığıyla Iframe Desteği**: Fonksiyonları ve araçları kullanarak HTML'i doğrudan sohbet arayüzünüze oluşturmayı sağlar. Kullanım durumları arasında DOOM ve Snake gibi oyunları oynamak, bir hava durumu uygulamasını görüntülemek ve Anthropic "artifact" benzeri özellikler uygulamak bulunur. Topluluk platformumuzdaki ve dokümantasyonumuzdaki güncellemeler için takipte kalın.
+- 🔒 **Deneysel OAuth Desteği**: Yeni deneysel OAuth desteği. Daha fazla ayrıntı için dokümantasyonumuzu kontrol edin.
+- 🖼️ **Özel Arka Plan Desteği**: Deneyiminizi kişiselleştirmek için Ayarlar > Arayüz'den özel bir arka plan ayarlayın.
+- 🔑 **AUTOMATIC1111_API_AUTH Desteği**: AUTOMATIC1111 API için geliştirilmiş güvenlik.
+- 🎨 **Kod Vurgulama Optimizasyonu**: Geliştirilmiş kod vurgulama özellikleri.
+- 🎙️ **Ses Kesme Özelliği**: Yeniden tanıtıldı ve artık Ayarlar > Arayüz'den açılıp kapatılabilir.
+- 💤 **Wakelock API**: Önemli görevler sırasında ekranın kararmasını önlemek için artık kullanılıyor.
+- 🔐 **API Anahtarı Gizliliği**: Daha iyi güvenlik için tüm API anahtarları varsayılan olarak gizlidir.
+- 🔍 **Yeni Web Arama Sağlayıcısı**: Yeni bir seçenek olarak jina_search eklendi.
+- 🌐 **Gelişmiş Uluslararasılaşma (i18n)**: Geliştirilmiş Korece çevirisi ve güncellenmiş Çince ve Ukraynaca çeviriler.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Conversation Mode Issue**: Fixed the issue where Conversation Mode remained active after being removed from settings.
-- **📏 Scroll Button Obstruction**: Resolved the issue where the scrollToBottom button container obstructed clicks on buttons beneath it.
+- 🔧 **Konuşma Modu Sorunu**: Konuşma Modunun ayarlardan kaldırıldıktan sonra aktif kalması sorunu düzeltildi.
+- 📏 **Kaydırma Düğmesi Engeli**: ScrollToBottom düğme container'ının altındaki düğmelerin tıklanmasını engellemesi sorunu çözüldü.
 
-### Changed
+### Değiştirildi
 
-- **⏲️ AIOHTTP_CLIENT_TIMEOUT**: Now set to 'None' by default for improved configuration flexibility.
-- **📞 Voice Call Enhancements**: Improved by skipping code blocks and expressions during calls.
-- **🚫 Error Message Handling**: Disabled the continuation of operations with error messages.
-- **🗂️ Playground Relocation**: Moved the Playground from the workspace to the user menu for better user experience.
+- ⏲️ **AIOHTTP_CLIENT_TIMEOUT**: Geliştirilmiş yapılandırma esnekliği için artık varsayılan olarak 'None' olarak ayarlandı.
+- 📞 **Sesli Çağrı Geliştirmeleri**: Çağrılar sırasında kod bloklarını ve ifadeleri atlayarak geliştirildi.
+- 🚫 **Hata Mesajı İşleme**: Hata mesajlarıyla işlemlerin devam etmesi devre dışı bırakıldı.
+- 🗂️ **Playground Yeniden Konumlandırma**: Daha iyi kullanıcı deneyimi için Playground çalışma alanından kullanıcı menüsüne taşındı.
 
 ## [0.3.5] - 2024-06-16
 
-### Added
+### Eklendi
 
-- **📞 Enhanced Voice Call**: Text-to-speech (TTS) callback now operates in real-time for each sentence, reducing latency by not waiting for full completion.
-- **👆 Tap to Interrupt**: During a call, you can now stop the assistant from speaking by simply tapping, instead of using voice. This resolves the issue of the speaker's voice being mistakenly registered as input.
-- **😊 Emoji Call**: Toggle this feature on from the Settings > Interface, allowing LLMs to express emotions using emojis during voice calls for a more dynamic interaction.
-- **🖱️ Quick Archive/Delete**: Use the Shift key + mouseover on the chat list to swiftly archive or delete items.
-- **📝 Markdown Support in Model Descriptions**: You can now format model descriptions with markdown, enabling bold text, links, etc.
-- **🧠 Editable Memories**: Adds the capability to modify memories.
-- **📋 Admin Panel Sorting**: Introduces the ability to sort users/chats within the admin panel.
-- **🌑 Dark Mode for Quick Selectors**: Dark mode now available for chat quick selectors (prompts, models, documents).
-- **🔧 Advanced Parameters**: Adds 'num_keep' and 'num_batch' to advanced parameters for customization.
-- **📅 Dynamic System Prompts**: New variables '{{CURRENT_DATETIME}}', '{{CURRENT_TIME}}', '{{USER_LOCATION}}' added for system prompts. Ensure '{{USER_LOCATION}}' is toggled on from Settings > Interface.
-- **🌐 Tavily Web Search**: Includes Tavily as a web search provider option.
-- **🖊️ Federated Auth Usernames**: Ability to set user names for federated authentication.
-- **🔗 Auto Clean URLs**: When adding connection URLs, trailing slashes are now automatically removed.
-- **🌐 Enhanced Translations**: Improved Chinese and Swedish translations.
+- 📞 **Gelişmiş Sesli Çağrı**: Text-to-speech (TTS) callback'i artık her cümle için gerçek zamanlı olarak çalışıyor, tamamlama için beklemeyerek gecikmeyi azaltıyor.
+- 👆 **Dokunarak Kesme**: Bir arama sırasında, artık sesi durdurmak için sesli komut yerine sadece dokunarak konuşan kişinin sesinin yanlışlıkla giriş olarak kaydedilmesi sorununu çözebilirsiniz.
+- 😊 **Emoji Çağrısı**: Ayarlar > Arayüz'den bu özelliği açın, LLM'lerin daha dinamik bir etkileşim için sesli aramalar sırasında emojiler kullanarak duygularını ifade etmelerine olanak tanır.
+- 🖱️ **Hızlı Arşivle/Sil**: Sohbet listesinde Shift tuşu + fareyle üzerine gelerek öğeleri hızla arşivleyin veya silin.
+- 📝 **Model Açıklamalarında Markdown Desteği**: Artık model açıklamalarını Markdown ile biçimlendirebilirsiniz, kalın metin, bağlantılar vb. etkinleştirilebilir.
+- 🧠 **Düzenlenebilir Bellekler**: Bellekleri değiştirme yeteneği ekler.
+- 📋 **Yönetici Paneli Sıralaması**: Yönetici panelinde kullanıcıları/sohbetleri sıralama yeteneği tanıtıldı.
+- 🌑 **Hızlı Seçiciler için Koyu Mod**: Sohbet hızlı seçicileri (prompt'lar, modeller, belgeler) için koyu mod artık mevcut.
+- 🔧 **Gelişmiş Parametreler "Min P"**: Özelleştirilmiş model hassasiyet kontrolü için gelişmiş ayarlara 'Min P' parametresi eklendi.
+- 📅 **Dinamik Sistem Prompt'ları**: Sistem prompt'ları için yeni değişkenler '{{CURRENT_DATETIME}}', '{{CURRENT_TIME}}', '{{USER_LOCATION}}' eklendi. '{{USER_LOCATION}}'un Ayarlar > Arayüz'den açık olduğundan emin olun.
+- 🌐 **Tavily Web Araması**: Bir web arama sağlayıcısı seçeneği olarak Tavily'yi içerir.
+- 🖊️ **Birleşik Kimlik Doğrulama Kullanıcı Adları**: Birleşik kimlik doğrulama için kullanıcı adlarını ayarlama yeteneği.
+- 🔗 **Otomatik Temiz URL'ler**: Bağlantı URL'leri eklerken, sondaki eğik çizgiler artık otomatik olarak kaldırılır.
+- 🌐 **Gelişmiş Çeviriler**: Geliştirilmiş Çince ve İsveççe çeviriler.
 
-### Fixed
+### Düzeltildi
 
-- **⏳ AIOHTTP_CLIENT_TIMEOUT**: Introduced a new environment variable 'AIOHTTP_CLIENT_TIMEOUT' for requests to Ollama lasting longer than 5 minutes. Default is 300 seconds; set to blank ('') for no timeout.
-- **❌ Message Delete Freeze**: Resolved an issue where message deletion would sometimes cause the web UI to freeze.
+- ⏳ **AIOHTTP_CLIENT_TIMEOUT**: Ollama'ya yapılan istekler için 5 dakikadan uzun süren yeni bir ortam değişkeni 'AIOHTTP_CLIENT_TIMEOUT' tanıtıldı. Varsayılan 300 saniyedir; zaman aşımı olmaması için boş ('') olarak ayarlayın.
+- ❌ **Mesaj Silme Donması**: Mesaj silmenin bazen web UI'sinin donmasına neden olduğu bir sorun çözüldü.
 
 ## [0.3.4] - 2024-06-12
 
-### Fixed
+### Düzeltildi
 
-- **🔒 Mixed Content with HTTPS Issue**: Resolved a problem where mixed content (HTTP and HTTPS) was causing security warnings and blocking resources on HTTPS sites.
-- **🔍 Web Search Issue**: Addressed the problem where web search functionality was not working correctly. The 'ENABLE_RAG_LOCAL_WEB_FETCH' option has been reintroduced to restore proper web searching capabilities.
-- **💾 RAG Template Not Being Saved**: Fixed an issue where the RAG template was not being saved correctly, ensuring your custom templates are now preserved as expected.
+- 🔒 **HTTPS ile Karışık İçerik Sorunu**: Karışık içerik (HTTP ve HTTPS) güvenlik uyarılarına neden olan ve HTTPS sitelerinde kaynakları engelleyen bir sorun çözüldü.
+- 🔍 **Web Arama Sorunu**: Web arama işlevselliğinin doğru çalışmaması sorunu giderildi. Doğru web arama yeteneklerini geri yüklemek için 'ENABLE_RAG_LOCAL_WEB_FETCH' seçeneği yeniden tanıtıldı.
+- 💾 **RAG Şablonunun Kaydedilmemesi**: RAG şablonunun doğru kaydedilmemesi sorunu düzeltildi, böylece özel şablonlarınızın artık beklendiği gibi korunmasını sağlandı.
 
 ## [0.3.3] - 2024-06-12
 
-### Added
+### Eklendi
 
-- **🛠️ Native Python Function Calling**: Introducing native Python function calling within Open WebUI. We’ve also included a built-in code editor to seamlessly develop and integrate function code within the 'Tools' workspace. With this, you can significantly enhance your LLM’s capabilities by creating custom RAG pipelines, web search tools, and even agent-like features such as sending Discord messages.
-- **🌐 DuckDuckGo Integration**: Added DuckDuckGo as a web search provider, giving you more search options.
-- **🌏 Enhanced Translations**: Improved translations for Vietnamese and Chinese languages, making the interface more accessible.
+- 🛠️ **Yerel Python Fonksiyon Çağırma**: Open WebUI içinde yerel Python fonksiyon çağırma özelliği tanıtıldı. Ayrıca, 'Araçlar' çalışma alanında fonksiyon kodunu sorunsuz bir şekilde geliştirmek ve entegre etmek için yerleşik bir kod düzenleyici de ekledik. Böylece, özel RAG pipeline'ları, web arama araçları ve hatta Discord mesajları göndermek gibi ajan benzeri özellikler oluşturarak LLM'nizin yeteneklerini önemli ölçüde artırabilirsiniz.
+- 🌐 **DuckDuckGo Entegrasyonu**: Daha fazla arama seçeneği sunan bir web arama sağlayıcısı olarak DuckDuckGo eklendi.
+- 🌏 **Gelişmiş Çeviriler**: Vietnamca ve Çince dilleri için geliştirilmiş çeviriler, arayüzü daha erişilebilir hale getiriyor.
 
-### Fixed
+### Düzeltildi
 
-- **🔗 Web Search URL Error Handling**: Fixed the issue where a single URL error would disrupt the data loading process in Web Search mode. Now, such errors will be handled gracefully to ensure uninterrupted data loading.
-- **🖥️ Frontend Responsiveness**: Resolved the problem where the frontend would stop responding if the backend encounters an error while downloading a model. Improved error handling to maintain frontend stability.
-- **🔧 Dependency Issues in pip**: Fixed issues related to pip installations, ensuring all dependencies are correctly managed to prevent installation errors.
+- 🔗 **Web Arama URL Hata İşleme**: Tek bir URL hatasının Web Arama modunda veri yükleme sürecini kesintiye uğratması sorunu düzeltildi. Artık bu tür hatalar sorunsuz bir şekilde ele alınacak ve kesintisiz veri yüklemesi sağlanacak.
+- 🖥️ **Frontend Duyarlılığı**: Backend bir model indirirken hata ile karşılaşırsa frontend'in yanıt vermeyi durdurması sorunu çözüldü. Frontend kararlılığını korumak için hata işleme iyileştirildi.
+- 🔧 **pip'teki Bağımlılık Sorunları**: pip kurulumlarıyla ilgili sorunlar düzeltildi, tüm bağımlılıkların doğru bir şekilde yönetilmesi sağlanarak kurulum hataları önlendi.
 
 ## [0.3.2] - 2024-06-10
 
-### Added
+### Eklendi
 
-- **🔍 Web Search Query Status**: The web search query will now persist in the results section to aid in easier debugging and tracking of search queries.
-- **🌐 New Web Search Provider**: We have added Serply as a new option for web search providers, giving you more choices for your search needs.
-- **🌏 Improved Translations**: We've enhanced translations for Chinese and Portuguese.
+- 🔍 **Web Arama Sorgusu Durumu**: Web arama sorgusu, daha kolay hata ayıklama ve arama sorgularının takibi için sonuçlar bölümünde kalıcı olacak.
+- 🌐 **Yeni Web Arama Sağlayıcısı**: Arama ihtiyaçlarınız için daha fazla seçenek sunan yeni bir web arama sağlayıcısı olarak Serply eklendi.
+- 🌏 **Geliştirilmiş Çeviriler**: Çince ve Portekizce çevirilerimiz geliştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **🎤 Audio File Upload Issue**: The bug that prevented audio files from being uploaded in chat input has been fixed, ensuring smooth communication.
-- **💬 Message Input Handling**: Improved the handling of message inputs by instantly clearing images and text after sending, along with immediate visual indications when a response message is loading, enhancing user feedback.
-- **⚙️ Parameter Registration and Validation**: Fixed the issue where parameters were not registering in certain cases and addressed the problem where users were unable to save due to invalid input errors.
+- 🎤 **Ses Dosyası Yükleme Sorunu**: Sohbet girişinde ses dosyalarının yüklenmesini engelleyen hata düzeltildi, sorunsuz iletişim sağlandı.
+- 💬 **Mesaj Girişi İşleme**: Görüntüleri ve metni gönderdikten sonra anında temizleyerek, bir yanıt mesajı yüklenirken anında görsel göstergelerle mesaj girişlerinin işlenmesi iyileştirildi, kullanıcı geri bildirimi artırıldı.
+- ⚙️ **Parametre Kaydı ve Doğrulama**: Parametrelerin belirli durumlarda kaydedilmemesi sorunu ve kullanıcıların geçersiz giriş hataları nedeniyle kaydedememesi sorunu giderildi.
 
 ## [0.3.1] - 2024-06-09
 
-### Fixed
+### Düzeltildi
 
-- **💬 Chat Functionality**: Resolved the issue where chat functionality was not working for specific models.
+- 💬 **Sohbet İşlevselliği**: Belirli modeller için sohbet işlevselliğinin çalışmaması sorunu çözüldü.
 
 ## [0.3.0] - 2024-06-09
 
-### Added
+### Eklendi
 
-- **📚 Knowledge Support for Models**: Attach documents directly to models from the models workspace, enhancing the information available to each model.
-- **🎙️ Hands-Free Voice Call Feature**: Initiate voice calls without needing to use your hands, making interactions more seamless.
-- **📹 Video Call Feature**: Enable video calls with supported vision models like Llava and GPT-4o, adding a visual dimension to your communications.
-- **🎛️ Enhanced UI for Voice Recording**: Improved user interface for the voice recording feature, making it more intuitive and user-friendly.
-- **🌐 External STT Support**: Now support for external Speech-To-Text services, providing more flexibility in choosing your STT provider.
-- **⚙️ Unified Settings**: Consolidated settings including document settings under a new admin settings section for easier management.
-- **🌑 Dark Mode Splash Screen**: A new splash screen for dark mode, ensuring a consistent and visually appealing experience for dark mode users.
-- **📥 Upload Pipeline**: Directly upload pipelines from the admin settings > pipelines section, streamlining the pipeline management process.
-- **🌍 Improved Language Support**: Enhanced support for Chinese and Ukrainian languages, better catering to a global user base.
+- 📚 **Modeller için Bilgi Desteği**: Belgeleri modeller çalışma alanından doğrudan modellere ekleyin, her model için mevcut bilgileri artırın.
+- 🎙️ **Eller Serbest Sesli Çağrı Özelliği**: Etkileşimleri daha sorunsuz hale getirerek ellerinizi kullanmadan sesli çağrılar başlatın.
+- 📹 **Video Çağrı Özelliği**: Llava ve GPT-4o gibi desteklenen vision modelleriyle görüntülü aramaları etkinleştirin, iletişimlerinize görsel bir boyut katın.
+- 🎛️ **Ses Kaydı için Gelişmiş UI**: Ses kaydı özelliği için geliştirilmiş kullanıcı arayüzü, daha sezgisel ve kullanıcı dostu hale getirildi.
+- 🌐 **Harici STT Desteği**: Artık harici Speech-To-Text hizmetleri desteği, STT sağlayıcınızı seçerken daha fazla esneklik sağlıyor.
+- ⚙️ **Birleşik Ayarlar**: Belge ayarları da dahil olmak üzere ayarlar, daha kolay yönetim için yeni bir yönetici ayarları bölümünde birleştirildi.
+- 🌑 **Koyu Mod Açılış Ekranı**: Koyu mod kullanıcıları için tutarlı ve görsel olarak çekici bir deneyim sağlayan koyu mod için yeni bir açılış ekranı.
+- 📥 **Pipeline Yükleme**: Yönetici ayarları > pipeline'lar bölümünden doğrudan pipeline'ları yükleyin, pipeline yönetim sürecini kolaylaştırın.
+- 🌍 **Gelişmiş Dil Desteği**: Çince ve Ukraynaca dilleri için geliştirilmiş destek, daha küresel bir kullanıcı tabanına daha iyi hizmet veriyor.
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ Playground Issue**: Fixed the playground not functioning properly, ensuring a smoother user experience.
-- **🔥 Temperature Parameter Issue**: Corrected the issue where the temperature value '0' was not being passed correctly.
-- **📝 Prompt Input Clearing**: Resolved prompt input textarea not being cleared right away, ensuring a clean slate for new inputs.
-- **✨ Various UI Styling Issues**: Fixed numerous user interface styling problems for a more cohesive look.
-- **👥 Active Users Display**: Fixed active users showing active sessions instead of actual users, now reflecting accurate user activity.
-- **🌐 Community Platform Compatibility**: The Community Platform is back online and fully compatible with Open WebUI.
+- 🛠️ **Playground Sorunu**: Playground'ın düzgün çalışmaması düzeltildi, daha sorunsuz bir kullanıcı deneyimi sağlandı.
+- 🔥 **Sıcaklık Parametresi Sorunu**: Sıcaklık değeri '0'ın doğru bir şekilde geçirilmemesi sorunu düzeltildi.
+- 📝 **Prompt Girişi Temizleme**: Prompt giriş textarea'sının hemen temizlenmemesi sorunu çözüldü, yeni girişler için temiz bir sayfa sağlandı.
+- ✨ **Çeşitli UI Stil Sorunları**: Daha tutarlı bir görünüm için çok sayıda kullanıcı arayüzü stil sorunu düzeltildi.
+- 👥 **Aktif Kullanıcılar Göstergesi**: Aktif kullanıcıların gerçek kullanıcılar yerine aktif oturumları göstermesi düzeltildi, artık doğru kullanıcı etkinliğini yansıtıyor.
+- 🌐 **Topluluk Platformu Uyumluluğu**: Topluluk Platformu tekrar çevrimiçi ve Open WebUI ile tamamen uyumlu.
 
-### Changed
+### Değiştirildi
 
-- **📝 RAG Implementation**: Updated the RAG (Retrieval-Augmented Generation) implementation to use a system prompt for context, instead of overriding the user's prompt.
-- **🔄 Settings Relocation**: Moved Models, Connections, Audio, and Images settings to the admin settings for better organization.
-- **✍️ Improved Title Generation**: Enhanced the default prompt for title generation, yielding better results.
-- **🔧 Backend Task Management**: Tasks like title generation and search query generation are now managed on the backend side and controlled only by the admin.
-- **🔍 Editable Search Query Prompt**: You can now edit the search query generation prompt, offering more control over how queries are generated.
-- **📏 Prompt Length Threshold**: Set the prompt length threshold for search query generation from the admin settings, giving more customization options.
-- **📣 Settings Consolidation**: Merged the Banners admin setting with the Interface admin setting for a more streamlined settings area.
+- 📝 **RAG Uygulaması**: RAG (Retrieval-Augmented Generation) uygulaması, kullanıcının prompt'unu üzerine yazmak yerine bağlam için bir sistem prompt'u kullanacak şekilde güncellendi.
+- 🔄 **Ayarların Yeniden Konumlandırılması**: Modeller, Bağlantılar, Ses ve Görüntü ayarları, daha iyi organizasyon için yönetici ayarlarına taşındı.
+- ✍️ **Geliştirilmiş Başlık Oluşturma**: Başlık oluşturma için varsayılan prompt geliştirildi, daha iyi sonuçlar verdi.
+- 🔧 **Backend Görev Yönetimi**: Başlık oluşturma ve arama sorgusu oluşturma gibi görevler artık backend tarafında yönetiliyor ve yalnızca yönetici tarafından kontrol ediliyor.
+- 🔍 **Düzenlenebilir Arama Sorgusu Prompt'u**: Arama sorgusu oluşturma prompt'unu artık düzenleyebilirsiniz, sorguların nasıl oluşturulduğu üzerinde daha fazla kontrol sağlar.
+- 📏 **Prompt Uzunluk Eşiği**: Yönetici ayarlarından arama sorgusu oluşturma için prompt uzunluk eşiğini ayarlayın, daha fazla özelleştirme seçeneği sunar.
+- 📣 **Ayarlar Konsolidasyonu**: Banner'lar yönetici ayarları, daha düzenli bir ayarlar alanı için Arayüz yönetici ayarlarıyla birleştirildi.
 
 ## [0.2.5] - 2024-06-05
 
-### Added
+### Eklendi
 
-- **👥 Active Users Indicator**: Now you can see how many people are currently active and what they are running. This helps you gauge when performance might slow down due to a high number of users.
-- **🗂️ Create Ollama Modelfile**: The option to create a modelfile for Ollama has been reintroduced in the Settings > Models section, making it easier to manage your models.
-- **⚙️ Default Model Setting**: Added an option to set the default model from Settings > Interface. This feature is now easily accessible, especially convenient for mobile users as it was previously hidden.
-- **🌐 Enhanced Translations**: We've improved the Chinese translations and added support for Turkmen and Norwegian languages to make the interface more accessible globally.
+- 👥 **Aktif Kullanıcılar Göstergesi**: Artık kaç kişinin aktif olduğunu ve ne çalıştıklarını görebilirsiniz. Bu, yüksek kullanıcı sayısı nedeniyle performansın ne zaman yavaşlayabileceğini anlamanıza yardımcı olur.
+- 🗂️ **Ollama Modelfile Oluştur**: Ollama için bir modelfile oluşturma seçeneği, Ayarlar > Modeller bölümüne geri getirildi, modellerinizi yönetmeyi kolaylaştırıyor.
+- ⚙️ **Varsayılan Model Ayarı**: Ayarlar > Arayüz'den varsayılan modeli ayarlama seçeneği eklendi. Bu özellik, daha önce gizli olduğu için özellikle mobil kullanıcılar için artık kolayca erişilebilir.
+- 🌐 **Gelişmiş Çeviri**: Çince çevirileri geliştirildi ve arayüzü küresel olarak daha erişilebilir hale getirmek için Türkmence ve Norveççe dilleri için destek eklendi.
 
-### Fixed
+### Düzeltildi
 
-- **📱 Mobile View Improvements**: The UI now uses dvh (dynamic viewport height) instead of vh (viewport height), providing a better and more responsive experience for mobile users.
+- 📱 **Mobil Görünüm İyileştirmeleri**: UI artık vh (viewport height) yerine dvh (dynamic viewport height) kullanıyor, mobil kullanıcılar için daha iyi ve daha duyarlı bir deneyim sağlıyor.
 
 ## [0.2.4] - 2024-06-03
 
-### Added
+### Eklendi
 
-- **👤 Improved Account Pending Page**: The account pending page now displays admin details by default to avoid confusion. You can disable this feature in the admin settings if needed.
-- **🌐 HTTP Proxy Support**: We have enabled the use of the 'http_proxy' environment variable in OpenAI and Ollama API calls, making it easier to configure network settings.
-- **❓ Quick Access to Documentation**: You can now easily access Open WebUI documents via a question mark button located at the bottom right corner of the screen (available on larger screens like PCs).
-- **🌍 Enhanced Translation**: Improvements have been made to translations.
+- 👤 **Geliştirilmiş Hesap Beklemedeki Sayfa**: Hesap beklemedeki sayfası artık varsayılan olarak yönetici ayrıntılarını göstererek kafa karışıklığını önler. Gerektiğinde yönetici ayarlarından bu özelliği devre dışı bırakabilirsiniz.
+- 🌐 **HTTP Proxy Desteği**: OpenAI ve Ollama API çağrılarında 'http_proxy' ortam değişkeninin kullanımını etkinleştirdik, ağ ayarlarını yapılandırmayı kolaylaştırıyor.
+- ❓ **Dokümantasyona Hızlı Erişim**: Artık ekranın sağ alt köşesinde bulunan bir soru işareti düğmesi aracılığıyla Open WebUI dokümanlarına kolayca erişebilirsiniz (PC gibi daha büyük ekranlarda kullanılabilir).
+- 🌍 **Gelişmiş Çeviri**: Çevirilerde iyileştirmeler yapıldı.
 
-### Fixed
+### Düzeltildi
 
-- **🔍 SearxNG Web Search**: Fixed the issue where the SearxNG web search functionality was not working properly.
+- 🔍 **SearxNG Web Araması**: SearxNG web arama işlevselliğinin düzgün çalışmaması sorunu düzeltildi.
 
 ## [0.2.3] - 2024-06-03
 
-### Added
+### Eklendi
 
-- **📁 Export Chat as JSON**: You can now export individual chats as JSON files from the navbar menu by navigating to 'Download > Export Chat'. This makes sharing specific conversations easier.
-- **✏️ Edit Titles with Double Click**: Double-click on titles to rename them quickly and efficiently.
-- **🧩 Batch Multiple Embeddings**: Introduced 'RAG_EMBEDDING_OPENAI_BATCH_SIZE' to process multiple embeddings in a batch, enhancing performance for large datasets.
-- **🌍 Improved Translations**: Enhanced the translation quality across various languages for a better user experience.
+- 📁 **Sohbeti JSON Olarak Dışa Aktar**: Artık tek tek sohbetleri, gezinme çubuğu menüsünden 'İndir > Sohbeti Dışa Aktar' seçeneğine giderek JSON dosyaları olarak dışa aktarabilirsiniz. Bu, belirli konuşmaları paylaşmayı kolaylaştırır.
+- ✏️ **Başlıkları Çift Tıklamayla Düzenle**: Başlıkları hızla ve verimli bir şekilde yeniden adlandırmak için çift tıklayın.
+- 🧩 **Birden Fazla Embedding'i Toplu İşle**: Büyük veri kümeleri için performansı artıran birden fazla embedding'i toplu olarak işlemek için 'RAG_EMBEDDING_OPENAI_BATCH_SIZE' tanıtıldı.
+- 🌍 **Geliştirilmiş Çeviriler**: Daha iyi bir kullanıcı deneyimi için çeşitli dillerde çeviri kalitesi artırıldı.
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ Modelfile Migration Script**: Fixed an issue where the modelfile migration script would fail if an invalid modelfile was encountered.
-- **💬 Zhuyin Input Method on Mac**: Resolved an issue where using the Zhuyin input method in the Web UI on a Mac caused text to send immediately upon pressing the enter key, leading to incorrect input.
-- **🔊 Local TTS Voice Selection**: Fixed the issue where the selected local Text-to-Speech (TTS) voice was not being displayed in settings.
+- 🛠️ **Modelfile Geçiş Betiği**: Geçersiz bir modelfile ile karşılaşıldığında modelfile geçiş betiğinin başarısız olması sorunu düzeltildi.
+- 💬 **Mac'te Zhuyin Giriş Yöntemi**: Mac'te Web UI'de Zhuyin giriş yöntemi kullanılırken metnin enter tuşuna basıldığında hemen gönderilmesi sorunu çözüldü, yanlış girişe neden oluyordu.
+- 🔊 **Yerel TTS Ses Seçimi**: Ayarlarda seçilen yerel Text-to-Speech (TTS) sesinin görüntülenmemesi sorunu düzeltildi.
 
 ## [0.2.2] - 2024-06-02
 
-### Added
+### Eklendi
 
-- **🌊 Mermaid Rendering Support**: We've included support for Mermaid rendering. This allows you to create beautiful diagrams and flowcharts directly within Open WebUI.
-- **🔄 New Environment Variable 'RESET_CONFIG_ON_START'**: Introducing a new environment variable: 'RESET_CONFIG_ON_START'. Set this variable to reset your configuration settings upon starting the application, making it easier to revert to default settings.
+- 🌊 **Mermaid Oluşturma Desteği**: Mermaid oluşturma desteği eklendi. Bu, Open WebUI içinde doğrudan güzel diyagramlar ve akış şemaları oluşturmanıza olanak tanır.
+- 🔄 **Yeni Ortam Değişkeni 'RESET_CONFIG_ON_START'**: Yeni bir ortam değişkeni tanıtıldı: 'RESET_CONFIG_ON_START'. Uygulamayı başlatırken yapılandırma ayarlarınızı sıfırlamak için bu değişkeni ayarlayın, varsayılan ayarlara dönmeyi kolaylaştırır.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Pipelines Filter Issue**: We've addressed an issue with the pipelines where filters were not functioning as expected.
+- 🔧 **Pipelines Filtre Sorunu**: Pipeline'larda filtrelerin beklendiği gibi çalışmaması sorunu giderildi.
 
 ## [0.2.1] - 2024-06-02
 
-### Added
+### Eklendi
 
-- **🖱️ Single Model Export Button**: Easily export models with just one click using the new single model export button.
-- **🖥️ Advanced Parameters Support**: Added support for 'num_thread', 'use_mmap', and 'use_mlock' parameters for Ollama.
-- **🌐 Improved Vietnamese Translation**: Enhanced Vietnamese language support for a better user experience for our Vietnamese-speaking community.
+- 🖱️ **Tek Model Dışa Aktar Düğmesi**: Yeni tek model dışa aktar düğmesini kullanarak modelleri tek tıklamayla kolayca dışa aktarın.
+- 🖥️ **Gelişmiş Parametre Desteği**: Ollama için 'num_thread', 'use_mmap' ve 'use_mlock' parametreleri için destek eklendi.
+- 🌐 **Geliştirilmiş Vietnamca Çeviri**: Vietnamca konuşan topluluğumuz için daha iyi bir kullanıcı deneyimi sağlamak amacıyla Vietnamca dil desteği geliştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 OpenAI URL API Save Issue**: Corrected a problem preventing the saving of OpenAI URL API settings.
-- **🚫 Display Issue with Disabled Ollama API**: Fixed the display bug causing models to appear in settings when the Ollama API was disabled.
+- 🔧 **OpenAI URL API Kaydetme Sorunu**: OpenAI URL API ayarlarının kaydedilmesini engelleyen bir sorun düzeltildi.
+- 🚫 **Devre Dışı Ollama API ile Görüntüleme Sorunu**: Ollama API devre dışı bırakıldığında modellerin ayarlarda görünmesine neden olan görüntüleme hatası düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **💡 Versioning Update**: As a reminder from our previous update, version 0.2.y will focus primarily on bug fixes, while major updates will be designated as 0.x from now on for better version tracking.
+- 💡 **Sürüm Güncellemesi**: Önceki güncellememizden bir hatırlatma olarak, 0.2.y sürümü öncelikli olarak hata düzeltmelerine odaklanacakken, ana güncellemeler bundan sonra daha iyi sürüm takibi için 0.x olarak belirlenecektir.
 
 ## [0.2.0] - 2024-06-01
 
-### Added
+### Eklendi
 
-- **🔧 Pipelines Support**: Open WebUI now includes a plugin framework for enhanced customization and functionality (https://github.com/open-webui/pipelines). Easily add custom logic and integrate Python libraries, from AI agents to home automation APIs.
-- **🔗 Function Calling via Pipelines**: Integrate function calling seamlessly through Pipelines.
-- **⚖️ User Rate Limiting via Pipelines**: Implement user-specific rate limits to manage API usage efficiently.
-- **📊 Usage Monitoring with Langfuse**: Track and analyze usage statistics with Langfuse integration through Pipelines.
-- **🕒 Conversation Turn Limits**: Set limits on conversation turns to manage interactions better through Pipelines.
-- **🛡️ Toxic Message Filtering**: Automatically filter out toxic messages to maintain a safe environment using Pipelines.
-- **🔍 Web Search Support**: Introducing built-in web search capabilities via RAG API, allowing users to search using SearXNG, Google Programmatic Search Engine, Brave Search, serpstack, and serper. Activate it effortlessly by adding necessary variables from Document settings > Web Params.
-- **🗂️ Models Workspace**: Create and manage model presets for both Ollama/OpenAI API. Note: The old Modelfiles workspace is deprecated.
-- **🛠️ Model Builder Feature**: Build and edit all models with persistent builder mode.
-- **🏷️ Model Tagging Support**: Organize models with tagging features in the models workspace.
-- **📋 Model Ordering Support**: Effortlessly organize models by dragging and dropping them into the desired positions within the models workspace.
-- **📈 OpenAI Generation Stats**: Access detailed generation statistics for OpenAI models.
-- **📅 System Prompt Variables**: New variables added: '{{CURRENT_DATE}}' and '{{USER_NAME}}' for dynamic prompts.
-- **📢 Global Banner Support**: Manage global banners from admin settings > banners.
-- **🗃️ Enhanced Archived Chats Modal**: Search and export archived chats easily.
-- **📂 Archive All Button**: Quickly archive all chats from settings > chats.
-- **🌐 Improved Translations**: Added and improved translations for French, Croatian, Cebuano, and Vietnamese.
+- 🔧 **Pipelines Desteği**: Open WebUI artık geliştirilmiş özelleştirme ve işlevsellik için bir eklenti framework'ü içerir (https://github.com/open-webui/pipelines). AI ajanlarından ev otomasyonu API'lerine kadar özel mantık ekleyin ve Python kütüphanelerini entegre edin.
+- 🔗 **Pipelines aracılığıyla Fonksiyon Çağırma**: Pipelines aracılığıyla fonksiyon çağırmayı sorunsuz bir şekilde entegre edin.
+- ⚖️ **Pipelines aracılığıyla Kullanıcı Hız Sınırlaması**: API kullanımını verimli bir şekilde yönetmek için kullanıcıya özgü hız sınırları uygulayın.
+- 📊 **Langfuse ile Kullanım İzleme**: Pipelines aracılığıyla Langfuse entegrasyonu ile kullanım istatistiklerini izleyin ve analiz edin.
+- 🕒 **Konuşma Turu Limitleri**: Pipelines aracılığıyla etkileşimleri daha iyi yönetmek için konuşma turu limitleri ayarlayın.
+- 🛡️ **Zararlı Mesaj Filtreleme**: Pipelines kullanarak güvenli bir ortam sağlamak için zararlı mesajları otomatik olarak filtreleyin.
+- 🔍 **Web Arama Desteği**: RAG API aracılığıyla yerleşik web arama yetenekleri tanıtıldı, kullanıcıların SearXNG, Google Programmatic Search Engine, Brave Search, serpstack ve serper kullanarak arama yapmasına olanak tanır. Belge ayarları > Web Parametreleri'nden gerekli değişkenleri ekleyerek zahmetsizce etkinleştirin.
+- 🗂️ **Modeller Çalışma Alanı**: Hem Ollama/OpenAI API için model ön ayarları oluşturun ve yönetin. Not: Eski Modelfile'lar çalışma alanı kullanımdan kaldırıldı.
+- 🛠️ **Model Oluşturucu Özelliği**: Kalıcı oluşturucu modu ile tüm modelleri oluşturun ve düzenleyin.
+- 🏷️ **Model Etiketleme Desteği**: Modelleri modeller çalışma alanında etiketleme özellikleriyle düzenleyin.
+- 📋 **Model Sıralama Desteği**: Modelleri modeller çalışma alanında sürükleyip bırakarak istediğiniz konumlara zahmetsizce düzenleyin.
+- 📈 **OpenAI Oluşturma İstatistikleri**: OpenAI modelleri için ayrıntılı oluşturma istatistiklerine erişin.
+- 📅 **Sistem Prompt Değişkenleri**: Dinamik prompt'lar için yeni değişkenler eklendi: '{{CURRENT_DATE}}' ve '{{USER_NAME}}'.
+- 📢 **Global Banner Desteği**: Yönetici ayarları > banner'lardan global banner'ları yönetin.
+- 🗃️ **Gelişmiş Arşivlenmiş Sohbetler Modalı**: Arşivlenmiş sohbetleri kolayca arayın ve dışa aktarın.
+- 📂 **Tümünü Arşivle Düğmesi**: Ayarlar > sohbetler'den tüm sohbetleri hızla arşivleyin.
+- 🌐 **Geliştirilmiş Çeviriler**: Fransızca, Hırvatça, Cebuano ve Vietnamca için çeviriler eklendi ve iyileştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **🔍 Archived Chats Visibility**: Resolved issue with archived chats not showing in the admin panel.
-- **💬 Message Styling**: Fixed styling issues affecting message appearance.
-- **🔗 Shared Chat Responses**: Corrected the issue where shared chat response messages were not readonly.
-- **🖥️ UI Enhancement**: Fixed the scrollbar overlapping issue with the message box in the user interface.
+- 🔍 **Arşivlenmiş Sohbetler Görünürlüğü**: Yönetici panelinde arşivlenmiş sohbetlerin gösterilmemesi sorunu çözüldü.
+- 💬 **Mesaj Stili**: Mesaj görünümünü etkileyen stil sorunları düzeltildi.
+- 🔗 **Paylaşılan Sohbet Yanıtları**: Paylaşılan sohbet yanıt mesajlarının salt okunur olmaması sorunu düzeltildi.
+- 🖥️ **UI Geliştirmesi**: Kullanıcı arayüzünde mesaj kutusu ile kaydırma çubuğu çakışması sorunu düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **💾 User Settings Storage**: User settings are now saved on the backend, ensuring consistency across all devices.
-- **📡 Unified API Requests**: The API request for getting models is now unified to '/api/models' for easier usage.
-- **🔄 Versioning Update**: Our versioning will now follow the format 0.x for major updates and 0.x.y for patches.
-- **📦 Export All Chats (All Users)**: Moved this functionality to the Admin Panel settings for better organization and accessibility.
+- 💾 **Kullanıcı Ayarları Depolama**: Kullanıcı ayarları artık backend'de kaydediliyor, tüm cihazlarda tutarlılık sağlanıyor.
+- 📡 **Birleşik API İstekleri**: Modelleri almak için API isteği, daha kolay kullanım için '/api/models' olarak birleştirildi.
+- 🔄 **Sürüm Güncellemesi**: Sürümlendirmemiz artık ana güncellemeler için 0.x formatını ve patch'ler için 0.x.y formatını takip edecek.
+- 📦 **Tüm Sohbetleri Dışa Aktar (Tüm Kullanıcılar)**: Bu işlevsellik, daha iyi organizasyon ve erişilebilirlik için Yönetici Paneli ayarlarına taşındı.
 
-### Removed
+### Kaldırıldı
 
-- **🚫 Bundled LiteLLM Support Deprecated**: Migrate your LiteLLM config.yaml to a self-hosted LiteLLM instance. LiteLLM can still be added via OpenAI Connections. Download the LiteLLM config.yaml from admin settings > database > export LiteLLM config.yaml.
+- 🚫 **Paketlenmiş LiteLLM Desteği Kullanımdan Kaldırıldı**: LiteLLM config.yaml'inizi kendi barındırdığınız bir LiteLLM örneğine taşıyın. LiteLLM hala OpenAI Bağlantıları aracılığıyla eklenebilir. LiteLLM config.yaml'i yönetici ayarları > veritabanı > LiteLLM config.yaml'i dışa aktar'dan indirin.
 
 ## [0.1.125] - 2024-05-19
 
-### Added
+### Eklendi
 
-- **🔄 Updated UI**: Chat interface revamped with chat bubbles. Easily switch back to the old style via settings > interface > chat bubble UI.
-- **📂 Enhanced Sidebar UI**: Model files, documents, prompts, and playground merged into Workspace for streamlined access.
-- **🚀 Improved Many Model Interaction**: All responses now displayed simultaneously for a smoother experience.
-- **🐍 Python Code Execution**: Execute Python code locally in the browser with libraries like 'requests', 'beautifulsoup4', 'numpy', 'pandas', 'seaborn', 'matplotlib', 'scikit-learn', 'scipy', 'regex'.
-- **🧠 Experimental Memory Feature**: Manually input personal information you want LLMs to remember via settings > personalization > memory.
-- **💾 Persistent Settings**: Settings now saved as config.json for convenience.
-- **🩺 Health Check Endpoint**: Added for Docker deployment.
-- **↕️ RTL Support**: Toggle chat direction via settings > interface > chat direction.
-- **🖥️ PowerPoint Support**: RAG pipeline now supports PowerPoint documents.
-- **🌐 Language Updates**: Ukrainian, Turkish, Arabic, Chinese, Serbian, Vietnamese updated; Punjabi added.
+- 🔄 **Güncellenmiş UI**: Sohbet arayüzü sohbet balonları ile yeniden tasarlandı. Ayarlar > arayüz > sohbet balonu UI aracılığıyla eski stile kolayca geri dönebilirsiniz.
+- 📂 **Gelişmiş Kenar Çubuğu UI'si**: Model dosyaları, belgeler, prompt'lar ve playground, kolay erişim için Çalışma Alanı'nda birleştirildi.
+- 🚀 **Geliştirilmiş Çok Modelli Etkileşim**: Daha sorunsuz bir deneyim için tüm yanıtlar artık eşzamanlı olarak görüntülenir.
+- 🐍 **Python Kod Yürütme**: Python kodunu 'requests', 'beautifulsoup4', 'numpy', 'pandas', 'seaborn', 'matplotlib', 'scikit-learn', 'scipy', 'regex' gibi kütüphanelerle yerel olarak tarayıcıda yürütün.
+- 🧠 **Deneysel Bellek Özelliği**: LLM'lerin hatırlamasını istediğiniz kişisel bilgileri Ayarlar > Kişiselleştirme > Bellek aracılığıyla manuel olarak girin.
+- 💾 **Kalıcı Ayarlar**: Ayarlar artık kolaylık sağlamak için config.json olarak kaydediliyor.
+- 🩺 **Sağlık Kontrolü Endpoint'i**: Docker dağıtımı için eklendi.
+- ↕️ **RTL Desteği**: Ayarlar > arayüz > sohbet yönü aracılığıyla sohbet yönünü değiştirin.
+- 🖥️ **PowerPoint Desteği**: RAG pipeline artık PowerPoint belgelerini destekliyor.
+- 🌐 **Dil Güncellemeleri**: Ukraynaca, Türkçe, Arapça, Çince, Sırpça, Vietnamca güncellendi; Pencapça eklendi.
 
-### Changed
+### Değiştirildi
 
-- **👤 Shared Chat Update**: Shared chat now includes creator user information.
+- 👤 **Paylaşılan Sohbet Güncellemesi**: Paylaşılan sohbet artık oluşturucu kullanıcı bilgilerini içeriyor.
 
 ## [0.1.124] - 2024-05-08
 
-### Added
+### Eklendi
 
-- **🖼️ Improved Chat Sidebar**: Now conveniently displays time ranges and organizes chats by today, yesterday, and more.
-- **📜 Citations in RAG Feature**: Easily track the context fed to the LLM with added citations in the RAG feature.
-- **🔒 Auth Disable Option**: Introducing the ability to disable authentication. Set 'WEBUI_AUTH' to False to disable authentication. Note: Only applicable for fresh installations without existing users.
-- **📹 Enhanced YouTube RAG Pipeline**: Now supports non-English videos for an enriched experience.
-- **🔊 Specify OpenAI TTS Models**: Customize your TTS experience by specifying OpenAI TTS models.
-- **🔧 Additional Environment Variables**: Discover more environment variables in our comprehensive documentation at Open WebUI Documentation (https://docs.openwebui.com).
-- **🌐 Language Support**: Arabic, Finnish, and Hindi added; Improved support for German, Vietnamese, and Chinese.
+- 🖼️ **Geliştirilmiş Sohbet Kenar Çubuğu**: Artık zaman aralıklarını rahatça gösterir ve sohbetleri bugün, dün ve daha fazlasına göre düzenler.
+- 📜 **RAG Özelliğinde Alıntılar**: RAG özelliğine eklenen alıntılarla LLM'ye beslenen bağlamı kolayca takip edin. Not: Bu özellik yalnızca yeni yüklenen dosyaları destekler, izlenebilirliği artırır ve kaynak netliği sağlar.
+- 🔒 **Kimlik Doğrulamayı Devre Dışı Bırak Seçeneği**: Kimlik doğrulamayı devre dışı bırakma yeteneği tanıtıldı. Kimlik doğrulamayı devre dışı bırakmak için 'WEBUI_AUTH'u False olarak ayarlayın. Not: Yalnızca mevcut kullanıcılar olmadan yeni kurulumlar için geçerlidir.
+- 📹 **Gelişmiş YouTube RAG Pipeline'ı**: Zenginleştirilmiş bir deneyim için İngilizce olmayan videoları da destekleyen YouTube videoları için özel RAG pipeline'ı tanıtıldı.
+- 🔊 **OpenAI TTS Modellerini Belirt**: OpenAI TTS modellerini belirterek TTS deneyiminizi özelleştirin.
+- 🔧 **Ek Ortam Değişkenleri**: Kapsamlı dokümantasyonumuzda (https://docs.openwebui.com) daha fazla ortam değişkeni keşfedin, bellek kullanımını yönetmek için 'ENABLE_LITELLM' seçeneği dahil.
+- 🌐 **Dil Desteği**: Arapça, Fince ve Hintçe eklendi; Almanca, Vietnamca ve Çince için geliştirilmiş destek.
 
-### Fixed
+### Düzeltildi
 
-- **🛠️ Model Selector Styling**: Addressed styling issues for improved user experience.
-- **⚠️ Warning Messages**: Resolved backend warning messages.
+- 🛠️ **Model Seçici Stili**: Geliştirilmiş kullanıcı deneyimi için stil sorunları giderildi.
+- ⚠️ **Uyarı Mesajları**: Backend uyarı mesajları çözüldü.
 
-### Changed
+### Değiştirildi
 
-- **📝 Title Generation**: Limited output to 50 tokens.
-- **📦 Helm Charts**: Removed Helm charts, now available in a separate repository (https://github.com/open-webui/helm-charts).
+- 📝 **Başlık Oluşturma**: Çıktı 50 token ile sınırlıdır.
+- 📦 **Helm Charts**: Helm chart'ları kaldırıldı, artık ayrı bir depoda (https://github.com/open-webui/helm-charts) mevcut.
 
 ## [0.1.123] - 2024-05-02
 
-### Added
+### Eklendi
 
-- **🎨 New Landing Page Design**: Refreshed design for a more modern look and optimized use of screen space.
-- **📹 Youtube RAG Pipeline**: Introduces dedicated RAG pipeline for Youtube videos, enabling interaction with video transcriptions directly.
-- **🔧 Enhanced Admin Panel**: Streamlined user management with options to add users directly or in bulk via CSV import.
-- **👥 '@' Model Integration**: Easily switch to specific models during conversations; old collaborative chat feature phased out.
-- **🌐 Language Enhancements**: Swedish translation added, plus improvements to German, Spanish, and the addition of Doge translation.
+- 🎨 **Yeni Açılış Sayfası Tasarımı**: Daha modern bir görünüm ve ekran alanının optimize edilmiş kullanımı için yenilenmiş tasarım.
+- 📹 **Youtube RAG Pipeline'ı**: Doğrudan video transkripsiyonlarıyla etkileşimi sağlayan Youtube videoları için özel RAG pipeline'ı tanıtıldı.
+- 🔧 **Gelişmiş Yönetici Paneli**: Kullanıcıları doğrudan veya CSV içe aktarma yoluyla toplu olarak ekleme seçenekleriyle kolaylaştırılmış kullanıcı yönetimi.
+- 👥 **'@' Model Entegrasyonu**: Konuşmalar sırasında belirli modellere kolayca geçiş yapın; eski işbirlikçi sohbet özelliği aşamalı olarak kaldırıldı.
+- 🌐 **Dil Geliştirmeleri**: İsveççe çeviri eklendi, ayrıca Almanca, İspanyolca için iyileştirmeler ve Doge çevirisi eklendi.
 
-### Fixed
+### Düzeltildi
 
-- **🗑️ Delete Chat Shortcut**: Addressed issue where shortcut wasn't functioning.
-- **🖼️ Modal Closing Bug**: Resolved unexpected closure of modal when dragging from within.
-- **✏️ Edit Button Styling**: Fixed styling inconsistency with edit buttons.
-- **🌐 Image Generation Compatibility Issue**: Rectified image generation compatibility issue with third-party APIs.
-- **📱 iOS PWA Icon Fix**: Corrected iOS PWA home screen icon shape.
-- **🔍 Scroll Gesture Bug**: Adjusted gesture sensitivity to prevent accidental activation when scrolling through code on mobile; now requires scrolling from the leftmost side to open the sidebar.
+- 🗑️ **Sohbet Sil Kısayolu**: Kısayolun çalışmaması sorunu giderildi.
+- 🖼️ **Modal Kapanma Hatası**: İçinden sürüklerken modalın beklenmedik şekilde kapanması sorunu çözüldü.
+- ✏️ **Düzenleme Düğmesi Stili**: Düzenleme düğmelerindeki stil tutarsızlığı düzeltildi.
+- 🌐 **Görüntü Oluşturma Uyumluluk Sorunu**: Üçüncü taraf API'leri ile görüntü oluşturma uyumluluk sorunu düzeltildi.
+- 📱 **iOS PWA İkon Düzeltmesi**: iOS PWA ana ekran ikon şekli düzeltildi.
+- 🔍 **Kaydırma Hareketi Hatası**: Mobil cihazda kod üzerinde kaydırma yaparken kazara etkinleştirmeyi önlemek için hareket duyarlılığı ayarlandı; artık kenar çubuğunu açmak için en soldan kaydırma gerektirir.
 
-### Changed
+### Değiştirildi
 
-- **🔄 Unlimited Context Length**: Advanced settings now allow unlimited max context length (previously limited to 16000).
-- **👑 Super Admin Assignment**: The first signup is automatically assigned a super admin role, unchangeable by other admins.
-- **🛡️ Admin User Restrictions**: User action buttons from the admin panel are now disabled for users with admin roles.
-- **🔝 Default Model Selector**: Set as default model option now exclusively available on the landing page.
+- 🔄 **Sınırsız Bağlam Uzunluğu**: Gelişmiş ayarlar artık sınırsız maksimum bağlam uzunluğuna izin veriyor (daha önce 16000 ile sınırlıydı).
+- 👑 **Süper Yönetici Ataması**: İlk kayıt olan kullanıcı otomatik olarak diğer yöneticiler tarafından değiştirilemeyen bir süper yönetici rolüne atanır.
+- 🛡️ **Yönetici Kullanıcı Kısıtlamaları**: Yönetici panelindeki kullanıcı eylem düğmeleri, yönetici rolüne sahip kullanıcılar için artık devre dışıdır.
+- 🔝 **Varsayılan Model Seçici**: Varsayılan model seçeneği artık yalnızca açılış sayfasında kullanılabilir.
 
 ## [0.1.122] - 2024-04-27
 
-### Added
+### Eklendi
 
-- **🌟 Enhanced RAG Pipeline**: Now with hybrid searching via 'BM25', reranking powered by 'CrossEncoder', and configurable relevance score thresholds.
-- **🛢️ External Database Support**: Seamlessly connect to custom SQLite or Postgres databases using the 'DATABASE_URL' environment variable.
-- **🌐 Remote ChromaDB Support**: Introducing the capability to connect to remote ChromaDB servers.
-- **👨‍💼 Improved Admin Panel**: Admins can now conveniently check users' chat lists and last active status directly from the admin panel.
-- **🎨 Splash Screen**: Introducing a loading splash screen for a smoother user experience.
-- **🌍 Language Support Expansion**: Added support for Bangla (bn-BD), along with enhancements to Chinese, Spanish, and Ukrainian translations.
-- **💻 Improved LaTeX Rendering Performance**: Enjoy faster rendering times for LaTeX equations.
-- **🔧 More Environment Variables**: Explore additional environment variables in our documentation (https://docs.openwebui.com), including the 'ENABLE_LITELLM' option to manage memory usage.
+- 🌟 **Gelişmiş RAG Pipeline'ı**: Artık 'BM25' aracılığıyla hibrit arama, 'CrossEncoder' tarafından desteklenen yeniden sıralama ve yapılandırılabilir alaka düzeyi puanı eşikleri ile.
+- 🛢️ **Harici Veritabanı Desteği**: 'DATABASE_URL' ortam değişkenini kullanarak özel SQLite veya Postgres veritabanlarına sorunsuz bir şekilde bağlanın.
+- 🌐 **Uzak ChromaDB Desteği**: Uzak ChromaDB sunucularına bağlanma yeteneği tanıtıldı.
+- 👨‍💼 **Geliştirilmiş Yönetici Paneli**: Yöneticiler artık kullanıcıların sohbet listelerini ve son aktif durumlarını doğrudan yönetici panelinden rahatça kontrol edebilir.
+- 🎨 **Açılış Ekranı**: Daha sorunsuz bir kullanıcı deneyimi için bir yükleme açılış ekranı tanıtıldı.
+- 🌍 **Dil Desteği Genişletme**: Bengalce (bn-BD) desteği eklendi, ayrıca Çince, İspanyolca ve Ukraynaca çevirilerinde geliştirmeler yapıldı.
+- 💻 **Geliştirilmiş LaTeX Oluşturma Performansı**: LaTeX denklemleri için daha hızlı oluşturma sürelerinin keyfini çıkarın.
+- 🔧 **Daha Fazla Ortam Değişkeni**: Dokümantasyonumuzda (https://docs.openwebui.com) ek ortam değişkenlerini keşfedin, bellek kullanımını yönetmek için 'ENABLE_LITELLM' seçeneği dahil.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Ollama Compatibility**: Resolved errors occurring when Ollama server version isn't an integer, such as SHA builds or RCs.
-- **🐛 Various OpenAI API Issues**: Addressed several issues related to the OpenAI API.
-- **🛑 Stop Sequence Issue**: Fixed the problem where the stop sequence with a backslash '\' was not functioning.
-- **🔤 Font Fallback**: Corrected font fallback issue.
+- 🔧 **Ollama Uyumluluğu**: Ollama sunucu sürümünün SHA build'ları veya RC'ler gibi bir tam sayı olmaması durumunda oluşan hatalar çözüldü.
+- 🐛 **Çeşitli OpenAI API Sorunları**: OpenAI API ile ilgili çeşitli sorunlar giderildi.
+- 🛑 **Durdurma Sırası Sorunu**: Ters eğik çizgi '\' ile durdurma sırasının çalışmaması sorunu düzeltildi.
+- 🔤 **Yazı Tipi Yedeklemesi**: Yazı tipi yedeklemesi sorunu düzeltildi.
 
-### Changed
+### Değiştirildi
 
-- **⌨️ Prompt Input Behavior on Mobile**: Enter key prompt submission disabled on mobile devices for improved user experience.
+- ⌨️ **Mobil Üzerinde Prompt Giriş Davranışı**: Mobil cihazlarda enter tuşu prompt gönderimi, geliştirilmiş kullanıcı deneyimi için devre dışı bırakıldı.
 
 ## [0.1.121] - 2024-04-24
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Translation Issues**: Addressed various translation discrepancies.
-- **🔒 LiteLLM Security Fix**: Updated LiteLLM version to resolve a security vulnerability.
-- **🖥️ HTML Tag Display**: Rectified the issue where the '< br >' tag wasn't displaying correctly.
-- **🔗 WebSocket Connection**: Resolved the failure of WebSocket connection under HTTPS security for ComfyUI server.
-- **📜 FileReader Optimization**: Implemented FileReader initialization per image in multi-file drag & drop to ensure reusability.
-- **🏷️ Tag Display**: Corrected tag display inconsistencies.
-- **📦 Archived Chat Styling**: Fixed styling issues in archived chat.
-- **🔖 Safari Copy Button Bug**: Addressed the bug where the copy button failed to copy links in Safari.
+- 🔧 **Çeviri Sorunları**: Çeşitli çeviri farklılıkları giderildi.
+- 🔒 **LiteLLM Güvenlik Düzeltmesi**: Bir güvenlik açığını gidermek için LiteLLM sürümü güncellendi.
+- 🖥️ **HTML Etiketi Görüntüsü**: '< br >' etiketinin doğru görüntülenmemesi sorunu düzeltildi.
+- 🔗 **WebSocket Bağlantısı**: ComfyUI sunucusu için HTTPS güvenliği altında WebSocket bağlantısının başarısız olması çözüldü.
+- 📜 **FileReader Optimizasyonu**: Çoklu dosya sürükle ve bırak işleminde her görüntü için FileReader başlatılması uygulandı, yeniden kullanılabilirliği sağlandı.
+- 🏷️ **Etiket Görüntüsü**: Etiket görüntü tutarsızlıkları düzeltildi.
+- 📦 **Arşivlenmiş Sohbet Stili**: Arşivlenmiş sohbette stil sorunları düzeltildi.
+- 🔖 **Safari Kopyalama Düğmesi Hatası**: Safari'de kopyalama düğmesinin bağlantıları kopyalayamaması hatası giderildi.
 
 ## [0.1.120] - 2024-04-20
 
-### Added
+### Eklendi
 
-- **📦 Archive Chat Feature**: Easily archive chats with a new sidebar button, and access archived chats via the profile button > archived chats.
-- **🔊 Configurable Text-to-Speech Endpoint**: Customize your Text-to-Speech experience with configurable OpenAI endpoints.
-- **🛠️ Improved Error Handling**: Enhanced error message handling for connection failures.
-- **⌨️ Enhanced Shortcut**: When editing messages, use ctrl/cmd+enter to save and submit, and esc to close.
-- **🌐 Language Support**: Added support for Georgian and enhanced translations for Portuguese and Vietnamese.
+- 📦 **Arşiv Sohbet Özelliği**: Yeni bir kenar çubuğu düğmesiyle sohbetleri kolayca arşivleyin ve profil düğmesi > arşivlenmiş sohbetler aracılığıyla arşivlenmiş sohbetlere erişin.
+- 🔊 **Yapılandırılabilir Text-to-Speech Endpoint'i**: Yapılandırılabilir OpenAI endpoint'leri ile Text-to-Speech deneyiminizi özelleştirin.
+- 🛠️ **Geliştirilmiş Hata İşleme**: Bağlantı hataları için geliştirilmiş hata mesajı işleme.
+- ⌨️ **Gelişmiş Kısayol**: Mesajları düzenlerken, kaydetmek ve göndermek için ctrl/cmd+enter kullanın ve kapatmak için esc kullanın.
+- 🌐 **Dil Desteği**: Gürcüce desteği eklendi ve Portekizce ve Vietnamca çevirileri geliştirildi.
 
-### Fixed
+### Düzeltildi
 
-- **🔧 Model Selector**: Resolved issue where default model selection was not saving.
-- **🔗 Share Link Copy Button**: Fixed bug where the copy button wasn't copying links in Safari.
-- **🎨 Light Theme Styling**: Addressed styling issue with the light theme.
+- 🔧 **Model Seçici**: Varsayılan model seçiminin kaydedilmemesi sorunu çözüldü.
+- 🔗 **Paylaş Bağlantısı Kopyalama Düğmesi**: Kopyalama düğmesinin Safari'de bağlantıları kopyalayamaması hatası düzeltildi.
+- 🎨 **Açık Tema Stili**: Açık tema ile ilgili stil sorunu giderildi.
 
 ## [0.1.119] - 2024-04-16
 
-### Added
+### Eklendi
 
-- **🌟 Enhanced RAG Embedding Support**: Ollama, and OpenAI models can now be used for RAG embedding model.
-- **🔄 Seamless Integration**: Copy 'ollama run <model name>' directly from Ollama page to easily select and pull models.
-- **🏷️ Tagging Feature**: Add tags to chats directly via the sidebar chat menu.
-- **📱 Mobile Accessibility**: Swipe left and right on mobile to effortlessly open and close the sidebar.
-- **🔍 Improved Navigation**: Admin panel now supports pagination for user list.
-- **🌍 Additional Language Support**: Added Polish language support.
+- 🌟 **Gelişmiş RAG Embedding Desteği**: Ollama ve OpenAI modelleri artık RAG embedding modeli için kullanılabilir.
+- 🔄 **Sorunsuz Entegrasyon**: Ollama sayfasından doğrudan 'ollama run <model adı>' komutunu kopyalayarak modelleri kolayca seçin ve çekin.
+- 🏷️ **Etiketleme Özelliği**: Kenar çubuğu sohbet menüsünden sohbetlere doğrudan etiketler ekleyin.
+- 📱 **Mobil Erişilebilirlik**: Kenar çubuğunu zahmetsizce açıp kapatmak için mobil cihazda sola ve sağa kaydırın.
+- 🔍 **Geliştirilmiş Gezinme**: Yönetici paneli artık kullanıcı listesi için sayfalandırmayı destekliyor.
+- 🌍 **Ek Dil Desteği**: Lehçe dil desteği eklendi.
 
-### Fixed
+### Düzeltildi
 
-- **🌍 Language Enhancements**: Vietnamese and Spanish translations have been improved.
-- **🔧 Helm Fixes**: Resolved issues with Helm trailing slash and manifest.json.
+- 🌍 **Dil Geliştirmeleri**: Vietnamca ve İspanyolca çevirileri geliştirildi.
+- 🔧 **Helm Düzeltmeleri**: Helm sondaki eğik çizgi ve manifest.json ile ilgili sorunlar çözüldü.
 
-### Changed
+### Değiştirildi
 
-- **🐳 Docker Optimization**: Updated docker image build process to utilize 'uv' for significantly faster builds compared to 'pip3'.
+- 🐳 **Docker Optimizasyonu**: 'pip3'e kıyasla önemli ölçüde daha hızlı build'ler için 'uv' kullanmak üzere docker imajı build süreci güncellendi.
 
 ## [0.1.118] - 2024-04-10
 
-### Added
+### Eklendi
 
-- **🦙 Ollama and CUDA Images**: Added support for ':ollama' and ':cuda' tagged images.
-- **👍 Enhanced Response Rating**: Now you can annotate your ratings for better feedback.
-- **👤 User Initials Profile Photo**: User initials are now the default profile photo.
-- **🔍 Update RAG Embedding Model**: Customize RAG embedding model directly in document settings.
-- **🌍 Additional Language Support**: Added Turkish language support.
+- 🦙 **Ollama ve CUDA İmajları**: ':ollama' ve ':cuda' etiketli imajlar için destek eklendi.
+- 👍 **Gelişmiş Yanıt Derecelendirmesi**: Artık daha iyi geri bildirim için derecelendirmelerinizi açıklayabilirsiniz.
+- 👤 **Kullanıcı Baş Harfleri Profil Fotoğrafı**: Kullanıcı baş harfleri artık varsayılan profil fotoğrafıdır.
+- 🔍 **RAG Embedding Modelini Güncelle**: Belge ayarlarından doğrudan RAG embedding modelini özelleştirin.
+- 🌍 **Ek Dil Desteği**: Türkçe dil desteği eklendi.
 
-### Fixed
+### Düzeltildi
 
-- **🔒 Share Chat Permission**: Resolved issue with chat sharing permissions.
-- **🛠 Modal Close**: Modals can now be closed using the Esc key.
+- 🔒 **Sohbet Paylaşma İzni**: Sohbet paylaşma izinleriyle ilgili sorun çözüldü.
+- 🛠 **Modal Kapatma**: Modallar artık Esc tuşu kullanılarak kapatılabilir.
 
-### Changed
+### Değiştirildi
 
-- **🎨 Admin Panel Styling**: Refreshed styling for the admin panel.
-- **🐳 Docker Image Build**: Updated docker image build process for improved efficiency.
+- 🎨 **Yönetici Paneli Stili**: Yönetici paneli için yenilenen stil.
+- 🐳 **Docker İmajı Oluşturma**: Geliştirilmiş verimlilik için docker imajı oluşturma süreci güncellendi.
+
 
 ## [0.1.117] - 2024-04-03
+### Eklendi
 
-### Added
+🗨️ Yerel Sohbet Paylaşımı: Kullanıcılar arasında sohbet bağlantılarını sorunsuz bir şekilde paylaşın.
 
-- 🗨️ **Local Chat Sharing**: Share chat links seamlessly between users.
-- 🔑 **API Key Generation Support**: Generate secret keys to leverage Open WebUI with OpenAI libraries.
-- 📄 **Chat Download as PDF**: Easily download chats in PDF format.
-- 📝 **Improved Logging**: Enhancements to logging functionality.
-- 📧 **Trusted Email Authentication**: Authenticate using a trusted email header.
+🔑 API Anahtarı Oluşturma Desteği: OpenAI kütüphaneleriyle Open WebUI'yi kullanmak için gizli anahtarlar oluşturun.
 
-### Fixed
+📄 Sohbeti PDF Olarak İndir: Sohbetleri kolayca PDF formatında indirin.
 
-- 🌷 **Enhanced Dutch Translation**: Improved translation for Dutch users.
-- ⚪ **White Theme Styling**: Resolved styling issue with the white theme.
-- 📜 **LaTeX Chat Screen Overflow**: Fixed screen overflow issue with LaTeX rendering.
-- 🔒 **Security Patches**: Applied necessary security patches.
+📝 Geliştirilmiş Günlükleme: Günlükleme işlevselliğine geliştirmeler.
+
+📧 Güvenilir E-posta Kimlik Doğrulaması: Güvenilir bir e-posta başlığı kullanarak kimlik doğrulayın.
+
+### Düzeltildi
+
+🌷 Gelişmiş Hollandaca Çeviri: Hollandalı kullanıcılar için geliştirilmiş çeviri.
+
+⚪ Beyaz Tema Stili: Beyaz tema ile ilgili stil sorunu çözüldü.
+
+📜 LaTeX Sohbet Ekranı Taşması: LaTeX oluşturmayla ilgili ekran taşması sorunu düzeltildi.
+
+🔒 Güvenlik Yamaları: Gerekli güvenlik yamaları uygulandı.
 
 ## [0.1.116] - 2024-03-31
+### Eklendi
 
-### Added
+🔄 Gelişmiş UI: Model seçici artık gezinme çubuğunda kolayca bulunur, konuşmalar sırasında birden fazla model arasında sorunsuz geçişi sağlar.
 
-- **🔄 Enhanced UI**: Model selector now conveniently located in the navbar, enabling seamless switching between multiple models during conversations.
-- **🔍 Improved Model Selector**: Directly pull a model from the selector/Models now display detailed information for better understanding.
-- **💬 Webhook Support**: Now compatible with Google Chat and Microsoft Teams.
-- **🌐 Localization**: Korean translation (I18n) now available.
-- **🌑 Dark Theme**: OLED dark theme introduced for reduced strain during prolonged usage.
-- **🏷️ Tag Autocomplete**: Dropdown feature added for effortless chat tagging.
+🔍 İyileştirilmiş Model Seçici: Seçiciden doğrudan bir model çekin/Modeller artık daha iyi anlamak için ayrıntılı bilgi gösterir.
 
-### Fixed
+💬 Webhook Desteği: Artık Google Chat ve Microsoft Teams ile uyumlu.
 
-- **🔽 Auto-Scrolling**: Addressed OpenAI auto-scrolling issue.
-- **🏷️ Tag Validation**: Implemented tag validation to prevent empty string tags.
-- **🚫 Model Whitelisting**: Resolved LiteLLM model whitelisting issue.
-- **✅ Spelling**: Corrected various spelling issues for improved readability.
+🌐 Yerelleştirme: Korece çeviri (I18n) artık mevcut.
+
+🌑 Koyu Tema: Uzun süreli kullanım sırasında göz yorgunluğunu azaltmak için OLED koyu tema tanıtıldı.
+
+🏷️ Etiket Otomatik Tamamlama: Zahmetsiz sohbet etiketleme için açılır menü özelliği eklendi.
+
+### Düzeltildi
+
+🔽 Otomatik Kaydırma: OpenAI otomatik kaydırma sorunu giderildi.
+
+🏷️ Etiket Doğrulama: Boş dize etiketlerini önlemek için etiket doğrulama uygulandı.
+
+🚫 Model Beyaz Listesi: LiteLLM model beyaz listeleme sorunu çözüldü.
+
+✅ Yazım: Daha iyi okunabilirlik için çeşitli yazım hataları düzeltildi.
 
 ## [0.1.115] - 2024-03-24
+### Eklendi
 
-### Added
+🔍 Özel Model Seçici: Yeni arama filtresi özelliği ile özel modelleri kolayca bulun ve seçin.
 
-- **🔍 Custom Model Selector**: Easily find and select custom models with the new search filter feature.
-- **🛑 Cancel Model Download**: Added the ability to cancel model downloads.
-- **🎨 Image Generation ComfyUI**: Image generation now supports ComfyUI.
-- **🌟 Updated Light Theme**: Updated the light theme for a fresh look.
-- **🌍 Additional Language Support**: Now supporting Bulgarian, Italian, Portuguese, Japanese, and Dutch.
+🛑 Model İndirmeyi İptal Et: Model indirmelerini iptal etme yeteneği eklendi.
 
-### Fixed
+🎨 Görüntü Oluşturma ComfyUI: Görüntü oluşturma artık ComfyUI'yi destekliyor.
 
-- **🔧 Fixed Broken Experimental GGUF Upload**: Resolved issues with experimental GGUF upload functionality.
+🌟 Güncellenmiş Açık Tema: Yeni bir görünüm için açık tema güncellendi.
 
-### Changed
+🌍 Ek Dil Desteği: Artık Bulgarca, İtalyanca, Portekizce, Japonca ve Hollandaca destekleniyor.
 
-- **🔄 Vector Storage Reset Button**: Moved the reset vector storage button to document settings.
+### Düzeltildi
+
+🔧 Bozuk Deneysel GGUF Yüklemesi Düzeltildi: Deneysel GGUF yükleme işlevselliğiyle ilgili sorunlar çözüldü.
+
+### Değiştirildi
+
+🔄 Vektör Depolama Sıfırla Düğmesi: Vektör depolama sıfırlama düğmesi belge ayarlarına taşındı.
 
 ## [0.1.114] - 2024-03-20
+### Eklendi
 
-### Added
+🔗 Webhook Entegrasyonu: Artık webhook aracılığıyla yeni kullanıcı kayıt olaylarına abone olabilirsiniz. Yönetici paneli > yönetici ayarları > webhook URL'ye gitmeniz yeterli.
 
-- **🔗 Webhook Integration**: Now you can subscribe to new user sign-up events via webhook. Simply navigate to the admin panel > admin settings > webhook URL.
-- **🛡️ Enhanced Model Filtering**: Alongside Ollama, OpenAI proxy model whitelisting, we've added model filtering functionality for LiteLLM proxy.
-- **🌍 Expanded Language Support**: Spanish, Catalan, and Vietnamese languages are now available, with improvements made to others.
+🛡️ Gelişmiş Model Filtreleme: Ollama, OpenAI proxy model beyaz listesine ek olarak, LiteLLM proxy için model filtreleme işlevselliği ekledik.
 
-### Fixed
+🌍 Genişletilmiş Dil Desteği: İspanyolca, Katalanca ve Vietnamca dilleri artık mevcut, diğer dillerde de iyileştirmeler yapıldı.
 
-- **🔧 Input Field Spelling**: Resolved issue with spelling mistakes in input fields.
-- **🖊️ Light Mode Styling**: Fixed styling issue with light mode in document adding.
+### Düzeltildi
 
-### Changed
+🔧 Giriş Alanı Yazımı: Giriş alanlarındaki yazım hataları giderildi.
 
-- **🔄 Language Sorting**: Languages are now sorted alphabetically by their code for improved organization.
+🖊️ Açık Mod Stili: Belge eklemede açık mod stili sorunu düzeltildi.
+
+### Değiştirildi
+
+🔄 Dil Sıralama: Diller artık daha iyi organizasyon için kodlarına göre alfabetik olarak sıralanıyor.
 
 ## [0.1.113] - 2024-03-18
+### Eklendi
 
-### Added
+🌍 Yerelleştirme: Artık UI dilini Ayarlar > Genel'den değiştirebilirsiniz. Ukraynaca, Almanca, Farsça (Persian), Geleneksel ve Basitleştirilmiş Çince ve Fransızca çevirilerini destekliyoruz. UI'yi kendi dilinize çevirmemize yardımcı olabilirsiniz! Daha fazla bilgi için CONTRIBUTION.md belgesine bakın.
 
-- 🌍 **Localization**: You can now change the UI language in Settings > General. We support Ukrainian, German, Farsi (Persian), Traditional and Simplified Chinese and French translations. You can help us to translate the UI into your language! More info in our [CONTRIBUTION.md](https://github.com/open-webui/open-webui/blob/main/docs/CONTRIBUTING.md#-translations-and-internationalization).
-- 🎨 **System-wide Theme**: Introducing a new system-wide theme for enhanced visual experience.
+🎨 Sistem Genelinde Tema: Gelişmiş görsel deneyim için yeni bir sistem genelinde tema tanıtıldı.
 
-### Fixed
+### Düzeltildi
 
-- 🌑 **Dark Background on Select Fields**: Improved readability by adding a dark background to select fields, addressing issues on certain browsers/devices.
-- **Multiple OPENAI_API_BASE_URLS Issue**: Resolved issue where multiple base URLs caused conflicts when one wasn't functioning.
-- **RAG Encoding Issue**: Fixed encoding problem in RAG.
-- **npm Audit Fix**: Addressed npm audit findings.
-- **Reduced Scroll Threshold**: Improved auto-scroll experience by reducing the scroll threshold from 50px to 5px.
+🌑 Seçim Alanlarında Koyu Arka Plan: Belirli tarayıcılarda/cihazlarda sorunları gidererek seçim alanlarına koyu bir arka plan ekleyerek okunabilirlik iyileştirildi.
 
-### Changed
+Birden Fazla OPENAI_API_BASE_URLS Sorunu: Birinin çalışmaması durumunda birden fazla temel URL'nin çakışmaya neden olması sorunu çözüldü.
 
-- 🔄 **Sidebar UI Update**: Updated sidebar UI to feature a chat menu dropdown, replacing two icons for improved navigation.
+RAG Kodlama Sorunu: RAG'deki kodlama problemi düzeltildi.
+
+npm Denetim Düzeltmesi: npm denetim bulguları giderildi.
+
+Azaltılmış Kaydırma Eşiği: Kaydırma eşiği 50px'ten 5px'e düşürülerek otomatik kaydırma deneyimi iyileştirildi.
+
+Değiştirildi
+
+🔄 Kenar Çubuğu UI Güncellemesi: Daha iyi gezinme için iki ikonun yerini alan bir sohbet menüsü açılır penceresi içerecek şekilde kenar çubuğu UI güncellendi.
 
 ## [0.1.112] - 2024-03-15
+### Düzeltildi
 
-### Fixed
+🗨️ Görüntü oluşturulduktan sonra sohbet arızası çözüldü.
 
-- 🗨️ Resolved chat malfunction after image generation.
-- 🎨 Fixed various RAG issues.
-- 🧪 Rectified experimental broken GGUF upload logic.
+🎨 Çeşitli RAG sorunları düzeltildi.
+
+🧪 Deneysel bozuk GGUF yükleme mantığı düzeltildi.
 
 ## [0.1.111] - 2024-03-10
+### Eklendi
 
-### Added
+🛡️ Model Beyaz Listesi: Yöneticiler artık 'user' rolüne sahip kullanıcılar için modelleri beyaz listeye alma yeteneğine sahip.
 
-- 🛡️ **Model Whitelisting**: Admins now have the ability to whitelist models for users with the 'user' role.
-- 🔄 **Update All Models**: Added a convenient button to update all models at once.
-- 📄 **Toggle PDF OCR**: Users can now toggle PDF OCR option for improved parsing performance.
-- 🎨 **DALL-E Integration**: Introduced DALL-E integration for image generation alongside automatic1111.
-- 🛠️ **RAG API Refactoring**: Refactored RAG logic and exposed its API, with additional documentation to follow.
+🔄 Tüm Modelleri Güncelle: Tüm modelleri tek seferde güncellemek için kullanışlı bir düğme eklendi.
 
-### Fixed
+📄 PDF OCR'yi Aç/Kapat: Kullanıcılar artık daha iyi ayrıştırma performansı için PDF OCR seçeneğini açıp kapatabilir.
 
-- 🔒 **Max Token Settings**: Added max token settings for anthropic/claude-3-sonnet-20240229 (Issue #1094).
-- 🔧 **Misalignment Issue**: Corrected misalignment of Edit and Delete Icons when Chat Title is Empty (Issue #1104).
-- 🔄 **Context Loss Fix**: Resolved RAG losing context on model response regeneration with Groq models via API key (Issue #1105).
-- 📁 **File Handling Bug**: Addressed File Not Found Notification when Dropping a Conversation Element (Issue #1098).
-- 🖱️ **Dragged File Styling**: Fixed dragged file layover styling issue.
+🎨 DALL-E Entegrasyonu: automatic1111'e ek olarak görüntü oluşturma için DALL-E entegrasyonu tanıtıldı.
+
+🛠️ RAG API Yeniden Yapılandırması: RAG mantığı yeniden yapılandırıldı ve API'si açık hale getirildi, ek dokümantasyonlar yakında gelecek.
+
+### Düzeltildi
+
+🔒 Maksimum Token Ayarları: Anthropic/claude-3-sonnet-20240229 için maksimum token ayarları eklendi (Sorun #1094).
+
+🔧 Hizalama Sorunu: Sohbet Başlığı Boşken Düzenle ve Sil İkonlarının Yanlış Hizalanması düzeltildi (Sorun #1104).
+
+🔄 Bağlam Kaybı Düzeltmesi: API anahtarı aracılığıyla Groq modelleriyle model yanıtı yeniden oluşturmada RAG'nin bağlam kaybetmesi çözüldü (Sorun #1105).
+
+📁 Dosya İşleme Hatası: Konuşma Öğesi Bırakıldığında Dosya Bulunamadı Bildirimi giderildi (Sorun #1098).
+
+🖱️ Sürüklenen Dosya Stili: Sürüklenen dosya katmanı stil sorunu düzeltildi.
 
 ## [0.1.110] - 2024-03-06
+### Eklendi
 
-### Added
+🌐 Çoklu OpenAI Sunucusu Desteği: Artık yerel olarak desteklenen birden fazla OpenAI uyumlu API ile sorunsuz entegrasyonun keyfini çıkarın.
 
-- **🌐 Multiple OpenAI Servers Support**: Enjoy seamless integration with multiple OpenAI-compatible APIs, now supported natively.
+### Düzeltildi
 
-### Fixed
+🔍 OCR Sorunu: OCR arızasından kaynaklanan PDF ayrıştırma sorunu çözüldü.
 
-- **🔍 OCR Issue**: Resolved PDF parsing issue caused by OCR malfunction.
-- **🚫 RAG Issue**: Fixed the RAG functionality, ensuring it operates smoothly.
-- **📄 "Add Docs" Model Button**: Addressed the non-functional behavior of the "Add Docs" model button.
+🚫 RAG Sorunu: RAG işlevselliği düzeltildi, sorunsuz çalıştığı sağlandı.
+
+📄 "Belgeleri Ekle" Model Düğmesi: "Belgeleri Ekle" model düğmesinin işlevsel olmayan davranışı giderildi.
 
 ## [0.1.109] - 2024-03-06
+### Eklendi
 
-### Added
+🔄 Çoklu Ollama Sunucusu Desteği: Tek bir WebUI'de birden fazla Ollama sunucusu desteği ile gelişmiş ölçeklenebilirlik ve performansın keyfini çıkarın. Yük dengeleme özellikleri artık mevcut, geliştirilmiş verimlilik sağlıyor (#788, #278).
 
-- **🔄 Multiple Ollama Servers Support**: Enjoy enhanced scalability and performance with support for multiple Ollama servers in a single WebUI. Load balancing features are now available, providing improved efficiency (#788, #278).
-- **🔧 Support for Claude 3 and Gemini**: Responding to user requests, we've expanded our toolset to include Claude 3 and Gemini, offering a wider range of functionalities within our platform (#1064).
-- **🔍 OCR Functionality for PDF Loader**: We've augmented our PDF loader with Optical Character Recognition (OCR) capabilities. Now, extract text from scanned documents and images within PDFs, broadening the scope of content processing (#1050).
+🔧 Claude 3 ve Gemini Desteği: Kullanıcı isteklerine yanıt olarak, araç setimizi Claude 3 ve Gemini'yi içerecek şekilde genişlettik, platformumuz içinde daha geniş bir işlevsellik yelpazesi sunuyoruz (#1064).
 
-### Fixed
+🔍 PDF Yükleyici için OCR İşlevselliği: PDF yükleyicimizi Optik Karakter Tanıma (OCR) yetenekleri ile güçlendirdik. Artık PDF'lerdeki taranmış belgelerden ve resimlerden metin çıkarın, içerik işleme kapsamını genişletiyor (#1050).
 
-- **🛠️ RAG Collection**: Implemented a dynamic mechanism to recreate RAG collections, ensuring users have up-to-date and accurate data (#1031).
-- **📝 User Agent Headers**: Fixed issue of RAG web requests being sent with empty user_agent headers, reducing rejections from certain websites. Realistic headers are now utilized for these requests (#1024).
-- **⏹️ Playground Cancel Functionality**: Introducing a new "Cancel" option for stopping Ollama generation in the Playground, enhancing user control and usability (#1006).
-- **🔤 Typographical Error in 'ASSISTANT' Field**: Corrected a typographical error in the 'ASSISTANT' field within the GGUF model upload template for accuracy and consistency (#1061).
+### Düzeltildi
 
-### Changed
+🛠️ RAG Koleksiyonu: Kullanıcıların güncel ve doğru verilere sahip olmasını sağlayan RAG koleksiyonlarını yeniden oluşturmak için dinamik bir mekanizma uygulandı (#1031).
 
-- **🔄 Refactored Message Deletion Logic**: Streamlined message deletion process for improved efficiency and user experience, simplifying interactions within the platform (#1004).
-- **⚠️ Deprecation of `OLLAMA_API_BASE_URL`**: Deprecated `OLLAMA_API_BASE_URL` environment variable; recommend using `OLLAMA_BASE_URL` instead. Refer to our documentation for further details.
+📝 Kullanıcı Aracısı Başlıkları: RAG web isteklerinin boş user_agent başlıklarıyla gönderilmesi sorunu düzeltildi, belirli web sitelerinden gelen retleri azalttı. Bu istekler için artık gerçekçi başlıklar kullanılıyor (#1024).
+
+⏹️ Playground İptal İşlevselliği: Playground'da Ollama oluşturmayı durdurmak için yeni bir "İptal" seçeneği tanıtıldı, kullanıcı kontrolünü ve kullanılabilirliği artırıyor (#1006).
+
+🔤 'ASSISTANT' Alanında Tipografik Hata: Doğruluk ve tutarlılık için GGUF model yükleme şablonundaki 'ASSISTANT' alanında tipografik bir hata düzeltildi (#1061).
+
+### Değiştirildi
+
+🔄 Mesaj Silme Mantığı Yeniden Yapılandırıldı: Geliştirilmiş verimlilik ve kullanıcı deneyimi için mesaj silme süreci kolaylaştırıldı, platform içindeki etkileşimler basitleştirildi (#1004).
+
+⚠️ OLLAMA_API_BASE_URL'nin Kullanımdan Kaldırılması: OLLAMA_API_BASE_URL ortam değişkeni kullanımdan kaldırıldı; bunun yerine OLLAMA_BASE_URL kullanılması önerilir. Daha fazla ayrıntı için dokümantasyonumuza bakın.
 
 ## [0.1.108] - 2024-03-02
+### Eklendi
 
-### Added
+🎮 Playground Özelliği (Beta): Yönetici erişimine sahip sezgisel bir UI aracılığıyla ham API'nin tüm potansiyelini keşfedin. Erişmek için kenar çubuğunun alt ad alanına tıklamanız yeterli. Playground özelliği iki mod sunar: metin tamamlama (notebook) ve sohbet tamamlama. Beta aşamasında olduğu için karşılaştığınız sorunları bildirin.
 
-- **🎮 Playground Feature (Beta)**: Explore the full potential of the raw API through an intuitive UI with our new playground feature, accessible to admins. Simply click on the bottom name area of the sidebar to access it. The playground feature offers two modes text completion (notebook) and chat completion. As it's in beta, please report any issues you encounter.
-- **🛠️ Direct Database Download for Admins**: Admins can now download the database directly from the WebUI via the admin settings.
-- **🎨 Additional RAG Settings**: Customize your RAG process with the ability to edit the TOP K value. Navigate to Documents > Settings > General to make changes.
-- **🖥️ UI Improvements**: Tooltips now available in the input area and sidebar handle. More tooltips will be added across other parts of the UI.
+🛠️ Yönetici için Doğrudan Veritabanı İndirme: Yöneticiler artık veritabanını WebUI'den yönetici ayarları aracılığıyla doğrudan indirebilirler.
 
-### Fixed
+🎨 Ek RAG Ayarları: TOP K değerini düzenleme yeteneği ile RAG sürecinizi özelleştirin. Belgeler > Ayarlar > Genel'e giderek değişiklikleri yapabilirsiniz.
 
-- Resolved input autofocus issue on mobile when the sidebar is open, making it easier to use.
-- Corrected numbered list display issue in Safari (#963).
-- Restricted user ability to delete chats without proper permissions (#993).
+🖥️ UI İyileştirmeleri: Giriş alanında ve kenar çubuğu tutamacında artık araç ipuçları mevcut. UI'nin diğer bölümlerine de daha fazla araç ipucu eklenecek.
 
-### Changed
+### Düzeltildi
 
-- **Simplified Ollama Settings**: Ollama settings now don't require the `/api` suffix. You can now utilize the Ollama base URL directly, e.g., `http://localhost:11434`. Also, an `OLLAMA_BASE_URL` environment variable has been added.
-- **Database Renaming**: Starting from this release, `ollama.db` will be automatically renamed to `webui.db`.
+Kenar çubuğu açıkken mobil cihazda giriş otomatik odaklama sorunu çözüldü, kullanımı kolaylaştırdı.
+
+Safari'de numaralı liste görüntüleme sorunu düzeltildi (#963).
+
+Uygun izinler olmadan kullanıcıların sohbetleri silme yeteneği kısıtlandı (#993).
+
+### Değiştirildi
+
+Basitleştirilmiş Ollama Ayarları: Ollama ayarları artık /api soneki gerektirmiyor. Artık Ollama temel URL'sini doğrudan kullanabilirsiniz, örn. http://localhost:11434. Ayrıca, bir OLLAMA_BASE_URL ortam değişkeni eklendi.
+
+Veritabanı Yeniden Adlandırma: Bu sürümden itibaren ollama.db otomatik olarak webui.db olarak yeniden adlandırılacaktır.
 
 ## [0.1.107] - 2024-03-01
+### Eklendi
 
-### Added
+🚀 Makefile ve LLM Güncelleme Betiği: Depoya Makefile ve LLM güncellemeleri için bir betik dahil edildi.
 
-- **🚀 Makefile and LLM Update Script**: Included Makefile and a script for LLM updates in the repository.
+### Düzeltildi
 
-### Fixed
+Ayarlar modalındaki bağlantıların tıklanamaz görünmesi sorunu düzeltildi (#960).
 
-- Corrected issue where links in the settings modal didn't appear clickable (#960).
-- Fixed problem with web UI port not taking effect due to incorrect environment variable name in run-compose.sh (#996).
-- Enhanced user experience by displaying chat in browser title and enabling automatic scrolling to the bottom (#992).
+run-compose.sh'de yanlış ortam değişkeni adı nedeniyle web UI portunun etkili olmaması sorunu düzeltildi (#996).
 
-### Changed
+Tarayıcı başlığında sohbeti görüntüleyerek ve otomatik olarak aşağıya kaydırmayı etkinleştirerek kullanıcı deneyimi geliştirildi (#992).
 
-- Upgraded toast library from `svelte-french-toast` to `svelte-sonner` for a more polished UI.
-- Enhanced accessibility with the addition of dark mode on the authentication page.
+Değiştirildi
+
+Daha şık bir UI için toast kütüphanesi svelte-french-toast'ten svelte-sonner'e yükseltildi.
+
+Kimlik doğrulama sayfasında koyu mod eklenerek erişilebilirlik artırıldı.
 
 ## [0.1.106] - 2024-02-27
+### Eklendi
 
-### Added
+🎯 Otomatik Odaklanma Özelliği: Sohbet başlatıldığında veya açıldığında giriş alanı otomatik olarak odaklanır.
 
-- **🎯 Auto-focus Feature**: The input area now automatically focuses when initiating or opening a chat conversation.
+### Düzeltildi
 
-### Fixed
+"HuggingFace" yazım hatası "Hugging Face" olarak düzeltildi (Sorun #924).
 
-- Corrected typo from "HuggingFace" to "Hugging Face" (Issue #924).
-- Resolved bug causing errors in chat completion API calls to OpenAI due to missing "num_ctx" parameter (Issue #927).
-- Fixed issues preventing text editing, selection, and cursor retention in the input field (Issue #940).
-- Fixed a bug where defining an OpenAI-compatible API server using 'OPENAI_API_BASE_URL' containing 'openai' string resulted in hiding models not containing 'gpt' string from the model menu. (Issue #930)
+Eksik "num_ctx" parametresi nedeniyle OpenAI'ye yapılan sohbet tamamlama API çağrılarında hatalara neden olan hata düzeltildi (Sorun #927).
+
+Giriş alanında metin düzenleme, seçme ve imleç tutma sorunları düzeltildi (Sorun #940).
+
+'OPENAI_API_BASE_URL' içeren 'openai' dizgisi içeren bir OpenAI uyumlu API sunucusu tanımlandığında, 'gpt' dizgisi içermeyen modellerin model menüsünden gizlenmesi sorunu düzeltildi. (Sorun #930)
 
 ## [0.1.105] - 2024-02-25
+### Eklendi
 
-### Added
+📄 Belge Seçimi: Artık daha kolay yönetim için birden fazla belgeyi aynı anda seçebilir ve silebilirsiniz.
 
-- **📄 Document Selection**: Now you can select and delete multiple documents at once for easier management.
+### Değiştirildi
 
-### Changed
-
-- **🏷️ Document Pre-tagging**: Simply click the "+" button at the top, enter tag names in the popup window, or select from a list of existing tags. Then, upload files with the added tags for streamlined organization.
+🏷️ Belge Ön Etiketleme: Üstteki "+" düğmesine tıklayın, açılır pencerede etiket adlarını girin veya mevcut etiketler listesinden seçin. Ardından, kolaylaştırılmış organizasyon için eklenen etiketlerle dosyaları yükleyin.
 
 ## [0.1.104] - 2024-02-25
+### Eklendi
 
-### Added
+🔄 Güncellemeleri Kontrol Et: Ayarlar > Hakkında'da uygun bir şekilde bulunan güncellemeleri kontrol ederek sisteminizi güncel tutun.
 
-- **🔄 Check for Updates**: Keep your system current by checking for updates conveniently located in Settings > About.
-- **🗑️ Automatic Tag Deletion**: Unused tags on the sidebar will now be deleted automatically with just a click.
+🗑️ Otomatik Etiket Silme: Kenar çubuğundaki kullanılmayan etiketler artık tek bir tıklamayla otomatik olarak silinecek.
 
-### Changed
+### Değiştirildi
 
-- **🎨 Modernized Styling**: Enjoy a refreshed look with updated styling for a more contemporary experience.
+🎨 Modernleştirilmiş Stil: Daha çağdaş bir deneyim için güncellenmiş stil ile yenilenmiş bir görünümün keyfini çıkarın.
 
 ## [0.1.103] - 2024-02-25
+### Eklendi
 
-### Added
+🔗 Yerleşik LiteLLM Proxy: Gelişmiş işlevsellik için artık Open WebUI içinde LiteLLM proxy içerir.
 
-- **🔗 Built-in LiteLLM Proxy**: Now includes LiteLLM proxy within Open WebUI for enhanced functionality.
+Mevcut LiteLLM yapılandırmalarını -v /path/to/config.yaml:/app/backend/data/litellm/config.yaml bayrağını kullanarak kolayca entegre edin.
 
-  - Easily integrate existing LiteLLM configurations using `-v /path/to/config.yaml:/app/backend/data/litellm/config.yaml` flag.
-  - When utilizing Docker container to run Open WebUI, ensure connections to localhost use `host.docker.internal`.
+Open WebUI'yi çalıştırmak için Docker container kullanırken, localhost'a bağlantıların host.docker.internal kullanılarak yapıldığından emin olun.
 
-- **🖼️ Image Generation Enhancements**: Introducing Advanced Settings with Image Preview Feature.
-  - Customize image generation by setting the number of steps; defaults to A1111 value.
+🖼️ Görüntü Oluşturma Geliştirmeleri: Görüntü Önizleme Özelliği ile Gelişmiş Ayarlar tanıtıldı.
 
-### Fixed
+Adım sayısını ayarlayarak görüntü oluşturmayı özelleştirin; varsayılan A1111 değeridir.
 
-- Resolved issue with RAG scan halting document loading upon encountering unsupported MIME types or exceptions (Issue #866).
+### Düzeltildi
 
-### Changed
+RAG taramasının desteklenmeyen MIME türleri veya istisnalar nedeniyle belge yüklemesini durdurması sorunu çözüldü (Sorun #866).
 
-- Ollama is no longer required to run Open WebUI.
-- Access our comprehensive documentation at [Open WebUI Documentation](https://docs.openwebui.com/).
+### Değiştirildi
+
+Ollama artık Open WebUI'yi çalıştırmak için gerekli değil.
+
+Kapsamlı dokümantasyonumuza Open WebUI Dokümantasyonu adresinden erişin.
 
 ## [0.1.102] - 2024-02-22
+### Eklendi
 
-### Added
+🖼️ Görüntü Oluşturma: AUTOMATIC1111/stable-diffusion-webui API'sini kullanarak Görüntüler Oluşturun. Bunu Ayarlar > Görüntüler'den ayarlayabilirsiniz.
 
-- **🖼️ Image Generation**: Generate Images using the AUTOMATIC1111/stable-diffusion-webui API. You can set this up in Settings > Images.
-- **📝 Change title generation prompt**: Change the prompt used to generate titles for your chats. You can set this up in the Settings > Interface.
-- **🤖 Change embedding model**: Change the embedding model used to generate embeddings for your chats in the Dockerfile. Use any sentence transformer model from huggingface.co.
-- **📢 CHANGELOG.md/Popup**: This popup will show you the latest changes.
+📝 Başlık oluşturma prompt'unu değiştir: Sohbetleriniz için başlık oluşturmakta kullanılan prompt'u değiştirin. Bunu Ayarlar > Arayüz'den ayarlayabilirsiniz.
+
+🤖 Embedding modelini değiştir: Dockerfile'da sohbetleriniz için embedding oluşturmakta kullanılan embedding modelini değiştirin. huggingface.co'dan herhangi bir sentence transformer modelini kullanın.
+
+📢 CHANGELOG.md/Açılır Pencere: Bu açılır pencere size en son değişiklikleri gösterecektir.
 
 ## [0.1.101] - 2024-02-22
+### Düzeltildi
 
-### Fixed
+LaTeX çıktı biçimlendirme sorunu (#828)
 
-- LaTex output formatting issue (#828)
+### Değiştirildi
 
-### Changed
+Önceki 1.0.0-alpha.101 sürümü yerine, küresel kurallara uymak için semantik sürümlemeye geçtik.
 
-- Instead of having the previous 1.0.0-alpha.101, we switched to semantic versioning as a way to respect global conventions.
+Çeviri Burak Can Öğüt
