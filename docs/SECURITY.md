@@ -1,44 +1,36 @@
-# Security Policy
+# Güvenlik Politikası
+Birincil hedefimiz, kullanıcılar tarafından Open WebUI üzerinde depolanan hassas verilerin korunmasını ve gizliliğini sağlamaktır.
 
-Our primary goal is to ensure the protection and confidentiality of sensitive data stored by users on open-webui.
-
-## Supported Versions
-
-| Version | Supported          |
+## Desteklenen Sürümler
+| Sürüm | Destekleniyor          |
 | ------- | ------------------ |
 | main    | :white_check_mark: |
 | others  | :x:                |
 
-## Zero Tolerance for External Platforms
+## Harici Platformlara Sıfır Tolerans
+Üçüncü taraf platformlardan gelen kabul edilemez düzeydeki spam ve istenmeyen iletişim emsallerine dayanarak, duruşumuzu kesin olarak yeniden teyit ediyoruz. **Güvenlik açığı bildirimleri için GitHub dışındaki hiçbir platformla etkileşim kurmayı, katılmayı veya izlemeyi reddediyoruz.** Nedenlerimiz sadece prosedürel değil, aynı zamanda projemizin açık kaynak kültüründe var olan şeffaflık ve doğrudan topluluk etkileşimini savunan etik anlayışına derinden bağlıdır. Süreçlerimizi harici platformlara yönlendirme girişimleri kesinlikle reddedilecektir. Bu politika müzakere edilemez ve hiçbir istisnası yoktur.
 
-Based on a precedent of an unacceptable degree of spamming and unsolicited communications from third-party platforms, we forcefully reaffirm our stance. **We refuse to engage with, join, or monitor any platforms outside of GitHub for vulnerability reporting.** Our reasons are not just procedural but are deep-seated in the ethos of our project, which champions transparency and direct community interaction inherent in the open-source culture. Any attempts to divert our processes to external platforms will be met with outright rejection. This policy is non-negotiable and understands no exceptions.
+Belirlenen GitHub depomuz dışındaki kaynaklardan gelen her türlü rapor veya talep, değerlendirilmeye alınmaksızın reddedilecektir. Harici etkileşimlerin, topluluk odaklı projelerin bütünlüğünü nasıl zayıflatıp tehlikeye atabileceğini gördük ve kullanıcı topluluğumuzun güvenliği ve gizliliği konusunda kumar oynamaya burada değiliz.
 
-Any reports or solicitations arriving from sources other than our designated GitHub repository will be dismissed without consideration. We’ve seen how external engagements can dilute and compromise the integrity of community-driven projects, and we’re not here to gamble with the security and privacy of our user community.
+## Güvenlik Açığı Bildirme
+Potansiyel güvenlik açıklarını tespit etme konusundaki topluluğun ilgisini takdir ediyoruz. Ancak, derhal geçerli olmak üzere, düşük çabalı güvenlik açığı raporlarını **kabul etmeyeceğiz**. Gönderimlerin yapıcı ve uygulanabilir olmasını sağlamak için lütfen aşağıdaki yönergeleri izleyin:
 
-## Reporting a Vulnerability
+Belirlenen GitHub depomuz aracılığıyla gönderilmeyen raporlar dikkate alınmayacak ve harici platformlarda işbirliği yapma davetlerini kesinlikle reddedeceğiz. Bu konudaki agresif duruşumuz, tüm operasyonların görünür olduğu ve katkıda bulunanların sorumlu olduğu güvenli, şeffaf ve açık bir topluluk oluşturma taahhüdümüzü vurgulamaktadır.
 
-We appreciate the community's interest in identifying potential vulnerabilities. However, effective immediately, we will **not** accept low-effort vulnerability reports. To ensure that submissions are constructive and actionable, please adhere to the following guidelines:
+1.  **Muallak Rapor Yok**: Detay içermeyen "Bir güvenlik açığı buldum" gibi gönderimler spam olarak kabul edilecek ve kabul edilmeyecektir.
+2.  **Derinlemesine Anlayış Gerekli**: Raporlar, kod tabanı hakkında net bir anlayış yansıtmalı ve etkilenen bileşenler ile potansiyel etkiler dahil olmak üzere güvenlik açığı hakkında spesifik detaylar sağlamalıdır.
+3.  **Proof of Concept (PoC) Zorunludur**: Her gönderim, güvenlik açığını gösteren iyi belgelenmiş bir Proof of Concept (PoC) içermelidir. Gizlilik endişesi varsa, raporlayanların depoda özel bir fork oluşturmaları ve erişimi sürdürücülerle paylaşmaları teşvik edilir. Raporlar geçerli kanıt içermeyenler dikkate alınmayacaktır.
+4.  **Gerekli Yama Gönderimi**: PoC ile birlikte, raporlayanlar tespit edilen güvenlik açığını gidermek için bir yama veya uygulanabilir adımlar sağlamalıdır. Bu, düzeltmeleri hızla değerlendirmemize ve uygulamamıza yardımcı olur.
+5.  **Kolaylaştırılmış Birleştirme Süreci**: Güvenlik açığı raporları yukarıdaki kriterleri karşıladığında, tıpkı normal pull request'ler gibi derhal birleştirmek için değerlendirebiliriz. İyi yapılandırılmış ve kapsamlı gönderimler, güvenliğimizi artırma sürecini hızlandıracaktır.
 
-Reports not submitted through our designated GitHub repository will be disregarded, and we will categorically reject invitations to collaborate on external platforms. Our aggressive stance on this matter underscores our commitment to a secure, transparent, and open community where all operations are visible and contributors are accountable.
+**Yönetmeliklere uymayan gönderimler kapatılacak ve tekrarlayan ihlalciler yasaklanabilir.** Amacımız, kaliteli gönderimlerin tüm kullanıcılar için daha iyi güvenliği teşvik ettiği yapıcı bir raporlama ortamı oluşturmaktır.
 
-1. **No Vague Reports**: Submissions such as "I found a vulnerability" without any details will be treated as spam and will not be accepted.
+## Ürün Güvenliği
+Otomatik ve manuel test tekniklerinin bir kombinasyonunu kullanarak dahili süreçlerimizi ve sistem mimarimizi güvenlik açıkları açısından düzenli olarak denetliyoruz. Yakın zamanda projemizde SAST ve SCA taramalarını da uygulamayı planlıyoruz.
 
-2. **In-Depth Understanding Required**: Reports must reflect a clear understanding of the codebase and provide specific details about the vulnerability, including the affected components and potential impacts.
-
-3. **Proof of Concept (PoC) is Mandatory**: Each submission must include a well-documented proof of concept (PoC) that demonstrates the vulnerability. If confidentiality is a concern, reporters are encouraged to create a private fork of the repository and share access with the maintainers. Reports lacking valid evidence will be disregarded.
-
-4. **Required Patch Submission**: Along with the PoC, reporters must provide a patch or actionable steps to remediate the identified vulnerability. This helps us evaluate and implement fixes rapidly.
-
-5. **Streamlined Merging Process**: When vulnerability reports meet the above criteria, we can consider them for immediate merging, similar to regular pull requests. Well-structured and thorough submissions will expedite the process of enhancing our security.
-
-**Non-compliant submissions will be closed, and repeat violators may be banned.** Our goal is to foster a constructive reporting environment where quality submissions promote better security for all users.
-
-## Product Security
-
-We regularly audit our internal processes and system architecture for vulnerabilities using a combination of automated and manual testing techniques. We are also planning to implement SAST and SCA scans in our project soon.
-
-For immediate concerns or detailed reports that meet our guidelines, please create an issue in our [issue tracker](/open-webui/open-webui/issues) or contact us on [Discord](https://discord.gg/5rJgQTnV4s).
+Acil endişeleriniz veya yönergelerimize uyan detaylı raporlar için, lütfen [sorun takip sistemimizde](/open-webui/open-webui/issues) bir sorun oluşturun veya [Discord](https://discord.gg/5rJgQTnV4s) üzerinden bizimle iletişime geçin.
 
 ---
+_Son güncellenme tarihi:_ **_2024-08-19_**_._
 
-_Last updated on **2024-08-19**._
+Türkçeye çeviren: Burak Can Öğüt
